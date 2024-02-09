@@ -1,3 +1,5 @@
-export default function Home() {
-  return <h1>Satria Bahari</h1>;
+import Home from "@/modules/home";
+
+export default function HomePage() {
+  return <Home/>;
 }
