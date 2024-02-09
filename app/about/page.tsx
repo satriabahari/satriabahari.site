@@ -4,7 +4,6 @@ import About from "@/modules/about";
 const PAGE_TITLE = "About";
 const PAGE_DESCRIPTION = 'A short story of me'
 
-
 export default function AboutPage() {
   return (
     <>
