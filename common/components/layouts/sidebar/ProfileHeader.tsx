@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { MdVerified as VerifiedIcon } from "react-icons/md";
+import ThemeToggle from "../../elements/ThemeToggle";
 
 export default function ProfileHeader() {
   return (
@@ -10,6 +11,7 @@ export default function ProfileHeader() {
           <h2 className="text-xl font-medium">Satria Bahari</h2>
         </Link>
         <VerifiedIcon size={18} className="text-blue-400" />
+        <ThemeToggle />
       </div>
       <Link href="/" className="text-sm text-neutral-600">
         @satriabaharii_
