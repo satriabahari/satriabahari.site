@@ -10,12 +10,17 @@
   },
   "dependencies": {
     "date-fns": "^3.3.1",
+    "cloudinary": "^2.0.1",
+    "clsx": "^2.1.0",
     "next": "14.1.0",
+    "next-cloudinary": "^5.20.0",
+    "next-themes": "^0.2.1",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^5.0.1"
+    "react-icons": "^5.0.1",
+    "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
     "@types/node": "^20",
