@@ -16,7 +16,7 @@ export default function CareerList() {
       </div>
 
       <div className="grid grid-cols-2 gap-4">
-        {CAREERS.map((career, index) => (
+        {CAREERS?.map((career, index) => (
           <CareerCard key={index} {...career} />
         ))}
       </div>
