@@ -29,7 +29,7 @@ export default function CareerCard({
   }
 
   return (
-    <Card className="flex items-center gap-5">
+    <Card className="flex items-center gap-5 border border-neutral-300 px-6 py-4">
       {logo ? (
         <Image width={55} height={55} src={logo} alt={company} />
       ) : (
@@ -39,7 +39,7 @@ export default function CareerCard({
       <div className="space-y-1">
         <h6>{position}</h6>
         <div className="space-y-2 text-sm text-neutral-600">
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-2">
             <Link href={link || "#"} target="_blank">
               <span className="cursor-pointer underline">{company}</span>
             </Link>
@@ -47,7 +47,7 @@ export default function CareerCard({
             <span>{location}</span>
           </div>
 
-          <div className="flex flex-col">
+          <div className="flex flex-col text-[13px]">
             <div className="flex gap-1">
               <span>{format(startDate, "MMM yyyy")}</span> -{" "}
               <span>{end_date ? format(endDate, "MMM yyyy") : "Present"}</span>
