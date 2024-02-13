@@ -1,5 +1,18 @@
-import React from "react";
+import clsx from "clsx";
 
-export default function Breakline() {
-  return <div className="my-4 border-t border-gray-300 "></div>;
+type BreaklineProps = {
+  className?: string;
+  [propName: string]: string | undefined;
+};
+
+export default function Breakline({
+  className = "",
+  ...others
+}: BreaklineProps) {
+  return (
+    <div
+      className={clsx("my-4 border-t border-gray-300", className)}
+      {...others}
+    ></div>
+  );
 }
