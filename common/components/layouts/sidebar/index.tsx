@@ -7,7 +7,7 @@ import ProfileHeader from "./ProfileHeader";
 
 export default function Sidebar() {
   return (
-    <header className="min-h-screen w-1/5 p-4 shadow-2xl">
+    <header className="min-h-screen w-1/5 p-4">
       <ProfileHeader />
       <Breakline />
       <Menu list={MENU_ITEMS} />
