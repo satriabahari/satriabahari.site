@@ -8,4 +8,4 @@ export const GET = async () => {
   } catch (error) {
     return NextResponse.json({ status: false, error }, { status: 400 });
   }
-};k
+};
