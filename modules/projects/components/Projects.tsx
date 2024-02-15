@@ -4,7 +4,7 @@ import ProjectCard from "./ProjectCard";
 
 export default function Projects({ projects }: ProjectItemProps) {
   return (
-    <section>
+    <section className="grid grid-cols-2 gap-12">
       {projects?.map((project, index) => (
         <ProjectCard key={index} {...project} />
       ))}
