@@ -29,7 +29,7 @@ export default function CareerCard({
   }
 
   return (
-    <Card className="flex items-center gap-5 border border-neutral-300 px-6 py-4">
+    <Card className="flex items-center gap-5 border border-neutral-300 px-6 py-4 dark:border-neutral-600">
       {logo ? (
         <Image width={55} height={55} src={logo} alt={company} />
       ) : (
@@ -38,12 +38,14 @@ export default function CareerCard({
 
       <div className="space-y-1">
         <h6>{position}</h6>
-        <div className="space-y-2 text-sm text-neutral-600">
+        <div className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
           <div className="flex items-center gap-2">
             <Link href={link || "#"} target="_blank">
-              <span className="cursor-pointer underline">{company}</span>
+              <span className="cursor-pointer underline hover:text-neutral-900 hover:dark:text-neutral-50">
+                {company}
+              </span>
             </Link>
-            <span className="text-neutral-300">•</span>
+            <span className="text-neutral-300 dark:text-neutral-700">•</span>
             <span>{location}</span>
           </div>
 

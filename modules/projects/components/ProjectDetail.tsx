@@ -17,8 +17,10 @@ export default function ProjectDetail({
     <div className="space-y-8 overflow-hidden">
       <div className="flex flex-col items-center justify-between lg:flex-row">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="mb-1 text-sm">Tech Stack: </span>
-          <div className="flex items-center gap-3">
+          <span className="mb-1 text-sm text-neutral-700 dark:text-neutral-300">
+            Tech Stack :{" "}
+          </span>
+          <div className="flex flex-wrap items-center gap-3">
             {stacksArray.map((stack: string, index: number) => (
               <div key={index}>{SKILLS[stack]}</div>
             ))}

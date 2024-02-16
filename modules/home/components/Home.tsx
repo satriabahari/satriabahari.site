@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Introduction />
-      <Breakline />
+      <Breakline className="my-8" />
     </>
   );
 }
