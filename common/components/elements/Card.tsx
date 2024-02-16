@@ -11,7 +11,7 @@ export default function Card({
 }: CardProps) {
   return (
     <div
-      className={`rounded-xl shadow-sm transition-all duration-300 ${className}`}
+      className={`rounded-xl bg-neutral-50 shadow-sm transition-all duration-300 dark:bg-neutral-800 ${className}`}
       {...others}
     >
       {children}

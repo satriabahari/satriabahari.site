@@ -19,12 +19,12 @@ export default function ProjectCard({
 
   return (
     <Link href={`/projects/${slug}`}>
-      <Card className="group cursor-pointer border border-neutral-200 hover:scale-105">
+      <Card className="group cursor-pointer border border-neutral-200 hover:scale-105 dark:border-neutral-700">
         <div className="relative">
           <Image
             src={image}
             alt={title}
-            width={400}
+            width={450}
             height={200}
             className="h-full rounded-t-xl object-cover"
           />
@@ -34,10 +34,10 @@ export default function ProjectCard({
           </div>
         </div>
         <div className="space-y-2 p-5">
-          <h3 className="cursor-pointer text-lg text-neutral-700 transition-all duration-300 group-hover:text-teal-500">
+          <h3 className="cursor-pointer text-lg text-neutral-700 transition-all duration-300 group-hover:text-teal-500 dark:text-neutral-300 dark:group-hover:text-teal-400">
             {title}
           </h3>
-          <p className="text-sm leading-relaxed text-neutral-700">
+          <p className="text-sm leading-relaxed text-neutral-700 dark:text-neutral-400">
             {trimmedContent}
           </p>
           <div className="flex flex-wrap items-center gap-3 pt-2">

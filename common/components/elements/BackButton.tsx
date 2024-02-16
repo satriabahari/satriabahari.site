@@ -21,7 +21,7 @@ export default function BackButton({ url }: BackButtonProps) {
   };
 
   const className =
-    "flex gap-2 w-max hover:gap-3 items-center pb-5 transition-all duration-300 font-medium text-neutral-600 cursor-pointer";
+    "flex gap-2 w-max hover:gap-3 items-center pb-5 transition-all duration-300 font-medium text-neutral-600 dark:text-neutral-400 cursor-pointer";
 
   const BackButtonChildComponent = () => {
     return (

@@ -21,7 +21,10 @@ export default function ProfileHeader() {
         </Link>
         <VerifiedIcon size={18} className="text-blue-400" />
       </div>
-      <Link href="/" className="text-sm text-neutral-600">
+      <Link
+        href="/"
+        className="text-sm text-neutral-600 transition-all duration-300 hover:text-neutral-800 dark:text-neutral-500 hover:dark:text-neutral-400"
+      >
         @satriabaharii_
       </Link>
     </div>
