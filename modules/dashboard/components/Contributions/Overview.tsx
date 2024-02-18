@@ -25,11 +25,16 @@ export default function Overview({ data }: OverviewProps) {
 
   const totalContributionList = weeks
     .map((week) =>
-      week.contributionDays.map((contributionDay) => contributionDay.contributionCount))
+      week.contributionDays.map(
+        (contributionDay) => contributionDay.contributionCount,
+      ),
+    )
     .flat();
 
   const bestContribution = Math.max(...totalContributionList) || 0;
-  const averageContribution = totalContributions / totalContributionList.length;
+  const averageContribution = Math.round(
+    totalContributions / totalContributionList.length,
+  );
 
   return (
     <div className="grid grid-cols-4 gap-3 py-2">
