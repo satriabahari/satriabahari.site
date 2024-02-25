@@ -1,3 +1,5 @@
+"use client";
+
 import Sidebar from "./sidebar";
 
 type LayoutsProps = {
@@ -6,10 +8,12 @@ type LayoutsProps = {
 
 export default function Layouts({ children }: LayoutsProps) {
   return (
-    <div className="px-12">
-      <div className="flex gap-5 py-4">
+    <div className="mx-auto lg:px-12">
+      <div className="flex flex-col lg:flex-row lg:gap-5 lg:py-4">
         <Sidebar />
-        <main className="w-4/5">{children}</main>
+        <main className="max-w-[854px] transition-all duration-300 lg:w-4/5">
+          {children}
+        </main>
       </div>
     </div>
   );
