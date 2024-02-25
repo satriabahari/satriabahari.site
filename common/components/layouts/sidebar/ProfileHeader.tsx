@@ -2,31 +2,48 @@ import Link from "next/link";
 
 import { MdVerified as VerifiedIcon } from "react-icons/md";
 import Image from "next/image";
+import clsx from "clsx";
+import Tooltip from "../../elements/Tooltip";
 
-export default function ProfileHeader() {
+type ProfileHeaderProps = {
+  expandMenu: boolean;
+  imageSize: number;
+};
+
+export default function ProfileHeader({
+  expandMenu,
+  imageSize,
+}: ProfileHeaderProps) {
   return (
-    <div className="flex flex-col gap-1 lg:items-start">
-      <div className="overflow-hidden rounded-full border-2 border-neutral-400">
-        <Image
-          src={"/images/satria.jpg"}
-          width={100}
-          height={100}
-          alt="Satria Bahari"
-        />
-      </div>
+    <div
+      className={clsx(
+        "flex w-full flex-grow items-center gap-4 lg:flex-col lg:items-start lg:gap-0.5",
+        expandMenu && "flex-col !items-start",
+      )}
+    >
+      <Image
+        src={"/images/satria.jpg"}
+        width={expandMenu ? 80 : imageSize}
+        height={expandMenu ? 80 : imageSize}
+        alt="Satria Bahari"
+        // rounded="rounded-full"
+        className="rotate-3 rounded-full border-2 border-neutral-400 dark:border-neutral-600 lg:hover:scale-105"
+      />
 
-      <div className="mt-4 flex items-center gap-x-2">
+      <div className="mt-1 flex items-center gap-2 lg:mt-4">
         <Link href="/">
-          <h2 className="text-xl font-medium">Satria Bahari</h2>
+          <h2 className="flex-grow text-lg font-medium lg:text-xl">
+            Satria Bahari
+          </h2>
         </Link>
-        <VerifiedIcon size={18} className="text-blue-400" />
+
+        <Tooltip title="Verified">
+          <VerifiedIcon size={18} className="text-blue-400" />
+        </Tooltip>
       </div>
-      <Link
-        href="/"
-        className="text-sm text-neutral-600 transition-all duration-300 hover:text-neutral-800 dark:text-neutral-500 hover:dark:text-neutral-400"
-      >
+      <div className="hidden text-sm text-neutral-600 transition-all duration-300 hover:text-neutral-700 dark:text-neutral-500 dark:hover:text-neutral-400 lg:flex">
         @satriabaharii_
-      </Link>
+      </div>
     </div>
   );
 }
