@@ -1,3 +1,5 @@
+"use client";
+
 import useIsMobile from "@/hooks/useIsMobile";
 import { useMenu } from "@/stores/menu";
 import clsx from "clsx";
@@ -8,6 +10,7 @@ import MobileMenuButton from "./sidebar/MobileMenuButton";
 import ThemeToggle from "../elements/ThemeToggle";
 import { AnimatePresence } from "framer-motion";
 import MobileMenu from "./sidebar/MobileMenu";
+import Tooltip from "../elements/Tooltip";
 
 export default function MobileHeader() {
   const isMobile = useIsMobile();
@@ -30,14 +33,14 @@ export default function MobileHeader() {
             />
           </div>
           <div className="mt-1 flex items-center gap-2">
-            <Link href="/" passHref>
-              <h2 className="font-sora flex-grow whitespace-nowrap text-lg font-medium lg:text-xl">
+            <Link href="/">
+              <h2 className="flex-grow whitespace-nowrap text-lg font-medium lg:text-xl">
                 Satria Bahari
               </h2>
             </Link>
-            {/* <Tooltip title="Verified"> */}
-            <VerifiedIcon size={18} className="text-blue-400" />
-            {/* </Tooltip> */}
+            <Tooltip title="Verified">
+              <VerifiedIcon size={18} className="text-blue-400" />
+            </Tooltip>
           </div>
         </div>
         {isMobile && (
@@ -45,7 +48,7 @@ export default function MobileHeader() {
             className={clsx(
               "mt-2 flex items-center gap-5 lg:hidden",
               isOpen &&
-                "h-[120px] flex-col-reverse !items-end justify-between pb-1",
+                "h-[120px] flex-col-reverse items-end justify-between pb-1",
             )}
           >
             <ThemeToggle />
