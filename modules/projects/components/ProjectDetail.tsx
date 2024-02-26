@@ -14,8 +14,8 @@ export default function ProjectDetail({
 }: ProjectItem) {
   const stacksArray = JSON.parse(stacks);
   return (
-    <div className="space-y-8 overflow-hidden">
-      <div className="flex flex-col items-center justify-between lg:flex-row">
+    <div className="space-y-8">
+      <div className="flex flex-col items-center justify-between gap-5 sm:flex-row lg:flex-row lg:items-start">
         <div className="flex flex-wrap items-center gap-2">
           <span className="mb-1 text-sm text-neutral-700 dark:text-neutral-300">
             Tech Stack :{" "}
