@@ -1,33 +1,4 @@
-// import useIsMobile from "@/hooks/useIsMobile";
-// import ThemeToggle from "../../elements/ThemeToggle";
-// import ProfileHeader from "./ProfileHeader";
-// import { useMenu } from "@/stores/menu";
-// import MobileMenuButton from "./MobileMenuButton";
-// import MobileMenu from "./MobileMenu";
-
-// export default function Profile() {
-//   const isMobile = useIsMobile();
-//   const imageSize = isMobile ? 40 : 100;
-//   const { isOpen, toggleMenu } = useMenu();
-
-//   return (
-//     <div>
-//       <div className="flex space-y-4 lg:flex-col">
-//         <ProfileHeader expandMenu={isOpen} imageSize={imageSize} />
-//         {isMobile ? (
-//           <div>
-//             <ThemeToggle />
-//             <MobileMenuButton expandMenu={isOpen} setExpandMenu={toggleMenu} />
-//           </div>
-//         ) : null}
-//       </div>
-
-//       {isMobile ? isOpen && <MobileMenu /> : null}
-//     </div>
-//   );
-// }
-
-"use client";
+"use client"
 
 import clsx from "clsx";
 import { AnimatePresence } from "framer-motion";
@@ -37,7 +8,6 @@ import { useMenu } from "@/stores/menu";
 
 import useIsMobile from "@/hooks/useIsMobile";
 
-// import ToggleThemeIcon from '../../elements/ToggleThemeIcon'
 import MobileMenu from "./MobileMenu";
 import MobileMenuButton from "./MobileMenuButton";
 import ProfileHeader from "./ProfileHeader";

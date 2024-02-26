@@ -1,8 +1,11 @@
+"use client";
+
 import { MenuItemProps } from "@/common/types/menu";
 import { useMenu } from "@/stores/menu";
+import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useState } from "react";
+import { useState } from "react";
 import { BsArrowRightShort as ExternalLinkIcon } from "react-icons/bs";
 
 export default function MenuItem({
@@ -45,15 +48,24 @@ export default function MenuItem({
     onMouseLeave: handleMouseLeave,
   };
 
+  const isActiveRoute = pathname === href;
+
   const itemComponent = () => {
     return (
       <div {...elementProps}>
-        <i className="transition group-hover:-rotate-12">{icon}</i>
-        {isHover && (
-          <p className="ml-1 whitespace-nowrap text-sm delay-1000">{title}</p>
-        )}
-        <p className="flex-grow">{title}</p>
+        <div
+          className={clsx(
+            "transition-all duration-300 group-hover:-rotate-12",
+            isActiveRoute && "-rotate-12",
+          )}
+        >
+          {icon}
+        </div>
+        <div className="flex-grow">{title}</div>
         {children && <>{children}</>}
+        {isActiveRoute && (
+          <ExternalLinkIcon size={22} className="animate-pulse text-gray-500" />
+        )}
         {isExternalUrl && isHovered && (
           <ExternalLinkIcon
             size={22}
@@ -68,8 +80,6 @@ export default function MenuItem({
     <div className="cursor-pointer">{itemComponent()}</div>
   ) : (
     <Link
-      aria-label={title}
-      tabIndex={0}
       href={href}
       target={isExternalUrl ? "_blank" : ""}
       onClick={handleClick}

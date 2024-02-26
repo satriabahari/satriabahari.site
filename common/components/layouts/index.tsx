@@ -1,5 +1,3 @@
-"use client";
-
 import Sidebar from "./sidebar";
 
 type LayoutsProps = {

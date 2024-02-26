@@ -1,9 +1,10 @@
 import Link from "next/link";
 
 import { MdVerified as VerifiedIcon } from "react-icons/md";
-import Image from "next/image";
+// import Image from "next/image";
 import clsx from "clsx";
 import Tooltip from "../../elements/Tooltip";
+import Image from "../../elements/Image";
 
 type ProfileHeaderProps = {
   expandMenu: boolean;
@@ -26,8 +27,8 @@ export default function ProfileHeader({
         width={expandMenu ? 80 : imageSize}
         height={expandMenu ? 80 : imageSize}
         alt="Satria Bahari"
-        // rounded="rounded-full"
-        className="rotate-3 rounded-full border-2 border-neutral-400 dark:border-neutral-600 lg:hover:scale-105"
+        className="rotate-3 border-2 border-neutral-400 dark:border-neutral-600 lg:hover:scale-105"
+        rounded="rounded-full"
       />
 
       <div className="mt-1 flex items-center gap-2 lg:mt-4">
