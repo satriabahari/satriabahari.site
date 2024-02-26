@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import clsx from "clsx";
 import { AnimatePresence } from "framer-motion";
@@ -12,6 +12,7 @@ import MobileMenu from "./MobileMenu";
 import MobileMenuButton from "./MobileMenuButton";
 import ProfileHeader from "./ProfileHeader";
 import ThemeToggle from "../../elements/ThemeToggle";
+import Status from "../../elements/Status";
 
 export default function Profile() {
   const isMobile = useIsMobile();
@@ -41,7 +42,7 @@ export default function Profile() {
         <ProfileHeader expandMenu={isOpen} imageSize={imageSize} />
         {!isMobile && (
           <div className="flex w-full items-center justify-between">
-            {/* <Status /> */}
+            <Status />
             <ThemeToggle />
           </div>
         )}
