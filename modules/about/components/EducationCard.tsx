@@ -27,9 +27,11 @@ export default function EducationCard({
           <h6>{school}</h6>
         </a>
         <div className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
-          <div className="flex items-center gap-2">
-            <span className="">{degree}</span>
-            <span className="text-neutral-300 dark:text-neutral-700">•</span>
+          <div className="flex flex-col gap-1 md:flex-row md:gap-2">
+            <span>{degree}</span>
+            <span className="hidden text-neutral-300 dark:text-neutral-700 md:flex">
+              •
+            </span>
             <span>{major}</span>
           </div>
           <div className="flex flex-col text-sm">
