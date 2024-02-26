@@ -3,6 +3,7 @@ import { ProjectItem } from "@/common/types/projects";
 import Image from "next/image";
 import React from "react";
 import ProjectLink from "./ProjectLink";
+import Tooltip from "@/common/components/elements/Tooltip";
 
 export default function ProjectDetail({
   title,
@@ -22,7 +23,9 @@ export default function ProjectDetail({
           </span>
           <div className="flex flex-wrap items-center gap-3">
             {stacksArray.map((stack: string, index: number) => (
-              <div key={index}>{SKILLS[stack]}</div>
+              <div key={index}>
+                <Tooltip title={stack}>{SKILLS[stack]}</Tooltip>
+              </div>
             ))}
           </div>
         </div>
