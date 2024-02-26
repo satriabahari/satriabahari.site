@@ -7,7 +7,7 @@ const PAGE_DESCRIPTION = "Let`s get in touch";
 
 export default function ContactPage() {
   return (
-    <Container>
+    <Container data-aos="fade-up">
       <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
       <Contact />
     </Container>

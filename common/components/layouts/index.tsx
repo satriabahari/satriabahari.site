@@ -1,10 +1,23 @@
+"use client";
+
 import Sidebar from "./sidebar";
+
+import { useEffect } from "react";
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 type LayoutsProps = {
   children: React.ReactNode;
 };
 
 export default function Layouts({ children }: LayoutsProps) {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      delay: 50,
+    });
+  }, []);
   return (
     <div className="mx-auto lg:px-12">
       <div className="flex flex-col lg:flex-row lg:gap-5 lg:py-4">

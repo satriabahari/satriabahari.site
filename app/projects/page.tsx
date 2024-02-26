@@ -12,7 +12,7 @@ export default async function ProjectsPage() {
   const response = await axios.get("http://localhost:3000/api/projects");
   const projects = response.data.data;
   return (
-    <Container>
+    <Container data-aos="fade-up">
       <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
       <Projects projects={projects} />
     </Container>

@@ -7,7 +7,7 @@ const PAGE_DESCRIPTION = "A short story of me";
 
 export default function AboutPage() {
   return (
-    <Container>
+    <Container data-aos="fade-up">
       <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
       <About />
     </Container>
