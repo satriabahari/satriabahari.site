@@ -19,7 +19,7 @@ export default async function ProjectDetailPage({
   const PAGE_TITLE = project.title;
   const PAGE_DESCRIPTION = project.description;
   return (
-    <Container>
+    <Container data-aos="fade-up">
       <BackButton url="/projects" />
       <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
       <ProjectDetail {...project} />
