@@ -6,15 +6,20 @@ export default function ContactCard({
   href,
   icon,
   backgroundColor,
+  textColor,
 }: SocialMediaProps) {
   return (
-    <Link href={href}>
-      <button
-        className={`flex items-center gap-x-2 rounded-md px-4 py-2 text-neutral-50 ${backgroundColor}`}
+    <button
+      className={`w-full rounded-md px-4 py-2 text-neutral-50 md:w-max ${textColor} ${backgroundColor}`}
+    >
+      <Link
+        href={href}
+        target="_blank"
+        className="flex items-center justify-center  gap-x-2"
       >
-        <i>{icon}</i>
-        <p>{title}</p>
-      </button>
-    </Link>
+        {icon}
+        <p className="text-sm">{title}</p>
+      </Link>
+    </button>
   );
 }
