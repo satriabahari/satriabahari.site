@@ -5,4 +5,5 @@ export type SocialMediaProps = {
   isShow?: boolean;
   isExternal?: boolean;
   backgroundColor?: string;
+  textColor?: string;
 };
