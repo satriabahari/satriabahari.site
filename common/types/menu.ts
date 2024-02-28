@@ -7,6 +7,6 @@ export type MenuItemProps = {
   isShow?: boolean;
   isExternal: boolean;
   eventName?: string;
-  isHover: boolean;
+  isHover?: boolean;
   children?: React.ReactNode
 };
