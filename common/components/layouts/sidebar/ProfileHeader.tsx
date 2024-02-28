@@ -27,7 +27,7 @@ export default function ProfileHeader({
         width={expandMenu ? 80 : imageSize}
         height={expandMenu ? 80 : imageSize}
         alt="Satria Bahari"
-        className="rotate-3 border-2 border-neutral-400 dark:border-neutral-600 lg:hover:scale-105"
+        className="border-2 border-neutral-400 dark:border-neutral-600 lg:hover:scale-105"
         rounded="rounded-full"
       />
 
