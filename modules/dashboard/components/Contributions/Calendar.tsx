@@ -1,6 +1,7 @@
 "use client";
 
 import clsx from "clsx";
+import { motion } from "framer-motion";
 import { useState } from "react";
 
 type Contribution = {
@@ -85,8 +86,18 @@ export default function Calendar({ data }: CalendarProps) {
                   Math.random() * week.contributionDays.length * 0.15;
 
                 return (
-                  <span
+                  <motion.span
                     key={contribution.date}
+                    initial="initial"
+                    animate="animate"
+                    variants={{
+                      initial: { opacity: 0, translateY: -20 },
+                      animate: {
+                        opacity: 1,
+                        translateY: 0,
+                        transition: { delay: getRandomDelayAnimate },
+                      },
+                    }}
                     className="my-[2px] block h-[12px] w-[12px] rounded-sm bg-neutral-300 dark:bg-neutral-800"
                     style={backgroundColor ? { backgroundColor } : undefined}
                     onMouseEnter={() =>
@@ -112,8 +123,17 @@ export default function Calendar({ data }: CalendarProps) {
           <ul className="flex gap-1">
             <li className="h-[10px] w-[10px] rounded-sm bg-neutral-300 dark:bg-neutral-800" />
             {contributionColors.map((item, index) => (
-              <li
+              <motion.li
                 key={item}
+                initial="initial"
+                animate="animate"
+                variants={{
+                  initial: { opacity: 0 },
+                  animate: {
+                    opacity: 1,
+                    transition: { delay: index * 0.3 },
+                  },
+                }}
                 className="h-[10px] w-[10px] rounded-sm"
                 style={{ backgroundColor: item }}
               />

@@ -1,6 +1,7 @@
 import Container from "@/common/components/elements/Container";
 import PageHeading from "@/common/components/elements/PageHeading";
 import Dashboard from "@/modules/dashboard/components/Dashboard";
+import { getCodewarsData } from "@/services/codewars";
 import { getGithubData } from "@/services/github";
 import React from "react";
 
@@ -10,10 +11,11 @@ const PAGE_DESCRIPTION =
 
 export default async function DashboardPage() {
   const githubData = await getGithubData();
+  const codewardData = await getCodewarsData();
   return (
     <Container data-aos="fade-up">
       <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
-      <Dashboard githubData={githubData}/>
+      <Dashboard githubData={githubData} codewarsData={codewardData} />
     </Container>
   );
 }
