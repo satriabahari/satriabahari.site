@@ -1,55 +1,55 @@
-import { BiRocket as ContactIcon } from 'react-icons/bi';
 import {
-  FiCoffee as ProjectIcon,
-  FiCpu as DashboardIcon,
-  FiPocket as HomeIcon,
-  FiUser as ProfileIcon,
-} from 'react-icons/fi';
+  BiHomeCircle as HomeIcon,
+  BiUser as AboutIcon,
+  BiCollection as ProjectIcon,
+  BiCategory as DashboardIcon,
+  BiBook as ContactIcon,
+} from "react-icons/bi";
 
-import { MenuItemProps } from '../types/menu';
+import { MenuItemProps } from "../types/menu";
 
 const iconSize = 20;
 
 export const MENU_ITEMS: MenuItemProps[] = [
   {
-    title: 'Home',
-    href: '/',
+    title: "Home",
+    href: "/",
     icon: <HomeIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
-    eventName: 'Pages: Home',
+    eventName: "Pages: Home",
   },
   {
-    title: 'About',
-    href: '/about',
-    icon: <ProfileIcon size={iconSize} />,
+    title: "About",
+    href: "/about",
+    icon: <AboutIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
-    eventName: 'Pages: About',
+    eventName: "Pages: About",
   },
-  
+
   {
-    title: 'Projects',
-    href: '/projects',
+    title: "Projects",
+    href: "/projects",
     icon: <ProjectIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
-    eventName: 'Pages: Projects',
+    eventName: "Pages: Projects",
   },
   {
-    title: 'Dashboard',
-    href: '/dashboard',
+    title: "Dashboard",
+    href: "/dashboard",
     icon: <DashboardIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
-    eventName: 'Pages: Dashboard',
+    eventName: "Pages: Dashboard",
   },
   {
-    title: 'Contact',
-    href: '/contact',
+    title: "Contact",
+    href: "/contact",
     icon: <ContactIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
-    eventName: 'Pages: Contact',
+    eventName: "Pages: Contact",
   },
 ];
