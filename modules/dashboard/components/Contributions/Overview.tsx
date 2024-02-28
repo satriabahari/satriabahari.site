@@ -37,7 +37,7 @@ export default function Overview({ data }: OverviewProps) {
   );
 
   return (
-    <div className="grid grid-cols-4 gap-3 py-2">
+    <div className="grid grid-cols-2 gap-3 py-2 sm:grid-cols-4">
       <OverviewItem label="Total" value={totalContributions} />
       <OverviewItem label="This Week" value={totalThisWeekContribution} />
       <OverviewItem label="Best Day" value={bestContribution} />
