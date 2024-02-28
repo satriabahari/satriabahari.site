@@ -1,7 +1,6 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { resolve } from "path";
 import { BsCloudMoon, BsCloudSun } from "react-icons/bs";
 
 export default function ThemeToggle() {
@@ -12,8 +11,11 @@ export default function ThemeToggle() {
   };
 
   return (
-    <button onClick={toggleTheme} className="">
-      {resolvedTheme ? <BsCloudSun /> : <BsCloudMoon />}
+    <button
+      onClick={toggleTheme}
+      className="rounded-xl bg-neutral-100 p-2 transition-all duration-300 hover:bg-neutral-200 dark:bg-neutral-800 hover:dark:bg-neutral-700"
+    >
+      {resolvedTheme === "light" ? <BsCloudSun /> : <BsCloudMoon />}
     </button>
   );
 }
