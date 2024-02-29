@@ -25,7 +25,7 @@ export type CodeChallenges = {
 };
 export type CodewarsData = {
   id: string;
-  username: string;
+  username: string; 
   name: string;
   honor: number;
   clan: string;
