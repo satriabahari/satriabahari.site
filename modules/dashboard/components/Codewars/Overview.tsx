@@ -1,5 +1,5 @@
 import React from "react";
-import OverviewItem from "../Contributions/OverviewItem";
+import OverviewItem from "../OverviewItem";
 import { CodewarsData } from "@/common/types/codewars";
 
 type OverviewProps = {

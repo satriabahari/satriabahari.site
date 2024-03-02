@@ -6,9 +6,11 @@ export type TypingStats = {
 
 export type PersonalBests = {
   time: {
-    [key: string]: PersonalBestsTime[];
+    [key: number]: PersonalBestsTime[];
   };
-  words: {};
+  words: {
+    [key: number]: PersonalBestsTime[];
+  };
 };
 
 export type PersonalBestsTime = {
@@ -23,20 +25,37 @@ export type PersonalBestsTime = {
   timestamp: number;
 };
 
+export type detailsProfile = {
+  bio: string;
+  keyboard: string;
+  socialProfiles: {
+    [key: string]: string;
+  };
+};
+
 export type AllTimeLbs = {
   time: {
-    [key: string]: number | null;
+    [key: number]: {
+      [language: string]: number | null;
+    };
   };
+};
+
+export type socialProfiles = {
+  github: string;
+  twitter: string;
+  website: string;
 };
 
 export type MonkeytypeData = {
   name: string;
   addedAt: number;
   typingStats: TypingStats;
-  personalBests: PersonalBestsTime;
+  personalBests: PersonalBests;
   xp: number;
   streak: number;
   maxStreak: number;
+  details: detailsProfile;
   allTimeLbs: AllTimeLbs;
   uid: string;
 };

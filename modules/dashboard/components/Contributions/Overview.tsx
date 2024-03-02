@@ -1,5 +1,5 @@
 import { previousDay } from "date-fns";
-import OverviewItem from "./OverviewItem";
+import OverviewItem from "../OverviewItem";
 
 type OverviewProps = {
   data: {

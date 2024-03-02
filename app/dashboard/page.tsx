@@ -11,7 +11,8 @@ const PAGE_DESCRIPTION =
   "This is my personal dashboard, built with Next.js API routes deployed as serverless functions.";
 
 export default async function DashboardPage() {
-  const githubData = await getGithubData();
+  // const githubData = await getGithubData();
+  const githubData = null;
   const codewardData = await getCodewarsData();
   const monkeytypeData = await getMonkeytypeData();
   return (
