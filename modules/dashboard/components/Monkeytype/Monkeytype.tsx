@@ -1,17 +1,24 @@
 import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
 import { MONKEYTYPE_URL } from "@/common/constant/monkeytype";
-import { MonkeytypeData } from "@/common/types/monkeytype";
+import {
+  MonkeytypeData,
+  MonkeytypeLeaderboard,
+} from "@/common/types/monkeytype";
 import Link from "next/link";
 import { SiMonkeytype as MonkeytypeIcon } from "react-icons/si";
 import Overview from "./Overview";
 import Info from "./info";
 
 type MonkeytypeProps = {
-  monkeytypeData: MonkeytypeData;
+  monkeytypeDataProfile: MonkeytypeData;
+  monkeytypeDataLeaderboard: MonkeytypeLeaderboard;
 };
 
-export default function Monkeytype({ monkeytypeData }: MonkeytypeProps) {
+export default function Monkeytype({
+  monkeytypeDataProfile,
+  monkeytypeDataLeaderboard,
+}: MonkeytypeProps) {
   return (
     <section className="space-y-2">
       <SectionHeading
@@ -33,10 +40,13 @@ export default function Monkeytype({ monkeytypeData }: MonkeytypeProps) {
         </Link>
       </SectionSubHeading>
 
-      {monkeytypeData && (
+      {monkeytypeDataProfile && (
         <div>
-          <Overview data={monkeytypeData} />
-          <Info data={monkeytypeData} />
+          <Overview
+            dataProfile={monkeytypeDataProfile}
+            dataLeaderboard={monkeytypeDataLeaderboard}
+          />
+          {/* <Info data={monkeytypeDataProfile} /> */}
         </div>
       )}
     </section>
