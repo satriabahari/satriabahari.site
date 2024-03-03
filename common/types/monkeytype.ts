@@ -59,3 +59,22 @@ export type MonkeytypeData = {
   allTimeLbs: AllTimeLbs;
   uid: string;
 };
+
+export type EntryData = {
+  _id: string;
+  wpm: number;
+  acc: number;
+  timestamp: number;
+  raw: number;
+  consistency: number;
+  uid: string;
+  name: string;
+  rank: number;
+  badgeId: null;
+};
+
+export type MonkeytypeLeaderboard = {
+  count: number;
+  rank: number;
+  entry: EntryData;
+};
