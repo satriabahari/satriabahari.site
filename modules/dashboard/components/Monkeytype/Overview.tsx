@@ -1,11 +1,11 @@
-import React from "react";
 import {
   MonkeytypeData,
   MonkeytypeLeaderboard,
 } from "@/common/types/monkeytype";
 import Image from "next/image";
 import OverviewItem from "./OverviewItem";
-// import Image from "@/common/components/elements/Image";
+import Tooltip from "@/common/components/elements/Tooltip";
+import { differenceInDays, format } from "date-fns";
 
 type OverviewProps = {
   dataProfile: MonkeytypeData;
@@ -17,18 +17,14 @@ export default function Overview({
   dataLeaderboard,
 }: OverviewProps) {
   const timeTyping = dataProfile?.typingStats.timeTyping;
-  const jam = Math.floor(timeTyping / 3600);
-  const sisa = jam % 3600;
-  const menit = Math.floor(sisa / 60);
-  const detik = Math.floor(sisa % 60);
+  const hours = Math.round(timeTyping / 3600);
+  const minutes = Math.round((timeTyping % 3600) / 60);
+  const remainingSeconds = Math.round(timeTyping % 60);
 
-  const timestamp = dataProfile?.addedAt;
-  const date = new Date(timestamp);
+  const date = new Date(dataProfile?.addedAt);
 
-  const day = date.getDate() > 9 ? date.getDate() : `0${date.getDate()}`;
-  const month =
-    date.getMonth() + 1 > 9 ? date.getMonth() + 1 : `0${date.getMonth() + 1}`;
-  const year = date.getFullYear();
+  const endDate = new Date();
+  const durationDays = differenceInDays(endDate, date);
   return (
     <div className="grid grid-cols-2 gap-3 py-2 sm:grid-cols-6">
       <div className="col-span-2 flex items-center gap-x-4 rounded-xl border border-neutral-200 bg-neutral-100 px-4 py-3 dark:border-neutral-800 dark:bg-neutral-800">
@@ -43,12 +39,16 @@ export default function Overview({
           <span className="text-2xl font-medium text-green-600">
             {dataProfile?.name}
           </span>
-          <span className="text-xs text-neutral-900 dark:text-neutral-400">
-            Joined {day} {month} {year}
-          </span>
-          <span className="text-xs text-neutral-900 dark:text-neutral-400">
-            Current streak: {dataProfile?.streak} days
-          </span>
+          <Tooltip title={`${durationDays} days ago`}>
+            <span className="text-xs text-neutral-900 dark:text-neutral-400">
+              Joined {format(date, "dd MMM yyyy")}
+            </span>
+          </Tooltip>
+          <Tooltip title={`Longest streak: ${dataProfile?.maxStreak} days`}>
+            <span className="text-xs text-neutral-900 dark:text-neutral-400">
+              Current streak: {dataProfile?.streak} days
+            </span>
+          </Tooltip>
         </div>
       </div>
 
@@ -63,7 +63,10 @@ export default function Overview({
         />
         <OverviewItem
           label="time typing"
-          value={`${jam} : ${menit} : ${detik}`}
+          value={format(
+            new Date(0, 0, 0, hours, minutes, remainingSeconds),
+            "HH:mm:ss",
+          )}
         />
       </div>
 
@@ -121,37 +124,3 @@ export default function Overview({
     </div>
   );
 }
-
-{
-  /* 
-      <div className="col-span-4 flex items-center justify-around rounded-xl border border-neutral-200 bg-neutral-100 px-4 py-3 dark:border-neutral-800 dark:bg-neutral-800">
-        <div className="flex flex-col">
-          <span className="text-xs dark:text-neutral-400">test started</span>
-          <span className="text-2xl font-medium text-green-600">
-            {dataProfile?.typingStats.startedTests}
-          </span>
-        </div>
-        <div className="flex flex-col">
-          <span className="text-xs dark:text-neutral-400">test completed</span>
-          <span className="text-2xl font-medium text-green-600">
-            {dataProfile?.typingStats.completedTests}
-          </span>
-        </div>
-        <div className="flex flex-col">
-          <span className="text-xs dark:text-neutral-400 ">time typing</span>
-          <span className="text-2xl font-medium text-green-600">
-            {jam} : {menit} : {detik}
-          </span>
-        </div>
-      </div> */
-}
-
-// <div key={item} className="flex flex-col items-center gap-2">
-//   <h2 className="text-xs dark:text-neutral-400">{item} seconds</h2>
-//   <span className="text-2xl font-medium dark:text-green-600">
-//     {Math.round(maxWpm.wpm)}
-//   </span>
-//   <span className=" dark:text-neutral-300">
-//     {Math.floor(maxWpm.acc)}%
-//   </span>
-// </div>
