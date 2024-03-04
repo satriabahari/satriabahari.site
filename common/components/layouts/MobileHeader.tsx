@@ -1,7 +1,7 @@
 "use client";
 
 import useIsMobile from "@/hooks/useIsMobile";
-import { useMenu } from "@/stores/menu";
+import { useMenu } from "@/common/stores/menu";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";

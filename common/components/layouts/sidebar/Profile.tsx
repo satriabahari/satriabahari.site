@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { AnimatePresence } from "framer-motion";
 import React, { useEffect } from "react";
 
-import { useMenu } from "@/stores/menu";
+import { useMenu } from "@/common/stores/menu";
 
 import useIsMobile from "@/hooks/useIsMobile";
 
