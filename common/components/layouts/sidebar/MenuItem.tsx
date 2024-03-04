@@ -1,7 +1,7 @@
 "use client";
 
 import { MenuItemProps } from "@/common/types/menu";
-import { useMenu } from "@/stores/menu";
+import { useMenu } from "@/common/stores/menu";
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
