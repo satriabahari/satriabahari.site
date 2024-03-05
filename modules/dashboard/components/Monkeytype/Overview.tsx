@@ -1,11 +1,13 @@
+"use client";
+
 import {
   MonkeytypeData,
   MonkeytypeLeaderboard,
 } from "@/common/types/monkeytype";
-import Image from "next/image";
 import OverviewItem from "./OverviewItem";
-import Tooltip from "@/common/components/elements/Tooltip";
-import { differenceInDays, format } from "date-fns";
+import { format } from "date-fns";
+import { useState } from "react";
+import Profile from "./Profile";
 
 type OverviewProps = {
   dataProfile: MonkeytypeData;
@@ -16,43 +18,22 @@ export default function Overview({
   dataProfile,
   dataLeaderboard,
 }: OverviewProps) {
+  const [isHover, setIsHover] = useState<number | null>(null);
+
+  const handleHover = (index: number | null) => {
+    setIsHover(index);
+  };
+
   const timeTyping = dataProfile?.typingStats.timeTyping;
   const hours = Math.round(timeTyping / 3600);
   const minutes = Math.round((timeTyping % 3600) / 60);
   const remainingSeconds = Math.round(timeTyping % 60);
 
-  const date = new Date(dataProfile?.addedAt);
-
-  const endDate = new Date();
-  const durationDays = differenceInDays(endDate, date);
   return (
-    <div className="grid grid-cols-2 gap-3 py-2 sm:grid-cols-6">
-      <div className="col-span-2 flex items-center gap-x-4 rounded-xl border border-neutral-200 bg-neutral-100 px-4 py-3 dark:border-neutral-800 dark:bg-neutral-800">
-        <Image
-          src={"/images/satria.jpg"}
-          width={70}
-          height={70}
-          alt="Satria Bahari"
-          className="rounded-full border-2 border-neutral-400 dark:border-neutral-600 lg:hover:scale-105"
-        />
-        <div className="flex flex-col gap-y-1">
-          <span className="text-2xl font-medium text-green-600">
-            {dataProfile?.name}
-          </span>
-          <Tooltip title={`${durationDays} days ago`}>
-            <span className="text-xs text-neutral-900 dark:text-neutral-400">
-              Joined {format(date, "dd MMM yyyy")}
-            </span>
-          </Tooltip>
-          <Tooltip title={`Longest streak: ${dataProfile?.maxStreak} days`}>
-            <span className="text-xs text-neutral-900 dark:text-neutral-400">
-              Current streak: {dataProfile?.streak} days
-            </span>
-          </Tooltip>
-        </div>
-      </div>
+    <div className="grid grid-cols-1 gap-3 py-2 sm:grid-cols-6">
+      <Profile data={dataProfile} />
 
-      <div className="col-span-4 flex items-center justify-around rounded-xl border border-neutral-200 bg-neutral-100 px-4 py-3 dark:border-neutral-800 dark:bg-neutral-800">
+      <div className="flex items-center justify-around rounded-xl border border-neutral-200 bg-neutral-100 px-4 py-3 dark:border-neutral-800 dark:bg-neutral-800 sm:col-span-4">
         <OverviewItem
           label="test started"
           value={dataProfile?.typingStats.startedTests}
@@ -70,7 +51,7 @@ export default function Overview({
         />
       </div>
 
-      <div className="col-span-6 flex items-center justify-between rounded-xl border border-neutral-200 bg-neutral-100 px-4 py-3 dark:border-neutral-800 dark:bg-neutral-800">
+      <div className="flex items-center justify-between rounded-xl border border-neutral-200 bg-neutral-100 px-4 py-3 dark:border-neutral-800 dark:bg-neutral-800 sm:col-span-6">
         <span className="text-sm text-neutral-900 dark:text-neutral-400">
           All-Time English Leaderboards
         </span>
@@ -86,38 +67,96 @@ export default function Overview({
         />
       </div>
 
-      <div className="col-span-3 flex justify-between rounded-xl border border-neutral-200 bg-neutral-100 px-4 py-3 dark:border-neutral-800 dark:bg-neutral-800">
+      <div className="flex justify-between rounded-xl border border-neutral-200 bg-neutral-100 px-4 py-3 dark:border-neutral-800 dark:bg-neutral-800 sm:col-span-3">
         {Object.keys(dataProfile?.personalBests.time).map((item, index) => {
           const maxWpm = Object.values(dataProfile?.personalBests.time)[
             index
           ].reduce((prevValue, currentValue) => {
             return prevValue.wpm > currentValue.wpm ? prevValue : currentValue;
           });
+
           return (
-            <OverviewItem
+            <div
               key={index}
-              label={`${item} second`}
-              value={Math.round(maxWpm.wpm)}
-              subValue={`${Math.floor(maxWpm.acc)}%`}
-            />
+              onMouseEnter={() => handleHover(index)}
+              onMouseLeave={() => handleHover(null)}
+            >
+              {isHover === index ? (
+                <div className={"flex flex-col items-center"}>
+                  <span className="text-xs text-neutral-900 dark:text-neutral-400">
+                    {`${item} second`}
+                  </span>
+                  <span className="text-xs text-neutral-900 dark:text-neutral-50">
+                    {Math.round(maxWpm.wpm)} wpm
+                  </span>
+                  <span className="text-xs text-neutral-900 dark:text-neutral-50">
+                    {Math.round(maxWpm.raw)} raw
+                  </span>
+                  <span className="text-xs text-neutral-900 dark:text-neutral-50">
+                    {Math.round(maxWpm.acc)}% acc
+                  </span>
+                  <span className="text-xs text-neutral-900 dark:text-neutral-50">
+                    {Math.round(maxWpm.consistency)}% con
+                  </span>
+                  <span className="text-xs text-neutral-900 dark:text-neutral-400">
+                    {format(maxWpm.timestamp, "dd MMM yyyy")}
+                  </span>
+                </div>
+              ) : (
+                <OverviewItem
+                  label={`${item} second`}
+                  value={Math.round(maxWpm.wpm)}
+                  subValue={`${Math.floor(maxWpm.acc)}%`}
+                />
+              )}
+            </div>
           );
         })}
       </div>
 
-      <div className="col-span-3 flex justify-between rounded-xl border border-neutral-200 bg-neutral-100 px-4 py-3 dark:border-neutral-800 dark:bg-neutral-800">
+      <div className="flex justify-between rounded-xl border border-neutral-200 bg-neutral-100 px-4 py-3 dark:border-neutral-800 dark:bg-neutral-800 sm:col-span-3">
         {Object.keys(dataProfile?.personalBests.words).map((item, index) => {
-          const maxWpm = Object.values(dataProfile?.personalBests.words)[
+          const maxWpm = Object.values(dataProfile?.personalBests.time)[
             index
           ].reduce((prevValue, currentValue) => {
             return prevValue.wpm > currentValue.wpm ? prevValue : currentValue;
           });
           return (
-            <OverviewItem
+            <div
               key={index}
-              label={`${item} words`}
-              value={Math.round(maxWpm.wpm)}
-              subValue={`${Math.floor(maxWpm.acc)}%`}
-            />
+              onMouseEnter={() => handleHover(index + 4)}
+              onMouseLeave={() => handleHover(null)}
+              onClick={() => console.log(index * 2)}
+            >
+              {isHover === index + 4 ? (
+                <div key={index} className={"flex flex-col items-center "}>
+                  <span className="text-xs text-neutral-900 dark:text-neutral-400">
+                    {`${item} words`}
+                  </span>
+                  <span className="text-xs text-neutral-900 dark:text-neutral-50">
+                    {Math.round(maxWpm.wpm)} wpm
+                  </span>
+                  <span className="text-xs text-neutral-900 dark:text-neutral-50">
+                    {Math.round(maxWpm.raw)} raw
+                  </span>
+                  <span className="text-xs text-neutral-900 dark:text-neutral-50">
+                    {Math.round(maxWpm.acc)}% acc
+                  </span>
+                  <span className="text-xs text-neutral-900 dark:text-neutral-50">
+                    {Math.round(maxWpm.consistency)}% con
+                  </span>
+                  <span className="text-xs text-neutral-900 dark:text-neutral-400">
+                    {format(maxWpm.timestamp, "dd MMM yyyy")}
+                  </span>
+                </div>
+              ) : (
+                <OverviewItem
+                  label={`${item} words`}
+                  value={Math.round(maxWpm.wpm)}
+                  subValue={`${Math.floor(maxWpm.acc)}%`}
+                />
+              )}
+            </div>
           );
         })}
       </div>
