@@ -1,9 +1,11 @@
-import { SKILLS } from "@/common/constant/skills";
-import { ProjectItem } from "@/common/types/projects";
 import Image from "next/image";
 import React from "react";
-import ProjectLink from "./ProjectLink";
+
+import { STACKS } from "@/common/constant/stacks";
+import { ProjectItem } from "@/common/types/projects";
 import Tooltip from "@/common/components/elements/Tooltip";
+
+import ProjectLink from "./ProjectLink";
 
 export default function ProjectDetail({
   title,
@@ -24,7 +26,7 @@ export default function ProjectDetail({
           <div className="flex flex-wrap items-center gap-3">
             {stacksArray.map((stack: string, index: number) => (
               <div key={index}>
-                <Tooltip title={stack}>{SKILLS[stack]}</Tooltip>
+                <Tooltip title={stack}>{STACKS[stack]}</Tooltip>
               </div>
             ))}
           </div>

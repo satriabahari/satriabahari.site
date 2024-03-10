@@ -7,6 +7,7 @@ export const GITHUB_ACCOUNTS = {
   type: 'personal',
   is_active: true
 }
+
 export const GITHUB_USER_QUERY = `query($username: String!) {
     user(login: $username) {
       contributionsCollection {

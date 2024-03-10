@@ -1,8 +1,7 @@
 import Link from "next/link";
-
 import { MdVerified as VerifiedIcon } from "react-icons/md";
-// import Image from "next/image";
 import clsx from "clsx";
+
 import Tooltip from "../../elements/Tooltip";
 import Image from "../../elements/Image";
 

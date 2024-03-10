@@ -1,8 +1,9 @@
+import axios from "axios";
+
 import BackButton from "@/common/components/elements/BackButton";
 import Container from "@/common/components/elements/Container";
 import PageHeading from "@/common/components/elements/PageHeading";
 import ProjectDetail from "@/modules/projects/components/ProjectDetail";
-import axios from "axios";
 
 type ProjectDetailPageProps = {
   params: { slug: string };

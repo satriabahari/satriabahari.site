@@ -1,5 +1,6 @@
-import Container from "@/common/components/elements/Container";
 import Link from "next/link";
+
+import Container from "@/common/components/elements/Container";
 
 export default function NotFound() {
   return (
@@ -15,9 +16,7 @@ export default function NotFound() {
       </p>
       <Link
         href="/"
-        className="rounded-full border border-neutral-700 px-4 py-2 text-sm hover:bg-neutral-700 hover:text-neutral-300 dark:border-neutral-300 hover:dark:bg-neutral-300 hover:dark:text-neutral-700
-        
-      "
+        className="rounded-full border border-neutral-700 px-4 py-2 text-sm hover:bg-neutral-700 hover:text-neutral-300 dark:border-neutral-300 hover:dark:bg-neutral-300 hover:dark:text-neutral-700"
       >
         Take me home
       </Link>

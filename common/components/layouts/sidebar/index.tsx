@@ -1,12 +1,14 @@
 "use client";
 
 import React from "react";
-import Menu from "./Menu";
+
 import { MENU_ITEMS } from "@/common/constant/menu";
-import Breakline from "../../elements/Breakline";
-import Copyright from "../../elements/Copyright";
-import Profile from "./Profile";
 import useIsMobile from "@/hooks/useIsMobile";
+
+import Copyright from "../../elements/Copyright";
+import Breakline from "../../elements/Breakline";
+import Profile from "./Profile";
+import Menu from "./Menu";
 
 export default function Sidebar() {
   const filteredMenu = MENU_ITEMS?.filter((item) => item?.isShow);

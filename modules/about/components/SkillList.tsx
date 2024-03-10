@@ -1,13 +1,13 @@
 import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
-import { SKILLS } from "@/common/constant/skills";
+import { STACKS } from "@/common/constant/stacks";
 import { BiCodeAlt as SkillsIcon } from "react-icons/bi";
 import SkillCard from "./SkillCard";
 import MarqueeElement from "@/common/components/elements/MarqueeElement";
 
 export default function SkillList() {
   const stacksInArray: Array<[string, JSX.Element]> = Object.entries(
-    SKILLS,
+    STACKS,
   ).sort(() => Math.random() - 0.5);
   return (
     <section className="space-y-6">

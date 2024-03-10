@@ -1,9 +1,8 @@
-import Card from "@/common/components/elements/Card";
-import { CareerProps } from "@/common/types/careers";
-import { EducationProps } from "@/common/types/education";
 import Image from "next/image";
-import Link from "next/link";
 import { BsBuildings as CompanyIcon } from "react-icons/bs";
+
+import Card from "@/common/components/elements/Card";
+import { EducationProps } from "@/common/types/education";
 
 export default function EducationCard({
   school,

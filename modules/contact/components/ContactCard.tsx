@@ -1,5 +1,6 @@
-import { SocialMediaProps } from "@/common/types/socialMedia";
 import Link from "next/link";
+
+import { SocialMediaProps } from "@/common/types/socialMedia";
 
 export default function ContactCard({
   title,

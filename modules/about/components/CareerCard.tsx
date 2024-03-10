@@ -1,9 +1,10 @@
+import Link from "next/link";
+import Image from "next/image";
+import { differenceInMonths, differenceInYears, format } from "date-fns";
+import { BsBuildings as CompanyIcon } from "react-icons/bs";
+
 import Card from "@/common/components/elements/Card";
 import { CareerProps } from "@/common/types/careers";
-import { differenceInMonths, differenceInYears, format } from "date-fns";
-import Image from "next/image";
-import Link from "next/link";
-import { BsBuildings as CompanyIcon } from "react-icons/bs";
 
 export default function CareerCard({
   position,

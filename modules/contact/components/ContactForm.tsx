@@ -1,9 +1,10 @@
 "use client";
 
-import InputField from "@/common/components/elements/InputField";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+
+import InputField from "@/common/components/elements/InputField";
 
 type FormEmail = {
   name: string;

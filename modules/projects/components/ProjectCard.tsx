@@ -1,5 +1,5 @@
 import Card from "@/common/components/elements/Card";
-import { SKILLS } from "@/common/constant/skills";
+import { STACKS } from "@/common/constant/stacks";
 import { ProjectItem } from "@/common/types/projects";
 import Image from "next/image";
 import Link from "next/link";
@@ -42,7 +42,7 @@ export default function ProjectCard({
           </p>
           <div className="flex flex-wrap items-center gap-3 pt-2">
             {stacksArray.map((stack: string, index: number) => (
-              <div key={index}>{SKILLS[stack]}</div>
+              <div key={index}>{STACKS[stack]}</div>
             ))}
           </div>
         </div>

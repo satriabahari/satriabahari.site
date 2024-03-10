@@ -1,6 +1,6 @@
-import React from "react";
-import OverviewItem from "../OverviewItem";
 import { CodewarsData } from "@/common/types/codewars";
+
+import OverviewItem from "../OverviewItem";
 
 type OverviewProps = {
   data: CodewarsData;

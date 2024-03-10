@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
+import NextTopLoader from "nextjs-toploader";
+
 import Layouts from "@/common/components/layouts";
 import { soraSans } from "@/common/styles/fonts";
-import NextTopLoader from "nextjs-toploader";
 import ThemeProviderContext from "@/common/stores/theme";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",

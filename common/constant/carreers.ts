@@ -1,30 +1,6 @@
 import { CareerProps } from "../types/careers";
 
 export const CAREERS: CareerProps[] = [
-  // {
-  //   position: 'Senior Frontend Engineer',
-  //   company: 'Sirka.io',
-  //   logo: '/images/careers/sirka.png',
-  //   location: 'Jakarta, ID',
-  //   location_type: 'Remote',
-  //   type: 'Fulltime',
-  //   start_date: '2021-12',
-  //   end_date: '2022-03',
-  //   industry: 'wellness',
-  //   link: 'https://sirka.io',
-  // },
-  // {
-  //   position: 'Senior Frontend Engineer',
-  //   company: 'Sirka.io',
-  //   logo: '/images/careers/sirka.png',
-  //   location: 'Jakarta, ID',
-  //   location_type: 'Remote',
-  //   type: 'Fulltime',
-  //   start_date: '2021-12',
-  //   end_date: '2022-03',
-  //   industry: 'wellness',
-  //   link: 'https://sirka.io',
-  // },
   {
     position: "Full Stack Engineer",
     company: "Seeru",

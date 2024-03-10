@@ -1,4 +1,3 @@
-import { previousDay } from "date-fns";
 import OverviewItem from "../OverviewItem";
 
 type OverviewProps = {
