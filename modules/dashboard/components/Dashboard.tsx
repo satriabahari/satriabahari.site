@@ -1,25 +1,28 @@
-import Contributions from "./Contributions";
 import Breakline from "@/common/components/elements/Breakline";
-import Codewars from "./Codewars";
 import { CodewarsData } from "@/common/types/codewars";
 import {
   MonkeytypeData,
   MonkeytypeLeaderboard,
 } from "@/common/types/monkeytype";
+
+import Contributions from "./Contributions";
+import Codewars from "./Codewars";
 import Monkeytype from "./Monkeytype";
 
 type DashboardProps = {
   githubData: any;
   codewarsData: CodewarsData;
   monkeytypeDataProfile: MonkeytypeData;
-  monkeytypeDataLeaderboard: MonkeytypeLeaderboard;
+  monkeytypeDataTime60Leaderboard: MonkeytypeLeaderboard;
+  monkeytypeDataTime15Leaderboard: MonkeytypeLeaderboard;
 };
 
 export default function Dashboard({
   githubData,
   codewarsData,
   monkeytypeDataProfile,
-  monkeytypeDataLeaderboard,
+  monkeytypeDataTime60Leaderboard,
+  monkeytypeDataTime15Leaderboard,
 }: DashboardProps) {
   return (
     <>
@@ -29,7 +32,8 @@ export default function Dashboard({
       <Breakline className="my-8" />
       <Monkeytype
         monkeytypeDataProfile={monkeytypeDataProfile}
-        monkeytypeDataLeaderboard={monkeytypeDataLeaderboard}
+        monkeytypeDataTime60Leaderboard={monkeytypeDataTime60Leaderboard}
+        monkeytypeDataTime15Leaderboard={monkeytypeDataTime15Leaderboard}
       />
     </>
   );

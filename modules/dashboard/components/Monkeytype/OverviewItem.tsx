@@ -1,21 +1,19 @@
-import clsx from "clsx";
-
 type OverviewItemProps = {
   label: string;
   value: number | string;
   subValue?: number | string;
-  flex?: boolean;
+  isFlex?: boolean;
 };
 
 export default function OverviewItem({
   label,
   value,
   subValue,
-  flex = false,
+  isFlex = false,
 }: OverviewItemProps) {
   return (
     <div
-      className={`flex items-center ${flex ? "flex-row" : "flex-col"} gap-x-2`}
+      className={`flex items-center ${isFlex ? "flex-row" : "flex-col"} gap-x-2 p-1`}
     >
       <span className="text-xs text-neutral-900 dark:text-neutral-400">
         {label}
