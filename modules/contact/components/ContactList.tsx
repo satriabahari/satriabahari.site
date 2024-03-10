@@ -1,4 +1,5 @@
 import { SOCIAL_MEDIA } from "@/common/constant/socialMedia";
+
 import ContactCard from "./ContactCard";
 
 export default function ContactList() {

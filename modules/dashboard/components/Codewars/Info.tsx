@@ -1,5 +1,4 @@
 import { CodewarsData } from "@/common/types/codewars";
-import React from "react";
 
 type InfoProps = {
   data: CodewarsData;

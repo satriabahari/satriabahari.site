@@ -32,7 +32,7 @@ export type SkillProps = {
 
 const iconSize = 24;
 
-export const SKILLS: SkillProps = {
+export const STACKS: SkillProps = {
   HTML: <SiHtml5 size={iconSize} className="text-orange-500" />,
   CSS: <SiCss3 size={iconSize} className="text-blue-500" />,
   TailwindCSS: <SiTailwindcss size={iconSize} className="text-cyan-400" />,

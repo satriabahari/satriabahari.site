@@ -1,7 +1,7 @@
 import { ProjectItemProps } from "@/common/types/projects";
+import EmptyState from "@/common/components/elements/EmptyState";
 
 import ProjectCard from "./ProjectCard";
-import EmptyState from "@/common/components/elements/EmptyState";
 
 export default function Projects({ projects }: ProjectItemProps) {
   const filteredProjects = projects.filter((project) => project?.is_show);

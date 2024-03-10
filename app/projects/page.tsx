@@ -1,8 +1,8 @@
+import axios from "axios";
+
 import Container from "@/common/components/elements/Container";
 import PageHeading from "@/common/components/elements/PageHeading";
 import Projects from "@/modules/projects";
-
-import axios from "axios";
 
 const PAGE_TITLE = "Projects";
 const PAGE_DESCRIPTION =

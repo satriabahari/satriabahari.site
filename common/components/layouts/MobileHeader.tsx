@@ -1,14 +1,16 @@
 "use client";
 
-import useIsMobile from "@/hooks/useIsMobile";
-import { useMenu } from "@/common/stores/menu";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { MdVerified as VerifiedIcon } from "react-icons/md";
+import { AnimatePresence } from "framer-motion";
+
+import useIsMobile from "@/hooks/useIsMobile";
+import { useMenu } from "@/common/stores/menu";
+
 import MobileMenuButton from "./sidebar/MobileMenuButton";
 import ThemeToggle from "../elements/ThemeToggle";
-import { AnimatePresence } from "framer-motion";
 import MobileMenu from "./sidebar/MobileMenu";
 import Tooltip from "../elements/Tooltip";
 

@@ -1,12 +1,13 @@
+import Link from "next/link";
+import { SiCodewars as CodewarsIcon } from "react-icons/si";
+
 import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
-import React from "react";
-import { SiCodewars as CodewarsIcon } from "react-icons/si";
+import { CodewarsData } from "@/common/types/codewars";
+import { CODEWARS_URL } from "@/common/constant/codewars";
+
 import Info from "./Info";
 import Overview from "./Overview";
-import { CodewarsData } from "@/common/types/codewars";
-import Link from "next/link";
-import { CODEWARS_URL } from "@/common/constant/codewars";
 
 type CodewarsProps = {
   codewarsData: CodewarsData;

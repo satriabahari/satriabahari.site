@@ -1,11 +1,10 @@
 "use client";
 
-import Sidebar from "./sidebar";
-
 import { useEffect } from "react";
-
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+
+import Sidebar from "./sidebar";
 
 type LayoutsProps = {
   children: React.ReactNode;
