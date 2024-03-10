@@ -1,13 +1,12 @@
 import Container from "@/common/components/elements/Container";
 import PageHeading from "@/common/components/elements/PageHeading";
 import Dashboard from "@/modules/dashboard/components/Dashboard";
-import { getCodewarsData } from "@/services/codewars";
 import { getGithubData } from "@/services/github";
+import { getCodewarsData } from "@/services/codewars";
 import {
   getMonkeytypeData,
   getMonkeytypeLeaderboard,
 } from "@/services/monkeytype";
-import React from "react";
 
 const PAGE_TITLE = "Dashboard";
 const PAGE_DESCRIPTION =
@@ -18,7 +17,17 @@ export default async function DashboardPage() {
   const githubData = null;
   const codewardData = await getCodewarsData();
   const monkeytypeDataProfile = await getMonkeytypeData();
-  const monkeytypeDataLeaderboard = await getMonkeytypeLeaderboard();
+  const monkeytypeDataTime60Leaderboard = await getMonkeytypeLeaderboard({
+    language: "english",
+    mode: "time",
+    mode2: 60,
+  });
+  const monkeytypeDataTime15Leaderboard = await getMonkeytypeLeaderboard({
+    language: "english",
+    mode: "time",
+    mode2: 15,
+  });
+
   return (
     <Container data-aos="fade-up">
       <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
@@ -26,7 +35,8 @@ export default async function DashboardPage() {
         githubData={githubData}
         codewarsData={codewardData}
         monkeytypeDataProfile={monkeytypeDataProfile}
-        monkeytypeDataLeaderboard={monkeytypeDataLeaderboard}
+        monkeytypeDataTime60Leaderboard={monkeytypeDataTime60Leaderboard}
+        monkeytypeDataTime15Leaderboard={monkeytypeDataTime15Leaderboard}
       />
     </Container>
   );
