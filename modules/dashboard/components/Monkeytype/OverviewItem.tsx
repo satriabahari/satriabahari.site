@@ -1,3 +1,5 @@
+import clsxm from "@/common/libs/clsxm";
+
 type OverviewItemProps = {
   label: string;
   value: number | string;
@@ -13,14 +15,17 @@ export default function OverviewItem({
 }: OverviewItemProps) {
   return (
     <div
-      className={`flex items-center ${isFlex ? "flex-row" : "flex-col"} gap-x-2 p-1`}
+      className={clsxm(
+        "flex flex-col items-center gap-x-2 p-1",
+        isFlex && "flex-row",
+      )}
     >
-      <span className="text-xs text-neutral-900 dark:text-neutral-400">
+      <span className="text-xs text-neutral-600 dark:text-neutral-400">
         {label}
       </span>
       <span className="text-2xl font-medium text-green-600">{value}</span>
       {subValue && (
-        <span className=" text-neutral-900 dark:text-neutral-300">
+        <span className=" text-neutral-600 dark:text-neutral-300">
           {subValue}
         </span>
       )}
