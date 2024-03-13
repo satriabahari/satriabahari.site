@@ -1,16 +1,16 @@
 import { create } from "zustand";
 
-export type initialModalState = {
+export type InitialModalState = {
   isOpen: boolean;
 };
 
-export type initialModalAction = {
+export type InitialModalAction = {
   showMenu(): void;
   hideMenu(): void;
   toggleMenu(): void;
 };
 
-export const useMenu = create<initialModalState & initialModalAction>()(
+export const useMenu = create<InitialModalState & InitialModalAction>()(
   (set) => ({
     isOpen: false,
     showMenu: () => set({ isOpen: true }),

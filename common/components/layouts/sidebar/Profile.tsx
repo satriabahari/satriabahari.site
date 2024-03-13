@@ -1,22 +1,21 @@
-"use client";
-
 import clsx from "clsx";
 import { AnimatePresence } from "framer-motion";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { useMenu } from "@/common/stores/menu";
-import useIsMobile from "@/hooks/useIsMobile";
 
 import MobileMenu from "./MobileMenu";
 import MobileMenuButton from "./MobileMenuButton";
 import ProfileHeader from "./ProfileHeader";
 import ThemeToggle from "../../elements/ThemeToggle";
-import Status from "../../elements/Status";
 
 export default function Profile() {
-  const isMobile = useIsMobile();
-  const imageSize = isMobile ? 40 : 100;
+  const [width, setWidth] = useState(0);
+  const [isMobile, setIsMobile] = useState(width < 769);
+
   const { isOpen, toggleMenu } = useMenu();
+
+  const imageSize = isMobile ? 40 : 100;
 
   useEffect(() => {
     if (isOpen) {
@@ -30,6 +29,19 @@ export default function Profile() {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    const updateWindowDimensions = () => {
+      const newWidth = window.innerWidth;
+      setWidth(newWidth);
+    };
+
+    window.addEventListener("resize", updateWindowDimensions);
+
+    window.removeEventListener("resize", updateWindowDimensions);
+
+    return setIsMobile(width < 821);
+  }, [width]);
+
   return (
     <div
       className={clsx(
@@ -39,16 +51,10 @@ export default function Profile() {
     >
       <div className="flex items-start justify-between md:px-2 lg:flex-col lg:space-y-4">
         <ProfileHeader expandMenu={isOpen} imageSize={imageSize} />
-        {!isMobile && (
-          <div className="flex w-full items-center justify-between">
-            <Status />
-            <ThemeToggle />
-          </div>
-        )}
         {isMobile && (
           <div
             className={clsx(
-              "mt-2 flex items-center gap-5 lg:hidden",
+              "mt-1 flex items-center gap-5 lg:hidden",
               isOpen &&
                 "h-[120px] flex-col-reverse !items-end justify-between pb-1",
             )}
