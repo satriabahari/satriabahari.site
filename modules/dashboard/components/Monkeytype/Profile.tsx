@@ -30,9 +30,10 @@ export default function Profile({ data, className }: ProfileProps) {
     level++;
     xp -= xpNeeded;
     xpNeeded += 49;
+    console.log(xpNeeded);
   }
 
-  const xpToNextLevel = level * 49 + 100;
+  const xpToNextLevel = (level - 1) * 49 + 100;
   const difference = (xpToNextLevel - xp) / 100;
   const remainder = xpToNextLevel - xp;
 
@@ -73,7 +74,9 @@ export default function Profile({ data, className }: ProfileProps) {
         </div>
 
         <div className="flex w-full items-center justify-between gap-3">
-          <span className="text-sm font-medium text-green-600">{level}</span>
+          <Tooltip title={`${data?.xp} total xp`}>
+            <span className="text-sm font-medium text-green-600">{level}</span>
+          </Tooltip>
           <div className="relative h-2 w-full rounded-full bg-neutral-300 dark:bg-neutral-900 ">
             <span
               className={clsxm(
@@ -90,7 +93,7 @@ export default function Profile({ data, className }: ProfileProps) {
         </div>
       </div>
 
-      <span className="hidden h-24 w-2 rounded-full bg-neutral-300 p-1 dark:bg-neutral-900 sm:block" />
+      <span className="hidden h-full w-2 rounded-full bg-neutral-300 p-1 dark:bg-neutral-900 sm:flex" />
 
       <div className="flex flex-grow items-center justify-between rounded-xl  bg-neutral-100 dark:bg-neutral-800 sm:flex-row sm:px-4 sm:py-3">
         <OverviewItem
