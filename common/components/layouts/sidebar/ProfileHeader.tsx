@@ -48,7 +48,7 @@ export default function ProfileHeader({
         @satriabaharii_
       </div>
 
-      <div className="hidden w-full items-center justify-between sm:flex lg:mt-2">
+      <div className="hidden w-full items-center justify-between lg:flex lg:mt-2">
         <Status />
         <ThemeToggle />
       </div>

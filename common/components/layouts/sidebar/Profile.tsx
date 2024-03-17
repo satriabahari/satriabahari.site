@@ -31,7 +31,6 @@ export default function Profile() {
   }, [isOpen]);
 
   useEffect(() => {
-    console.log(isMobile);
     const updateWindowDimensions = () => {
       const newWidth = window.innerWidth;
       setWidth(newWidth);
