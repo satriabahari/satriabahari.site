@@ -1,7 +1,4 @@
-"use client";
-
 import clsx from "clsx";
-import Image from "next/image";
 import Link from "next/link";
 import { MdVerified as VerifiedIcon } from "react-icons/md";
 import { AnimatePresence } from "framer-motion";
@@ -13,11 +10,13 @@ import MobileMenuButton from "./sidebar/MobileMenuButton";
 import ThemeToggle from "../elements/ThemeToggle";
 import MobileMenu from "./sidebar/MobileMenu";
 import Tooltip from "../elements/Tooltip";
+import Image from "../elements/Image";
 
 export default function MobileHeader() {
   const isMobile = useIsMobile();
   const { isOpen, toggleMenu } = useMenu();
   const imageSize = isMobile ? 40 : 100;
+
   return (
     <div className="flex flex-col rounded-b-md px-4 py-4 shadow-sm lg:hidden">
       <div
@@ -32,10 +31,11 @@ export default function MobileHeader() {
               alt="profile"
               width={isOpen ? 80 : imageSize * 0.9}
               height={isOpen ? 80 : imageSize * 0.9}
+              rounded="rounded-full"
             />
           </div>
           <div className="mt-1 flex items-center gap-2">
-            <Link href="/">
+            <Link href="/" passHref>
               <h2 className="flex-grow whitespace-nowrap text-lg font-medium lg:text-xl">
                 Satria Bahari
               </h2>
