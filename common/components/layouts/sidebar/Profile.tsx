@@ -8,9 +8,10 @@ import MobileMenu from "./MobileMenu";
 import MobileMenuButton from "./MobileMenuButton";
 import ProfileHeader from "./ProfileHeader";
 import ThemeToggle from "../../elements/ThemeToggle";
+import useIsMobile from "@/hooks/useIsMobile";
 
 export default function Profile() {
-  const [width, setWidth] = useState(0);
+  const [width, setWidth] = useState(window.innerWidth);
   const [isMobile, setIsMobile] = useState(width < 769);
 
   const { isOpen, toggleMenu } = useMenu();
@@ -30,6 +31,7 @@ export default function Profile() {
   }, [isOpen]);
 
   useEffect(() => {
+    console.log(isMobile);
     const updateWindowDimensions = () => {
       const newWidth = window.innerWidth;
       setWidth(newWidth);
@@ -37,10 +39,8 @@ export default function Profile() {
 
     window.addEventListener("resize", updateWindowDimensions);
 
-    window.removeEventListener("resize", updateWindowDimensions);
-
-    return setIsMobile(width < 821);
-  }, [width]);
+    setIsMobile(width < 821);
+  }, [isMobile, width]);
 
   return (
     <div
