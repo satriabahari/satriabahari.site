@@ -30,7 +30,6 @@ export default function Profile({ data, className }: ProfileProps) {
     level++;
     xp -= xpNeeded;
     xpNeeded += 49;
-    console.log(xpNeeded);
   }
 
   const xpToNextLevel = (level - 1) * 49 + 100;
