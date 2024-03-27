@@ -13,8 +13,9 @@ export default async function ProjectsPage() {
   const projects = response.data.data;
   return (
     <Container data-aos="fade-up">
-      <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
-      <Projects projects={projects} />
+      {/* <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
+      <Projects projects={projects} /> */}
+      <div>test</div>
     </Container>
   );
 }
