@@ -33,11 +33,11 @@ export default function Dashboard({
       <Breakline className="my-8" />
       <Codewars codewarsData={codewarsData} />
       <Breakline className="my-8" />
-      <Monkeytype
+      {/* <Monkeytype
         monkeytypeDataProfile={monkeytypeDataProfile}
         monkeytypeDataTime60Leaderboard={monkeytypeDataTime60Leaderboard}
         monkeytypeDataTime15Leaderboard={monkeytypeDataTime15Leaderboard}
-      />
+      /> */}
     </>
   );
 }
