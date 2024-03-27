@@ -29,7 +29,7 @@ export default function Dashboard({
     <>
       <Contributions githubData={githubData} />
       <Breakline className="my-8" />
-      <CodingActive />
+      {/* <CodingActive /> */}
       <Breakline className="my-8" />
       <Codewars codewarsData={codewarsData} />
       <Breakline className="my-8" />
