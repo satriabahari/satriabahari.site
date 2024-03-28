@@ -28,11 +28,6 @@
 //   );
 // }
 
-import React from 'react'
-
-export default function ProjectDetailPage() {
-  return (
-    <div>ProjectDetailPage</div>
-  )
+export default function Page({ params }: { params: { slug: string } }) {
+  return <h1>{`My Page ${params}`}</h1>;
 }
-
