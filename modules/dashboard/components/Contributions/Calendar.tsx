@@ -63,7 +63,7 @@ export default function Calendar({ data }: CalendarProps) {
   return (
     <>
       <div className="relative flex flex-col">
-        <ul className="flex justify-end gap-1 overflow-hidden text-xs dark:text-neutral-400 md:justify-start">
+        <ul className="flex justify-end gap-[3px] overflow-hidden text-xs dark:text-neutral-400 md:justify-start">
           {months.map((month) => (
             <li
               key={month.firstDay}
@@ -75,7 +75,7 @@ export default function Calendar({ data }: CalendarProps) {
           ))}
         </ul>
 
-        <div className="flex justify-start gap-1 overflow-hidden">
+        <div className="flex justify-start gap-[2.9px] overflow-hidden">
           {weeks?.map((week) => (
             <div key={week.firstDay}>
               {week.contributionDays.map((contribution) => {
