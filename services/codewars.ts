@@ -1,12 +1,19 @@
+import { CODEWARS_ACCOUNT } from "@/common/constant/codewars";
 import axios from "axios";
 
-export async function getCodewarsData() {
-  const USER_ID = process.env.NEXT_PUBLIC_USER_ID;
-  const CODEWARS_API = `https://www.codewars.com/api/v1/users/${USER_ID}`;
-  try {
-    const response = await axios.get(CODEWARS_API);
-    return response.data;
-  } catch (error) {
-    console.log(error);
+const { user_id } = CODEWARS_ACCOUNT;
+
+const CODEWARS_ENDPOINT = `https://www.codewars.com/api/v1/users/${user_id}`;
+
+export const getCodewarsData = async () => {
+  const response = await axios.get(CODEWARS_ENDPOINT);
+
+  const status = response.status;
+  const data = response.data;
+
+  if (status > 400) {
+    return { status, data: {} };
   }
-}
+
+  return { status, data };
+};

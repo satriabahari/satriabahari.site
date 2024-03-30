@@ -1,21 +1,71 @@
-import axios from 'axios'
+import axios from "axios";
 
-import { GITHUB_ACCOUNTS, GITHUB_API_BASE_URL, GITHUB_USER_QUERY } from '@/common/constant/github'
+import { GITHUB_ACCOUNTS } from "@/common/constant/github";
 
-export async function getGithubData() {
+const GITHUB_USER_ENDPOINT = "https://api.github.com/graphql";
+
+const GITHUB_USER_QUERY = `query($username: String!) {
+  user(login: $username) {
+    contributionsCollection {
+      contributionCalendar {
+        colors
+        totalContributions
+        months {
+          firstDay
+          name
+          totalWeeks
+        }
+        weeks {
+          contributionDays {
+            color
+            contributionCount
+            date
+          }
+          firstDay
+        }
+      }
+    }
+  }
+}`;
+
+export const fetchGithubData = async (
+  username: string,
+  token: string | undefined,
+) => {
   const response = await axios.post(
-    GITHUB_API_BASE_URL,
+    GITHUB_USER_ENDPOINT,
     {
       query: GITHUB_USER_QUERY,
       variables: {
-        username: GITHUB_ACCOUNTS.username
-      }
+        username: username,
+      },
     },
     {
       headers: {
-        Authorization: `bearer ${GITHUB_ACCOUNTS.token}`
-      }
-    }
-  )
-  return response.data?.data.user.contributionsCollection.contributionCalendar
-}
+        Authorization: `bearer ${token}`,
+      },
+    },
+  );
+
+  const status: number = response.status;
+  const responseJson = response.data;
+
+  if (status > 400) {
+    return { status, data: {} };
+  }
+
+  return { status, data: responseJson.data.user };
+};
+
+export const getGithubData = async () => {
+  // const account = GITHUB_ACCOUNTS.find(
+  //   (account) => account?.type === type && account?.is_active,
+  // );
+
+  // if (!account) {
+  //   throw new Error('Invalid user type');
+  // }
+
+  const { username, token } = GITHUB_ACCOUNTS;
+  return await fetchGithubData(username, token);
+};

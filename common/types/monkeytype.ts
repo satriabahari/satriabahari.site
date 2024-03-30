@@ -36,7 +36,7 @@ export type detailsProfile = {
 export type AllTimeLbs = {
   time: {
     [key: number]: {
-      [language: string]: number | null;
+      [language: string]: number;
     };
   };
 };
@@ -58,23 +58,4 @@ export type MonkeytypeData = {
   details: detailsProfile;
   allTimeLbs: AllTimeLbs;
   uid: string;
-};
-
-export type EntryData = {
-  _id: string;
-  wpm: number;
-  acc: number;
-  timestamp: number;
-  raw: number;
-  consistency: number;
-  uid: string;
-  name: string;
-  rank: number;
-  badgeId: null;
-};
-
-export type MonkeytypeLeaderboard = {
-  count: number;
-  rank: number;
-  entry: EntryData;
 };

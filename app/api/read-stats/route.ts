@@ -17,8 +17,11 @@ export const GET = async () => {
       all_time_since_today: allTimeSinceTodayResponse.data,
     };
 
-    return NextResponse.json(data);
+    return NextResponse.json(data, { status: 200 });
   } catch (error) {
-    return NextResponse.json({ message: "Internal Server Error" });
+    return NextResponse.json(
+      { message: "Internal Server Error" },
+      { status: 500 },
+    );
   }
 };
