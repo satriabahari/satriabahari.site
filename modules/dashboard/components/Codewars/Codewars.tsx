@@ -1,19 +1,25 @@
+"use client";
+
 import Link from "next/link";
 import { SiCodewars as CodewarsIcon } from "react-icons/si";
+import useSWR from "swr";
 
 import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
-import { CodewarsData } from "@/common/types/codewars";
-import { CODEWARS_URL } from "@/common/constant/codewars";
+import { fetcher } from "@/services/fetcher";
 
 import Info from "./Info";
 import Overview from "./Overview";
+import { CODEWARS_ACCOUNT } from "@/common/constant/codewars";
 
 type CodewarsProps = {
-  codewarsData: CodewarsData;
+  endpoint: string;
 };
 
-export default function Codewars({ codewarsData }: CodewarsProps) {
+export default function Codewars({ endpoint }: CodewarsProps) {
+  const { data } = useSWR(endpoint, fetcher);
+  const { codewars_url } = CODEWARS_ACCOUNT;
+
   return (
     <section className="space-y-2">
       <SectionHeading
@@ -27,7 +33,7 @@ export default function Codewars({ codewarsData }: CodewarsProps) {
       <SectionSubHeading>
         <p>My statistic score on codewars.</p>
         <Link
-          href={CODEWARS_URL}
+          href={codewars_url}
           target="_blank"
           className="text-sm text-neutral-600 hover:text-neutral-900 dark:text-neutral-500 dark:hover:text-neutral-400"
         >
@@ -35,10 +41,10 @@ export default function Codewars({ codewarsData }: CodewarsProps) {
         </Link>
       </SectionSubHeading>
 
-      {codewarsData && (
+      {data && (
         <div>
-          <Overview data={codewarsData} />
-          <Info data={codewarsData} />
+          <Overview data={data} />
+          <Info data={data} />
         </div>
       )}
     </section>
