@@ -2,26 +2,13 @@
 
 import { useState } from "react";
 
-import {
-  MonkeytypeData,
-  MonkeytypeLeaderboard,
-} from "@/common/types/monkeytype";
-
-import Profile from "./Profile";
-import Leaderboard from "./Leaderboard";
-import PersonalBestOverview from "./PersonalBestOverview";
+import OverviewItem from "./OverviewItem";
 
 type OverviewProps = {
-  dataProfile: MonkeytypeData;
-  dataTime60Leaderboard: MonkeytypeLeaderboard;
-  dataTime15Leaderboard: MonkeytypeLeaderboard;
+  data: any;
 };
 
-export default function Overview({
-  dataProfile,
-  dataTime60Leaderboard,
-  dataTime15Leaderboard,
-}: OverviewProps) {
+export default function Overview({ data }: OverviewProps) {
   const [isHover, setIsHover] = useState<number | null>(null);
 
   const handleHover = (index: number | null) => {
@@ -30,28 +17,8 @@ export default function Overview({
 
   return (
     <div className="grid grid-cols-1 gap-3 py-2 sm:grid-cols-2">
-      <Profile data={dataProfile} className="col-span-1 sm:col-span-2" />
-
-      <Leaderboard
-        label="All-Time English Leaderboards"
-        datas={[dataTime15Leaderboard, dataTime60Leaderboard]}
-        className="col-span-1 sm:col-span-2"
-      />
-
-      <PersonalBestOverview
-        data={dataProfile}
-        type="time"
-        isHover={isHover}
-        handleHover={handleHover}
-        className="col-span-1"
-      />
-      <PersonalBestOverview
-        data={dataProfile}
-        type="words"
-        isHover={isHover}
-        handleHover={handleHover}
-        className="col-span-1"
-      />
+      <OverviewItem data={data.personalBests.time} type="time" />
+      <OverviewItem data={data.personalBests.words} type="words" />
     </div>
   );
 }

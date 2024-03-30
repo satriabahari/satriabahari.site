@@ -1,34 +1,41 @@
-import clsxm from "@/common/libs/clsxm";
+import Card from "@/common/components/elements/Card";
+import { PersonalBestsTime } from "@/common/types/monkeytype";
 
 type OverviewItemProps = {
-  label: string;
-  value: number | string;
-  subValue?: number | string;
-  isFlex?: boolean;
+  data?: {
+    [time: string]: PersonalBestsTime[];
+  };
+  type?: string;
 };
 
-export default function OverviewItem({
-  label,
-  value,
-  subValue,
-  isFlex = false,
-}: OverviewItemProps) {
-  return (
-    <div
-      className={clsxm(
-        "flex flex-col items-center gap-x-2 p-1",
-        isFlex && "flex-row",
-      )}
-    >
-      <span className="text-xs text-neutral-600 dark:text-neutral-400">
-        {label}
-      </span>
-      <span className="text-2xl font-medium text-green-600">{value}</span>
-      {subValue && (
-        <span className=" text-neutral-600 dark:text-neutral-300">
-          {subValue}
-        </span>
-      )}
-    </div>
-  );
+export default function OverviewItem({ data, type }: OverviewItemProps) {
+  if (data && typeof data === "object") {
+    const datas = Object.keys(data).map((time) => {
+      const items = data[time];
+      const maxWPMItem = items.reduce((prev, current) =>
+        prev.wpm > current.wpm ? prev : current,
+      );
+      return { time, maxWPMItem };
+    });
+
+    // const maxWpm = Object.values(personalBestData)[index].reduce(
+    //   (prevValue, currentValue) => {
+    //     return prevValue.wpm > currentValue.wpm ? prevValue : currentValue;
+    //   },
+    // );
+
+    return (
+      <Card className="grid grid-cols-4 gap-4 px-2 py-4">
+        {datas.map((item) => (
+          <div key={item.time} className="flex flex-col items-center gap-y-1">
+            <span className="flex text-xs dark:text-neutral-600">{`${item.time} ${type}`}</span>
+            <span className="text-3xl dark:text-neutral-50">
+              {Math.round(item.maxWPMItem.wpm)}
+            </span>
+            <span className="text-lg dark:text-neutral-400">{`${Math.floor(item.maxWPMItem.acc)}%`}</span>
+          </div>
+        ))}
+      </Card>
+    );
+  }
 }

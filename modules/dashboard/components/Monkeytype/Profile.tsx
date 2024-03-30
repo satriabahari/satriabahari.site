@@ -5,14 +5,16 @@ import Tooltip from "@/common/components/elements/Tooltip";
 import { MonkeytypeData } from "@/common/types/monkeytype";
 import clsxm from "@/common/libs/clsxm";
 
-import OverviewItem from "./OverviewItem";
-
 type ProfileProps = {
   data: MonkeytypeData;
-  className?: string;
 };
 
-export default function Profile({ data, className }: ProfileProps) {
+type ItemProps = {
+  label?: string;
+  value?: number | string;
+};
+
+export default function Profile({ data }: ProfileProps) {
   const date = new Date(data?.addedAt);
   const endDate = new Date();
   const durationDays = differenceInDays(endDate, date);
@@ -36,13 +38,15 @@ export default function Profile({ data, className }: ProfileProps) {
   const difference = (xpToNextLevel - xp) / 100;
   const remainder = xpToNextLevel - xp;
 
+  const Item = ({ label, value }: ItemProps) => (
+    <div className="flex">
+      <span>{label}</span>
+      <span>{value}</span>
+    </div>
+  );
+
   return (
-    <div
-      className={clsxm(
-        "flex flex-col items-center gap-x-8 gap-y-4 rounded-xl border border-neutral-200 bg-neutral-100 py-3 dark:border-neutral-800 dark:bg-neutral-800 sm:flex-row sm:px-4",
-        className,
-      )}
-    >
+    <div className="flex flex-col items-center gap-x-8 gap-y-4 rounded-xl border border-neutral-200 bg-neutral-100 py-3 dark:border-neutral-800 dark:bg-neutral-800 sm:flex-row sm:px-4">
       <div className="flex flex-col gap-y-2">
         <div className="flex gap-x-4">
           <div className="flex items-center">
@@ -95,15 +99,15 @@ export default function Profile({ data, className }: ProfileProps) {
       <span className="hidden h-full w-2 rounded-full bg-neutral-300 p-1 dark:bg-neutral-900 sm:flex" />
 
       <div className="flex flex-grow items-center justify-between rounded-xl  bg-neutral-100 dark:bg-neutral-800 sm:flex-row sm:px-4 sm:py-3">
-        <OverviewItem
+        <Item
           label="test started"
           value={data?.typingStats.startedTests}
         />
-        <OverviewItem
+        <Item
           label="test completed"
           value={data?.typingStats.completedTests}
         />
-        <OverviewItem
+        <Item
           label="time typing"
           value={format(
             new Date(0, 0, 0, hours, minutes, remainingSeconds),

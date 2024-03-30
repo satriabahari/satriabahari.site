@@ -1,4 +1,4 @@
-import OverviewItem from "../OverviewItem";
+import OverviewItem from "./OverviewItem";
 
 type OverviewProps = {
   data: {

@@ -1,27 +1,24 @@
+"use client";
+
 import Link from "next/link";
 import { SiMonkeytype as MonkeytypeIcon } from "react-icons/si";
 
 import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
-import { MONKEYTYPE_URL } from "@/common/constant/monkeytype";
-import {
-  MonkeytypeData,
-  MonkeytypeLeaderboard,
-} from "@/common/types/monkeytype";
+import { fetcher } from "@/services/fetcher";
 
 import Overview from "./Overview";
+import useSWR from "swr";
+import Profile from "./Profile";
+import Leaderboard from "./Leaderboard";
 
 type MonkeytypeProps = {
-  monkeytypeDataProfile: MonkeytypeData;
-  monkeytypeDataTime60Leaderboard: MonkeytypeLeaderboard;
-  monkeytypeDataTime15Leaderboard: MonkeytypeLeaderboard;
+  endpoint: string;
 };
 
-export default function Monkeytype({
-  monkeytypeDataProfile,
-  monkeytypeDataTime60Leaderboard,
-  monkeytypeDataTime15Leaderboard,
-}: MonkeytypeProps) {
+export default function Monkeytype({ endpoint }: MonkeytypeProps) {
+  const { data } = useSWR(endpoint, fetcher);
+
   return (
     <section className="space-y-2">
       <SectionHeading
@@ -35,7 +32,7 @@ export default function Monkeytype({
       <SectionSubHeading>
         <p>My statistic score on Monkeytype.</p>
         <Link
-          href={MONKEYTYPE_URL}
+          href={"#"}
           target="_blank"
           className="text-sm text-neutral-600 hover:text-neutral-900 dark:text-neutral-500 dark:hover:text-neutral-400"
         >
@@ -43,13 +40,11 @@ export default function Monkeytype({
         </Link>
       </SectionSubHeading>
 
-      {monkeytypeDataProfile && (
+      {data && (
         <>
-          <Overview
-            dataProfile={monkeytypeDataProfile}
-            dataTime60Leaderboard={monkeytypeDataTime60Leaderboard}
-            dataTime15Leaderboard={monkeytypeDataTime15Leaderboard}
-          />
+          <Profile data={data} />
+          <Leaderboard data={data} />
+          <Overview data={data} />
         </>
       )}
     </section>
