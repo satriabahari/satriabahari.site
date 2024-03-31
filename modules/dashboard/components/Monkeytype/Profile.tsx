@@ -116,11 +116,19 @@ export default function Profile({ data }: ProfileProps) {
       <span className="hidden h-full w-2 rounded-full bg-neutral-300 p-1 dark:bg-neutral-900 sm:flex" />
 
       <div className="flex flex-grow items-center justify-between rounded-xl sm:flex-row sm:px-4 sm:py-3">
-        <Item label="test started" value={data?.typingStats.startedTests} />
-        <Item label="test completed" value={data?.typingStats.completedTests} />
+        <Item
+          label="test started"
+          value={data?.typingStats.startedTests || "N/A"}
+        />
+        <Item
+          label="test completed"
+          value={data?.typingStats.completedTests || "N/A"}
+        />
         <Item
           label="time typing"
-          value={format(new Date(0, 0, 0, 0, minutes, seconds), "HH:mm:ss")}
+          value={
+            format(new Date(0, 0, 0, 0, minutes, seconds), "HH:mm:ss") || "N/A"
+          }
         />
       </div>
     </Card>
