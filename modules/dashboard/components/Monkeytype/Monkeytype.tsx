@@ -11,6 +11,7 @@ import Overview from "./Overview";
 import useSWR from "swr";
 import Profile from "./Profile";
 import Leaderboard from "./Leaderboard";
+import { MONKEYTYPE_ACCOUNT } from "@/common/constant/monkeytype";
 
 type MonkeytypeProps = {
   endpoint: string;
@@ -32,7 +33,7 @@ export default function Monkeytype({ endpoint }: MonkeytypeProps) {
       <SectionSubHeading>
         <p>My statistic score on Monkeytype.</p>
         <Link
-          href={"#"}
+          href={MONKEYTYPE_ACCOUNT.monkeytype_url}
           target="_blank"
           className="text-sm text-neutral-600 hover:text-neutral-900 dark:text-neutral-500 dark:hover:text-neutral-400"
         >
