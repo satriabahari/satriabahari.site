@@ -1,5 +1,5 @@
 type PageHeadingProps = {
-  title: string;
+  title?: string;
   description?: string;
 };
 
