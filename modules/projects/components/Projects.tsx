@@ -1,12 +1,20 @@
-import { ProjectItemProps } from "@/common/types/projects";
+"use client";
+
 import EmptyState from "@/common/components/elements/EmptyState";
 
 import ProjectCard from "./ProjectCard";
+import useSWR from "swr";
+import { fetcher } from "@/services/fetcher";
+import { ProjectItem } from "@/common/types/projects";
 
-export default function Projects({ projects }: ProjectItemProps) {
-  const filteredProjects = projects.filter((project) => project?.is_show);
+export default function Projects() {
+  const { data } = useSWR("/api/projects", fetcher);
 
-  if (filteredProjects.length === 0) {
+  const filteredProjects: ProjectItem[] = data?.filter(
+    (item: ProjectItem) => item?.is_show,
+  );
+
+  if (filteredProjects?.length === 0) {
     return <EmptyState message="No Data" />;
   }
 

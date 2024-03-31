@@ -21,7 +21,7 @@ const Item = ({ label, value }: ItemProps) => {
 };
 
 export default function Leaderboard({ data }: LeaderboardProps) {
-  const datas = Object.values(data.allTimeLbs.time);
+  const datas = Object.values(data.allTimeLbs.time) || [];
   return (
     <Card className="flex flex-col items-center justify-between gap-y-1 px-4 py-3 sm:flex-row">
       <span className="text-sm text-neutral-600 dark:text-neutral-500">
@@ -31,7 +31,7 @@ export default function Leaderboard({ data }: LeaderboardProps) {
         <Item
           key={index}
           label={index == 0 ? "15" : "60"}
-          value={convertToOrdinal(data.english)}
+          value={convertToOrdinal(data.english) || "-"}
         />
       ))}
     </Card>
