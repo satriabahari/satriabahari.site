@@ -19,7 +19,7 @@ export default function ProjectCard({
 
   return (
     <Link href={`/projects/${slug}`}>
-      <Card className="group cursor-pointer border border-neutral-200 hover:scale-105 dark:border-neutral-700">
+      <Card className="group cursor-pointer">
         <div className="relative">
           <Image
             src={image}
