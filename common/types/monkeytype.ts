@@ -36,7 +36,10 @@ export type detailsProfile = {
 export type AllTimeLbs = {
   time: {
     [key: number]: {
-      [language: string]: number;
+      english: {
+        rank: number;
+        count: number;
+      };
     };
   };
 };
