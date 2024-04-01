@@ -4,7 +4,6 @@ import { motion, Variants } from "framer-motion";
 
 import Tooltip from "@/common/components/elements/Tooltip";
 import { MonkeytypeData } from "@/common/types/monkeytype";
-import clsxm from "@/common/libs/clsxm";
 import Card from "@/common/components/elements/Card";
 
 type ProfileProps = {
@@ -17,7 +16,7 @@ type ItemProps = {
 };
 
 const Item = ({ label, value }: ItemProps) => (
-  <div className="flex flex-col">
+  <div className="flex flex-col items-center">
     <span className="text-xs dark:text-neutral-500">{label}</span>
     <span className="text-2xl dark:text-neutral-50">{value}</span>
   </div>
@@ -37,13 +36,13 @@ export default function Profile({ data }: ProfileProps) {
   let xpNeeded = 100;
 
   while (xp >= xpNeeded) {
-    level++;
     xp -= xpNeeded;
     xpNeeded += 49;
+    level++;
   }
 
-  const xpToNextLevel = (level - 1) * 49 + 100;
-  const difference = (xpToNextLevel - xp) / 100;
+  const xpToNextLevel = level * 49 + 100;
+  const difference = (xp / xpToNextLevel) * 100;
   const remainder = xpToNextLevel - xp;
 
   const progressVariants: Variants = {
@@ -60,7 +59,7 @@ export default function Profile({ data }: ProfileProps) {
         <span className="text-sm font-medium text-green-600">{level}</span>
       </Tooltip>
 
-      <div className="relative h-2 w-full rounded-full bg-neutral-300 dark:bg-neutral-900 ">
+      <div className="relative h-2 w-full rounded-full bg-neutral-300 dark:bg-dark ">
         <motion.span
           initial="initial"
           animate="animate"
@@ -113,9 +112,9 @@ export default function Profile({ data }: ProfileProps) {
         <XpProgress />
       </div>
 
-      <span className="hidden h-full w-2 rounded-full bg-neutral-300 p-1 dark:bg-neutral-900 sm:flex" />
+      <span className="hidden h-24 w-2 rounded-full bg-neutral-300 p-1 dark:bg-dark sm:inline-block" />
 
-      <div className="flex flex-grow items-center justify-between rounded-xl sm:flex-row sm:px-4 sm:py-3">
+      <div className="flex flex-grow flex-col items-center justify-between rounded-xl sm:flex-row sm:px-4 sm:py-3">
         <Item
           label="test started"
           value={data?.typingStats.startedTests || "N/A"}
