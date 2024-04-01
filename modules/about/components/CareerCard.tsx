@@ -30,7 +30,7 @@ export default function CareerCard({
   }
 
   return (
-    <Card className="flex items-center gap-5 border border-neutral-300 px-6 py-4 dark:border-neutral-600">
+    <Card className="flex items-center gap-5 px-6 py-4">
       {logo ? (
         <Image width={55} height={55} src={logo} alt={company} />
       ) : (
