@@ -1,6 +1,5 @@
-// import { format, parseISO } from "date-fns";
 import { utcToZonedTime } from "date-fns-tz";
-import {format, parseISO} from "date-fns"
+import { format, parseISO } from "date-fns";
 
 export const convertToOrdinal = (number: number) => {
   if (typeof number !== "number") {
