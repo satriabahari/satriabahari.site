@@ -10,11 +10,14 @@ export default function Card({
   ...others
 }: CardProps) {
   return (
-    <div
-      className={`rounded-xl bg-neutral-50 shadow-sm transition-all duration-300 dark:bg-[#1E1E1E] ${className}`}
-      {...others}
-    >
-      {children}
+    <div className="rounded-xl border-[1.5px] border-neutral-300 p-1 shadow-sm dark:border-[#333333]">
+      <div
+        className={`rounded-lg bg-gradient-to-b
+        from-neutral-200 to-neutral-100 transition-all duration-300 hover:to-[#ffffff] dark:from-[#242424] dark:to-neutral-900 dark:hover:to-neutral-950 ${className}`}
+        {...others}
+      >
+        {children}
+      </div>
     </div>
   );
 }
