@@ -14,7 +14,6 @@ export const getUserData = async () => {
 
   const status = response.status;
   const responseJson = response.data;
-  console.log(response.data.data);
 
   if (status > 400) {
     return { status, data: {} };

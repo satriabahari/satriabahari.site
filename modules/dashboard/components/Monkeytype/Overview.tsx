@@ -1,7 +1,3 @@
-"use client";
-
-import { useState } from "react";
-
 import OverviewItem from "./OverviewItem";
 
 type OverviewProps = {
@@ -9,12 +5,6 @@ type OverviewProps = {
 };
 
 export default function Overview({ data }: OverviewProps) {
-  const [isHover, setIsHover] = useState<number | null>(null);
-
-  const handleHover = (index: number | null) => {
-    setIsHover(index);
-  };
-
   return (
     <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
       <OverviewItem data={data.personalBests.time} type="time" />
