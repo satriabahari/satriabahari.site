@@ -7,7 +7,7 @@ const USER_ENDPOINT = `https://api.monkeytype.com/users/${username}/profile`;
 
 export const getUserData = async () => {
   const response = await axios.get(USER_ENDPOINT, {
-    headers: {
+    headers: { 
       Authorization: `ApeKey ${api_key}`,
     },
   });
