@@ -8,7 +8,6 @@ import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
 import { fetcher } from "@/services/fetcher";
 
-import Info from "./Info";
 import Overview from "./Overview";
 import { CODEWARS_ACCOUNT } from "@/common/constant/codewars";
 
@@ -41,12 +40,7 @@ export default function Codewars({ endpoint }: CodewarsProps) {
         </Link>
       </SectionSubHeading>
 
-      {data && (
-        <div>
-          <Overview data={data} />
-          <Info data={data} />
-        </div>
-      )}
+      {data && <Overview data={data} />}
     </section>
   );
 }
