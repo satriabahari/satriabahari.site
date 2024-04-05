@@ -9,7 +9,7 @@ type LeaderboardProps = {
 type ItemProps = {
   label: string;
   value: string;
-  percent?: number;
+  percent?: string;
 };
 
 const Item = ({ label, value, percent }: ItemProps) => {
@@ -21,7 +21,7 @@ const Item = ({ label, value, percent }: ItemProps) => {
           <span className="text-xs dark:text-neutral-500">Top {percent}%</span>
         ) : null}
       </div>
-      <span className="text-2xl dark:text-neutral-50">{value}</span>
+      <span className="text-2xl dark:text-amber-300">{value}</span>
     </div>
   );
 };
@@ -34,14 +34,13 @@ export default function Leaderboard({ data }: LeaderboardProps) {
         All-Time English Leaderboards
       </span>
       {datas.map((data, index) => {
+        const percent = (data?.english?.rank / data?.english?.count) * 100;
         return (
           <Item
             key={index}
             label={index == 0 ? "15" : "60"}
             value={convertToOrdinal(data?.english?.rank) || "-"}
-            percent={Math.round(
-              (data?.english.rank / data?.english?.count) * 100,
-            )}
+            percent={percent.toFixed(2)}
           />
         );
       })}
