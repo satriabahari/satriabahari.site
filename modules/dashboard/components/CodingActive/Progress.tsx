@@ -19,7 +19,7 @@ export default function Progress({ data, className }: ProgressProps) {
   return (
     <div className="flex items-center justify-between gap-3">
       <div className="w-24">{name}</div>
-      <div className="relative flex h-3 flex-1 justify-center rounded-full bg-neutral-200 dark:bg-neutral-800">
+      <div className="relative flex h-3 flex-1 justify-center rounded-full bg-neutral-200 dark:bg-dark">
         <motion.span
           initial="initial"
           animate="animate"
