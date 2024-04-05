@@ -23,8 +23,6 @@ export const getReadStats = async () => {
   const end_date = getData?.data?.end;
   const last_update = getData?.data?.modified_at;
 
-  const categories = getData?.data?.categories;
-
   const best_day = {
     date: getData?.data?.best_day?.date,
     text: getData?.data?.best_day?.text,
@@ -34,7 +32,7 @@ export const getReadStats = async () => {
   const human_readable_total =
     getData?.data?.human_readable_total_including_other_language;
 
-  const languages = getData?.data?.languages?.slice(0, 3);
+  const languages = getData?.data?.languages?.slice(0, 6);
   const editors = getData?.data?.editors;
 
   return {
@@ -43,7 +41,6 @@ export const getReadStats = async () => {
       start_date,
       end_date,
       last_update,
-      categories,
       best_day,
       human_readable_daily_average,
       human_readable_total,
