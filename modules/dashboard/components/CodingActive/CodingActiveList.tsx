@@ -23,7 +23,7 @@ export default function CodingActiveList({ data }: CodingActiveListProps) {
     <Card className="flex flex-col gap-y-3 px-4 py-3">
       <p className="dark:text-neutral-400">Languages</p>
 
-      <ul className="grid grid-cols-2 gap-x-12">
+      <ul className="grid grid-cols-1 gap-x-12 sm:grid-cols-2">
         {data?.languages?.map((subItem) => (
           <li key={subItem?.name}>
             <Progress
