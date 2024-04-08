@@ -14,7 +14,7 @@ import Leaderboard from "./Leaderboard";
 import { MONKEYTYPE_ACCOUNT } from "@/common/constant/monkeytype";
 
 export default function Monkeytype() {
-  const { data } = useSWR("/api/monkey", fetcher);
+  const { data } = useSWR("/api/monkeytype", fetcher);
 
   return (
     <section className="space-y-2">
