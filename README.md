@@ -15,7 +15,7 @@
 
 ## Introduction
 
-This website was carefully crafted from the ground using Next.js and other helpful tools, starting in June 2023.
+This website was carefully crafted from the ground using Next.js and other helpful tools, starting in Feb 2024.
 
 I'm constantly making improvements to add more features and content. This website is where I share what I've learned and offer insights to others.
 
@@ -35,16 +35,13 @@ This website is built using these technologies:
 - 🔰 TypeScript
 - 💠 Tailwind CSS 3
 - 🗂 Prisma Client
-- 🔥 Firebase
 - 🦫 Zustand
 - 〰️ SWR
 - ➰ Framer Motion
 - 💢 React Icons
-- 🛢 Jest
 - 🧿 Absolute Import and Path Alias
 - 📏 ESLint
 - ✨ Prettier
-- 🐶 Husky & Lint Staged
 - 📌 Conventional Commit Lint
 
 <br />
@@ -53,29 +50,9 @@ This website is built using these technologies:
 
 On this website there are several features that will continue to be updated and added in the future.
 
-- ### 🤖 ChatGPT AI (Unavailable)
-
-You can access this feature by opening the command palette [cmd+k], then typing whatever you want to search/ask for. (Currently not available, but you can configure it on your machine with your own OpenAI api key)
-
-- ### 💻 JavaScript Playground
-
-A no-fuss pure JavaScript playground with a live feedback loop.
-
-- ### 💬 Realtime Guestbook
-
-Realtime guestbook chat is powered by Firebase. Anyone can leave me a message in this website.
-
-- ### 🎧 Spotify Status
-
-Displays song information being played on spotify in real time using the Spotify API and SWR.
-
 - ### 🕗 Wakatime Statistics
 
 Data is retrieved using the Wakatime API and then displayed on the dashboard, built with Next.js API routes deployed as serverless functions.
-
-- ### 📝 Blogs
-
-The content on this blog is meticulously managed and sourced from a self-hosted headless CMS powered by WordPress, exemplifying our commitment to a streamlined and efficient content delivery system. The data fetching technique used to retrieve articles from WordPress CMS API involves using Client-Side Rendering (CSR) for the blog list and Server-Side Rendering (SSR) for the blog details.
 
 - ### 🗳 Projects
 
@@ -106,13 +83,13 @@ If you are interested in running this project on your local machine, you can do 
 1. Clone using git
 
    ```bash
-   git clone https://github.com/aulianza/aulianza.id
+   git clone https://github.com/satriabahari/satria.com
    ```
 
 2. Using `create-next-app`
 
    ```bash
-   npx create-next-app -e https://github.com/aulianza/aulianza.id project-name
+   npx create-next-app -e https://github.com/satriabahari/satria.com project-name
    ```
 
 3. Using `degit`
@@ -139,51 +116,31 @@ yarn install
 This repository uses several environment variables. Please copy .env.example into .env, then fill in the values with your own. For third-party environment variables such as Spotify, Wakatime, Firebase, and others, please refer to the official documentation provided by each provider.
 
 ```
-BUNDLE_ANALYZER=false
-SITE_URL=https://aulianza.id
+NODEMAILER_PW=
+NODEMAILER_EMAIL=
 
-# Blog
-BLOG_API_URL=
+GITHUB_READ_USER_TOKEN_PERSONAL=
 
-# OpenAI
-OPENAI_API_KEY=
-
-# DEV.to
-DEVTO_KEY=
-
-# Spotify
-SPOTIFY_CLIENT_ID=
-SPOTIFY_CLIENT_SECRET=
-SPOTIFY_REFRESH_TOKEN=
-
-# WakaTime
+WAKATIME_API_ID=
 WAKATIME_API_KEY=
 
-# GitHub
-GITHUB_READ_USER_TOKEN_PERSONAL=
-GITHUB_READ_USER_TOKEN_WORK=
+MONKEYTYPE_API_KEY=
 
-# Prisma Database
-DATABASE_URL='postgres://USER:PASSWORD@HOST:5432/postgres'
+CODEWARS_USER_ID=
 
-# Contact Form
-CONTACT_FORM_API_KEY=
+POSTGRES_URL=
+POSTGRES_URL_NON_POOLING=
+POSTGRES_URL_NO_SSL=
+POSTGRES_PRISMA_URL=
+POSTGRES_USER=
+POSTGRES_PASSWORD=
+POSTGRES_HOST=
+POSTGRES_DATABASE=
 
-# Firebase
-NEXT_PUBLIC_FIREBASE_API_KEY=
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
-NEXT_PUBLIC_FIREBASE_DB_URL=
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
-NEXT_PUBLIC_FIREBASE_APP_ID=
-NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=
-NEXT_PUBLIC_FIREBASE_CHAT_DB=
-
-# Next-Auth SSO
-NEXTAUTH_URL=http://localhost:3000
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
+CLOUDINARY_URL=
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
 ```
 
 ### 4. Run the development server
@@ -196,7 +153,3 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. You can start editing the page by modifying `src/pages/index.tsx`.
 <br /><br />
-
-## License
-
-Licensed under the [GPL-3.0 license](https://github.com/aulianza/aulianza.id/blob/master/LICENSE).
