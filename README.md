@@ -1,6 +1,6 @@
 <div align="center">
   <h1>satria.vercel.app</h1>
-  <p>🔥 Personal website was built originally from scratch using Next.js, TypeScript, Tailwind CSS, SWR, Firebase and Prisma with PostgreSQL</p>
+  <p>🔥 Personal website was built originally from scratch using Next.js, TypeScript, Tailwind CSS, SWR, and Prisma with PostgreSQL</p>
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/aulianza/aulianza.id)](https://github.com/aulianza/aulianza.id/stargazers)
 [![Depfu](https://badges.depfu.com/badges/02483ebb21fdb2182a66a28b68d1b7b0/status.svg)](https://depfu.com)
@@ -11,7 +11,7 @@
 </div>
 <br />
 
-<img width="1359" alt="image" src="https://github.com/aulianza/aulianza.id/assets/15605885/e9665038-6e84-4c8e-a847-fb90138c0303">
+<img width="1359" alt="image" src="https://github.com/satriabahari/satria.com/assets/121304362/af497626-1675-4037-aebe-efb91034c384">
 
 ## Introduction
 
@@ -86,15 +86,15 @@ The data projects on this blog are taken from the PostgreSQL database connected 
 
 - ### PageSpeed Insights
 
-Report URL: https://pagespeed.web.dev/analysis/https-aulianza-id/pk0y6xcz25?form_factor=desktop
+Report URL: https://pagespeed.web.dev/analysis/https-satriav2-vercel-app/yjcgcx7o2a?form_factor=desktop
 
-![image](https://github.com/aulianza/aulianza.id/assets/15605885/d87a6083-caf3-4b84-ba59-975c07193a9f)
+![image](https://github.com/satriabahari/satria.com/assets/121304362/22628b99-fd71-4aff-b8d8-f744fef6e06c)
 
 - ### GTmetrix
 
-Report URL: [https://pagespeed.web.dev/analysis/https-aulianza-id/pk0y6xcz25?form_factor=desktop](https://gtmetrix.com/reports/aulianza.id/REEiduoo/)
+Report URL: https://gtmetrix.com/reports/satriav2.vercel.app/cRqM4gpB/)](https://gtmetrix.com/reports/satriav2.vercel.app/cRqM4gpB/
 
-![image](https://github.com/aulianza/aulianza.id/assets/15605885/953dc131-bf52-4ef6-913c-f6eb8fb6c6a7)
+![image](https://github.com/satriabahari/satria.com/assets/121304362/872797d0-e027-4972-ae93-0343c607140d)
 <br /><br />
 
 ## Getting Started
