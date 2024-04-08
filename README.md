@@ -92,7 +92,7 @@ Report URL: https://pagespeed.web.dev/analysis/https-satriav2-vercel-app/yjcgcx7
 
 - ### GTmetrix
 
-Report URL: https://gtmetrix.com/reports/satriav2.vercel.app/cRqM4gpB/)](https://gtmetrix.com/reports/satriav2.vercel.app/cRqM4gpB/
+Report URL: https://gtmetrix.com/reports/satriav2.vercel.app/cRqM4gpB/
 
 ![image](https://github.com/satriabahari/satria.com/assets/121304362/872797d0-e027-4972-ae93-0343c607140d)
 <br /><br />
