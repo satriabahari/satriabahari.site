@@ -1,12 +1,16 @@
 import { MONKEYTYPE_ACCOUNT } from "@/common/constant/monkeytype";
 import axios from "axios";
 
-const { username } = MONKEYTYPE_ACCOUNT;
+const { username, api_key } = MONKEYTYPE_ACCOUNT;
 
 const USER_ENDPOINT = `https://api.monkeytype.com/users/${username}/profile`;
 
-export async function getUserData() {
-  const response = await axios.get(USER_ENDPOINT);
+export const getMonkeytypeData = async () => {
+  const response = await axios.get(USER_ENDPOINT, {
+    headers: {
+      Authorization: `ApeKey ${api_key}`,
+    },
+  });
 
   const status = response.status;
   const responseJson = response.data;
@@ -16,4 +20,4 @@ export async function getUserData() {
   }
 
   return { status, data: responseJson.data };
-}
+};

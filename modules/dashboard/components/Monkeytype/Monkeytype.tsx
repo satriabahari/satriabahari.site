@@ -13,12 +13,8 @@ import Profile from "./Profile";
 import Leaderboard from "./Leaderboard";
 import { MONKEYTYPE_ACCOUNT } from "@/common/constant/monkeytype";
 
-type MonkeytypeProps = {
-  endpoint: string;
-};
-
-export default function Monkeytype({ endpoint }: MonkeytypeProps) {
-  const { data } = useSWR(endpoint, fetcher);
+export default function Monkeytype() {
+  const { data } = useSWR("/api/monkeytype", fetcher);
 
   return (
     <section className="space-y-2">
