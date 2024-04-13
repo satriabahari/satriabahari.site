@@ -6,8 +6,8 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url = env("POSTGRES_PRISMA_URL")
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL")
   directUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
@@ -22,6 +22,6 @@ model Projects {
   stacks      String
   is_show     Boolean  @default(true)
   updated_at  DateTime @default(now())
-  content     String?  @db.Text
+  content     String?  
   is_featured Boolean  @default(false)
 }
