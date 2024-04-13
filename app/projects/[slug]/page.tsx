@@ -7,6 +7,7 @@ import ProjectDetail from "@/modules/projects/components/ProjectDetail";
 import prisma from "@/common/libs/prisma";
 import { ProjectItem } from "@/common/types/projects";
 import { METADATA } from "@/common/constant/metadata";
+import { loadMdxFiles } from "@/common/libs/mdx";
 
 type ProjectDetailPageProps = {
   params: { slug: string };
@@ -25,25 +26,27 @@ export async function generateMetadata({
       url: `${METADATA.openGraph.url}/${project.slug}`,
       siteName: METADATA.openGraph.siteName,
       locale: METADATA.openGraph.locale,
-      type: 'article',
-      authors: METADATA.creator
+      type: "article",
+      authors: METADATA.creator,
     },
     keywords: project.title,
     alternates: {
-      canonical: `${process.env.DOMAIN}/projects/${params.slug}`
-    }
-  }
+      canonical: `${process.env.DOMAIN}/projects/${params.slug}`,
+    },
+  };
 }
 
 const getProjectDetail = async (slug: string): Promise<ProjectItem> => {
-  const response = await prisma.projects.findUnique({
+  const projects = await prisma.projects.findUnique({
     where: {
       slug: String(slug),
     },
   });
 
+  const contents = loadMdxFiles();
+  const content = contents.find((item) => item.slug === slug);
+  const response = { ...projects, content: content?.content };
   const data = JSON.parse(JSON.stringify(response));
-
   return data;
 };
 
