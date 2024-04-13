@@ -4,6 +4,7 @@ import React from "react";
 import { STACKS } from "@/common/constant/stacks";
 import { ProjectItem } from "@/common/types/projects";
 import Tooltip from "@/common/components/elements/Tooltip";
+import MDXComponent from "@/common/components/elements/MDXComponent";
 
 import ProjectLink from "./ProjectLink";
 
@@ -38,6 +39,12 @@ export default function ProjectDetail({
         />
       </div>
       <Image src={image} alt={title} width={1000} height={400} />
+
+      {content ? (
+        <div className="mt-5 space-y-6 leading-[1.8] dark:text-neutral-300">
+          <MDXComponent>{content}</MDXComponent>
+        </div>
+      ) : null}
     </div>
   );
 }
