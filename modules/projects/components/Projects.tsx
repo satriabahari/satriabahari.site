@@ -1,11 +1,12 @@
 "use client";
 
-import EmptyState from "@/common/components/elements/EmptyState";
-
-import ProjectCard from "./ProjectCard";
 import useSWR from "swr";
+
+import EmptyState from "@/common/components/elements/EmptyState";
 import { fetcher } from "@/services/fetcher";
 import { ProjectItem } from "@/common/types/projects";
+
+import ProjectCard from "./ProjectCard";
 
 export default function Projects() {
   const { data } = useSWR("/api/projects", fetcher);
@@ -19,7 +20,7 @@ export default function Projects() {
   }
 
   return (
-    <section className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+    <section className="grid grid-cols-1 gap-12 md:grid-cols-2">
       {filteredProjects?.map((project, index) => (
         <ProjectCard key={index} {...project} />
       ))}
