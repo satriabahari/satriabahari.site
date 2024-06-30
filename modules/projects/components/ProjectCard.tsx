@@ -27,7 +27,7 @@ export default function ProjectCard({
             alt={title}
             width={450}
             height={200}
-            className="h-full rounded-t-xl object-cover w-full md:w-auto"
+            className="h-full w-full rounded-t-xl object-cover md:w-auto"
           />
           <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center gap-1 rounded-t-xl bg-black text-sm font-medium text-neutral-50 opacity-0 transition-opacity duration-300 group-hover:opacity-80">
             <span>View Project</span>
