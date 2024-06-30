@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
+import { Analytics } from "@vercel/analytics/react";
 
 import Layouts from "@/common/components/layouts";
 import { soraSans } from "@/common/styles/fonts";
@@ -51,6 +52,7 @@ export default function RootLayout({
         <ThemeProviderContext>
           <Layouts>{children}</Layouts>
         </ThemeProviderContext>
+        <Analytics />
       </body>
     </html>
   );
