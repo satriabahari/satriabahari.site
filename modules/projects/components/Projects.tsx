@@ -20,7 +20,7 @@ export default function Projects() {
   }
 
   return (
-    <section className="grid grid-cols-1 gap-12 md:grid-cols-2">
+    <section className="grid grid-cols-1 gap-8 md:grid-cols-2">
       {filteredProjects?.map((project, index) => (
         <ProjectCard key={index} {...project} />
       ))}
