@@ -38,7 +38,16 @@ export default function ProjectDetail({
           link_github={link_github || ""}
         />
       </div>
-      <Image src={image} alt={title} width={1000} height={400} />
+
+      <div className="overflow-hidden">
+        <Image
+          src={image}
+          alt={title}
+          width={1000}
+          height={400}
+          className="transition duration-500 hover:scale-[1.04]"
+        />
+      </div>
 
       {content ? (
         <div className="mt-5 space-y-6 leading-[1.8] dark:text-neutral-300">
