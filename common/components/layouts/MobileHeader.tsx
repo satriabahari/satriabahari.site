@@ -59,7 +59,8 @@ export default function MobileHeader() {
         )}
       </div>
       {isMobile && (
-        <AnimatePresence>{isOpen && <MobileMenu />}</AnimatePresence>
+        // <AnimatePresence>{isOpen && <MobileMenu />}</AnimatePresence>
+        <>{isOpen && <MobileMenu />}</>
       )}
     </div>
   );
