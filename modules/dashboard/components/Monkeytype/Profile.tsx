@@ -18,7 +18,7 @@ type ItemProps = {
 const Item = ({ label, value }: ItemProps) => (
   <div className="flex flex-col items-center">
     <span className="text-xs dark:text-neutral-500">{label}</span>
-    <span className="text-2xl dark:text-amber-300">{value}</span>
+    <span className="text-2xl dark:text-green-600">{value}</span>
   </div>
 );
 
@@ -56,7 +56,7 @@ export default function Profile({ data }: ProfileProps) {
   const XpProgress = () => (
     <div className="flex w-full items-center justify-between gap-3">
       <Tooltip title={`${data?.xp} total xp`}>
-        <span className="text-sm font-medium text-amber-300">{level}</span>
+        <span className="text-sm font-medium text-green-600">{level}</span>
       </Tooltip>
 
       <div className="relative h-2 w-full rounded-full bg-neutral-300 dark:bg-dark ">
@@ -93,7 +93,7 @@ export default function Profile({ data }: ProfileProps) {
           </div>
 
           <div className="flex flex-col">
-            <span className="text-2xl font-medium text-amber-300">
+            <span className="text-2xl font-medium text-green-600">
               {data?.name}
             </span>
             <Tooltip title={`${durationDays} days ago`}>

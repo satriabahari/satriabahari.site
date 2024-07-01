@@ -2,7 +2,6 @@ import Link from "next/link";
 import { MdArrowOutward as ArrowIcon } from "react-icons/md";
 
 import { SocialMediaProps } from "@/common/types/socialMedia";
-import clsx from "clsx";
 
 export default function ContactCard({
   title,
@@ -27,7 +26,9 @@ export default function ContactCard({
       <div className={`${textColor} z-10 space-y-2`}>
         <h4 className="text-lg font-semibold">{title}</h4>
         <p className="pb-2 text-xs">{description}</p>
-        <button className={`${backgroundColor} bg-opacity-85 hover:bg-opacity-100 transition duration-100 rounded-md px-4 py-2 md:w-max `}>
+        <button
+          className={`${backgroundColor} rounded-md bg-opacity-85 px-4 py-2 transition duration-100 hover:bg-opacity-100 md:w-max `}
+        >
           <Link
             href={href}
             target="_blank"
@@ -45,7 +46,6 @@ export default function ContactCard({
         >
           {icon}
         </div>
-        {/* <div className={clsx("rounded-2xl border-8 p-2", `${borderColor}/10`)}> */}
       </div>
     </div>
   );

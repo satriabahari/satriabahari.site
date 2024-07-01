@@ -38,11 +38,11 @@ export default function Monkeytype() {
       </SectionSubHeading>
 
       {data && (
-        <>
+        <div className="flex flex-col gap-4">
           <Profile data={data} />
           <Leaderboard data={data} />
           <Overview data={data} />
-        </>
+        </div>
       )}
     </section>
   );
