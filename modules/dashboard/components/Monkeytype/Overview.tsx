@@ -6,7 +6,7 @@ type OverviewProps = {
 
 export default function Overview({ data }: OverviewProps) {
   return (
-    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
       <OverviewItem data={data.personalBests.time} type="time" />
       <OverviewItem data={data.personalBests.words} type="words" />
     </div>

@@ -21,7 +21,7 @@ const Item = ({ label, value, percent }: ItemProps) => {
           <span className="text-xs dark:text-neutral-500">Top {percent}%</span>
         ) : null}
       </div>
-      <span className="text-2xl dark:text-amber-300">{value}</span>
+      <span className="text-2xl dark:text-green-600">{value}</span>
     </div>
   );
 };
