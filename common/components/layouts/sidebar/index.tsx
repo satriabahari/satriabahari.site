@@ -9,7 +9,6 @@ import Menu from "./Menu";
 
 export default function Sidebar() {
   const filteredMenu = MENU_ITEMS?.filter((item) => item?.isShow);
-  // const isMobile = useIsMobile();
   return (
     <header className="lg:w-1/5">
       <div className="sticky top-0 z-10 flex flex-col transition-all duration-300 lg:py-8">
