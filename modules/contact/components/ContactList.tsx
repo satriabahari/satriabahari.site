@@ -7,7 +7,7 @@ export default function ContactList() {
   return (
     <div className="flex flex-col space-y-4">
       <h2>Find me on social media</h2>
-      <div className="flex flex-wrap gap-4">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {filteredSocialMedia.map((media) => (
           <ContactCard key={media.title} {...media} />
         ))}
