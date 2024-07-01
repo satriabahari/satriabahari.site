@@ -5,6 +5,7 @@ import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
 import { CAREERS } from "@/common/constant/carreers";
 
 import CareerCard from "./CareerCard";
+import Resume from "./Resume";
 
 export default function CareerList() {
   return (
@@ -13,10 +14,11 @@ export default function CareerList() {
         <SectionHeading title="Career" icon={<CareerIcon />} />
         <SectionSubHeading>
           <p>My professional career journey.</p>
+          <Resume/>
         </SectionSubHeading>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4">
         {CAREERS?.map((career, index) => (
           <CareerCard key={index} {...career} />
         ))}

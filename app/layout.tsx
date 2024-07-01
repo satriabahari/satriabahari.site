@@ -4,7 +4,7 @@ import NextTopLoader from "nextjs-toploader";
 import { Analytics } from "@vercel/analytics/react";
 
 import Layouts from "@/common/components/layouts";
-import { soraSans } from "@/common/styles/fonts";
+import { onestSans } from "@/common/styles/fonts";
 import ThemeProviderContext from "@/common/stores/theme";
 import { METADATA } from "@/common/constant/metadata";
 
@@ -37,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body className={soraSans.className}>
+      <body className={onestSans.className}>
         <NextTopLoader
           color="#05b6d3"
           initialPosition={0.08}
