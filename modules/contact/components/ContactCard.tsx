@@ -24,7 +24,7 @@ export default function ContactCard({
         {backgroundIcon}
       </div>
       <div className={`${textColor} z-10 space-y-2`}>
-        <h4 className="text-lg font-semibold">{title}</h4>
+        <h4 className="text-lg font-semibold tracking-wide">{title}</h4>
         <p className="pb-2 text-xs">{description}</p>
         <button
           className={`${backgroundColor} rounded-md bg-opacity-85 px-4 py-2 transition duration-100 hover:bg-opacity-100 md:w-max `}
