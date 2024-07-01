@@ -13,9 +13,8 @@ const backgroundIconSize = 275;
 
 export const SOCIAL_MEDIA: SocialMediaProps[] = [
   {
-    title: "Lorem ipsum, dolor sit.",
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, vel.",
+    title: "Stay in Touch",
+    description: "Reach out via email for any inquiries or collaborations.",
     name: "Gmail",
     href: "mailto:satriaabaharii@gmail.com",
     icon: <SiGmail size={iconSize} />,
@@ -28,9 +27,8 @@ export const SOCIAL_MEDIA: SocialMediaProps[] = [
     isShow: true,
   },
   {
-    title: "Lorem ipsum, dolor sit.",
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, vel.",
+    title: "Follow My Journey",
+    description: "Stay updated with my latest posts and stories on Instagram.",
     name: "Instagram",
     href: "https://www.instagram.com/satriabaharii_/",
     icon: <InstagramIcon size={iconSize} />,
@@ -43,10 +41,10 @@ export const SOCIAL_MEDIA: SocialMediaProps[] = [
     isShow: true,
   },
   {
-    title: "Lorem ipsum, dolor sit.",
+    title: "Let's Connect",
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, vel.",
-    name: "Linkedin",
+      "Connect for collaboration or explore my professional experience.",
+    name: "LinkedIn",
     href: "https://www.linkedin.com/in/satria-bahari/",
     icon: <LinkedinIcon size={iconSize} />,
     backgroundIcon: <LinkedinIcon size={backgroundIconSize} />,
@@ -57,10 +55,9 @@ export const SOCIAL_MEDIA: SocialMediaProps[] = [
     isShow: true,
   },
   {
-    title: "Lorem ipsum, dolor sit.",
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, vel.",
-    name: "Tiktok",
+    title: "Join the Fun",
+    description: "Follow me on TikTok for entertaining and engaging content.",
+    name: "TikTok",
     href: "https://www.tiktok.com/@satriaabaharii/",
     icon: <TiktokIcon size={iconSize} />,
     backgroundIcon: <TiktokIcon size={backgroundIconSize} />,
@@ -71,10 +68,9 @@ export const SOCIAL_MEDIA: SocialMediaProps[] = [
     isShow: true,
   },
   {
-    title: "Lorem ipsum, dolor sit.",
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, vel.",
-    name: "Github",
+    title: "Explore the Code",
+    description: "Explore the source code for all my projects on GitHub.",
+    name: "GitHub",
     href: "https://github.com/satriabahari",
     icon: <GithubIcon size={iconSize} />,
     backgroundIcon: <GithubIcon size={backgroundIconSize} />,
