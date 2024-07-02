@@ -57,7 +57,7 @@ export default function MenuItem({
         <div
           className={clsx(
             "transition-all duration-300 group-hover:-rotate-12",
-            isActiveRoute && "-rotate-12",
+            isActiveRoute && "animate-pulse",
           )}
         >
           {icon}
