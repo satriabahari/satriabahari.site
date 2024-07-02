@@ -42,7 +42,7 @@ export default function ContactCard({
 
       <div className={`flex items-end justify-end`}>
         <div
-          className={`rounded-2xl border-8 border-opacity-10 bg-opacity-5 p-2 ${backgroundColor} ${borderColor}`}
+          className={`text-neutral-50 rounded-2xl border-8 border-opacity-10 bg-opacity-5 p-2 ${backgroundColor} ${borderColor}`}
         >
           {icon}
         </div>
