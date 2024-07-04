@@ -6,6 +6,7 @@ import Tooltip from "../../elements/Tooltip";
 import Image from "../../elements/Image";
 import Status from "../../elements/Status";
 import ThemeToggle from "../../elements/ThemeToggle";
+import LocaleSwitcher from "./LocaleSwitcher";
 
 type ProfileHeaderProps = {
   expandMenu: boolean;
@@ -50,7 +51,8 @@ export default function ProfileHeader({
       </div>
 
       <div className="hidden w-full items-center justify-between lg:mt-2 lg:flex">
-        <Status />
+        {/* <Status /> */}
+        <LocaleSwitcher />
         <ThemeToggle />
       </div>
     </div>

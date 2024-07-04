@@ -8,6 +8,7 @@ import MobileMenu from "./MobileMenu";
 import MobileMenuButton from "./MobileMenuButton";
 import ProfileHeader from "./ProfileHeader";
 import ThemeToggle from "../../elements/ThemeToggle";
+import LocaleSwitcher from "./LocaleSwitcher";
 
 export default function Profile() {
   const [width, setWidth] = useState(0);
@@ -59,10 +60,13 @@ export default function Profile() {
             className={clsx(
               "mt-1 flex items-center gap-5 lg:hidden",
               isOpen &&
-                "h-[120px] flex-col-reverse !items-end justify-between pb-1",
+                "h-[130px] flex-col-reverse !items-end justify-between pb-1",
             )}
           >
-            <ThemeToggle />
+            <div className="flex gap-4">
+              <LocaleSwitcher />
+              <ThemeToggle />
+            </div>
             <MobileMenuButton expandMenu={isOpen} setExpandMenu={toggleMenu} />
           </div>
         )}
