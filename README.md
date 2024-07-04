@@ -10,7 +10,8 @@
 </div>
 <br />
 
-<img width="1359" alt="image" src="https://github.com/satriabahari/satria.com/assets/121304362/d9342cfd-3bdf-4f4c-97d2-69cafd24e3ab">
+<img width="1359" alt="image" src="https://github.com/satriabahari/satria.com/assets/121304362/aefc17bd-5174-44ab-a1a2-61b66b3e3f66">
+
 
 
 
