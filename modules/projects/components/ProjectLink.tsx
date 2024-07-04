@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { BsGithub as GithubIcon } from "react-icons/bs";
 import { FiExternalLink as LinkIcon } from "react-icons/fi";
@@ -19,6 +20,7 @@ export default function ProjectLink({
   link_github,
   link_demo,
 }: ProjectLinkProps) {
+  const t = useTranslations("ProjectsPage");
   const LinkComponent = ({ url, text, icon }: LinkComponentProps) => {
     return (
       <Link href={url} target="_blank">
@@ -36,7 +38,7 @@ export default function ProjectLink({
       {link_github ? (
         <LinkComponent
           url={link_github}
-          text="Source Code"
+          text={t("source_code_text")}
           icon={<GithubIcon size={22} />}
         />
       ) : null}
@@ -46,7 +48,7 @@ export default function ProjectLink({
       {link_demo ? (
         <LinkComponent
           url={link_demo}
-          text="Live Demo"
+          text={t("live_demo_text")}
           icon={<LinkIcon size={22} />}
         />
       ) : null}

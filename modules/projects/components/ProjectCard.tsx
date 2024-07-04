@@ -1,10 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
 import { HiOutlineArrowSmRight as ViewIcon } from "react-icons/hi";
 
 import Card from "@/common/components/elements/Card";
 import { STACKS } from "@/common/constant/stacks";
 import { ProjectItem } from "@/common/types/projects";
+import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/navigation";
 
 export default function ProjectCard({
   title,
@@ -17,7 +18,8 @@ export default function ProjectCard({
   const stacksArray = JSON.parse(stacks);
   const trimmedContent =
     description.slice(0, 70) + (description.length > 70 ? "..." : "");
-
+  const t = useTranslations("ProjectsPage")
+  const locale = useLocale();
   return (
     <Link href={`/projects/${slug}`}>
       <Card className="group cursor-pointer">
@@ -30,7 +32,7 @@ export default function ProjectCard({
             className="h-full w-full rounded-t-xl object-cover md:w-auto"
           />
           <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center gap-1 rounded-t-xl bg-black text-sm font-medium text-neutral-50 opacity-0 transition-opacity duration-300 group-hover:opacity-80">
-            <span>View Project</span>
+            <span>{t("view_project")}</span>
             <ViewIcon size={20} />
           </div>
         </div>
