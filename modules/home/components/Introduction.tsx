@@ -10,7 +10,7 @@ export default function Introduction() {
       </div>
 
       <div className="space-y-4">
-        <ul className="ml-5 flex list-disc gap-10 text-neutral-700 dark:text-neutral-400">
+        <ul className="ml-5 flex flex-col md:flex-row list-disc gap-y-2 gap-x-10 text-neutral-700 dark:text-neutral-400">
           <li>
             {t("location")}
           </li>
