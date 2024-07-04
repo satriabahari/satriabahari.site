@@ -5,6 +5,7 @@ import { motion, Variants } from "framer-motion";
 import Tooltip from "@/common/components/elements/Tooltip";
 import { MonkeytypeData } from "@/common/types/monkeytype";
 import Card from "@/common/components/elements/Card";
+import { useTranslations } from "next-intl";
 
 type ProfileProps = {
   data: MonkeytypeData;
@@ -53,9 +54,11 @@ export default function Profile({ data }: ProfileProps) {
     },
   };
 
+  const t = useTranslations("DashboardPage.monkeytype");
+
   const XpProgress = () => (
     <div className="flex w-full items-center justify-between gap-3">
-      <Tooltip title={`${data?.xp} total xp`}>
+      <Tooltip title={`${data?.xp} ${t("total_xp")}`}>
         <span className="text-sm font-medium text-green-600">{level}</span>
       </Tooltip>
 
@@ -96,14 +99,16 @@ export default function Profile({ data }: ProfileProps) {
             <span className="text-2xl font-medium text-green-600">
               {data?.name}
             </span>
-            <Tooltip title={`${durationDays} days ago`}>
+            <Tooltip title={`${durationDays} ${t("days_ago")}`}>
               <span className="text-xs text-neutral-600 dark:text-neutral-400">
-                Joined {format(date, "dd MMM yyyy")}
+                {t("joined")} {format(date, "dd MMM yyyy")}
               </span>
             </Tooltip>
-            <Tooltip title={`Longest streak: ${data?.maxStreak} days`}>
+            <Tooltip
+              title={`${t("current_streak")}: ${data?.maxStreak} ${t("unit_days")}`}
+            >
               <span className="text-xs text-neutral-600 dark:text-neutral-400">
-                Current streak: {data?.streak} days
+                {t("current_streak")}: {data?.streak} {t("unit_days")}
               </span>
             </Tooltip>
           </div>
@@ -116,15 +121,15 @@ export default function Profile({ data }: ProfileProps) {
 
       <div className="flex flex-grow flex-col items-center justify-between rounded-xl sm:flex-row sm:px-4 sm:py-3">
         <Item
-          label="test started"
+          label={t("title_test_started")}
           value={data?.typingStats.startedTests || "N/A"}
         />
         <Item
-          label="test completed"
+          label={t("title_test_completed")}
           value={data?.typingStats.completedTests || "N/A"}
         />
         <Item
-          label="time typing"
+          label={t("title_time_typing")}
           value={
             format(new Date(0, 0, 0, 0, minutes, seconds), "HH:mm:ss") || "N/A"
           }

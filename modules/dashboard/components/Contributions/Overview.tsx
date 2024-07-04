@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import OverviewItem from "./OverviewItem";
 
 type OverviewProps = {
@@ -35,12 +36,14 @@ export default function Overview({ data }: OverviewProps) {
     totalContributions / totalContributionList.length,
   );
 
+  const t = useTranslations("DashboardPage.github");
+
   return (
     <div className="grid grid-cols-2 gap-3 py-2 sm:grid-cols-4">
-      <OverviewItem label="Total" value={totalContributions} />
-      <OverviewItem label="This Week" value={totalThisWeekContribution} />
-      <OverviewItem label="Best Day" value={bestContribution} />
-      <OverviewItem label="Average" value={averageContribution} unit="/ day" />
+      <OverviewItem label={t("title_total_contribution")} value={totalContributions} />
+      <OverviewItem label={t("title_total_this_week_contributino")} value={totalThisWeekContribution} />
+      <OverviewItem label={t("title_best_contribution")} value={bestContribution} />
+      <OverviewItem label={t("title_average_contribution")} value={averageContribution} unit={"/ " + t("unit")}/>
     </div>
   );
 }

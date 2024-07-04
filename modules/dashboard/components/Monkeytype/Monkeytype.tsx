@@ -12,14 +12,17 @@ import useSWR from "swr";
 import Profile from "./Profile";
 import Leaderboard from "./Leaderboard";
 import { MONKEYTYPE_ACCOUNT } from "@/common/constant/monkeytype";
+import { useTranslations } from "next-intl";
 
 export default function Monkeytype() {
   const { data } = useSWR("/api/monkeytype", fetcher);
 
+  const t = useTranslations("DashboardPage.monkeytype");
+
   return (
     <section className="space-y-2">
       <SectionHeading
-        title="Monkeytype Statistic"
+        title={t("title")}
         icon={
           <div className="h-5 w-5 overflow-hidden rounded-full">
             <MonkeytypeIcon />
@@ -27,7 +30,7 @@ export default function Monkeytype() {
         }
       />
       <SectionSubHeading>
-        <p>My statistic score on Monkeytype.</p>
+        <p>{t("sub_title")}</p>
         <Link
           href={MONKEYTYPE_ACCOUNT.monkeytype_url}
           target="_blank"

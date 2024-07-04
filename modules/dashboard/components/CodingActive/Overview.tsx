@@ -1,5 +1,6 @@
 import { formatDate } from "@/common/helpers";
 import OverviewItem from "./OverviewItem";
+import { useTranslations } from "next-intl";
 
 type OverviewProps = {
   data: {
@@ -29,14 +30,19 @@ export default function Overview({ data }: OverviewProps) {
     ? `${formatDate(bestDayDate)} (${bestDayText})`
     : "N/A";
 
+  const t = useTranslations("DashboardPage.wakatime");
+
   return (
     <div className="mb-1 grid gap-3 py-2 md:grid-cols-2">
-      <OverviewItem label="Start Date" value={startDate} />
-      <OverviewItem label="End Date" value={endDate} />
-      <OverviewItem label="Daily Coding Average" value={dailyAverage} />
-      <OverviewItem label="This Week Coding Time" value={dailyTotal} />
-      <OverviewItem label="Best Day Coding Time" value={bestDay} />
-      <OverviewItem label="All Time Since Today" value={allTimeSinceToday} />
+      <OverviewItem label={t("start_date")} value={startDate} />
+      <OverviewItem label={t("end_date")} value={endDate} />
+      <OverviewItem label={t("daily_average")} value={dailyAverage} />
+      <OverviewItem label={t("daily_total")} value={dailyTotal} />
+      <OverviewItem label={t("best_day")} value={bestDay} />
+      <OverviewItem
+        label={t("all_time_since_today")}
+        value={allTimeSinceToday}
+      />
     </div>
   );
 }
