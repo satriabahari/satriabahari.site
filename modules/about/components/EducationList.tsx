@@ -5,14 +5,16 @@ import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
 import { EDUCATION } from "@/common/constant/education";
 
 import EducationCard from "./EducationCard";
+import { useTranslations } from "next-intl";
 
 export default function EducationList() {
+  const t = useTranslations("AboutPage.education")
   return (
     <section className="space-y-6">
       <div className="space-y-2">
-        <SectionHeading title="Education" icon={<EducationIcon />} />
+        <SectionHeading title={t("title")} icon={<EducationIcon />} />
         <SectionSubHeading>
-          <p>My educational journey.</p>
+          <p>{t("sub_title")}</p>
         </SectionSubHeading>
       </div>
 
