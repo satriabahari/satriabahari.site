@@ -1,0 +1,220 @@
+{
+  "HomePage": {
+    "intro": "Hi, I'm Satria Bahari",
+    "location": "Based in Jambi, Indonesia 🇮🇩",
+    "location_type": "Onsite",
+    "resume": "Passionate and seasoned Software Engineer with a strong focus on frontend development. Proficient in TypeScript and well-versed in all aspects of web technologies. Collaborative team player dedicated to delivering efficient, scalable, and visually appealing web applications.",
+    "skills": {
+      "title": "Skills",
+      "sub_title": "My professional skills."
+    }
+  },
+  "AboutPage": {
+    "title": "About",
+    "description": "A short story of me",
+    "resume": {
+      "paragraf_1": "Hello there! Thank you for visiting my personal website. I'm Satria Bahari, a student majoring in Information Systems at the University of Jambi. I have a strong interest in frontend development. With a solid foundation in JavaScript and TypeScript, as well as a comprehensive understanding of various frontend libraries and frameworks, I have navigated the ever-evolving landscape of web development with enthusiasm and dedication.",
+
+      "paragraf_2": "I focus on creating web applications that not only provide precise experiences but are also user-friendly. My specialization includes JavaScript and TypeScript, along with frameworks such as React, Vite, and Next.js. As a quick learner and adaptive thinker, I thrive in a dynamic environment where innovation is a driving force. My collaborative nature allows me to seamlessly integrate with teams, contributing not only to my technical skills but also embodying a humble attitude that values input from every team member.",
+
+      "paragraf_3": "I strongly believe that effective communication is crucial for success in any role. I am adaptable, think efficiently, and always strive for the best. My experiences have equipped me with analytical skills and strong leadership abilities. I am comfortable working collaboratively in a team and am excited about the opportunity to contribute to team success. Looking forward to the possibility of collaboration!"
+    },
+    "career": {
+      "title": "Career",
+      "sub_title": "My professional career journey.",
+      "resume_download_button": "Download Resume",
+      "careers": {
+        "career_0": {
+          "position": "Fullstack Web Developer",
+          "company": "Jambi University",
+          "logo": "/images/careers/unja.png",
+          "location": "Jambi, Indonesia 🇮🇩",
+          "location_type": "Onsite",
+          "type": "Part-time",
+          "start_date": "2024-01",
+          "end_date": "2026-01",
+          "industry": "school",
+          "link": "https://www.unja.ac.id/",
+          "responsibilities": {
+            "responsibility_1": "Developed and managed a portfolio website showcasing my best work and achievements as a Web Developer. The website emphasizes professional design and easy navigation for an optimal user experience",
+            "responsibility_2": "Designed user interfaces with professional, responsive designs for both mobile and desktop devices, ensuring easy navigation for an optimal user experience"
+          }
+        },
+        "career_1": {
+          "position": "Fullstack Web Developer",
+          "company": "Jambi University",
+          "logo": "/images/careers/unja.png",
+          "location": "Jambi, Indonesia 🇮🇩",
+          "location_type": "Onsite",
+          "type": "Part-time",
+          "start_date": "2024-01",
+          "end_date": "2026-01",
+          "industry": "school",
+          "link": "https://www.unja.ac.id/",
+          "responsibilities": {
+            "responsibility_1": "Developed and managed a portfolio website showcasing my best work and achievements as a Web Developer. The website emphasizes professional design and easy navigation for an optimal user experience",
+            "responsibility_2": "Designed user interfaces with professional, responsive designs for both mobile and desktop devices, ensuring easy navigation for an optimal user experience",
+            "responsibility_3": "Designed user interfaces with professional, responsive designs for both mobile and desktop devices, ensuring easy navigation for an optimal user experience"
+          }
+        }
+      }
+    },
+    "education": {
+      "title": "Education",
+      "sub_title": "My educational journey.",
+      "school": "Jambi University",
+      "major": "Information Systems, (S.Kom)",
+      "logo": "/images/education/unja.png",
+      "location": "Jambi, Indonesia 🇮🇩",
+      "degree": "Bachelor's degree",
+      "start_year": 2022,
+      "end_year": 2026,
+      "link": "https://www.unja.ac.id"
+    }
+  },
+  "ProjectsPage": {
+    "title": "Projects",
+    "description": "Several projects that I have worked on, both private and open source.",
+    "view_project": "View Project",
+    "tech_stack": "Tech Stack",
+    "back_button": "Back",
+    "source_code_text": "Source Code",
+    "live_demo_text": "Live Demo"
+  },
+  "ContactPage": {
+    "title": "Contact",
+    "description": "Let`s get in touch",
+    "social_media": {
+      "title": "Find me on social media",
+      "gmail": {
+        "title": "Stay in Touch",
+        "description": "Reach out via email for any inquiries or collaborations."
+      },
+      "instagram": {
+        "title": "Follow My Journey",
+        "description": "Stay updated with my latest posts and stories on Instagram."
+      },
+      "linkedin": {
+        "title": "Let's Connect",
+        "description": "Connect for collaboration or explore my professional experience."
+      },
+      "tiktok": {
+        "title": "Join the Fun",
+        "description": "Follow me on TikTok for entertaining and engaging content."
+      },
+      "github": {
+        "title": "Explore the Code",
+        "description": "Explore the source code for all my projects on GitHub."
+      }
+    },
+    "form": {
+      "title": "Or send me a message",
+      "input_name": "Name",
+      "input_email": "Email",
+      "input_message": "Message",
+      "button": "Send Email"
+    }
+  },
+  "DashboardPage": {
+    "title": "Dashboard",
+    "description": "This is my personal dashboard, built with Next.js API routes deployed as serverless functions.",
+    "github": {
+      "title": "Contributions",
+      "sub_title": "My contributions from last year on github.",
+      "title_total_contribution": "Total",
+      "title_total_this_week_contributino": "This week",
+      "title_best_contribution": "Best",
+      "title_average_contribution": "Average",
+      "title_less_contribution": "Less",
+      "title_more_contribution": "More",
+      "unit": "day"
+    },
+    "wakatime": {
+      "title": "Weekly Statistic",
+      "sub_title": "My WakaTime last 7 days stats.",
+      "last_update": "Last update",
+      "start_date": "start_date",
+      "end_date": "end_date",
+      "daily_average": "Daily Coding Average",
+      "daily_total": "This Week Coding Time",
+      "best_day": "Best Day Coding Time",
+      "all_time_since_today": "All Time Since Today",
+      "languages": "Languages"
+    },
+    "codewars": {
+      "title": "Codewars Statistic",
+      "sub_title": "My statistic score on codewars.",
+      "title_rank": "Rank",
+      "title_honor": "Honor",
+      "title_completed": "Completed",
+      "title_leaderboard": "Leaderboard",
+      "title_clan": "Clan",
+      "title_skills": "Skills"
+    },
+    "monkeytype": {
+      "title": "Monkeytype Statistic",
+      "sub_title": "My statistic score on Monkeytype.",
+      "joined": "Joined",
+      "current_streak": "Current streak",
+      "unit_days": "days",
+      "title_test_started": "Test started",
+      "title_test_completed": "Test completed",
+      "title_time_typing": "Time typing",
+      "title_leaderboard": "All-Time English Leaderboards",
+      "unit_seconds": "Seconds",
+      "unit_time": "time",
+      "unit_words": "words",
+      "top": "top",
+      "days_ago": "days ago",
+      "xp_until_next_level": "XP until next level",
+      "total_xp": "total XP"
+    }
+  },
+  "Error": {
+    "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
+    "title": "Something went wrong!"
+  },
+  "IndexPage": {
+    "description": "This is a basic example that demonstrates the usage of <code>next-intl</code> with the Next.js App Router. Try changing the locale in the top right corner and see how the content changes.",
+    "title": "next-intl example"
+  },
+  "LocaleLayout": {
+    "title": "next-intl example"
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, id {🇮🇩 Indonesia} en {🇺🇸 English} other {Unknown}}"
+  },
+  "Manifest": {
+    "name": "next-intl example"
+  },
+  "Navigation": {
+    "Home": "Home",
+    "About": "About",
+    "Projects": "Projects",
+    "Dashboard": "Dashboard",
+    "Contact": "Contact"
+  },
+  "NotFoundPage": {
+    "description": "Please double-check the browser address bar or use the navigation to go to a known page.",
+    "title": "Page not found"
+  },
+  "PageLayout": {
+    "links": {
+      "docs": {
+        "description": "Learn more about next-intl in the official docs.",
+        "href": "https://next-intl-docs.vercel.app/",
+        "title": "Docs"
+      },
+      "source": {
+        "description": "Browse the source code of this example on GitHub.",
+        "href": "https://github.com/amannn/next-intl/tree/main/examples/example-app-router",
+        "title": "Source code"
+      }
+    }
+  },
+  "PathnamesPage": {
+    "description": "<p>The pathnames are internationalized too.</p><p>If you're using the default language English, you'll see <code>/en/pathnames</code> in the browser address bar on this page.</p><p>If you change the locale to German, the URL is localized accordingly (<code>/de/pfadnamen</code>).</p>",
+    "title": "Pathnames"
+  }
+}

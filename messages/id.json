@@ -1,0 +1,222 @@
+{
+  "HomePage": {
+    "intro": "Hai, saya Satria Bahari",
+    "location": "Berasal dari Jambi, Indonesia 🇮🇩",
+    "location_type": "Di lokasi",
+    "resume": "Insinyur Perangkat Lunak yang bersemangat dan berpengalaman dengan fokus kuat pada pengembangan frontend. Mahir dalam TypeScript dan berpengalaman dalam semua aspek teknologi web. Pemain tim kolaboratif yang berdedikasi untuk memberikan aplikasi web yang efisien, skalabel, dan menarik secara visual.",
+    "skills": {
+      "title": "Keahlian",
+      "sub_title": "Keahlian profesional saya."
+    }
+  },
+  "AboutPage": {
+    "title": "Tentang",
+    "description": "Cerita singkat tentang saya",
+    "resume": {
+      "paragraf_1": "Halo! Terima kasih telah mengunjungi situs pribadi saya. Saya Satria Bahari, seorang mahasiswa Sistem Informasi di Universitas Jambi. Saya sangat tertarik dengan pengembangan frontend. Dengan dasar yang kuat dalam JavaScript dan TypeScript, serta pemahaman komprehensif tentang berbagai pustaka dan kerangka kerja frontend, saya telah menjelajahi lanskap pengembangan web yang selalu berkembang dengan antusiasme dan dedikasi.",
+
+      "paragraf_2": "Saya fokus pada pembuatan aplikasi web yang tidak hanya memberikan pengalaman yang akurat tetapi juga ramah pengguna. Spesialisasi saya meliputi JavaScript dan TypeScript, bersama dengan kerangka kerja seperti React, Vite, dan Next.js. Sebagai pembelajar cepat dan pemikir adaptif, saya berkembang dalam lingkungan dinamis di mana inovasi adalah kekuatan pendorong. Sifat kolaboratif saya memungkinkan saya untuk berintegrasi dengan tim, tidak hanya menyumbangkan keterampilan teknis saya tetapi juga memiliki sikap rendah hati yang menghargai masukan dari setiap anggota tim.",
+
+      "paragraf_3": "Saya sangat percaya bahwa komunikasi yang efektif adalah kunci sukses dalam peran apa pun. Saya adaptif, berpikir efisien, dan selalu berusaha untuk yang terbaik. Pengalaman saya telah membekali saya dengan keterampilan analitis dan kemampuan kepemimpinan yang kuat. Saya nyaman bekerja secara kolaboratif dalam tim dan sangat antusias dengan kesempatan untuk berkontribusi pada kesuksesan tim. Saya menantikan kemungkinan untuk berkolaborasi!"
+    },
+    "career": {
+      "title": "Karier",
+      "sub_title": "Perjalanan karier profesional saya.",
+      "resume_download_button": "Unduh Resume",
+      "careers": {
+        "career_0": {
+          "position": "Pengembang Web Fullstack",
+          "company": "Universitas Jambi",
+          "logo": "/images/careers/unja.png",
+          "location": "Jambi, Indonesia 🇮🇩",
+          "location_type": "Onsite",
+          "type": "Paruh waktu",
+          "start_date": "2024-01",
+          "end_date": "2026-01",
+          "industry": "pendidikan",
+          "link": "https://www.unja.ac.id/",
+          "responsibilities": {
+            "responsibility_1": "Mengembangkan dan mengelola situs web portofolio yang menampilkan karya dan prestasi terbaik saya sebagai Pengembang Web. Situs web ini menekankan desain profesional dan navigasi yang mudah untuk pengalaman pengguna yang optimal.",
+            "responsibility_2": "Merancang antarmuka pengguna dengan desain responsif dan profesional untuk kedua perangkat mobile dan desktop, memastikan navigasi yang mudah untuk pengalaman pengguna yang optimal"
+          }
+        },
+        "career_1": {
+          "position": "Pengembang Web Fullstack",
+          "company": "Universitas Jambi",
+          "logo": "/images/careers/unja.png",
+          "location": "Jambi, Indonesia 🇮🇩",
+          "location_type": "Onsite",
+          "type": "Paruh waktu",
+          "start_date": "2024-01",
+          "end_date": "2026-01",
+          "industry": "pendidikan",
+          "link": "https://www.unja.ac.id/",
+          "responsibilities": {
+            "responsibility_1": "Mengembangkan dan mengelola situs web portofolio yang menampilkan karya dan prestasi terbaik saya sebagai Pengembang Web. Situs web ini menekankan desain profesional dan navigasi yang mudah untuk pengalaman pengguna yang optimal.",
+            "responsibility_2": "Merancang antarmuka pengguna dengan desain responsif dan profesional untuk kedua perangkat mobile dan desktop, memastikan navigasi yang mudah untuk pengalaman pengguna yang optimal",
+            "responsibility_3": "Merancang antarmuka pengguna dengan desain responsif dan profesional untuk kedua perangkat mobile dan desktop, memastikan navigasi yang mudah untuk pengalaman pengguna yang optimal"
+          }
+        }
+      }
+    },
+    "education": {
+      "title": "Pendidikan",
+      "sub_title": "Perjalanan pendidikan saya.",
+      "school": "Universitas Jambi",
+      "major": "Sistem Informasi, (S.Kom)",
+      "logo": "/images/education/unja.png",
+      "location": "Jambi, Indonesia 🇮🇩",
+      "degree": "Gelar Sarjana",
+      "start_year": 2022,
+      "end_year": 2026,
+      "link": "https://www.unja.ac.id"
+    }
+  },
+  "ProjectsPage": {
+    "title": "Proyek",
+    "description": "Beberapa proyek yang telah saya kerjakan, baik pribadi maupun sumber terbuka.",
+    "view_project": "Lihat Proyek",
+    "tech_stack": "Tumpukan Teknologi",
+    "back_button": "Kembali",
+    "source_code_text": "Kode Sumber",
+    "live_demo_text": "Demo Langsung"
+  },
+  "ContactPage": {
+    "title": "Kontak",
+    "description": "Mari kita berhubungan",
+    "social_media": {
+      "title": "Temukan saya di media sosial",
+      "gmail": {
+        "title": "Tetap Berhubungan",
+        "description": "Hubungi melalui email untuk pertanyaan atau kolaborasi."
+      },
+      "instagram": {
+        "title": "Ikuti Perjalanan Saya",
+        "description": "Tetap diperbarui dengan posting dan cerita terbaru saya di Instagram."
+      },
+      "linkedin": {
+        "title": "Mari Terhubung",
+        "description": "Terhubung untuk kolaborasi atau jelajahi pengalaman profesional saya."
+      },
+      "tiktok": {
+        "title": "Bergabunglah dalam Keseruan",
+        "description": "Ikuti saya di TikTok untuk konten yang menghibur dan menarik."
+      },
+      "github": {
+        "title": "Jelajahi Kode",
+        "description": "Jelajahi kode sumber untuk semua proyek saya di GitHub."
+      }
+    },
+    "form": {
+      "title": "Atau kirim pesan kepada saya",
+      "input_name": "Nama",
+      "input_email": "Email",
+      "input_message": "Pesan",
+      "button": "Kirim Email"
+    }
+  },
+  "DashboardPage": {
+    "title": "Dasbor",
+    "description": "Ini adalah dasbor pribadi saya, dibangun dengan jalur API Next.js yang diterapkan sebagai fungsi serverless.",
+    "github": {
+      "title": "Kontribusi",
+      "sub_title": "Kontribusi saya dari tahun lalu di GitHub.",
+      "title_total_contribution": "Total",
+      "title_total_this_week_contributino": "Minggu ini",
+      "title_best_contribution": "Terbaik",
+      "title_average_contribution": "Rata-rata",
+      "title_less_contribution": "Kurang",
+      "title_more_contribution": "Lebih",
+      "unit": "hari"
+    },
+    "wakatime": {
+      "title": "Statistik Mingguan",
+      "sub_title": "Statistik WakaTime saya selama 7 hari terakhir.",
+      "last_update": "Pembaruan Terakhir",
+      "start_date": "Tanggal Mulai",
+      "end_date": "Tanggal Berakhir",
+      "daily_average": "Rata-rata Coding Harian",
+      "daily_total": "Total Waktu Coding Minggu Ini",
+      "best_day": "Hari Terbaik Waktu Coding",
+      "all_time_since_today": "Total Waktu Sejak Hari Ini",
+      "languages": "Bahasa Pemrograman"
+    },
+    "codewars": {
+      "title": "Statistik Codewars",
+      "sub_title": "Skor statistik saya di Codewars.",
+      "title_rank": "Peringkat",
+      "title_honor": "Kehormatan",
+      "title_completed": "Selesai",
+      "title_leaderboard": "Papan Peringkat",
+      "title_clan": "Klan",
+      "title_skills": "Keterampilan"
+    },
+    "monkeytype": {
+      "title": "Statistik Monkeytype",
+      "sub_title": "Skor statistik saya di Monkeytype.",
+      "joined": "Bergabung",
+      "current_streak": "Rekor saat ini",
+      "unit_days": "hari",
+      "title_test_started": "Tes dimulai",
+      "title_test_completed": "Tes selesai",
+      "title_time_typing": "Waktu mengetik",
+      "title_leaderboard": "Papan Peringkat Bahasa Inggris",
+      "unit_seconds": "Detik",
+      "unit_time": "detik",
+      "unit_words": "kata",
+      "top": "teratas",
+      "days_ago": "hari yang lalu",
+      "xp_until_next_level": "XP sampai level berikutnya",
+      "total_xp": "jumlah XP"
+    }
+  },
+
+  "Error": {
+    "description": "<p>Es ist leider ein Problem aufgetreten.</p><p>Du kannst versuchen <retry>diese Seite neu zu laden</retry>.</p>",
+    "title": "Etwas ist schief gelaufen!"
+  },
+  "IndexPage": {
+    "description": "Dies ist ein Beispiel, das die Verwendung von <code>next-intl</code> mit dem Next.js App Router demonstriert. Bei Ändern der Sprache rechts oben ändert sich der Inhalt dieser Seite.",
+    "title": "next-intl Beispiel"
+  },
+  "LocaleLayout": {
+    "title": "next-intl Beispiel"
+  },
+  "LocaleSwitcher": {
+    "label": "Sprache ändern",
+    "locale": "{locale, select, id {🇮🇩 Indonesia} en {🇺🇸 English} other {Tidak Ada}}"
+  },
+  "Manifest": {
+    "description": "",
+    "name": ""
+  },
+  "Navigation": {
+    "Home": "Beranda",
+    "About": "Tentang",
+    "Projects": "Proyek",
+    "Dashboard": "Dasbord",
+    "Contact": "Kontak"
+  },
+  "NotFoundPage": {
+    "description": "Bitte überprüfe die Addressleiste deines Browsers oder verwende die Navigation um zu einer bekannten Seite zu wechseln.",
+    "title": "Seite nicht gefunden"
+  },
+  "PageLayout": {
+    "links": {
+      "docs": {
+        "description": "Erfahre mehr über next-intl in der offiziellen Dokumentation.",
+        "href": "https://next-intl-docs.vercel.app/",
+        "title": "Dokumentation"
+      },
+      "source": {
+        "description": "Sieh dir den Quellcode dieses Beispiels auf GitHub an.",
+        "href": "https://github.com/amannn/next-intl/tree/main/examples/example-app-router",
+        "title": "Quellcode"
+      }
+    }
+  },
+  "PathnamesPage": {
+    "description": "<p>Auch die Pfadnamen sind internationalisiert.</p><p>Wenn du die Standardsprache Englisch verwendest, siehst du <code>/en/pathnames</code> in der Adressleiste des Browsers auf dieser Seite.</p><p>Wenn du die Sprache auf Deutsch änderst, wird die URL entsprechend lokalisiert (<code>/de/pfadnamen</code>).</p>",
+    "title": "Pfadnamen"
+  }
+}
