@@ -1,3 +1,5 @@
+"use client";
+
 import { HiOutlineBriefcase as CareerIcon } from "react-icons/hi";
 
 import SectionHeading from "@/common/components/elements/SectionHeading";
@@ -6,21 +8,24 @@ import { CAREERS } from "@/common/constant/carreers";
 
 import CareerCard from "./CareerCard";
 import Resume from "./Resume";
+import { useTranslations } from "next-intl";
 
 export default function CareerList() {
+  const t = useTranslations("AboutPage.career");
+
   return (
     <section className="space-y-6">
       <div className="space-y-2">
-        <SectionHeading title="Career" icon={<CareerIcon />} />
+        <SectionHeading title={t("title")} icon={<CareerIcon />} />
         <SectionSubHeading>
-          <p>My professional career journey.</p>
-          <Resume/>
+          <p>{t("sub_title")}</p>
+          <Resume />
         </SectionSubHeading>
       </div>
 
       <div className="grid grid-cols-1 gap-4">
         {CAREERS?.map((career, index) => (
-          <CareerCard key={index} {...career} />
+          <CareerCard key={index} indexCareer={index} {...career} />
         ))}
       </div>
     </section>

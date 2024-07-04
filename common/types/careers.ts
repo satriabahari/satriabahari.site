@@ -10,4 +10,5 @@ export type CareerProps = {
   industry: string;
   link: string | null;
   responsibilities?: string[];
+  indexCareer?: number;
 };

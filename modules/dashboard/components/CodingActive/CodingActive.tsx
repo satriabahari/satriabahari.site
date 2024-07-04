@@ -13,6 +13,7 @@ import { fetcher } from "@/services/fetcher";
 
 import CodingActiveList from "./CodingActiveList";
 import Overview from "./Overview";
+import { useTranslations } from "next-intl";
 
 const CodingActive = () => {
   const { data } = useSWR("/api/read-stats", fetcher);
@@ -46,26 +47,23 @@ const CodingActive = () => {
     return null;
   };
 
+  const t = useTranslations("DashboardPage.wakatime");
+
   return (
     <section className="space-y-2">
       <SectionHeading
-        title="Weekly Statistics"
+        title={t("title")}
         icon={<WakatimeIcon className="mr-1" />}
       />
       <SectionSubHeading>
-        <div className="dark:text-neutral-400 md:flex-row md:items-center">
-          <span>My </span>
-          <Link
-            href="https://wakatime.com/@aulianza"
-            className="hover:text-neutral-900 hover:underline dark:hover:text-neutral-100"
-          >
-            WakaTime
-          </Link>
-          <span> last 7 days stats.</span>
-        </div>
-        <div className="text-sm text-neutral-600 dark:text-neutral-500">
-          Last update: {renderLastUpdate()}
-        </div>
+        {t("sub_title")}
+        <Link
+          href="https://wakatime.com/@satriabahari"
+          target="_blank"
+          className="text-sm text-neutral-600 hover:text-neutral-800 dark:text-neutral-500 dark:hover:text-neutral-400"
+        >
+          {t("last_update")}: {renderLastUpdate()}
+        </Link>
       </SectionSubHeading>
 
       <Overview data={data} />

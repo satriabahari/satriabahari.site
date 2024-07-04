@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 import InputField from "@/common/components/elements/InputField";
+import { useTranslations } from "next-intl";
 
 type FormEmail = {
   name: string;
@@ -47,14 +48,16 @@ export default function ContactForm() {
     return () => clearTimeout(timeout);
   }, [isLoading, isSuccess]);
 
+  const t = useTranslations("ContactPage");
   return (
     <div className="space-y-4">
-      <h2>Or send me a message</h2>
+      <h2>{t("form.title")}</h2>
       <form
         onSubmit={handleSubmit(handleFormSubmit)}
         className="space-y-4 transition-all duration-300"
       >
         <div className="flex w-full flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
+          {/* error translation placeholder */}
           <InputField
             name="name"
             rule={{ required: true }}

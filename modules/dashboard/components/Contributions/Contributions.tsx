@@ -11,6 +11,7 @@ import Overview from "./Overview";
 import Calendar from "./Calendar";
 import useSWR from "swr";
 import { fetcher } from "@/services/fetcher";
+import { useTranslations } from "next-intl";
 
 type ContributionsProps = {
   endpoint: string;
@@ -21,11 +22,13 @@ export default function Contributions({ endpoint }: ContributionsProps) {
   const contributionCalendar =
     data?.contributionsCollection?.contributionCalendar;
 
+  const t = useTranslations("DashboardPage.github");
+
   return (
     <section className="space-y-2">
-      <SectionHeading title="Contributions" icon={<GithubIcon />} />
+      <SectionHeading title={t("title")} icon={<GithubIcon />} />
       <SectionSubHeading>
-        <p>My contributions from last year on github.</p>
+        <p>{t("sub_title")}</p>
         <Link
           href={GITHUB_ACCOUNTS.github_url}
           target="_blank"
