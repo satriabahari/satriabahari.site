@@ -15,7 +15,7 @@ export const SOCIAL_MEDIA: SocialMediaProps[] = [
   {
     title: "Stay in Touch",
     description: "Reach out via email for any inquiries or collaborations.",
-    name: "Gmail",
+    name: "gmail",
     href: "mailto:satriaabaharii@gmail.com",
     icon: <SiGmail size={iconSize} />,
     backgroundIcon: <SiGmail size={backgroundIconSize} />,
@@ -29,7 +29,7 @@ export const SOCIAL_MEDIA: SocialMediaProps[] = [
   {
     title: "Follow My Journey",
     description: "Stay updated with my latest posts and stories on Instagram.",
-    name: "Instagram",
+    name: "instagram",
     href: "https://www.instagram.com/satriabaharii_/",
     icon: <InstagramIcon size={iconSize} />,
     backgroundIcon: <InstagramIcon size={backgroundIconSize} />,
@@ -44,7 +44,7 @@ export const SOCIAL_MEDIA: SocialMediaProps[] = [
     title: "Let's Connect",
     description:
       "Connect for collaboration or explore my professional experience.",
-    name: "LinkedIn",
+    name: "linkedin",
     href: "https://www.linkedin.com/in/satria-bahari/",
     icon: <LinkedinIcon size={iconSize} />,
     backgroundIcon: <LinkedinIcon size={backgroundIconSize} />,
@@ -57,7 +57,7 @@ export const SOCIAL_MEDIA: SocialMediaProps[] = [
   {
     title: "Join the Fun",
     description: "Follow me on TikTok for entertaining and engaging content.",
-    name: "TikTok",
+    name: "tiktok",
     href: "https://www.tiktok.com/@satriaabaharii/",
     icon: <TiktokIcon size={iconSize} />,
     backgroundIcon: <TiktokIcon size={backgroundIconSize} />,
@@ -70,7 +70,7 @@ export const SOCIAL_MEDIA: SocialMediaProps[] = [
   {
     title: "Explore the Code",
     description: "Explore the source code for all my projects on GitHub.",
-    name: "GitHub",
+    name: "github",
     href: "https://github.com/satriabahari",
     icon: <GithubIcon size={iconSize} />,
     backgroundIcon: <GithubIcon size={backgroundIconSize} />,
