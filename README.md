@@ -1,4 +1,4 @@
-<div align="center">
+![Screenshot 2024-07-03 205946](https://github.com/satriabahari/satria.com/assets/121304362/eaf85958-6138-483f-9a99-613e8afe27aa)<div align="center">
   <h1>satria.vercel.app</h1>
   <p>🔥 Personal website was built originally from scratch using Next.js, TypeScript, Tailwind CSS, SWR, and Prisma</p>
 
@@ -11,7 +11,9 @@
 </div>
 <br />
 
-<img width="1359" alt="image" src="https://github.com/satriabahari/satria.com/assets/121304362/af497626-1675-4037-aebe-efb91034c384">
+<img width="1359" alt="image" src="https://github.com/satriabahari/satria.com/assets/121304362/d9342cfd-3bdf-4f4c-97d2-69cafd24e3ab">
+
+
 
 ## Introduction
 
@@ -39,6 +41,7 @@ This website is built using these technologies:
 - 〰️ SWR
 - ➰ Framer Motion
 - 💢 React Icons
+- 🌐 Next-Intl
 - 🧿 Absolute Import and Path Alias
 - 📏 ESLint
 - ✨ Prettier
