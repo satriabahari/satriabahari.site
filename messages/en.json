@@ -183,7 +183,7 @@
   },
   "LocaleSwitcher": {
     "label": "Change language",
-    "locale": "{locale, select, id {🇮🇩 Indonesia} en {🇺🇸 English} other {Unknown}}"
+    "locale": "{locale, select, id {🇮🇩} en {🇺🇸} other {Unknown}}"
   },
   "Manifest": {
     "name": "next-intl example"
