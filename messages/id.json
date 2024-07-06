@@ -184,7 +184,7 @@
   },
   "LocaleSwitcher": {
     "label": "Sprache ändern",
-    "locale": "{locale, select, id {🇮🇩 Indonesia} en {🇺🇸 English} other {Tidak Ada}}"
+    "locale": "{locale, select, id {🇮🇩} en {🇺🇸} other {Tidak Ada}}"
   },
   "Manifest": {
     "description": "",

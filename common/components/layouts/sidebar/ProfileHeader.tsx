@@ -51,9 +51,11 @@ export default function ProfileHeader({
       </div>
 
       <div className="hidden w-full items-center justify-between lg:mt-2 lg:flex">
-        {/* <Status /> */}
-        <LocaleSwitcher />
-        <ThemeToggle />
+        <Status />
+        <div className="flex gap-4">
+          <LocaleSwitcher />
+          <ThemeToggle />
+        </div>
       </div>
     </div>
   );

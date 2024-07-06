@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { usePathname, useRouter } from "next/navigation";
 import { ChangeEvent, useState, useTransition } from "react";
 import { HiChevronRight as ChevronIcon } from "react-icons/hi";
+import { TbWorld as WorldIcon } from "react-icons/tb";
 
 interface LocaleSwitcherSelectProps {
   children: React.ReactNode;
@@ -39,19 +40,19 @@ export default function LocaleSwitcherSelect({
     >
       {/* <p className="sr-only">{label}</p> */}
       <select
-        className="inline-flex appearance-none rounded-md bg-neutral-100 px-3 py-1 outline-none transition duration-300 hover:bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700"
+        className="inline-flex appearance-none rounded-xl bg-neutral-100 px-2 py-1 outline-none transition duration-300 hover:bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700"
         defaultValue={defaultValue}
         disabled={isPending}
         onChange={onSelectChange}
       >
         {children}
       </select>
-      <ChevronIcon
+      {/* <ChevronIcon
         size={18}
         className={clsx({
           "rotate-90 transition-all duration-100": isShow,
         })}
-      />
+      /> */}
     </button>
   );
 }
