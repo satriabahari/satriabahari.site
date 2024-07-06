@@ -39,23 +39,6 @@
             "responsibility_1": "Developed and managed a portfolio website showcasing my best work and achievements as a Web Developer. The website emphasizes professional design and easy navigation for an optimal user experience",
             "responsibility_2": "Designed user interfaces with professional, responsive designs for both mobile and desktop devices, ensuring easy navigation for an optimal user experience"
           }
-        },
-        "career_1": {
-          "position": "Fullstack Web Developer",
-          "company": "Jambi University",
-          "logo": "/images/careers/unja.png",
-          "location": "Jambi, Indonesia 🇮🇩",
-          "location_type": "Onsite",
-          "type": "Part-time",
-          "start_date": "2024-01",
-          "end_date": "2026-01",
-          "industry": "school",
-          "link": "https://www.unja.ac.id/",
-          "responsibilities": {
-            "responsibility_1": "Developed and managed a portfolio website showcasing my best work and achievements as a Web Developer. The website emphasizes professional design and easy navigation for an optimal user experience",
-            "responsibility_2": "Designed user interfaces with professional, responsive designs for both mobile and desktop devices, ensuring easy navigation for an optimal user experience",
-            "responsibility_3": "Designed user interfaces with professional, responsive designs for both mobile and desktop devices, ensuring easy navigation for an optimal user experience"
-          }
         }
       }
     },
@@ -133,8 +116,8 @@
       "title": "Weekly Statistic",
       "sub_title": "My WakaTime last 7 days stats.",
       "last_update": "Last update",
-      "start_date": "start_date",
-      "end_date": "end_date",
+      "start_date": "Start Date",
+      "end_date": "End Date",
       "daily_average": "Daily Coding Average",
       "daily_total": "This Week Coding Time",
       "best_day": "Best Day Coding Time",
