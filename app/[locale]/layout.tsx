@@ -10,6 +10,7 @@ import { onestSans } from "@/common/styles/fonts";
 import ThemeProviderContext from "@/common/stores/theme";
 import { METADATA } from "@/common/constant/metadata";
 import Head from "next/head";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -44,13 +45,11 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning={true}>
-      <Head>
-        <script
-          defer
-          src="https://cloud.umami.is/script.js"
-          data-website-id="8e2c9f27-a12b-48ca-8130-808ebe377aca"
-        ></script>
-      </Head>
+      <Script
+        defer
+        src="https://cloud.umami.is/script.js"
+        data-website-id="8e2c9f27-a12b-48ca-8130-808ebe377aca"
+      ></Script>
       <body className={onestSans.className}>
         <NextTopLoader
           color="#05b6d3"
