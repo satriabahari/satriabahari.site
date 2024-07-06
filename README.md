@@ -63,7 +63,7 @@ The data projects on this blog are taken from the PostgreSQL database connected 
 <br /><br />
 
 - ### 🌍 International Language
-- 
+
 This website supports multiple languages, enabling users from different regions to interact with it in their preferred language. The translation is managed using i18n, making it easy to add new languages as needed.
 
 - ### 📊 Dashboard
