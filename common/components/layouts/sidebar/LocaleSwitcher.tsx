@@ -1,6 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
-import { useState } from "react";
 import { TbWorld as GlobalIcon } from "react-icons/tb";
 import LocaleSwitcherSelect from "./LocaleSwitcherSelect";
 import { locales } from "@/config";
