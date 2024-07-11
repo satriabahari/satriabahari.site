@@ -3,6 +3,7 @@ import NextTopLoader from "nextjs-toploader";
 import { Analytics } from "@vercel/analytics/react";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import { SessionProvider } from "next-auth/react";
 import "../globals.css";
 
 import Layouts from "@/common/components/layouts";
@@ -11,6 +12,8 @@ import ThemeProviderContext from "@/common/stores/theme";
 import { METADATA } from "@/common/constant/metadata";
 import Head from "next/head";
 import Script from "next/script";
+import NextAuthProvider from "@/SessionProvider";
+import { getServerSession } from "next-auth";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -42,6 +45,7 @@ export default async function RootLayout({
   params: { locale: string };
 }>) {
   const messages = await getMessages();
+  const session = await getServerSession();
 
   return (
     <html lang={locale} suppressHydrationWarning={true}>
@@ -63,9 +67,11 @@ export default async function RootLayout({
           shadow="0 0 10px #05b6d3,0 0 5px #45c6c0"
         />
         <NextIntlClientProvider messages={messages}>
-          <ThemeProviderContext>
-            <Layouts>{children}</Layouts>
-          </ThemeProviderContext>
+          <NextAuthProvider session={session}>
+            <ThemeProviderContext>
+              <Layouts>{children}</Layouts>
+            </ThemeProviderContext>
+          </NextAuthProvider>
         </NextIntlClientProvider>
         <Analytics />
       </body>
