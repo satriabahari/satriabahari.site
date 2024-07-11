@@ -42,7 +42,8 @@ export default function ChatItem({
             </div>
           )}
           <div className="hidden md:flex">
-            <ChatTime datetime={created_at} />
+            {/* <ChatTime datetime={created_at} /> */}
+            {created_at}
           </div>
         </div>
         <div className="group relative ml-1.5 flex w-fit items-center gap-3">
@@ -60,7 +61,8 @@ export default function ChatItem({
           )}
         </div>
         <div className="flex md:hidden">
-          <ChatTime datetime={created_at} />
+            {created_at}
+            {/* <ChatTime datetime={created_at} /> */}
         </div>
       </div>
     </div>
