@@ -153,7 +153,17 @@
       "total_xp": "jumlah XP"
     }
   },
-
+  "ChatRoomPage": {
+    "title": "Ruang Obrolan",
+    "description": "Tinggalkan apa pun yang ingin anda katakan, saran, pertanyaan, atau apa pun!",
+    "placeholder": "Ketik pesan...",
+    "sign_in": {
+      "title": "Silakan masuk untuk memulai. Jangan khawatir, data anda aman.",
+      "label": "Masuk dengan",
+      "signed_label": "Masuk sebagai",
+      "sign_out_label": "Keluar"
+    }
+  },
   "Error": {
     "description": "<p>Es ist leider ein Problem aufgetreten.</p><p>Du kannst versuchen <retry>diese Seite neu zu laden</retry>.</p>",
     "title": "Etwas ist schief gelaufen!"
@@ -178,6 +188,7 @@
     "About": "Tentang",
     "Projects": "Proyek",
     "Dashboard": "Dasbord",
+    "Chat Room": "Ruang Obrolan",
     "Contact": "Kontak"
   },
   "NotFoundPage": {

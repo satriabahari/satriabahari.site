@@ -24,6 +24,7 @@ import {
   SiReacttable,
   SiMysql,
   SiMongodb,
+  SiAstro,
 } from "react-icons/si";
 
 export type SkillProps = {
@@ -50,6 +51,7 @@ export const STACKS: SkillProps = {
   ),
   "React Table": <SiReacttable size={iconSize} className="text-rose-600" />,
   Vite: <SiVite size={iconSize} className="text-purple-500" />,
+  "Astro.js": <SiAstro size={iconSize} className="text-pink-500" />,
   "Next.js": <SiNextdotjs size={iconSize} />,
   Laravel: <SiLaravel size={iconSize} className="text-red-600" />,
   "Node.js": <SiNodedotjs size={iconSize} className="text-green-500" />,
