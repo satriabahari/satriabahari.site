@@ -153,6 +153,17 @@
       "total_xp": "total XP"
     }
   },
+  "ChatRoomPage": {
+    "title": "Chat Room",
+    "description": "Leave whatever you like to say, suggestions, questions or anything!",
+    "placeholder": "Type a message...",
+    "sign_in": {
+      "title": "Please sign in to start. Don't worry, your data is safe.",
+      "label": "Sign in with",
+      "signed_label": "Signed in as",
+      "sign_out_label": "Sign out"
+    }
+  },
   "Error": {
     "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
     "title": "Something went wrong!"
@@ -176,6 +187,7 @@
     "About": "About",
     "Projects": "Projects",
     "Dashboard": "Dashboard",
+    "Chat Room": "Chat Room",
     "Contact": "Contact"
   },
   "NotFoundPage": {

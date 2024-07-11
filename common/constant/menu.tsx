@@ -5,6 +5,8 @@ import {
   BiCategory as DashboardIcon,
   BiBook as ContactIcon,
 } from "react-icons/bi";
+import { PiChatTeardropDotsBold as ChatRoomIcon} from "react-icons/pi";
+
 
 import { MenuItemProps } from "../types/menu";
 
@@ -43,6 +45,14 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
     isExternal: false,
     eventName: "Pages: Dashboard",
+  },
+  {
+    title: "Chat Room",
+    href: "/chat",
+    icon: <ChatRoomIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: "Pages: Chat Room",
   },
   {
     title: "Contact",
