@@ -14,10 +14,6 @@ export const metadata: Metadata = {
   },
 };
 
-const PAGE_TITLE = "Dashboard";
-const PAGE_DESCRIPTION =
-  "This is my personal dashboard, built with Next.js API routes deployed as serverless functions.";
-
 export default function DashboardPage() {
   const t = useTranslations("DashboardPage");
   return (

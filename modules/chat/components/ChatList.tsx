@@ -1,15 +1,19 @@
 "use client";
 
-import { ChatListProps } from "@/common/types/chat";
-import ChatItem from "./ChatItem";
 import { useEffect, useRef, useState } from "react";
+
+import ChatItem from "./ChatItem";
+
+import { ChatListProps } from "@/common/types/chat";
 
 interface ChatListPropsNew extends ChatListProps {
   onDeleteMessage: (id: string) => void;
+  onClickReply: (name: string) => void;
 }
 export default function ChatList({
   messages,
   onDeleteMessage,
+  onClickReply,
 }: ChatListPropsNew) {
   const chatListRef = useRef<HTMLDivElement | null>(null);
   const [hasScrolledUp, setHasScrolledUp] = useState(false);
@@ -61,7 +65,12 @@ export default function ChatList({
   return (
     <div ref={chatListRef} className="h-80 space-y-5 overflow-y-auto py-4">
       {messages?.map((chat, index) => (
-        <ChatItem key={index} onDelete={onDeleteMessage} {...chat} />
+        <ChatItem
+          key={index}
+          onDelete={onDeleteMessage}
+          onReply={onClickReply}
+          {...chat}
+        />
       ))}
     </div>
   );

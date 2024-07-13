@@ -4,6 +4,8 @@ export interface MessageProps {
   email: string;
   image?: string;
   message: string;
+  is_reply?: boolean;
+  reply_to?: string;
   created_at: string;
   is_show?: boolean;
 }

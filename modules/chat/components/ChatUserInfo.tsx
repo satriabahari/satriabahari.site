@@ -1,7 +1,6 @@
+import React from "react";
 import { signOut, useSession } from "next-auth/react";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
-import React from "react";
 import { HiOutlineLogout as SignOutIcon } from "react-icons/hi";
 
 export default function ChatUserInfo() {
@@ -20,7 +19,7 @@ export default function ChatUserInfo() {
       </div>
       <button
         onClick={() => signOut()}
-        className="flex cursor-pointer items-center gap-1 rounded-md bg-red-600 px-3 py-1 font-medium text-red-50 transition duration-100 active:scale-90 dark:hover:bg-red-500"
+        className="flex cursor-pointer items-center gap-1 rounded-md bg-red-600 px-3 py-1 font-medium text-red-50 transition duration-100 hover:bg-red-500 active:scale-90"
       >
         <SignOutIcon size={16} />
         <span>{t("sign_out_label")}</span>

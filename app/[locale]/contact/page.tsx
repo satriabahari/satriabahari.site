@@ -14,9 +14,6 @@ export const metadata: Metadata = {
   },
 };
 
-const PAGE_TITLE = "Contact";
-const PAGE_DESCRIPTION = "Let`s get in touch";
-
 export default function ContactPage() {
   const t = useTranslations("ContactPage");
   return (

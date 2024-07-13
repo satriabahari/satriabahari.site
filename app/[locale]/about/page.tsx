@@ -14,9 +14,6 @@ export const metadata: Metadata = {
   },
 };
 
-const PAGE_TITLE = "About";
-const PAGE_DESCRIPTION = "A short story of me";
-
 export default function AboutPage() {
   const t = useTranslations("AboutPage");
   return (

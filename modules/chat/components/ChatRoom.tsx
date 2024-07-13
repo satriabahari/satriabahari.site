@@ -1,22 +1,39 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
+import { getDatabase, onValue, ref, remove, set } from "firebase/database";
+import { v4 as uuidv4 } from "uuid";
+
 import ChatAuth from "./ChatAuth";
 import ChatInput from "./ChatInput";
 import ChatList from "./ChatList";
-import { getDatabase, onValue, ref, remove, set } from "firebase/database";
+
 import { firebase } from "@/common/libs/firebase";
-import { v4 as uuidv4 } from "uuid";
 import { MessageProps } from "@/common/types/chat";
+import { useNotif } from "@/hooks/useNotif";
+import ChatItemSkeleton from "./ChatItemSkeleton";
 
 export const ChatRoom = () => {
+  const [messages, setMessages] = useState<MessageProps[]>([]);
+  const [isReply, setIsReply] = useState({ isReply: false, name: "" });
+  const [isLoading, setIsLoading] = useState(true);
+
   const { data: session } = useSession();
 
-  const [messages, setMessages] = useState<MessageProps[]>([]);
+  const notif = useNotif();
 
   const database = getDatabase(firebase);
   const databaseChat = process.env.NEXT_PUBLIC_FIREBASE_CHAT_DB;
+
+  const handleClickReply = (name: string) => {
+    if (!session?.user) return notif("Please sign in to reply");
+    setIsReply({ isReply: true, name: name });
+  };
+
+  const handleCancelReply = () => {
+    setIsReply({ isReply: false, name: "" });
+  };
 
   const handleMessage = (message: string) => {
     const messageId = uuidv4();
@@ -27,6 +44,8 @@ export const ChatRoom = () => {
       email: session?.user?.email,
       image: session?.user?.image,
       message,
+      is_reply: isReply.isReply,
+      reply_to: isReply.name,
       created_at: new Date().toISOString(),
       is_show: true,
     });
@@ -52,20 +71,32 @@ export const ChatRoom = () => {
           return dateA.getTime() - dateB.getTime();
         });
         setMessages(sortedMessage);
+        setIsLoading(false);
       }
     });
   }, [database, databaseChat]);
 
   return (
     <>
-      {/* {session && (
-        <>
-          Signed in as {session.user?.name} ({session.user?.email})<br />
-          <button onClick={() => signOut()}>Sign out</button>
-        </>
-      )} */}
-      <ChatList messages={messages} onDeleteMessage={handleDeleteMessage} />
-      {session ? <ChatInput onSendMessage={handleMessage} /> : <ChatAuth />}
+      {isLoading ? (
+        <ChatItemSkeleton />
+      ) : (
+        <ChatList
+          messages={messages}
+          onDeleteMessage={handleDeleteMessage}
+          onClickReply={handleClickReply}
+        />
+      )}
+
+      {session ? (
+        <ChatInput
+          onSendMessage={handleMessage}
+          onCancelReply={handleCancelReply}
+          replyName={isReply.name}
+        />
+      ) : (
+        <ChatAuth />
+      )}
     </>
   );
 };
