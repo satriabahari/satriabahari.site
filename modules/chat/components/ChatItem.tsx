@@ -36,7 +36,7 @@ export default function ChatItem({
   return (
     <div
       className={clsx(
-        "flex items-center gap-3 px-8",
+        "flex items-center gap-3 lg:px-8 px-4",
         isAuthor && "flex-row-reverse",
       )}
     >
