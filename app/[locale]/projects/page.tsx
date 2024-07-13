@@ -15,10 +15,6 @@ export const metadata: Metadata = {
   },
 };
 
-const PAGE_TITLE = "Projects";
-const PAGE_DESCRIPTION =
-  "Several projects that I have worked on, both private and open source.";
-
 export default function ProjectsPage() {
   const t = useTranslations("ProjectsPage");
   return (

@@ -1,10 +1,13 @@
 "use client";
 
 import { useEffect } from "react";
+import dynamic from "next/dynamic";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 import Sidebar from "./sidebar";
+
+const Notif = dynamic(() => import("../elements/Notif"), { ssr: false });
 
 type LayoutsProps = {
   children: React.ReactNode;
@@ -25,6 +28,7 @@ export default function Layouts({ children }: LayoutsProps) {
           {children}
         </main>
       </div>
+      <Notif />
     </div>
   );
 }

@@ -6,7 +6,7 @@ interface ChatTimeProps {
 }
 
 const ChatTime = ({ datetime }: ChatTimeProps) => {
-  const [formattedTime, setFormattedTime] = useState<string>(
+  const [formattedTime, setFormattedTime] = useState(
     formatDistanceToNow(new Date(datetime), { addSuffix: true }),
   );
 
