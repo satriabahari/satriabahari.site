@@ -23,6 +23,7 @@
       "title": "Career",
       "sub_title": "My professional career journey.",
       "resume_download_button": "Download Resume",
+      "portfolio_download_button": "Download Portfolio",
       "careers": {
         "career_0": {
           "position": "Fullstack Web Developer",
