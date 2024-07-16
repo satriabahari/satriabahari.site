@@ -1,10 +1,11 @@
 import Image from "next/image";
 import { HiOutlineArrowSmRight as ViewIcon } from "react-icons/hi";
+import { useTranslations } from "next-intl";
+import { TbPinnedFilled as PinIcon } from "react-icons/tb";
 
 import Card from "@/common/components/elements/Card";
 import { STACKS } from "@/common/constant/stacks";
 import { ProjectItem } from "@/common/types/projects";
-import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/navigation";
 
 export default function ProjectCard({
@@ -18,11 +19,17 @@ export default function ProjectCard({
   const stacksArray = JSON.parse(stacks);
   const trimmedContent =
     description.slice(0, 70) + (description.length > 70 ? "..." : "");
-  const t = useTranslations("ProjectsPage")
-  const locale = useLocale();
+  const t = useTranslations("ProjectsPage");
+  console.log(title);
   return (
     <Link href={`/projects/${slug}`}>
-      <Card className="group cursor-pointer">
+      <Card className="group relative cursor-pointer">
+        {is_featured && (
+          <div className="absolute right-0 top-0 z-10 items-center flex gap-x-1 rounded-bl-lg rounded-tr-lg bg-cyan-500 px-2 py-1 text-sm font-medium text-neutral-900">
+            <PinIcon size={15} />
+            <span>Featured</span>
+          </div>
+        )}
         <div className="relative">
           <Image
             src={image}
