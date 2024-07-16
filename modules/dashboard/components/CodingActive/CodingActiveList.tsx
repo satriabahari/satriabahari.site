@@ -1,5 +1,6 @@
 import Card from "@/common/components/elements/Card";
 import Progress from "./Progress";
+import { useTranslations } from "next-intl";
 
 type ItemProps = {
   name: string;
@@ -18,17 +19,18 @@ export default function CodingActiveList({ data }: CodingActiveListProps) {
   if (!data) {
     return null;
   }
+  const t = useTranslations("DashboardPage.wakatime");
 
   return (
     <Card className="flex flex-col gap-y-3 px-4 py-3">
-      <p className="dark:text-neutral-400">Languages</p>
+      <p className="dark:text-neutral-400">{t("languages")}</p>
 
       <ul className="grid grid-cols-1 gap-x-12 sm:grid-cols-2">
         {data?.languages?.map((subItem) => (
           <li key={subItem?.name}>
             <Progress
               data={subItem}
-              className={"bg-gradient-to-r from-sky-500 to-blue-600"}
+              className={"bg-gradient-to-r from-cyan-600 to-green-500"}
             />
           </li>
         ))}

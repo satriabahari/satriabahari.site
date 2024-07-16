@@ -7,7 +7,7 @@ export default function Contact() {
   return (
     <>
       <ContactList />
-      <Breakline />
+      <Breakline className="my-6"/>
       <ContactForm />
     </>
   );

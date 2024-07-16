@@ -1,6 +1,7 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/navigation";
+import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { FiArrowLeftCircle as BackButtonIcon } from "react-icons/fi";
 
@@ -26,10 +27,12 @@ export default function BackButton({ url }: BackButtonProps) {
     return (
       <>
         <BackButtonIcon size={20} />
-        <span>Back</span>
+        <span>{t("back_button")}</span>
       </>
     );
   };
+
+  const t = useTranslations("ProjectsPage")
 
   return (
     <div className="w-fit">

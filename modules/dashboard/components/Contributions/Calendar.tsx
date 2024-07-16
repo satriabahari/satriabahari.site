@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import { motion } from "framer-motion";
+import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 
 type Contribution = {
@@ -59,6 +60,9 @@ export default function Calendar({ data }: CalendarProps) {
     }) ?? [];
 
   const contributionColors = data?.colors ?? [];
+
+  const t = useTranslations("DashboardPage.github");
+  const locale = useLocale();
 
   return (
     <>
@@ -119,7 +123,9 @@ export default function Calendar({ data }: CalendarProps) {
 
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div className="flex items-center gap-2 text-sm">
-          <span className="dark:text-neutral-400">Less</span>
+          <span className="dark:text-neutral-400">
+            {t("title_less_contribution")}
+          </span>
           <ul className="flex gap-1">
             <li className="h-[10px] w-[10px] rounded-sm bg-neutral-300 dark:bg-neutral-800" />
             {contributionColors.map((item, index) => (
@@ -139,7 +145,7 @@ export default function Calendar({ data }: CalendarProps) {
               />
             ))}
           </ul>
-          <span>More</span>
+          <span>{t("title_more_contribution")}</span>
         </div>
 
         <div
@@ -148,7 +154,8 @@ export default function Calendar({ data }: CalendarProps) {
             "rounded bg-neutral-200 px-2 text-sm dark:bg-neutral-700",
           )}
         >
-          {selectContribution?.count} contributions on{" "}
+          {selectContribution?.count}{" "}
+          {locale == "en" ? "contributions on" : "kontribusi pada"}{" "}
           {selectContribution?.date}
         </div>
       </div>

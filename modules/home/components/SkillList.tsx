@@ -4,17 +4,20 @@ import { STACKS } from "@/common/constant/stacks";
 import { BiCodeAlt as SkillsIcon } from "react-icons/bi";
 import SkillCard from "./SkillCard";
 import MarqueeElement from "@/common/components/elements/MarqueeElement";
+import { useTranslations } from "next-intl";
 
 export default function SkillList() {
   const stacksInArray: Array<[string, JSX.Element]> = Object.entries(
     STACKS,
   ).sort(() => Math.random() - 0.5);
+  const t = useTranslations("HomePage");
+
   return (
     <section className="space-y-6">
       <div className="space-y-2">
-        <SectionHeading title="Skills" icon={<SkillsIcon />} />
+        <SectionHeading title={t("skills.title")} icon={<SkillsIcon />} />
         <SectionSubHeading>
-          <p>My professional skills.</p>
+          <p>{t("skills.sub_title")}</p>
         </SectionSubHeading>
       </div>
 

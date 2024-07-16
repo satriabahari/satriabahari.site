@@ -4,6 +4,7 @@ import Container from "@/common/components/elements/Container";
 import PageHeading from "@/common/components/elements/PageHeading";
 import Contact from "@/modules/contact";
 import { METADATA } from "@/common/constant/metadata";
+import { useTranslations } from "next-intl";
 
 export const metadata: Metadata = {
   title: `Contact ${METADATA.exTitle}`,
@@ -13,13 +14,11 @@ export const metadata: Metadata = {
   },
 };
 
-const PAGE_TITLE = "Contact";
-const PAGE_DESCRIPTION = "Let`s get in touch";
-
 export default function ContactPage() {
+  const t = useTranslations("ContactPage");
   return (
     <Container data-aos="fade-up">
-      <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
+      <PageHeading title={t("title")} description={t("description")} />
       <Contact />
     </Container>
   );

@@ -6,6 +6,7 @@ import Tooltip from "../../elements/Tooltip";
 import Image from "../../elements/Image";
 import Status from "../../elements/Status";
 import ThemeToggle from "../../elements/ThemeToggle";
+import LocaleSwitcher from "./LocaleSwitcher";
 
 type ProfileHeaderProps = {
   expandMenu: boolean;
@@ -23,6 +24,7 @@ export default function ProfileHeader({
         expandMenu && "flex-col !items-start",
       )}
     >
+      {/* Bermasalah (bug) */}
       <Image
         src={"/images/satria.jpg"}
         width={expandMenu ? 80 : imageSize * 0.9}
@@ -48,9 +50,12 @@ export default function ProfileHeader({
         @satriabaharii_
       </div>
 
-      <div className="hidden w-full items-center justify-between lg:flex lg:mt-2">
+      <div className="hidden w-full items-center justify-between lg:mt-2 lg:flex">
         <Status />
-        <ThemeToggle />
+        <div className="flex gap-4">
+          <LocaleSwitcher />
+          <ThemeToggle />
+        </div>
       </div>
     </div>
   );

@@ -10,6 +10,7 @@ import { fetcher } from "@/services/fetcher";
 
 import Overview from "./Overview";
 import { CODEWARS_ACCOUNT } from "@/common/constant/codewars";
+import { useTranslations } from "next-intl";
 
 type CodewarsProps = {
   endpoint: string;
@@ -19,10 +20,12 @@ export default function Codewars({ endpoint }: CodewarsProps) {
   const { data } = useSWR(endpoint, fetcher);
   const { codewars_url } = CODEWARS_ACCOUNT;
 
+  const t = useTranslations("DashboardPage.codewars");
+
   return (
     <section className="space-y-2">
       <SectionHeading
-        title="Codewars Statistic"
+        title={t("title")}
         icon={
           <div className="h-5 w-5 overflow-hidden rounded-full">
             <CodewarsIcon />
@@ -30,7 +33,7 @@ export default function Codewars({ endpoint }: CodewarsProps) {
         }
       />
       <SectionSubHeading>
-        <p>My statistic score on codewars.</p>
+        <p>{t("sub_title")}</p>
         <Link
           href={codewars_url}
           target="_blank"
