@@ -9,6 +9,7 @@ import { CAREERS } from "@/common/constant/carreers";
 import CareerCard from "./CareerCard";
 import Resume from "./Resume";
 import { useTranslations } from "next-intl";
+import Portfolio from "./Portfolio";
 
 export default function CareerList() {
   const t = useTranslations("AboutPage.career");
@@ -19,7 +20,10 @@ export default function CareerList() {
         <SectionHeading title={t("title")} icon={<CareerIcon />} />
         <SectionSubHeading>
           <p>{t("sub_title")}</p>
-          <Resume />
+          <div className="flex gap-4 mt-2 md:mt-0">
+            <Portfolio />
+            <Resume />
+          </div>
         </SectionSubHeading>
       </div>
 
