@@ -59,7 +59,11 @@ export default function ChatItem({
         >
           <div className="text-sm dark:text-neutral-200">{name}</div>
           {isAuthor && (
-            <div className="flex items-center gap-[2px] rounded-full bg-gradient-to-b from-sky-500 to-sky-700 px-1.5 py-0.5 text-sky-50 ">
+            // <div className="flex items-center gap-[2px] rounded-full bg-gradient-to-b from-sky-500 to-sky-700 px-1.5 py-0.5 text-sky-50 ">
+            //   <AdminIcon size={13} />
+            //   <span className="text-[10px]">Author</span>
+            // </div>
+            <div className="flex items-center gap-[2px] rounded-full bg-sky-500/20 font-medium px-1.5 py-0.5 text-sky-500 ">
               <AdminIcon size={13} />
               <span className="text-[10px]">Author</span>
             </div>
