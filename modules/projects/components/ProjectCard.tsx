@@ -25,7 +25,7 @@ export default function ProjectCard({
     <Link href={`/projects/${slug}`}>
       <Card className="group relative cursor-pointer">
         {is_featured && (
-          <div className="absolute right-0 top-0 z-10 items-center flex gap-x-1 rounded-bl-lg rounded-tr-lg bg-cyan-500 px-2 py-1 text-sm font-medium text-neutral-900">
+          <div className="absolute right-0 top-0 z-10 flex items-center gap-x-1 rounded-bl-lg rounded-tr-lg bg-cyan-500 px-2 py-1 text-sm font-medium text-neutral-900">
             <PinIcon size={15} />
             <span>Featured</span>
           </div>
