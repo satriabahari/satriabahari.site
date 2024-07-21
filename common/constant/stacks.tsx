@@ -31,7 +31,7 @@ export type SkillProps = {
   [key: string]: JSX.Element;
 };
 
-const iconSize = 24;
+const iconSize = 22;
 
 export const STACKS: SkillProps = {
   HTML: <SiHtml5 size={iconSize} className="text-orange-500" />,
@@ -65,3 +65,4 @@ export const STACKS: SkillProps = {
   Prisma: <SiPrisma size={iconSize} className="text-teal-500" />,
   Github: <SiGithub size={iconSize} />,
 };
+

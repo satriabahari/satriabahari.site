@@ -11,9 +11,9 @@ import ProjectCard from "./ProjectCard";
 export default function Projects() {
   const { data } = useSWR("/api/projects", fetcher);
 
-  const filteredProjects: ProjectItem[] = data?.filter(
-    (item: ProjectItem) => item?.is_show,
-  );
+  const filteredProjects: ProjectItem[] = data
+    ?.filter((item: ProjectItem) => item?.is_show)
+    .sort((a: ProjectItem, b: ProjectItem) => a.id - b.id);
 
   if (filteredProjects?.length === 0) {
     return <EmptyState message="No Data" />;
