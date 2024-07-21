@@ -3,29 +3,31 @@
 import Link from "next/link";
 import { SiCodewars as CodewarsIcon } from "react-icons/si";
 import useSWR from "swr";
+import { useTranslations } from "next-intl";
+
+import CodewarsSkeleton from "./CodewarsSkeleton";
+import Overview from "./Overview";
 
 import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
 import { fetcher } from "@/services/fetcher";
-
-import Overview from "./Overview";
 import { CODEWARS_ACCOUNT } from "@/common/constant/codewars";
-import { useTranslations } from "next-intl";
+import EmptyState from "@/common/components/elements/EmptyState";
 
 type CodewarsProps = {
   endpoint: string;
 };
 
 export default function Codewars({ endpoint }: CodewarsProps) {
-  const { data } = useSWR(endpoint, fetcher);
+  const { data, isLoading, error } = useSWR(endpoint, fetcher);
   const { codewars_url } = CODEWARS_ACCOUNT;
 
-  const t = useTranslations("DashboardPage.codewars");
+  const t = useTranslations("DashboardPage");
 
   return (
     <section className="space-y-2">
       <SectionHeading
-        title={t("title")}
+        title={t("codewars.title")}
         icon={
           <div className="h-5 w-5 overflow-hidden rounded-full">
             <CodewarsIcon />
@@ -33,7 +35,7 @@ export default function Codewars({ endpoint }: CodewarsProps) {
         }
       />
       <SectionSubHeading>
-        <p>{t("sub_title")}</p>
+        <p>{t("codewars.sub_title")}</p>
         <Link
           href={codewars_url}
           target="_blank"
@@ -43,7 +45,13 @@ export default function Codewars({ endpoint }: CodewarsProps) {
         </Link>
       </SectionSubHeading>
 
-      {data && <Overview data={data} />}
+      {error ? (
+        <EmptyState message={t("error")} />
+      ) : isLoading ? (
+        <CodewarsSkeleton />
+      ) : (
+        <Overview data={data} />
+      )}
     </section>
   );
 }

@@ -2,33 +2,35 @@
 
 import Link from "next/link";
 import { BsGithub as GithubIcon } from "react-icons/bs";
+import { useTranslations } from "next-intl";
+import useSWR from "swr";
+
+import Overview from "./Overview";
+import Calendar from "./Calendar";
 
 import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
 import { GITHUB_ACCOUNTS } from "@/common/constant/github";
-
-import Overview from "./Overview";
-import Calendar from "./Calendar";
-import useSWR from "swr";
 import { fetcher } from "@/services/fetcher";
-import { useTranslations } from "next-intl";
+import ContributionsSkeleton from "./ContributionsSkeleton";
+import EmptyState from "@/common/components/elements/EmptyState";
 
 type ContributionsProps = {
   endpoint: string;
 };
 
 export default function Contributions({ endpoint }: ContributionsProps) {
-  const { data } = useSWR(endpoint, fetcher);
+  const { data, isLoading, error } = useSWR(endpoint, fetcher);
   const contributionCalendar =
     data?.contributionsCollection?.contributionCalendar;
 
-  const t = useTranslations("DashboardPage.github");
+  const t = useTranslations("DashboardPage");
 
   return (
     <section className="space-y-2">
-      <SectionHeading title={t("title")} icon={<GithubIcon />} />
+      <SectionHeading title={t("github.title")} icon={<GithubIcon />} />
       <SectionSubHeading>
-        <p>{t("sub_title")}</p>
+        <p>{t("github.sub_title")}</p>
         <Link
           href={GITHUB_ACCOUNTS.github_url}
           target="_blank"
@@ -38,12 +40,16 @@ export default function Contributions({ endpoint }: ContributionsProps) {
         </Link>
       </SectionSubHeading>
 
-      {data ? (
+      {error ? (
+        <EmptyState message={t("error")} />
+      ) : isLoading ? (
+        <ContributionsSkeleton />
+      ) : (
         <div className="space-y-3">
           <Overview data={contributionCalendar} />
           <Calendar data={contributionCalendar} />
         </div>
-      ) : null}
+      )}
     </section>
   );
 }

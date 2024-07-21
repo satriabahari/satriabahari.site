@@ -102,6 +102,7 @@
   "DashboardPage": {
     "title": "Dashboard",
     "description": "This is my personal dashboard, built with Next.js API routes deployed as serverless functions.",
+    "error": "An error occurred on the server.",
     "github": {
       "title": "Contributions",
       "sub_title": "My contributions from last year on github.",
