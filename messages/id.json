@@ -102,6 +102,7 @@
   "DashboardPage": {
     "title": "Dasbor",
     "description": "Ini adalah dasbor pribadi saya, dibangun dengan jalur API Next.js yang diterapkan sebagai fungsi serverless.",
+    "error": "Terjadi kesalahan di server.",
     "github": {
       "title": "Kontribusi",
       "sub_title": "Kontribusi saya dari tahun lalu di GitHub.",

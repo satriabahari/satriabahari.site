@@ -13,16 +13,18 @@ import Profile from "./Profile";
 import Leaderboard from "./Leaderboard";
 import { MONKEYTYPE_ACCOUNT } from "@/common/constant/monkeytype";
 import { useTranslations } from "next-intl";
+import MonkeytypeSkeleton from "./MonkeytypeSkeleton";
+import EmptyState from "@/common/components/elements/EmptyState";
 
 export default function Monkeytype() {
-  const { data } = useSWR("/api/monkeytype", fetcher);
+  const { data, isLoading, error } = useSWR("/api/monkeytype", fetcher);
 
-  const t = useTranslations("DashboardPage.monkeytype");
+  const t = useTranslations("DashboardPage");
 
   return (
     <section className="space-y-2">
       <SectionHeading
-        title={t("title")}
+        title={t("monkeytype.title")}
         icon={
           <div className="h-5 w-5 overflow-hidden rounded-full">
             <MonkeytypeIcon />
@@ -30,7 +32,7 @@ export default function Monkeytype() {
         }
       />
       <SectionSubHeading>
-        <p>{t("sub_title")}</p>
+        <p>{t("monkeytype.sub_title")}</p>
         <Link
           href={MONKEYTYPE_ACCOUNT.monkeytype_url}
           target="_blank"
@@ -40,7 +42,11 @@ export default function Monkeytype() {
         </Link>
       </SectionSubHeading>
 
-      {data && (
+      {error ? (
+        <EmptyState message={t("error")} />
+      ) : isLoading ? (
+        <MonkeytypeSkeleton />
+      ) : (
         <div className="flex flex-col gap-4">
           <Profile data={data} />
           <Leaderboard data={data} />
