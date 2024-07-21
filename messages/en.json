@@ -63,7 +63,9 @@
     "tech_stack": "Tech Stack",
     "back_button": "Back",
     "source_code_text": "Source Code",
-    "live_demo_text": "Live Demo"
+    "live_demo_text": "Live Demo",
+    "error": "An error occurred on the server.",
+    "no_data": "No data available."
   },
   "ContactPage": {
     "title": "Contact",

@@ -19,13 +19,14 @@ export default function ProjectCard({
   const stacksArray = JSON.parse(stacks);
   const trimmedContent =
     description.slice(0, 80) + (description.length > 80 ? "..." : "");
+
   const t = useTranslations("ProjectsPage");
-  console.log(title);
+
   return (
     <Link href={`/projects/${slug}`}>
       <Card className="group relative cursor-pointer">
         {is_featured && (
-          <div className="absolute right-0 top-0 z-10 items-center flex gap-x-1 rounded-bl-lg rounded-tr-lg bg-cyan-500 px-2 py-1 text-sm font-medium text-neutral-900">
+          <div className="absolute right-0 top-0 z-10 flex items-center gap-x-1 rounded-bl-lg rounded-tr-lg bg-cyan-500 px-2 py-1 text-sm font-medium text-neutral-900">
             <PinIcon size={15} />
             <span>Featured</span>
           </div>
@@ -37,6 +38,7 @@ export default function ProjectCard({
             width={450}
             height={200}
             className="h-full w-full rounded-t-xl object-cover md:w-auto"
+            priority
           />
           <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center gap-1 rounded-t-xl bg-black text-sm font-medium text-neutral-50 opacity-0 transition-opacity duration-300 group-hover:opacity-80">
             <span>{t("view_project")}</span>
