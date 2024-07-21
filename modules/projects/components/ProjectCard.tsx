@@ -18,7 +18,7 @@ export default function ProjectCard({
 }: ProjectItem) {
   const stacksArray = JSON.parse(stacks);
   const trimmedContent =
-    description.slice(0, 70) + (description.length > 70 ? "..." : "");
+    description.slice(0, 80) + (description.length > 80 ? "..." : "");
   const t = useTranslations("ProjectsPage");
   console.log(title);
   return (
