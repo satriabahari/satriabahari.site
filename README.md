@@ -60,6 +60,7 @@ Data is retrieved using the Wakatime API and then displayed on the dashboard, bu
 - ### 🗳 Projects
 
 The data projects on this blog are taken from the PostgreSQL database connected through the Prisma Client. The database for this application is hosted on Supabase DB.The data fetching method used to retrieve data projects is Incremental Static Regeneration (ISR) with 1 second revalidation and Server-Side Rendering (SSR) for the project details..
+<br /><br />
 
 - ### 🌍 International Language
 
@@ -93,19 +94,19 @@ If you are interested in running this project on your local machine, you can do 
 1. Clone using git
 
    ```bash
-   git clone https://github.com/satriabahari/satria.com
+   git clone https://github.com/satriabahari/satriabahari.site
    ```
 
 2. Using `create-next-app`
 
    ```bash
-   npx create-next-app -e https://github.com/satriabahari/satria.com project-name
+   npx create-next-app -e https://github.com/satriabahari/satriabahari.site project-name
    ```
 
 3. Using `degit`
 
    ```bash
-   npx degit satriabahari/satria.com YOUR_APP_NAME
+   npx degit satriabahari/satriabahari.site YOUR_APP_NAME
    ```
 
 4. Deploy to Vercel or Netlify, etc
