@@ -28,7 +28,7 @@ export default function Projects() {
   }
 
   if (isLoading) {
-    return <ProjectSkeleton/>;
+    return <ProjectSkeleton />;
   }
 
   return (

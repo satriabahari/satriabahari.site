@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 
 import { STACKS } from "@/common/constant/stacks";
 import { ProjectItem } from "@/common/types/projects";
@@ -48,6 +47,7 @@ export default function ProjectDetail({
           width={1000}
           height={400}
           className="transition duration-500 hover:scale-[1.04]"
+          priority
         />
       </div>
 
