@@ -1,4 +1,4 @@
-  <h1>satria.vercel.app</h1>
+  <h1>satriabahari.site</h1>
   <p>🔥 Personal website was built originally from scratch using Next.js, TypeScript, Tailwind CSS, SWR, and Prisma</p>
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/satriabahari/satria.com)](https://github.com/satriabahari/satria.com/stargazers)
