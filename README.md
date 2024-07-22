@@ -60,7 +60,6 @@ Data is retrieved using the Wakatime API and then displayed on the dashboard, bu
 - ### 🗳 Projects
 
 The data projects on this blog are taken from the PostgreSQL database connected through the Prisma Client. The database for this application is hosted on Supabase DB.The data fetching method used to retrieve data projects is Incremental Static Regeneration (ISR) with 1 second revalidation and Server-Side Rendering (SSR) for the project details..
-<br /><br />
 
 - ### 🌍 International Language
 
