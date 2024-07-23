@@ -186,6 +186,6 @@
   },
   "NotFoundPage": {
     "title": "Page not found",
-    "label": "Take me home"
+    "button": "Take me home"
   }
 }
