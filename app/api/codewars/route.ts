@@ -1,5 +1,6 @@
-import { getCodewarsData } from "@/services/codewars";
 import { NextResponse } from "next/server";
+
+import { getCodewarsData } from "@/services/codewars";
 
 export const GET = async () => {
   try {

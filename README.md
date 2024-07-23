@@ -1,4 +1,4 @@
-  <h1>satria.vercel.app</h1>
+  <h1>satriabahari.site</h1>
   <p>🔥 Personal website was built originally from scratch using Next.js, TypeScript, Tailwind CSS, SWR, and Prisma</p>
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/satriabahari/satria.com)](https://github.com/satriabahari/satria.com/stargazers)
@@ -94,19 +94,19 @@ If you are interested in running this project on your local machine, you can do 
 1. Clone using git
 
    ```bash
-   git clone https://github.com/satriabahari/satria.com
+   git clone https://github.com/satriabahari/satriabahari.site
    ```
 
 2. Using `create-next-app`
 
    ```bash
-   npx create-next-app -e https://github.com/satriabahari/satria.com project-name
+   npx create-next-app -e https://github.com/satriabahari/satriabahari.site project-name
    ```
 
 3. Using `degit`
 
    ```bash
-   npx degit satriabahari/satria.com YOUR_APP_NAME
+   npx degit satriabahari/satriabahari.site YOUR_APP_NAME
    ```
 
 4. Deploy to Vercel or Netlify, etc

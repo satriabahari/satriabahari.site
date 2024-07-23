@@ -63,7 +63,9 @@
     "tech_stack": "Tumpukan Teknologi",
     "back_button": "Kembali",
     "source_code_text": "Kode Sumber",
-    "live_demo_text": "Demo Langsung"
+    "live_demo_text": "Demo Langsung",
+    "error": "Terjadi kesalahan di server.",
+    "no_data": "Tidak ada data yang tersedia"
   },
   "ContactPage": {
     "title": "Kontak",
@@ -102,6 +104,7 @@
   "DashboardPage": {
     "title": "Dasbor",
     "description": "Ini adalah dasbor pribadi saya, dibangun dengan jalur API Next.js yang diterapkan sebagai fungsi serverless.",
+    "error": "Terjadi kesalahan di server.",
     "github": {
       "title": "Kontribusi",
       "sub_title": "Kontribusi saya dari tahun lalu di GitHub.",

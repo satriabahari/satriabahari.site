@@ -18,9 +18,10 @@ export default function ProjectCard({
 }: ProjectItem) {
   const stacksArray = JSON.parse(stacks);
   const trimmedContent =
-    description.slice(0, 70) + (description.length > 70 ? "..." : "");
+    description.slice(0, 80) + (description.length > 80 ? "..." : "");
+
   const t = useTranslations("ProjectsPage");
-  console.log(title);
+
   return (
     <Link href={`/projects/${slug}`}>
       <Card className="group relative cursor-pointer">
@@ -37,6 +38,7 @@ export default function ProjectCard({
             width={450}
             height={200}
             className="h-full w-full rounded-t-xl object-cover md:w-auto"
+            priority
           />
           <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center gap-1 rounded-t-xl bg-black text-sm font-medium text-neutral-50 opacity-0 transition-opacity duration-300 group-hover:opacity-80">
             <span>{t("view_project")}</span>

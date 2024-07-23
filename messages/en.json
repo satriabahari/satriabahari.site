@@ -63,7 +63,9 @@
     "tech_stack": "Tech Stack",
     "back_button": "Back",
     "source_code_text": "Source Code",
-    "live_demo_text": "Live Demo"
+    "live_demo_text": "Live Demo",
+    "error": "An error occurred on the server.",
+    "no_data": "No data available."
   },
   "ContactPage": {
     "title": "Contact",
@@ -102,6 +104,7 @@
   "DashboardPage": {
     "title": "Dashboard",
     "description": "This is my personal dashboard, built with Next.js API routes deployed as serverless functions.",
+    "error": "An error occurred on the server.",
     "github": {
       "title": "Contributions",
       "sub_title": "My contributions from last year on github.",
