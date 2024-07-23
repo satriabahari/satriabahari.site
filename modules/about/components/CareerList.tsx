@@ -20,7 +20,7 @@ export default function CareerList() {
         <SectionHeading title={t("title")} icon={<CareerIcon />} />
         <SectionSubHeading>
           <p>{t("sub_title")}</p>
-          <div className="flex gap-4 mt-2 md:mt-0">
+          <div className="mt-2 flex md:flex-row gap-4 md:mt-0 flex-col">
             <Portfolio />
             <Resume />
           </div>

@@ -23,7 +23,7 @@
       "title": "Karier",
       "sub_title": "Perjalanan karier profesional saya.",
       "resume_download_button": "Unduh Resume",
-      "portofolio_download_button": "Unduh Portofolio",
+      "portfolio_download_button": "Unduh Portofolio",
       "careers": {
         "career_0": {
           "position": "Pengembang Web Fullstack",
@@ -186,6 +186,6 @@
   },
   "NotFoundPage": {
     "title": "Halaman tidak ditemukan",
-    "label": "Kembali ke beranda"
+    "button": "Kembali ke beranda"
   }
 }

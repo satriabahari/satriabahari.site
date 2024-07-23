@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 
 export default function NotFound() {
   const t = useTranslations("NotFoundPage");
+
   return (
     <Container
       data-aos="fade-up"
@@ -20,7 +21,7 @@ export default function NotFound() {
         href="/"
         className="rounded-full border border-neutral-700 px-4 py-2 text-sm hover:bg-neutral-700 hover:text-neutral-300 dark:border-neutral-300 hover:dark:bg-neutral-300 hover:dark:text-neutral-700"
       >
-        {t("label")}
+        {t("button")}
       </Link>
     </Container>
   );
