@@ -6,9 +6,9 @@ import { BsArrowRightShort as ExternalLinkIcon } from "react-icons/bs";
 import { useSelectedLayoutSegment } from "next/navigation";
 import { useTranslations } from "next-intl";
 
-import { Link } from "@/navigation";
 import { MenuItemProps } from "@/common/types/menu";
 import { useMenu } from "@/common/stores/menu";
+import Link from "next/link";
 
 export default function MenuItem({
   title,

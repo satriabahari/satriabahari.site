@@ -173,8 +173,9 @@
     "title": "Something went wrong!"
   },
   "LocaleSwitcher": {
-    "label": "Change language",
-    "locale": "{locale, select, id {🇮🇩} en {🇺🇸} other {Unknown}}"
+    "en": "🇺🇸",
+    "id": "🇮🇩",
+    "label": "Language"
   },
   "Navigation": {
     "Home": "Home",

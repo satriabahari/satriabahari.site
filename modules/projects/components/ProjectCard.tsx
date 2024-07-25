@@ -2,11 +2,11 @@ import Image from "next/image";
 import { HiOutlineArrowSmRight as ViewIcon } from "react-icons/hi";
 import { useTranslations } from "next-intl";
 import { TbPinnedFilled as PinIcon } from "react-icons/tb";
+import Link from "next/link";
 
 import Card from "@/common/components/elements/Card";
 import { STACKS } from "@/common/constant/stacks";
 import { ProjectItem } from "@/common/types/projects";
-import { Link } from "@/navigation";
 
 export default function ProjectCard({
   title,

@@ -1,6 +1,6 @@
 "use client";
 
-import { Link } from "@/navigation";
+import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { FiArrowLeftCircle as BackButtonIcon } from "react-icons/fi";
