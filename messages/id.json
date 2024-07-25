@@ -173,8 +173,9 @@
     "title": "Etwas ist schief gelaufen!"
   },
   "LocaleSwitcher": {
-    "label": "Sprache ändern",
-    "locale": "{locale, select, id {🇮🇩} en {🇺🇸} other {Tidak Ada}}"
+    "en": "🇺🇸",
+    "id": "🇮🇩",
+    "label": "Bahasa"
   },
   "Navigation": {
     "Home": "Beranda",

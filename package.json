@@ -22,6 +22,7 @@
     "@vercel/postgres": "^0.8.0",
     "aos": "^2.3.4",
     "axios": "^1.6.7",
+    "caniuse-lite": "",
     "cloudinary": "^2.0.1",
     "clsx": "^2.1.0",
     "date-fns": "2.30.0",
