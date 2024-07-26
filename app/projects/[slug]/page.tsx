@@ -4,7 +4,6 @@ import BackButton from "@/common/components/elements/BackButton";
 import Container from "@/common/components/elements/Container";
 import PageHeading from "@/common/components/elements/PageHeading";
 import ProjectDetail from "@/modules/projects/components/ProjectDetail";
-import prisma from "@/common/libs/prisma";
 import { ProjectItem } from "@/common/types/projects";
 import { METADATA } from "@/common/constant/metadata";
 import { loadMdxFiles } from "@/common/libs/mdx";

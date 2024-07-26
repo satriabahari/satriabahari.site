@@ -13,10 +13,6 @@ import { firebase } from "@/common/libs/firebase";
 import { MessageProps } from "@/common/types/chat";
 import { useNotif } from "@/hooks/useNotif";
 import ChatItemSkeleton from "./ChatItemSkeleton";
-import useSWR, { mutate } from "swr";
-import { fetcher } from "@/services/fetcher";
-import axios from "axios";
-import { createClient } from "@/common/utils/supabase/client";
 
 export const ChatRoom = () => {
   const [messages, setMessages] = useState<MessageProps[]>([]);
