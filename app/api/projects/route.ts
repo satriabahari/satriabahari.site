@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 
-import { createClient } from "@/common/utils/supabase/server";
 import { getProjectsData } from "@/services/projects";
 
 export const GET = async () => {
