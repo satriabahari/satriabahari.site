@@ -16,7 +16,7 @@ export default function ProjectDetail({
   link_github,
   content,
 }: ProjectItem) {
-  const stacksArray = JSON.parse(stacks);
+  const stacksArray = JSON.parse(JSON.stringify(stacks));
   const t = useTranslations("ProjectsPage");
   return (
     <div className="space-y-8">

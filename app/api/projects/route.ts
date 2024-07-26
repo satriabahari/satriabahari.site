@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
 
 import { createClient } from "@/common/utils/supabase/server";
+import { getProjectsData } from "@/services/projects";
 
 export const GET = async () => {
-  const supabase = createClient();
   try {
-    const { data } = await supabase.from("projects").select();
+    const data = await getProjectsData();
     return NextResponse.json(data, { status: 200 });
   } catch (error) {
     return NextResponse.json(
