@@ -1,5 +1,4 @@
 import NextAuth from "next-auth";
-
 import GithubProvider from "next-auth/providers/github";
 import GoolgeProvider from "next-auth/providers/google";
 

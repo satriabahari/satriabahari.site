@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function Status() {
+const Status = () => {
   return (
     <div className="flex items-center gap-2 rounded-full border border-neutral-700 px-4 py-1">
       <motion.div
@@ -13,4 +13,6 @@ export default function Status() {
       </span>
     </div>
   );
-}
+};
+
+export default Status;

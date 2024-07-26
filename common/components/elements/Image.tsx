@@ -1,12 +1,12 @@
 "use client";
 
 import clsx from "clsx";
-import NextImage, { ImageProps as NextImageProps } from "next/image";
 import { useState } from "react";
+import NextImage, { ImageProps as NextImageProps } from "next/image";
 
-type ImageProps = {
+interface ImageProps extends NextImageProps {
   rounded?: string;
-} & NextImageProps;
+}
 
 const Image = (props: ImageProps) => {
   const { alt, src, className, rounded, ...rest } = props;
@@ -40,4 +40,5 @@ const Image = (props: ImageProps) => {
     </div>
   );
 };
+
 export default Image;

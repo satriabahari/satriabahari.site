@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
 import remarkGfm from "remark-gfm";
 import ReactMarkdown from "react-markdown";
+import { ReactNode } from "react";
 
 import CodeBlock from "./CodeBlock";
 

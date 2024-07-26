@@ -1,14 +1,11 @@
 import clsx from "clsx";
 
-type BreaklineProps = {
+interface BreaklineProps {
   className?: string;
   [propName: string]: string | undefined;
-};
+}
 
-export default function Breakline({
-  className = "",
-  ...others
-}: BreaklineProps) {
+const Breakline = ({ className = "", ...others }: BreaklineProps) => {
   return (
     <div
       className={clsx(
@@ -18,4 +15,6 @@ export default function Breakline({
       {...others}
     ></div>
   );
-}
+};
+
+export default Breakline;

@@ -6,7 +6,7 @@ import {
   UseFormRegister,
 } from "react-hook-form";
 
-type RadioInputProps<TFormValue extends FieldValues> = {
+interface RadioInputProps<TFormValue extends FieldValues> {
   register: UseFormRegister<TFormValue>;
   name: Path<TFormValue>;
   error: FieldErrors;
@@ -14,8 +14,9 @@ type RadioInputProps<TFormValue extends FieldValues> = {
   isTextArea?: boolean;
   placeholder?: string;
   rows?: number;
-};
-export default function InputField<TFormValue extends FieldValues>({
+}
+
+const InputField = <TFormValue extends FieldValues>({
   name,
   rule,
   error,
@@ -23,7 +24,7 @@ export default function InputField<TFormValue extends FieldValues>({
   placeholder = "",
   rows = 2,
   register,
-}: RadioInputProps<TFormValue>) {
+}: RadioInputProps<TFormValue>) => {
   const renderPlaceholder =
     placeholder || name.charAt(0).toUpperCase() + name.slice(1);
   return (
@@ -55,4 +56,6 @@ export default function InputField<TFormValue extends FieldValues>({
       )}
     </div>
   );
-}
+};
+
+export default InputField;

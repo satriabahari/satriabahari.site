@@ -58,14 +58,6 @@ export const fetchGithubData = async (
 };
 
 export const getGithubData = async () => {
-  // const account = GITHUB_ACCOUNTS.find(
-  //   (account) => account?.type === type && account?.is_active,
-  // );
-
-  // if (!account) {
-  //   throw new Error('Invalid user type');
-  // }
-
   const { username, token } = GITHUB_ACCOUNTS;
   return await fetchGithubData(username, token);
 };

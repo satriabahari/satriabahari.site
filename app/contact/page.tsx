@@ -1,10 +1,10 @@
 import { Metadata } from "next";
+import { useTranslations } from "next-intl";
 
 import Container from "@/common/components/elements/Container";
 import PageHeading from "@/common/components/elements/PageHeading";
 import Contact from "@/modules/contact";
 import { METADATA } from "@/common/constant/metadata";
-import { useTranslations } from "next-intl";
 
 export const metadata: Metadata = {
   title: `Contact ${METADATA.exTitle}`,
@@ -14,12 +14,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ContactPage() {
+const ContactPage = () => {
   const t = useTranslations("ContactPage");
+
   return (
     <Container data-aos="fade-up">
       <PageHeading title={t("title")} description={t("description")} />
       <Contact />
     </Container>
   );
-}
+};
+
+export default ContactPage;

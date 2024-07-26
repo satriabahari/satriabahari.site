@@ -5,12 +5,16 @@ import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { FiArrowLeftCircle as BackButtonIcon } from "react-icons/fi";
 
-type BackButtonProps = {
+interface BackButtonProps {
   url?: string;
-};
+}
 
-export default function BackButton({ url }: BackButtonProps) {
+const BackButton = ({ url }: BackButtonProps) => {
   const router = useRouter();
+  const t = useTranslations("ProjectsPage");
+
+  const className =
+    "flex gap-2 w-max hover:gap-3 items-center pb-5 transition-all duration-300 font-medium text-neutral-600 dark:text-neutral-400 cursor-pointer";
 
   const handleOnClick = () => {
     if (url) {
@@ -20,9 +24,6 @@ export default function BackButton({ url }: BackButtonProps) {
     }
   };
 
-  const className =
-    "flex gap-2 w-max hover:gap-3 items-center pb-5 transition-all duration-300 font-medium text-neutral-600 dark:text-neutral-400 cursor-pointer";
-
   const BackButtonChildComponent = () => {
     return (
       <>
@@ -31,8 +32,6 @@ export default function BackButton({ url }: BackButtonProps) {
       </>
     );
   };
-
-  const t = useTranslations("ProjectsPage")
 
   return (
     <div className="w-fit">
@@ -49,4 +48,6 @@ export default function BackButton({ url }: BackButtonProps) {
       )}
     </div>
   );
-}
+};
+
+export default BackButton;

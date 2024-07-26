@@ -1,5 +1,5 @@
-import { NextResponse } from "next/server";
 import * as nodemailer from "nodemailer";
+import { NextResponse } from "next/server";
 
 export const POST = async (request: Request) => {
   const transporter = nodemailer.createTransport({

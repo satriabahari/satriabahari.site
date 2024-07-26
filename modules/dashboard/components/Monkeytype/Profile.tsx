@@ -1,20 +1,20 @@
-import { differenceInDays, format } from "date-fns";
 import Image from "next/image";
+import { differenceInDays, format } from "date-fns";
 import { motion, Variants } from "framer-motion";
-
-import Tooltip from "@/common/components/elements/Tooltip";
-import { MonkeytypeData } from "@/common/types/monkeytype";
-import Card from "@/common/components/elements/Card";
 import { useTranslations } from "next-intl";
 
-type ProfileProps = {
-  data: MonkeytypeData;
-};
+import Tooltip from "@/common/components/elements/Tooltip";
+import Card from "@/common/components/elements/Card";
+import { MonkeytypeData } from "@/common/types/monkeytype";
 
-type ItemProps = {
+interface ProfileProps {
+  data: MonkeytypeData;
+}
+
+interface ItemProps {
   label?: string;
   value?: number | string;
-};
+}
 
 const Item = ({ label, value }: ItemProps) => (
   <div className="flex flex-col items-center">
@@ -23,7 +23,9 @@ const Item = ({ label, value }: ItemProps) => (
   </div>
 );
 
-export default function Profile({ data }: ProfileProps) {
+const Profile = ({ data }: ProfileProps) => {
+  const t = useTranslations("DashboardPage.monkeytype");
+
   const date = new Date(data?.addedAt);
   const endDate = new Date();
   const durationDays = differenceInDays(endDate, date);
@@ -53,8 +55,6 @@ export default function Profile({ data }: ProfileProps) {
       transition: { delay: 0.8 },
     },
   };
-
-  const t = useTranslations("DashboardPage.monkeytype");
 
   const XpProgress = () => (
     <div className="flex w-full items-center justify-between gap-3">
@@ -137,4 +137,6 @@ export default function Profile({ data }: ProfileProps) {
       </div>
     </Card>
   );
-}
+};
+
+export default Profile;

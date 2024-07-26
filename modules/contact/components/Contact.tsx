@@ -3,12 +3,14 @@ import Breakline from "@/common/components/elements/Breakline";
 import ContactList from "./ContactList";
 import ContactForm from "./ContactForm";
 
-export default function Contact() {
+const Contact = () => {
   return (
     <>
       <ContactList />
-      <Breakline className="my-6"/>
+      <Breakline className="my-6" />
       <ContactForm />
     </>
   );
-}
+};
+
+export default Contact;

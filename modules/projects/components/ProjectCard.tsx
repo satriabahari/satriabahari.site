@@ -1,26 +1,26 @@
 import Image from "next/image";
+import Link from "next/link";
 import { HiOutlineArrowSmRight as ViewIcon } from "react-icons/hi";
 import { useTranslations } from "next-intl";
 import { TbPinnedFilled as PinIcon } from "react-icons/tb";
-import Link from "next/link";
 
 import Card from "@/common/components/elements/Card";
 import { STACKS } from "@/common/constant/stacks";
 import { ProjectItem } from "@/common/types/projects";
 
-export default function ProjectCard({
+const ProjectCard = ({
   title,
   slug,
   description,
   image,
   stacks,
   is_featured,
-}: ProjectItem) {
+}: ProjectItem) => {
+  const t = useTranslations("ProjectsPage");
+
   const stacksArray = JSON.parse(JSON.stringify(stacks));
   const trimmedContent =
     description.slice(0, 80) + (description.length > 80 ? "..." : "");
-
-  const t = useTranslations("ProjectsPage");
 
   return (
     <Link href={`/projects/${slug}`}>
@@ -61,4 +61,6 @@ export default function ProjectCard({
       </Card>
     </Link>
   );
-}
+};
+
+export default ProjectCard;

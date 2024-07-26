@@ -5,7 +5,7 @@ import Card from "@/common/components/elements/Card";
 import { EducationProps } from "@/common/types/education";
 import { useTranslations } from "next-intl";
 
-export default function EducationCard({
+const EducationCard = ({
   school,
   major,
   logo,
@@ -13,9 +13,10 @@ export default function EducationCard({
   start_year,
   end_year,
   link,
-  location
-}: EducationProps) {
+  location,
+}: EducationProps) => {
   const t = useTranslations("AboutPage.education");
+
   return (
     <Card className="flex items-center gap-5 px-6 py-4 ">
       {logo ? (
@@ -36,19 +37,19 @@ export default function EducationCard({
             </span>
             <span>{t("major")}</span>
           </div>
-          <div className="flex flex-col md:flex-row gap-1 md:gap-2 text-[12px]">
+          <div className="flex flex-col gap-1 text-[12px] md:flex-row md:gap-2">
             <span className="dark:text-neutral-500">
               {start_year} - {end_year}
             </span>
-            <span className="hidden text-neutral-300 dark:text-neutral-700 md:block rounded-full">
+            <span className="hidden rounded-full text-neutral-300 dark:text-neutral-700 md:block">
               •
             </span>
-            <span>
-              {t("location")}
-            </span>
+            <span>{t("location")}</span>
           </div>
         </div>
       </div>
     </Card>
   );
-}
+};
+
+export default EducationCard;

@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { useNotifStore } from "@/common/stores/notif";
 
-export default function Notif() {
+const Notif = () => {
   const { isOpen, text, hideNotif } = useNotifStore();
 
   useEffect(() => {
@@ -31,4 +31,6 @@ export default function Notif() {
       )}
     </AnimatePresence>
   );
-}
+};
+
+export default Notif;

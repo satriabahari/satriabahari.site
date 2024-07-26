@@ -1,4 +1,4 @@
-export type CareerProps = {
+export interface CareerProps {
   position: string;
   company: string;
   logo: string | null;
@@ -11,4 +11,4 @@ export type CareerProps = {
   link: string | null;
   responsibilities?: string[];
   indexCareer?: number;
-};
+}

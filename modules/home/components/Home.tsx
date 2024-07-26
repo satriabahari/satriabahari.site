@@ -3,7 +3,7 @@ import Breakline from "@/common/components/elements/Breakline";
 import Introduction from "./Introduction";
 import SkillList from "./SkillList";
 
-export default function Home() {
+const Home = () => {
   return (
     <>
       <Introduction />
@@ -11,4 +11,6 @@ export default function Home() {
       <SkillList />
     </>
   );
-}
+};
+
+export default Home;

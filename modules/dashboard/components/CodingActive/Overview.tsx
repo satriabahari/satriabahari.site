@@ -1,8 +1,10 @@
-import { formatDate } from "@/common/helpers";
-import OverviewItem from "./OverviewItem";
 import { useTranslations } from "next-intl";
 
-type OverviewProps = {
+import { formatDate } from "@/common/helpers";
+
+import OverviewItem from "./OverviewItem";
+
+interface OverviewProps {
   data: {
     human_readable_total?: string;
     human_readable_daily_average?: string;
@@ -16,9 +18,11 @@ type OverviewProps = {
     start_date?: string;
     end_date?: string;
   };
-};
+}
 
-export default function Overview({ data }: OverviewProps) {
+const Overview = ({ data }: OverviewProps) => {
+  const t = useTranslations("DashboardPage.wakatime");
+
   const dailyTotal = data?.human_readable_total || "N/A";
   const dailyAverage = data?.human_readable_daily_average || "N/A";
   const bestDayText = data?.best_day?.text || "N/A";
@@ -29,8 +33,6 @@ export default function Overview({ data }: OverviewProps) {
   const bestDay = bestDayDate
     ? `${formatDate(bestDayDate)} (${bestDayText})`
     : "N/A";
-
-  const t = useTranslations("DashboardPage.wakatime");
 
   return (
     <div className="mb-1 grid gap-3 py-2 md:grid-cols-2">
@@ -45,4 +47,6 @@ export default function Overview({ data }: OverviewProps) {
       />
     </div>
   );
-}
+};
+
+export default Overview;

@@ -2,17 +2,18 @@
 
 import useSWR from "swr";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
+import ProjectSkeleton from "./ProjectSkeleton";
 import ProjectCard from "./ProjectCard";
 
 import EmptyState from "@/common/components/elements/EmptyState";
 import { fetcher } from "@/services/fetcher";
 import { ProjectItem } from "@/common/types/projects";
-import { useTranslations } from "next-intl";
-import ProjectSkeleton from "./ProjectSkeleton";
 
-export default function Projects() {
+const Projects = () => {
   const { data, isLoading, error } = useSWR("/api/projects", fetcher);
+
   const t = useTranslations("ProjectsPage");
 
   const filteredProjects: ProjectItem[] = data
@@ -45,4 +46,6 @@ export default function Projects() {
       ))}
     </section>
   );
-}
+};
+
+export default Projects;

@@ -1,25 +1,25 @@
 "use client";
 
 import Link from "next/link";
+import useSWR from "swr";
 import { BsGithub as GithubIcon } from "react-icons/bs";
 import { useTranslations } from "next-intl";
-import useSWR from "swr";
 
 import Overview from "./Overview";
 import Calendar from "./Calendar";
 
 import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
-import { GITHUB_ACCOUNTS } from "@/common/constant/github";
-import { fetcher } from "@/services/fetcher";
 import ContributionsSkeleton from "./ContributionsSkeleton";
 import EmptyState from "@/common/components/elements/EmptyState";
+import { GITHUB_ACCOUNTS } from "@/common/constant/github";
+import { fetcher } from "@/services/fetcher";
 
-type ContributionsProps = {
+interface ContributionsProps {
   endpoint: string;
-};
+}
 
-export default function Contributions({ endpoint }: ContributionsProps) {
+const Contributions = ({ endpoint }: ContributionsProps) => {
   const { data, isLoading, error } = useSWR(endpoint, fetcher);
   const contributionCalendar =
     data?.contributionsCollection?.contributionCalendar;
@@ -52,4 +52,6 @@ export default function Contributions({ endpoint }: ContributionsProps) {
       )}
     </section>
   );
-}
+};
+
+export default Contributions;

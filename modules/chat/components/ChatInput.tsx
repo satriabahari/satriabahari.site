@@ -14,11 +14,11 @@ interface ChatInputPropsNew extends ChatInputProps {
   replyName?: string;
 }
 
-export default function ChatInput({
+const ChatInput = ({
   replyName,
   onSendMessage,
   onCancelReply,
-}: ChatInputPropsNew) {
+}: ChatInputPropsNew) => {
   const [message, setMessage] = useState("");
   const [isSending, setIsSending] = useState(false);
 
@@ -95,4 +95,6 @@ export default function ChatInput({
       <ChatUserInfo />
     </>
   );
-}
+};
+
+export default ChatInput;

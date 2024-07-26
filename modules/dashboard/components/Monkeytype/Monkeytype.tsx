@@ -1,22 +1,22 @@
 "use client";
 
 import Link from "next/link";
+import useSWR from "swr";
 import { SiMonkeytype as MonkeytypeIcon } from "react-icons/si";
+import { useTranslations } from "next-intl";
 
 import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
+import EmptyState from "@/common/components/elements/EmptyState";
 import { fetcher } from "@/services/fetcher";
+import { MONKEYTYPE_ACCOUNT } from "@/common/constant/monkeytype";
 
+import MonkeytypeSkeleton from "./MonkeytypeSkeleton";
 import Overview from "./Overview";
-import useSWR from "swr";
 import Profile from "./Profile";
 import Leaderboard from "./Leaderboard";
-import { MONKEYTYPE_ACCOUNT } from "@/common/constant/monkeytype";
-import { useTranslations } from "next-intl";
-import MonkeytypeSkeleton from "./MonkeytypeSkeleton";
-import EmptyState from "@/common/components/elements/EmptyState";
 
-export default function Monkeytype() {
+const Monkeytype = () => {
   const { data, isLoading, error } = useSWR("/api/monkeytype", fetcher);
 
   const t = useTranslations("DashboardPage");
@@ -55,4 +55,6 @@ export default function Monkeytype() {
       )}
     </section>
   );
-}
+};
+
+export default Monkeytype;

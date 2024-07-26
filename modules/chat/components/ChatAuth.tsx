@@ -21,7 +21,7 @@ const Providers = [
   },
 ];
 
-export default function ChatAuth({ isWidget = false }) {
+const ChatAuth = ({ isWidget = false }) => {
   const t = useTranslations("ChatRoomPage.sign_in");
   return (
     <div className="flex flex-col border-t border-neutral-300 py-1 dark:border-neutral-900">
@@ -49,4 +49,6 @@ export default function ChatAuth({ isWidget = false }) {
       </div>
     </div>
   );
-}
+};
+
+export default ChatAuth;

@@ -8,7 +8,7 @@ import { GITHUB_ACCOUNTS } from "@/common/constant/github";
 import { MONKEYTYPE_ACCOUNT } from "@/common/constant/monkeytype";
 import { CODEWARS_ACCOUNT } from "@/common/constant/codewars";
 
-export default function Dashboard() {
+const Dashboard = () => {
   return (
     <>
       <Contributions endpoint={GITHUB_ACCOUNTS.endpoint} />
@@ -20,4 +20,6 @@ export default function Dashboard() {
       <Monkeytype />
     </>
   );
-}
+};
+
+export default Dashboard;

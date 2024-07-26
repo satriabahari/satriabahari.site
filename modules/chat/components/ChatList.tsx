@@ -10,11 +10,12 @@ interface ChatListPropsNew extends ChatListProps {
   onDeleteMessage: (id: string) => void;
   onClickReply: (name: string) => void;
 }
-export default function ChatList({
+
+const ChatList = ({
   messages,
   onDeleteMessage,
   onClickReply,
-}: ChatListPropsNew) {
+}: ChatListPropsNew) => {
   const chatListRef = useRef<HTMLDivElement | null>(null);
   const [hasScrolledUp, setHasScrolledUp] = useState(false);
 
@@ -62,6 +63,7 @@ export default function ChatList({
   //     window.removeEventListener('resize', handleResize);
   //   };
   // }, [isWidget]);
+
   return (
     <div ref={chatListRef} className="h-80 space-y-5 overflow-y-auto py-4">
       {messages?.map((chat, index) => (
@@ -74,4 +76,6 @@ export default function ChatList({
       ))}
     </div>
   );
-}
+};
+
+export default ChatList;

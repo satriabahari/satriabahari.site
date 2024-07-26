@@ -1,21 +1,20 @@
 "use client";
 
 import dynamic from "next/dynamic";
-
-import { useEffect, useState } from "react";
-import {
-  HiCheckCircle as CheckIcon,
-  HiOutlineClipboardCopy as CopyIcon,
-} from "react-icons/hi";
-import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import { a11yDark as themeColor } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import { useCopyToClipboard } from "usehooks-ts";
 import css from "react-syntax-highlighter/dist/cjs/languages/prism/css";
 import diff from "react-syntax-highlighter/dist/cjs/languages/prism/diff";
 import javascript from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
 import tsx from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
 import typescript from "react-syntax-highlighter/dist/cjs/languages/prism/typescript";
+import { useEffect, useState } from "react";
+import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
+import { a11yDark as themeColor } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { useCopyToClipboard } from "usehooks-ts";
 import { CodeProps } from "react-markdown/lib/ast-to-react";
+import {
+  HiCheckCircle as CheckIcon,
+  HiOutlineClipboardCopy as CopyIcon,
+} from "react-icons/hi";
 
 const languages = {
   javascript: "javascript",

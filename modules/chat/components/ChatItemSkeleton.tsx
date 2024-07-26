@@ -1,4 +1,4 @@
-export default function ChatItemSkeleton() {
+const ChatItemSkeleton = () => {
   return (
     <div className="flex h-80 flex-col gap-4">
       <div className="mb-4 flex  gap-4">
@@ -27,4 +27,6 @@ export default function ChatItemSkeleton() {
       </div>
     </div>
   );
-}
+};
+
+export default ChatItemSkeleton;

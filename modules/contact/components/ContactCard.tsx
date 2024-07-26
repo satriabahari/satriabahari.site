@@ -1,11 +1,10 @@
 import Link from "next/link";
 import { MdArrowOutward as ArrowIcon } from "react-icons/md";
+import { useLocale, useTranslations } from "next-intl";
 
 import { SocialMediaProps } from "@/common/types/socialMedia";
-import { useLocale, useTranslations } from "next-intl";
-import { useEffect } from "react";
 
-export default function ContactCard({
+const ContactCard = ({
   title,
   description,
   name,
@@ -17,9 +16,10 @@ export default function ContactCard({
   borderColor,
   textColor,
   colSpan,
-}: SocialMediaProps) {
+}: SocialMediaProps) => {
   const t = useTranslations("ContactPage");
   const locale = useLocale();
+
   return (
     <div
       className={`relative grid w-full grid-cols-[2.5fr_1fr] overflow-hidden rounded-md border p-6 ${colSpan} ${borderColor} ${backgroundGradientColor}`}
@@ -60,4 +60,6 @@ export default function ContactCard({
       </div>
     </div>
   );
-}
+};
+
+export default ContactCard;

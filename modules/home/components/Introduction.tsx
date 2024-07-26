@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 
-export default function Introduction() {
+const Introduction = () => {
   const t = useTranslations("HomePage");
 
   return (
@@ -10,10 +10,8 @@ export default function Introduction() {
       </div>
 
       <div className="space-y-4">
-        <ul className="ml-5 flex flex-col md:flex-row list-disc gap-y-2 gap-x-10 text-neutral-700 dark:text-neutral-400">
-          <li>
-            {t("location")}
-          </li>
+        <ul className="ml-5 flex list-disc flex-col gap-x-10 gap-y-2 text-neutral-700 dark:text-neutral-400 md:flex-row">
+          <li>{t("location")}</li>
           <li>{t("location_type")}</li>
         </ul>
         <p className="mt-6 leading-loose text-neutral-600 dark:text-neutral-300">
@@ -22,4 +20,6 @@ export default function Introduction() {
       </div>
     </section>
   );
-}
+};
+
+export default Introduction;

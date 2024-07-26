@@ -1,16 +1,19 @@
+import { BiCodeAlt as SkillsIcon } from "react-icons/bi";
+import { useTranslations } from "next-intl";
+
+import SkillCard from "./SkillCard";
+
 import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
 import { STACKS } from "@/common/constant/stacks";
-import { BiCodeAlt as SkillsIcon } from "react-icons/bi";
-import SkillCard from "./SkillCard";
 import MarqueeElement from "@/common/components/elements/MarqueeElement";
-import { useTranslations } from "next-intl";
 
-export default function SkillList() {
+const SkillList = () => {
+  const t = useTranslations("HomePage");
+
   const stacksInArray: Array<[string, JSX.Element]> = Object.entries(
     STACKS,
   ).sort(() => Math.random() - 0.5);
-  const t = useTranslations("HomePage");
 
   return (
     <section className="space-y-6">
@@ -38,4 +41,6 @@ export default function SkillList() {
       </div>
     </section>
   );
-}
+};
+
+export default SkillList;

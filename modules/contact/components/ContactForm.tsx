@@ -3,17 +3,17 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-
-import InputField from "@/common/components/elements/InputField";
 import { useTranslations } from "next-intl";
 
-type FormEmail = {
+import InputField from "@/common/components/elements/InputField";
+
+interface FormEmail {
   name: string;
   email: string;
   message: string;
-};
+}
 
-export default function ContactForm() {
+const ContactForm = () => {
   const {
     register,
     handleSubmit,
@@ -23,8 +23,20 @@ export default function ContactForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [buttonText, setButtonText] = useState("Send Email");
   const [isSuccess, setIsSuccess] = useState(false);
+
+  const t = useTranslations("ContactPage");
+
   const regexEmail =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+  useEffect(() => {
+    setButtonText(isLoading ? "Sending your message..." : "Send Email");
+    if (!isLoading && isSuccess) setButtonText("Your email sent successfully");
+    const timeout = setTimeout(() => {
+      setButtonText("Send Email");
+    }, 5000);
+    return () => clearTimeout(timeout);
+  }, [isLoading, isSuccess]);
 
   const handleFormSubmit = async (payload: FormEmail) => {
     setIsLoading(true);
@@ -39,16 +51,6 @@ export default function ContactForm() {
     }
   };
 
-  useEffect(() => {
-    setButtonText(isLoading ? "Sending your message..." : "Send Email");
-    if (!isLoading && isSuccess) setButtonText("Your email sent successfully");
-    const timeout = setTimeout(() => {
-      setButtonText("Send Email");
-    }, 5000);
-    return () => clearTimeout(timeout);
-  }, [isLoading, isSuccess]);
-
-  const t = useTranslations("ContactPage");
   return (
     <div className="space-y-4">
       <h2>{t("form.title")}</h2>
@@ -57,7 +59,6 @@ export default function ContactForm() {
         className="space-y-4 transition-all duration-300"
       >
         <div className="flex w-full flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
-          {/* error translation placeholder */}
           <InputField
             name="name"
             rule={{ required: true }}
@@ -94,4 +95,6 @@ export default function ContactForm() {
       </form>
     </div>
   );
-}
+};
+
+export default ContactForm;

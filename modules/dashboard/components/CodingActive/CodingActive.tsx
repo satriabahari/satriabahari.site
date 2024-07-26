@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import useSWR from "swr";
 import Link from "next/link";
+import useSWR from "swr";
+import { useEffect, useState } from "react";
 import { SiWakatime as WakatimeIcon } from "react-icons/si";
 import { formatDistanceToNowStrict } from "date-fns";
 import { utcToZonedTime, zonedTimeToUtc } from "date-fns-tz";
@@ -14,8 +14,8 @@ import CodingActiveSkeleton from "./CodingActiveSkeleton";
 
 import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
-import { fetcher } from "@/services/fetcher";
 import EmptyState from "@/common/components/elements/EmptyState";
+import { fetcher } from "@/services/fetcher";
 
 const CodingActive = () => {
   const { data, isLoading, error } = useSWR("/api/read-stats", fetcher);
@@ -23,6 +23,8 @@ const CodingActive = () => {
   const [formattedLastUpdate, setFormattedLastUpdate] = useState<string | null>(
     null,
   );
+
+  const t = useTranslations("DashboardPage");
 
   useEffect(() => {
     const formatLastUpdate = (): void => {
@@ -48,8 +50,6 @@ const CodingActive = () => {
     }
     return null;
   };
-
-  const t = useTranslations("DashboardPage");
 
   return (
     <section className="space-y-2">

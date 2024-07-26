@@ -3,9 +3,8 @@ import Breakline from "@/common/components/elements/Breakline";
 import Story from "./Story";
 import CareerList from "./CareerList";
 import EducationList from "./EducationList";
-import SkillList from "../../home/components/SkillList";
 
-export default function About() {
+const About = () => {
   return (
     <>
       <Story />
@@ -15,4 +14,6 @@ export default function About() {
       <EducationList />
     </>
   );
-}
+};
+
+export default About;

@@ -10,9 +10,9 @@ import ChatInput from "./ChatInput";
 import ChatList from "./ChatList";
 
 import { firebase } from "@/common/libs/firebase";
-import { MessageProps } from "@/common/types/chat";
-import { useNotif } from "@/hooks/useNotif";
+import useNotif from "@/hooks/useNotif";
 import ChatItemSkeleton from "./ChatItemSkeleton";
+import { MessageProps } from "@/common/types/chat";
 
 export const ChatRoom = () => {
   const [messages, setMessages] = useState<MessageProps[]>([]);
@@ -24,6 +24,23 @@ export const ChatRoom = () => {
 
   const database = getDatabase(firebase);
   const databaseChat = process.env.NEXT_PUBLIC_FIREBASE_CHAT_DB;
+
+  useEffect(() => {
+    const messagesRef = ref(database, databaseChat);
+    onValue(messagesRef, (snapshot) => {
+      const messageData = snapshot.val();
+      if (messageData) {
+        const messagesArray = Object.values(messageData) as MessageProps[];
+        const sortedMessage = messagesArray.sort((a, b) => {
+          const dateA = new Date(a.created_at);
+          const dateB = new Date(b.created_at);
+          return dateA.getTime() - dateB.getTime();
+        });
+        setMessages(sortedMessage);
+        setIsLoading(false);
+      }
+    });
+  }, [database, databaseChat]);
 
   const handleClickReply = (name: string) => {
     if (!session?.user) return notif("Please sign in to reply");
@@ -48,14 +65,8 @@ export const ChatRoom = () => {
       created_at: new Date().toISOString(),
       is_show: true,
     });
-
-    // try {
-    //   await axios.post("/api/chat", newMessageData);
-    //   notif("Successfully to send message");
-    // } catch (error) {
-    //   console.error("Error:", error);
+    notif("Successfully to send message");
     //   notif("Failed to send message");
-    // }
   };
 
   const handleDeleteMessage = (id: string) => {
@@ -63,31 +74,10 @@ export const ChatRoom = () => {
 
     if (messageRef) {
       remove(messageRef);
-      // try {
-      //   await axios.delete(`/api/chat/${id}`);
-      //   notif("Successfully to delete message");
-      // } catch (error) {
+      notif("Successfully to delete message");
       //   notif("Failed to delete message");
-      // }
     }
   };
-
-  useEffect(() => {
-    const messagesRef = ref(database, databaseChat);
-    onValue(messagesRef, (snapshot) => {
-      const messageData = snapshot.val();
-      if (messageData) {
-        const messagesArray = Object.values(messageData) as MessageProps[];
-        const sortedMessage = messagesArray.sort((a, b) => {
-          const dateA = new Date(a.created_at);
-          const dateB = new Date(b.created_at);
-          return dateA.getTime() - dateB.getTime();
-        });
-        setMessages(sortedMessage);
-        setIsLoading(false);
-      }
-    });
-  }, [database, databaseChat]);
 
   return (
     <>

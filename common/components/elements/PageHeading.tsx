@@ -1,9 +1,9 @@
-type PageHeadingProps = {
+interface PageHeadingProps {
   title?: string;
   description?: string;
-};
+}
 
-export default function PageHeading({ title, description }: PageHeadingProps) {
+const PageHeading = ({ title, description }: PageHeadingProps) => {
   return (
     <>
       <h1 className="text-2xl font-medium">{title}</h1>
@@ -12,4 +12,6 @@ export default function PageHeading({ title, description }: PageHeadingProps) {
       </p>
     </>
   );
-}
+};
+
+export default PageHeading;

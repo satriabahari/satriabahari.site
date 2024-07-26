@@ -14,12 +14,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ContactPage() {
+const ContactPage = () => {
   const t = useTranslations("ChatRoomPage");
+
   return (
     <Container data-aos="fade-up">
       <PageHeading title={t("title")} description={t("description")} />
       <ChatRoom />
     </Container>
   );
-}
+};
+
+export default ContactPage;

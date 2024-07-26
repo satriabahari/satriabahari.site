@@ -1,24 +1,24 @@
 "use client";
 
 import clsx from "clsx";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
-import { useState } from "react";
 
-type Contribution = {
+interface Contribution {
   date: string;
   contributionCount: number;
   color: string;
-};
+}
 
-type Month = {
+interface Month {
   name: string;
   firstDay: string;
   totalWeeks: number;
   contributionsCount: number;
-};
+}
 
-type CalendarProps = {
+interface CalendarProps {
   data?: {
     weeks: {
       firstDay: string;
@@ -27,9 +27,9 @@ type CalendarProps = {
     months: Month[];
     colors: string[];
   };
-};
+}
 
-export default function Calendar({ data }: CalendarProps) {
+const Calendar = ({ data }: CalendarProps) => {
   const [selectContribution, setSelectContribution] = useState<{
     count: number | null;
     date: string | null;
@@ -37,6 +37,9 @@ export default function Calendar({ data }: CalendarProps) {
     count: null,
     date: null,
   });
+
+  const t = useTranslations("DashboardPage.github");
+  const locale = useLocale();
 
   const weeks = data?.weeks ?? [];
   const months =
@@ -60,9 +63,6 @@ export default function Calendar({ data }: CalendarProps) {
     }) ?? [];
 
   const contributionColors = data?.colors ?? [];
-
-  const t = useTranslations("DashboardPage.github");
-  const locale = useLocale();
 
   return (
     <>
@@ -161,4 +161,6 @@ export default function Calendar({ data }: CalendarProps) {
       </div>
     </>
   );
-}
+};
+
+export default Calendar;
