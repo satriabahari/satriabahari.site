@@ -16,7 +16,7 @@ export default function ProjectCard({
   stacks,
   is_featured,
 }: ProjectItem) {
-  const stacksArray = JSON.parse(stacks);
+  const stacksArray = JSON.parse(JSON.stringify(stacks));
   const trimmedContent =
     description.slice(0, 80) + (description.length > 80 ? "..." : "");
 
