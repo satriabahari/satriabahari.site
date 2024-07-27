@@ -7,8 +7,9 @@ import { EDUCATION } from "@/common/constant/education";
 import EducationCard from "./EducationCard";
 import { useTranslations } from "next-intl";
 
-export default function EducationList() {
-  const t = useTranslations("AboutPage.education")
+const EducationList = () => {
+  const t = useTranslations("AboutPage.education");
+
   return (
     <section className="space-y-6">
       <div className="space-y-2">
@@ -25,4 +26,6 @@ export default function EducationList() {
       </div>
     </section>
   );
-}
+};
+
+export default EducationList;

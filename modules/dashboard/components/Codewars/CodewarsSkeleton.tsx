@@ -1,4 +1,4 @@
-export default function CodewarsSkeleton() {
+const CodewarsSkeleton = () => {
   return (
     <div className="flex flex-col gap-4">
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
@@ -13,4 +13,6 @@ export default function CodewarsSkeleton() {
       </div>
     </div>
   );
-}
+};
+
+export default CodewarsSkeleton;

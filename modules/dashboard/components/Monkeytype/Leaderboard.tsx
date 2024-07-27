@@ -1,19 +1,22 @@
+import { useTranslations } from "next-intl";
+
 import Card from "@/common/components/elements/Card";
 import { convertToOrdinal } from "@/common/helpers";
 import { MonkeytypeData } from "@/common/types/monkeytype";
-import { useTranslations } from "next-intl";
 
-type LeaderboardProps = {
+interface LeaderboardProps {
   data: MonkeytypeData;
-};
+}
 
-type ItemProps = {
+interface ItemProps {
   label: string;
   value: string;
   percent?: string;
-};
+}
 
-export default function Leaderboard({ data }: LeaderboardProps) {
+const Leaderboard = ({ data }: LeaderboardProps) => {
+  const t = useTranslations("DashboardPage.monkeytype");
+
   const datas = Object.values(data.allTimeLbs.time) || [];
 
   const Item = ({ label, value, percent }: ItemProps) => {
@@ -34,8 +37,6 @@ export default function Leaderboard({ data }: LeaderboardProps) {
     );
   };
 
-  const t = useTranslations("DashboardPage.monkeytype");
-
   return (
     <Card className="flex flex-col items-center justify-between gap-y-3 px-4 py-3 sm:flex-row sm:gap-y-1">
       <span className="text-sm text-neutral-600 dark:text-neutral-500">
@@ -54,4 +55,6 @@ export default function Leaderboard({ data }: LeaderboardProps) {
       })}
     </Card>
   );
-}
+};
+
+export default Leaderboard;

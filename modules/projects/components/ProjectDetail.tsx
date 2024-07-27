@@ -1,23 +1,25 @@
 import Image from "next/image";
-
-import { STACKS } from "@/common/constant/stacks";
-import { ProjectItem } from "@/common/types/projects";
-import Tooltip from "@/common/components/elements/Tooltip";
-import MDXComponent from "@/common/components/elements/MDXComponent";
-
-import ProjectLink from "./ProjectLink";
 import { useTranslations } from "next-intl";
 
-export default function ProjectDetail({
+import Tooltip from "@/common/components/elements/Tooltip";
+import MDXComponent from "@/common/components/elements/MDXComponent";
+import { STACKS } from "@/common/constant/stacks";
+import { ProjectItem } from "@/common/types/projects";
+
+import ProjectLink from "./ProjectLink";
+
+const ProjectDetail = ({
   title,
   image,
   stacks,
   link_demo,
   link_github,
   content,
-}: ProjectItem) {
-  const stacksArray = JSON.parse(JSON.stringify(stacks));
+}: ProjectItem) => {
   const t = useTranslations("ProjectsPage");
+
+  const stacksArray = JSON.parse(JSON.stringify(stacks));
+
   return (
     <div className="space-y-8">
       <div className="flex flex-col items-center justify-between gap-5 sm:flex-row lg:flex-row lg:items-start">
@@ -58,4 +60,6 @@ export default function ProjectDetail({
       ) : null}
     </div>
   );
-}
+};
+
+export default ProjectDetail;

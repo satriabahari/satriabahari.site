@@ -1,22 +1,20 @@
 "use client";
 
 import Link from "next/link";
+import clsx from "clsx";
 import Image from "next/image";
-import { differenceInMonths, differenceInYears, format } from "date-fns";
+import { useState } from "react";
 import { BsBuildings as CompanyIcon } from "react-icons/bs";
 import { HiChevronRight as ChevronIcon } from "react-icons/hi";
+import { AnimatePresence, motion } from "framer-motion";
+import { useLocale } from "next-intl";
+import { useTranslations } from "use-intl";
+import { differenceInMonths, differenceInYears, format } from "date-fns";
 
 import Card from "@/common/components/elements/Card";
 import { CareerProps } from "@/common/types/careers";
-import { useEffect, useState } from "react";
-import clsx from "clsx";
-import { AnimatePresence, motion } from "framer-motion";
-import { list } from "postcss";
-import { useLocale, useMessages } from "next-intl";
-import { useTranslations } from "use-intl";
-import { CAREERS } from "@/common/constant/carreers";
 
-export default function CareerCard({
+const CareerCard = ({
   position,
   company,
   logo,
@@ -28,11 +26,10 @@ export default function CareerCard({
   location_type,
   responsibilities,
   indexCareer,
-}: CareerProps) {
+}: CareerProps) => {
   const [isShowResponsibility, setIsShowResponsibility] = useState(false);
 
   const t = useTranslations(`AboutPage.career.careers.career_${indexCareer}`);
-  const t2 = useTranslations("AboutPage.career");
   const locale = useLocale();
 
   const startDate = new Date(start_date);
@@ -141,4 +138,6 @@ export default function CareerCard({
       </div>
     </Card>
   );
-}
+};
+
+export default CareerCard;

@@ -1,4 +1,4 @@
-export default function MonkeytypeSkeleton() {
+const MonkeytypeSkeleton = () => {
   return (
     <div className="flex flex-col gap-4">
       <div className="h-52 w-full animate-pulse rounded-md bg-neutral-300 dark:bg-neutral-800 md:h-40" />
@@ -9,4 +9,6 @@ export default function MonkeytypeSkeleton() {
       </div>
     </div>
   );
-}
+};
+
+export default MonkeytypeSkeleton;

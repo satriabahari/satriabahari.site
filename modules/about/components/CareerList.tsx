@@ -8,10 +8,10 @@ import { CAREERS } from "@/common/constant/carreers";
 
 import CareerCard from "./CareerCard";
 import Resume from "./Resume";
-import { useTranslations } from "next-intl";
 import Portfolio from "./Portfolio";
+import { useTranslations } from "next-intl";
 
-export default function CareerList() {
+const CareerList = () => {
   const t = useTranslations("AboutPage.career");
 
   return (
@@ -20,7 +20,7 @@ export default function CareerList() {
         <SectionHeading title={t("title")} icon={<CareerIcon />} />
         <SectionSubHeading>
           <p>{t("sub_title")}</p>
-          <div className="mt-2 flex md:flex-row gap-4 md:mt-0 flex-col">
+          <div className="mt-2 flex flex-col gap-4 md:mt-0 md:flex-row">
             <Portfolio />
             <Resume />
           </div>
@@ -34,4 +34,6 @@ export default function CareerList() {
       </div>
     </section>
   );
-}
+};
+
+export default CareerList;

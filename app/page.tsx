@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 import Container from "@/common/components/elements/Container";
-import { METADATA } from "@/common/constant/metadata";
 import Home from "@/modules/home";
+import { METADATA } from "@/common/constant/metadata";
 
 export const metadata: Metadata = {
   title: `${METADATA.creator} | Personal Website`,
@@ -11,10 +11,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePage() {
+const HomePage = () => {
   return (
     <Container data-aos="fade-up">
       <Home />
     </Container>
   );
-}
+};
+
+export default HomePage;

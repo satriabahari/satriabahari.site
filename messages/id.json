@@ -67,40 +67,6 @@
     "error": "Terjadi kesalahan di server.",
     "no_data": "Tidak ada data yang tersedia"
   },
-  "ContactPage": {
-    "title": "Kontak",
-    "description": "Mari kita berhubungan",
-    "social_media": {
-      "title": "Temukan saya di media sosial",
-      "gmail": {
-        "title": "Tetap Berhubungan",
-        "description": "Hubungi melalui email untuk pertanyaan atau kolaborasi."
-      },
-      "instagram": {
-        "title": "Ikuti Perjalanan Saya",
-        "description": "Tetap diperbarui dengan posting dan cerita terbaru saya di Instagram."
-      },
-      "linkedin": {
-        "title": "Mari Terhubung",
-        "description": "Terhubung untuk kolaborasi atau jelajahi pengalaman profesional saya."
-      },
-      "tiktok": {
-        "title": "Bergabunglah dalam Keseruan",
-        "description": "Ikuti saya di TikTok untuk konten yang menghibur dan menarik."
-      },
-      "github": {
-        "title": "Jelajahi Kode",
-        "description": "Jelajahi kode sumber untuk semua proyek saya di GitHub."
-      }
-    },
-    "form": {
-      "title": "Atau kirim pesan kepada saya",
-      "input_name": "Nama",
-      "input_email": "Email",
-      "input_message": "Pesan",
-      "button": "Kirim Email"
-    }
-  },
   "DashboardPage": {
     "title": "Dasbor",
     "description": "Ini adalah dasbor pribadi saya, dibangun dengan jalur API Next.js yang diterapkan sebagai fungsi serverless.",
@@ -168,9 +134,39 @@
       "sign_out_label": "Keluar"
     }
   },
-  "Error": {
-    "description": "<p>Es ist leider ein Problem aufgetreten.</p><p>Du kannst versuchen <retry>diese Seite neu zu laden</retry>.</p>",
-    "title": "Etwas ist schief gelaufen!"
+  "ContactPage": {
+    "title": "Kontak",
+    "description": "Mari kita berhubungan",
+    "social_media": {
+      "title": "Temukan saya di media sosial",
+      "gmail": {
+        "title": "Tetap Berhubungan",
+        "description": "Hubungi melalui email untuk pertanyaan atau kolaborasi."
+      },
+      "instagram": {
+        "title": "Ikuti Perjalanan Saya",
+        "description": "Tetap diperbarui dengan posting dan cerita terbaru saya di Instagram."
+      },
+      "linkedin": {
+        "title": "Mari Terhubung",
+        "description": "Terhubung untuk kolaborasi atau jelajahi pengalaman profesional saya."
+      },
+      "tiktok": {
+        "title": "Bergabunglah dalam Keseruan",
+        "description": "Ikuti saya di TikTok untuk konten yang menghibur dan menarik."
+      },
+      "github": {
+        "title": "Jelajahi Kode",
+        "description": "Jelajahi kode sumber untuk semua proyek saya di GitHub."
+      }
+    },
+    "form": {
+      "title": "Atau kirim pesan kepada saya",
+      "input_name": "Nama",
+      "input_email": "Email",
+      "input_message": "Pesan",
+      "button": "Kirim Email"
+    }
   },
   "LocaleSwitcher": {
     "en": "🇺🇸",

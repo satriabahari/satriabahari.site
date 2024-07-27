@@ -1,16 +1,16 @@
 import Marquee from "react-fast-marquee";
 
-type MarqueeElementProps = {
+interface MarqueeElementProps {
   children: React.ReactNode;
   direction?: "left" | "right" | "up";
   withPadding?: boolean;
-};
+}
 
-export default function MarqueeElement({
+const MarqueeElement = ({
   children,
   direction = "left",
   withPadding = true,
-}: MarqueeElementProps) {
+}: MarqueeElementProps) => {
   return (
     <Marquee
       direction={direction}
@@ -20,4 +20,6 @@ export default function MarqueeElement({
       {children}
     </Marquee>
   );
-}
+};
+
+export default MarqueeElement;

@@ -1,14 +1,10 @@
-type CardProps = {
+interface CardProps {
   children: React.ReactNode;
   className?: string;
   [propName: string]: unknown;
-};
+}
 
-export default function Card({
-  children,
-  className = "",
-  ...others
-}: CardProps) {
+const Card = ({ children, className = "", ...others }: CardProps) => {
   return (
     <div className="rounded-xl border-[1.5px] border-neutral-300 p-1 shadow-sm dark:border-[#333333]">
       <div
@@ -20,4 +16,6 @@ export default function Card({
       </div>
     </div>
   );
-}
+};
+
+export default Card;

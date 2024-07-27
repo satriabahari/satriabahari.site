@@ -4,28 +4,28 @@ import { format } from "date-fns";
 import Card from "@/common/components/elements/Card";
 import { PersonalBestsTime } from "@/common/types/monkeytype";
 
-type OverviewItemProps = {
+interface OverviewItemProps {
   data?: {
     [time: string]: PersonalBestsTime[];
   };
   type?: string;
-};
+}
 
-type ItemProps = {
+interface ItemProps {
   data: {
     time: string;
     maxWpm: PersonalBestsTime;
   };
   type?: string;
-};
+}
 
-type ItemHoveredProps = {
+interface ItemHoveredProps {
   data: {
     time: string;
     maxWpm: PersonalBestsTime;
   };
   type?: string;
-};
+}
 
 const Item = ({ data, type }: ItemProps) => (
   <div className="flex flex-col items-center gap-y-1">
@@ -50,7 +50,7 @@ const ItemHovered = ({ data, type }: ItemHoveredProps) => (
   </div>
 );
 
-export default function OverviewItem({ data, type }: OverviewItemProps) {
+const OverviewItem = ({ data, type }: OverviewItemProps) => {
   const [isHover, setIsHover] = useState("");
 
   const handleHover = (item: string) => {
@@ -87,4 +87,6 @@ export default function OverviewItem({ data, type }: OverviewItemProps) {
       </Card>
     );
   }
-}
+};
+
+export default OverviewItem;

@@ -1,9 +1,9 @@
 import Link from "next/link";
-
-import Container from "@/common/components/elements/Container";
 import { useTranslations } from "next-intl";
 
-export default function NotFound() {
+import Container from "@/common/components/elements/Container";
+
+const NotFound = () => {
   const t = useTranslations("NotFoundPage");
 
   return (
@@ -25,4 +25,6 @@ export default function NotFound() {
       </Link>
     </Container>
   );
-}
+};
+
+export default NotFound;

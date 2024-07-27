@@ -1,38 +1,36 @@
-import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { BsGithub as GithubIcon } from "react-icons/bs";
 import { FiExternalLink as LinkIcon } from "react-icons/fi";
 
-type ProjectLinkProps = {
+interface ProjectLinkProps {
   title?: string;
   link_github?: string;
   link_demo?: string;
-};
+}
 
-type LinkComponentProps = {
+interface LinkComponentProps {
   url: string;
   text: string;
   icon: JSX.Element;
+}
+
+const LinkComponent = ({ url, text, icon }: LinkComponentProps) => {
+  return (
+    <Link href={url} target="_blank">
+      <div className="flex items-center gap-2 font-medium text-neutral-700 dark:text-neutral-300">
+        <i>{icon}</i>
+        <p className="text-sm transition-all duration-300 dark:text-teal-500 hover:dark:text-teal-400">
+          {text}
+        </p>
+      </div>
+    </Link>
+  );
 };
 
-export default function ProjectLink({
-  title,
-  link_github,
-  link_demo,
-}: ProjectLinkProps) {
+const ProjectLink = ({ title, link_github, link_demo }: ProjectLinkProps) => {
   const t = useTranslations("ProjectsPage");
-  const LinkComponent = ({ url, text, icon }: LinkComponentProps) => {
-    return (
-      <Link href={url} target="_blank">
-        <div className="flex items-center gap-2 font-medium text-neutral-700 dark:text-neutral-300">
-          <i>{icon}</i>
-          <p className="text-sm transition-all duration-300 dark:text-teal-500 hover:dark:text-teal-400">
-            {text}
-          </p>
-        </div>
-      </Link>
-    );
-  };
+
   return (
     <div className="flex gap-4">
       {link_github ? (
@@ -54,4 +52,6 @@ export default function ProjectLink({
       ) : null}
     </div>
   );
-}
+};
+
+export default ProjectLink;

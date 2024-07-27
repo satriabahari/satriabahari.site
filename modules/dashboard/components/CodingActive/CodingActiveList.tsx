@@ -1,25 +1,28 @@
-import Card from "@/common/components/elements/Card";
-import Progress from "./Progress";
 import { useTranslations } from "next-intl";
 
-type ItemProps = {
+import Card from "@/common/components/elements/Card";
+
+import Progress from "./Progress";
+
+interface ItemProps {
   name: string;
   hours: number;
   minutes: number;
-};
+}
 
-type CodingActiveListProps = {
+interface CodingActiveListProps {
   data?: {
     languages?: ItemProps[];
     categories?: ItemProps[];
   };
-};
+}
 
-export default function CodingActiveList({ data }: CodingActiveListProps) {
+const CodingActiveList = ({ data }: CodingActiveListProps) => {
+  const t = useTranslations("DashboardPage.wakatime");
+
   if (!data) {
     return null;
   }
-  const t = useTranslations("DashboardPage.wakatime");
 
   return (
     <Card className="flex flex-col gap-y-3 px-4 py-3">
@@ -37,4 +40,6 @@ export default function CodingActiveList({ data }: CodingActiveListProps) {
       </ul>
     </Card>
   );
-}
+};
+
+export default CodingActiveList;

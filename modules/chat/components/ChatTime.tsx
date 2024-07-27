@@ -1,5 +1,5 @@
-import { format, formatDistanceToNow, isToday } from 'date-fns';
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
+import { format, formatDistanceToNow, isToday } from "date-fns";
 
 interface ChatTimeProps {
   datetime: string;
@@ -21,10 +21,10 @@ const ChatTime = ({ datetime }: ChatTimeProps) => {
   }, [datetime]);
 
   return (
-    <div className='text-xs text-neutral-500 tracking-wide font-medium'>
+    <div className="text-xs font-medium tracking-wide text-neutral-500">
       {isToday(new Date(datetime))
         ? formattedTime
-        : format(new Date(datetime), 'dd/MM/yyyy, HH:mm')}
+        : format(new Date(datetime), "dd/MM/yyyy, HH:mm")}
     </div>
   );
 };

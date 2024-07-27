@@ -1,14 +1,14 @@
-type SectionHeadingProps = {
+interface SectionHeadingProps {
   title: string;
   icon?: React.ReactNode;
   className?: string;
-};
+}
 
-export default function SectionHeading({
+const SectionHeading = ({
   title,
   icon,
   className = "",
-}: SectionHeadingProps) {
+}: SectionHeadingProps) => {
   return (
     <div
       className={`flex items-center gap-1.5 text-xl font-medium text-neutral-800 dark:text-neutral-300 ${className}`}
@@ -17,4 +17,6 @@ export default function SectionHeading({
       <h2 className="capitalize">{title}</h2>
     </div>
   );
-}
+};
+
+export default SectionHeading;

@@ -3,12 +3,12 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-type TooltipProps = {
+interface TooltipProps {
   title: string;
   children: React.ReactNode;
-};
+}
 
-export default function Tooltip({ title, children }: TooltipProps) {
+const Tooltip = ({ title, children }: TooltipProps) => {
   const [isTooltipVisible, setTooltipVisible] = useState(false);
 
   const handleMouseEnter = () => {
@@ -45,4 +45,6 @@ export default function Tooltip({ title, children }: TooltipProps) {
       )}
     </div>
   );
-}
+};
+
+export default Tooltip;

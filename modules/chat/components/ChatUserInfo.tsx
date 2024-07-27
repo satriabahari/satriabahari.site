@@ -3,13 +3,14 @@ import { signOut, useSession } from "next-auth/react";
 import { useTranslations } from "next-intl";
 import { HiOutlineLogout as SignOutIcon } from "react-icons/hi";
 
-export default function ChatUserInfo() {
+const ChatUserInfo = () => {
+  const t = useTranslations("ChatRoomPage.sign_in");
+
   const { data: session } = useSession();
 
   const userName = session?.user?.name ?? null;
   const userEmail = session?.user?.email ?? null;
 
-  const t = useTranslations("ChatRoomPage.sign_in");
   return session ? (
     <div className="flex flex-col items-center justify-between gap-4 text-sm md:flex-row">
       <div className="flex flex-wrap gap-1 text-neutral-500">
@@ -26,4 +27,6 @@ export default function ChatUserInfo() {
       </button>
     </div>
   ) : null;
-}
+};
+
+export default ChatUserInfo;

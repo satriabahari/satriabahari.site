@@ -67,40 +67,6 @@
     "error": "An error occurred on the server.",
     "no_data": "No data available."
   },
-  "ContactPage": {
-    "title": "Contact",
-    "description": "Let`s get in touch",
-    "social_media": {
-      "title": "Find me on social media",
-      "gmail": {
-        "title": "Stay in Touch",
-        "description": "Reach out via email for any inquiries or collaborations."
-      },
-      "instagram": {
-        "title": "Follow My Journey",
-        "description": "Stay updated with my latest posts and stories on Instagram."
-      },
-      "linkedin": {
-        "title": "Let's Connect",
-        "description": "Connect for collaboration or explore my professional experience."
-      },
-      "tiktok": {
-        "title": "Join the Fun",
-        "description": "Follow me on TikTok for entertaining and engaging content."
-      },
-      "github": {
-        "title": "Explore the Code",
-        "description": "Explore the source code for all my projects on GitHub."
-      }
-    },
-    "form": {
-      "title": "Or send me a message",
-      "input_name": "Name",
-      "input_email": "Email",
-      "input_message": "Message",
-      "button": "Send Email"
-    }
-  },
   "DashboardPage": {
     "title": "Dashboard",
     "description": "This is my personal dashboard, built with Next.js API routes deployed as serverless functions.",
@@ -168,9 +134,39 @@
       "sign_out_label": "Sign out"
     }
   },
-  "Error": {
-    "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
-    "title": "Something went wrong!"
+  "ContactPage": {
+    "title": "Contact",
+    "description": "Let`s get in touch",
+    "social_media": {
+      "title": "Find me on social media",
+      "gmail": {
+        "title": "Stay in Touch",
+        "description": "Reach out via email for any inquiries or collaborations."
+      },
+      "instagram": {
+        "title": "Follow My Journey",
+        "description": "Stay updated with my latest posts and stories on Instagram."
+      },
+      "linkedin": {
+        "title": "Let's Connect",
+        "description": "Connect for collaboration or explore my professional experience."
+      },
+      "tiktok": {
+        "title": "Join the Fun",
+        "description": "Follow me on TikTok for entertaining and engaging content."
+      },
+      "github": {
+        "title": "Explore the Code",
+        "description": "Explore the source code for all my projects on GitHub."
+      }
+    },
+    "form": {
+      "title": "Or send me a message",
+      "input_name": "Name",
+      "input_email": "Email",
+      "input_message": "Message",
+      "button": "Send Email"
+    }
   },
   "LocaleSwitcher": {
     "en": "🇺🇸",

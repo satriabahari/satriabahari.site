@@ -1,4 +1,4 @@
-export default function ProjectSkeleton() {
+const ProjectSkeleton = () => {
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
       <div className="h-72 w-full animate-pulse rounded-lg bg-neutral-300 dark:bg-neutral-800" />
@@ -7,4 +7,6 @@ export default function ProjectSkeleton() {
       <div className="h-72 w-full animate-pulse rounded-lg bg-neutral-300 dark:bg-neutral-800" />
     </div>
   );
-}
+};
+
+export default ProjectSkeleton;

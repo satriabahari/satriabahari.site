@@ -1,13 +1,14 @@
+import { useTranslations } from "next-intl";
+
 import { CodewarsData } from "@/common/types/codewars";
 
 import OverviewItem from "./OverviewItem";
-import { useTranslations } from "next-intl";
 
-type OverviewProps = {
+interface OverviewProps {
   data: CodewarsData;
-};
+}
 
-export default function Overview({ data }: OverviewProps) {
+const Overview = ({ data }: OverviewProps) => {
   const t = useTranslations("DashboardPage.codewars");
 
   return (
@@ -37,4 +38,6 @@ export default function Overview({ data }: OverviewProps) {
       </div>
     </div>
   );
-}
+};
+
+export default Overview;

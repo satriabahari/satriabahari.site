@@ -1,22 +1,23 @@
+import Image from "next/image";
+import clsx from "clsx";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { MdAdminPanelSettings as AdminIcon } from "react-icons/md";
 import { FiTrash2 as DeleteIcon } from "react-icons/fi";
 import { BsFillReplyAllFill as ReplyIcon } from "react-icons/bs";
-import clsx from "clsx";
 
 import ChatTime from "./ChatTime";
 
-import { MessageProps } from "@/common/types/chat";
 import Tooltip from "@/common/components/elements/Tooltip";
+import { MessageProps } from "@/common/types/chat";
 
 interface ChatItemProps extends MessageProps {
   onDelete: (id: string) => void;
   onReply: (name: string) => void;
 }
-export default function ChatItem({
+
+const ChatItem = ({
   id,
   name,
   email,
@@ -27,16 +28,17 @@ export default function ChatItem({
   is_reply,
   onDelete,
   onReply,
-}: ChatItemProps) {
+}: ChatItemProps) => {
   const [isHover, setIsHover] = useState(false);
   const { data: session } = useSession();
+
   const authorEmail = process.env.NEXT_PUBLIC_AUTHOR_EMAIL;
   const isAuthor = email === authorEmail;
 
   return (
     <div
       className={clsx(
-        "flex items-center gap-3 lg:px-8 px-4",
+        "flex items-center gap-3 px-4 lg:px-8",
         isAuthor && "flex-row-reverse",
       )}
     >
@@ -59,11 +61,7 @@ export default function ChatItem({
         >
           <div className="text-sm dark:text-neutral-200">{name}</div>
           {isAuthor && (
-            // <div className="flex items-center gap-[2px] rounded-full bg-gradient-to-b from-sky-500 to-sky-700 px-1.5 py-0.5 text-sky-50 ">
-            //   <AdminIcon size={13} />
-            //   <span className="text-[10px]">Author</span>
-            // </div>
-            <div className="flex items-center gap-[2px] rounded-full bg-sky-500/20 font-medium px-1.5 py-0.5 text-sky-500 ">
+            <div className="flex items-center gap-[2px] rounded-full bg-sky-500/20 px-1.5 py-0.5 font-medium text-sky-500 ">
               <AdminIcon size={13} />
               <span className="text-[10px]">Author</span>
             </div>
@@ -134,4 +132,6 @@ export default function ChatItem({
       </div>
     </div>
   );
-}
+};
+
+export default ChatItem;

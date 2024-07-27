@@ -9,13 +9,13 @@ import { METADATA } from "@/common/constant/metadata";
 import { loadMdxFiles } from "@/common/libs/mdx";
 import { getProjectsDataBySlug } from "@/services/projects";
 
-type ProjectDetailPageProps = {
+interface ProjectDetailPageProps {
   params: { slug: string };
-};
+}
 
-export async function generateMetadata({
+export const generateMetadata = async ({
   params,
-}: ProjectDetailPageProps): Promise<Metadata> {
+}: ProjectDetailPageProps): Promise<Metadata> => {
   const project = await getProjectDetail(params?.slug);
 
   return {
@@ -34,11 +34,10 @@ export async function generateMetadata({
       canonical: `${process.env.DOMAIN}/projects/${params.slug}`,
     },
   };
-}
+};
 
 const getProjectDetail = async (slug: string): Promise<ProjectItem> => {
   const projects = await getProjectsDataBySlug(slug);
-
   const contents = loadMdxFiles();
   const content = contents.find((item) => item.slug === slug);
   const response = { ...projects, content: content?.content };
@@ -46,9 +45,7 @@ const getProjectDetail = async (slug: string): Promise<ProjectItem> => {
   return data;
 };
 
-export default async function ProjectDetailPage({
-  params,
-}: ProjectDetailPageProps) {
+const ProjectDetailPage = async ({ params }: ProjectDetailPageProps) => {
   const data = await getProjectDetail(params?.slug);
 
   const PAGE_TITLE = data?.title;
@@ -61,4 +58,6 @@ export default async function ProjectDetailPage({
       <ProjectDetail {...data} />
     </Container>
   );
-}
+};
+
+export default ProjectDetailPage;
