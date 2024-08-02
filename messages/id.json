@@ -56,6 +56,12 @@
       "link": "https://www.unja.ac.id"
     }
   },
+  "AchievementsPage": {
+    "title": "Prestasi",
+    "description": "Prestasi profesional saya.",
+    "error": "Terjadi kesalahan di server.",
+    "no_data": "Tidak ada data yang tersedia"
+  },
   "ProjectsPage": {
     "title": "Proyek",
     "description": "Beberapa proyek yang telah saya kerjakan, baik pribadi maupun sumber terbuka.",
@@ -176,6 +182,7 @@
   "Navigation": {
     "Home": "Beranda",
     "About": "Tentang",
+    "Achievements": "Prestasi",
     "Projects": "Proyek",
     "Dashboard": "Dasbord",
     "Chat Room": "Ruang Obrolan",

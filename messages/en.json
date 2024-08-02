@@ -56,6 +56,12 @@
       "link": "https://www.unja.ac.id"
     }
   },
+  "AchievementsPage": {
+    "title": "Achievements",
+    "description": "My professional achievements.",
+    "error": "An error occurred on the server.",
+    "no_data": "No data available."
+  },
   "ProjectsPage": {
     "title": "Projects",
     "description": "Several projects that I have worked on, both private and open source.",
@@ -176,6 +182,7 @@
   "Navigation": {
     "Home": "Home",
     "About": "About",
+    "Achievements": "Achievements",
     "Projects": "Projects",
     "Dashboard": "Dashboard",
     "Chat Room": "Chat Room",

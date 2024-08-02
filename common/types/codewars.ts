@@ -23,6 +23,7 @@ export type CodeChallenges = {
   totalAuthored: number;
   totalCompleted: number;
 };
+
 export type CodewarsData = {
   id: string;
   username: string; 
