@@ -24,7 +24,7 @@ const AchievementCard = ({
           alt={name}
           width={500}
           height={200}
-          className="md:h-[170px] h-[140px] w-full object-cover"
+          className="min-h-[180px] w-full object-cover md:h-[170px]"
         />
         <div className="my-auto space-y-2 p-4">
           {credential_id && (

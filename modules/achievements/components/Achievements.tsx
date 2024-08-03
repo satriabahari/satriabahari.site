@@ -47,7 +47,7 @@ const Achievements = () => {
       )}
 
       {!isLoading && !error && filteredAchievements.length !== 0 && (
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {filteredAchievements?.map((item, index) => (
             <motion.div
               key={index}
