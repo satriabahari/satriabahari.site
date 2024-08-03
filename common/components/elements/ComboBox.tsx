@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { useRouter, useSearchParams } from "next/navigation";
 import { LuChevronsUpDown as ArrowIcon } from "react-icons/lu";
@@ -32,7 +32,12 @@ const ComboBox = ({ data, param, url, label }: ComboBoxProps) => {
     category ? encodeURIComponent(category) : "",
   );
 
+  const comboBoxRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+
+  const filteredData = data?.filter((item) =>
+    item.label.toLowerCase().includes(inputValue.toLowerCase()),
+  );
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -58,13 +63,26 @@ const ComboBox = ({ data, param, url, label }: ComboBoxProps) => {
     setInputValue(event.target.value);
   };
 
-  const filteredData = data?.filter((item) =>
-    item.label.toLowerCase().includes(inputValue.toLowerCase()),
-  );
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      comboBoxRef.current &&
+      !comboBoxRef.current.contains(event.target as Node)
+    ) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
-      <div className="relative w-full md:w-[230px]">
+      <div ref={comboBoxRef} className="relative w-full md:w-[230px]">
         <Button
           className="flex w-full items-center justify-between gap-4 p-2 outline outline-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800"
           onClick={handleClick}
