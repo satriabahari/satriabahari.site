@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { TbPinnedFilled as PinIcon } from "react-icons/tb";
 
 import Card from "@/common/components/elements/Card";
-import { STACKS } from "@/common/constant/stacks";
+import { STACKS } from "@/common/constants/stacks";
 import { ProjectItem } from "@/common/types/projects";
 
 const ProjectCard = ({

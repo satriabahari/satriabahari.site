@@ -5,7 +5,7 @@ import SkillCard from "./SkillCard";
 
 import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
-import { STACKS } from "@/common/constant/stacks";
+import { STACKS } from "@/common/constants/stacks";
 import MarqueeElement from "@/common/components/elements/MarqueeElement";
 
 const SkillList = () => {

@@ -10,7 +10,7 @@ import "./globals.css";
 import Layouts from "@/common/components/layouts";
 import ThemeProviderContext from "@/common/stores/theme";
 import NextAuthProvider from "@/SessionProvider";
-import { METADATA } from "@/common/constant/metadata";
+import { METADATA } from "@/common/constants/metadata";
 import { onestSans } from "@/common/styles/fonts";
 
 export const metadata: Metadata = {

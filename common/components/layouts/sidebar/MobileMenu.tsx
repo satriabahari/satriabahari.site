@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import { MENU_ITEMS } from "@/common/constant/menu";
+import { MENU_ITEMS } from "@/common/constants/menu";
 
 import Breakline from "../../elements/Breakline";
 import Menu from "./Menu";

@@ -4,7 +4,7 @@ import { HiOutlineBriefcase as CareerIcon } from "react-icons/hi";
 
 import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
-import { CAREERS } from "@/common/constant/carreers";
+import { CAREERS } from "@/common/constants/carreers";
 
 import CareerCard from "./CareerCard";
 import Resume from "./Resume";

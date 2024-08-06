@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 
 import Tooltip from "@/common/components/elements/Tooltip";
 import MDXComponent from "@/common/components/elements/MDXComponent";
-import { STACKS } from "@/common/constant/stacks";
+import { STACKS } from "@/common/constants/stacks";
 import { ProjectItem } from "@/common/types/projects";
 
 import ProjectLink from "./ProjectLink";
