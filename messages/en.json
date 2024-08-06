@@ -60,7 +60,8 @@
     "title": "Achievements",
     "description": "My professional achievements.",
     "error": "An error occurred on the server.",
-    "no_data": "No data available."
+    "no_data": "No data available.",
+    "show_credential": "Show Credentials"
   },
   "ProjectsPage": {
     "title": "Projects",

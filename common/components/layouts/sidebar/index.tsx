@@ -1,6 +1,6 @@
 import React from "react";
 
-import { MENU_ITEMS } from "@/common/constant/menu";
+import { MENU_ITEMS } from "@/common/constants/menu";
 
 import Copyright from "../../elements/Copyright";
 import Breakline from "../../elements/Breakline";

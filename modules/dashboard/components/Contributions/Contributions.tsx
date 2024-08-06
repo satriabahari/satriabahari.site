@@ -12,7 +12,7 @@ import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
 import ContributionsSkeleton from "./ContributionsSkeleton";
 import EmptyState from "@/common/components/elements/EmptyState";
-import { GITHUB_ACCOUNTS } from "@/common/constant/github";
+import { GITHUB_ACCOUNTS } from "@/common/constants/github";
 import { fetcher } from "@/services/fetcher";
 
 interface ContributionsProps {

@@ -9,7 +9,7 @@ import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
 import EmptyState from "@/common/components/elements/EmptyState";
 import { fetcher } from "@/services/fetcher";
-import { MONKEYTYPE_ACCOUNT } from "@/common/constant/monkeytype";
+import { MONKEYTYPE_ACCOUNT } from "@/common/constants/monkeytype";
 
 import MonkeytypeSkeleton from "./MonkeytypeSkeleton";
 import Overview from "./Overview";

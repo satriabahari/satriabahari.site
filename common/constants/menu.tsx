@@ -6,7 +6,7 @@ import {
   BiBook as ContactIcon,
 } from "react-icons/bi";
 import { PiChatTeardropDotsBold as ChatRoomIcon } from "react-icons/pi";
-import { GrAchievement as AchievementIcon } from "react-icons/gr";
+import { PiCertificate as AchievementIcon } from "react-icons/pi";
 
 import { MenuItemProps } from "../types/menu";
 
@@ -33,7 +33,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     title: "Achievements",
     href: "/achievements",
     icon: <AchievementIcon size={iconSize} />,
-    isShow: true,
+    isShow: false,
     isExternal: false,
     eventName: "Pages: Achievements",
   },

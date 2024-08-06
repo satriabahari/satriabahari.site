@@ -2,7 +2,7 @@ import { TbSchool as EducationIcon } from "react-icons/tb";
 
 import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
-import { EDUCATION } from "@/common/constant/education";
+import { EDUCATION } from "@/common/constants/education";
 
 import EducationCard from "./EducationCard";
 import { useTranslations } from "next-intl";

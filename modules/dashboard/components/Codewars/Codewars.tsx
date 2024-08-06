@@ -12,7 +12,7 @@ import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
 import EmptyState from "@/common/components/elements/EmptyState";
 import { fetcher } from "@/services/fetcher";
-import { CODEWARS_ACCOUNT } from "@/common/constant/codewars";
+import { CODEWARS_ACCOUNT } from "@/common/constants/codewars";
 
 interface CodewarsProps {
   endpoint: string;
