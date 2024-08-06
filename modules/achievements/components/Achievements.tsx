@@ -12,20 +12,23 @@ import { fetcher } from "@/services/fetcher";
 import AchievementCard from "./AchievementCard";
 import AchievementSkeleton from "./AchievementSkeleton";
 import FilterHeader from "./FilterHeader";
+import { useState } from "react";
 
 const Achievements = () => {
   const t = useTranslations("AchievementsPage");
 
   const params = useSearchParams();
+  const [filter, setFilter] = useState({
+    category: params.get("category") || "",
+    search: params.get("search") || "",
+  })
   const category = params.get("category");
-  const organization = params.get("organization");
   const search = params.get("search");
 
   let apiUrl = "/api/achievements";
 
   const queryParams = new URLSearchParams();
   if (category) queryParams.append("category", category);
-  if (organization) queryParams.append("organization", organization);
   if (search) queryParams.append("search", search);
 
   if (queryParams.toString()) {
@@ -37,9 +40,7 @@ const Achievements = () => {
   const filteredAchievements: AchievementItem[] = data
     ?.filter(
       (item: AchievementItem) =>
-        item?.is_show &&
-        (!category || item?.category === category) &&
-        (!organization || item?.issuing_organization === organization),
+        item?.is_show && (!category || item?.category === category),
     )
     .sort((a: AchievementItem, b: AchievementItem) => b.id - a.id);
 

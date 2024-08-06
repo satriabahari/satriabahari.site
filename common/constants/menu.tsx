@@ -33,7 +33,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     title: "Achievements",
     href: "/achievements",
     icon: <AchievementIcon size={iconSize} />,
-    isShow: false,
+    isShow: true,
     isExternal: false,
     eventName: "Pages: Achievements",
   },
