@@ -18,7 +18,6 @@ const ProjectCard = ({
 }: ProjectItem) => {
   const t = useTranslations("ProjectsPage");
 
-  const stacksArray = JSON.parse(JSON.stringify(stacks));
   const trimmedContent =
     description.slice(0, 80) + (description.length > 80 ? "..." : "");
 
@@ -53,7 +52,7 @@ const ProjectCard = ({
             {trimmedContent}
           </p>
           <div className="flex flex-wrap items-center gap-3 pt-2">
-            {stacksArray.map((stack: string, index: number) => (
+            {stacks.map((stack: string, index: number) => (
               <div key={index}>{STACKS[stack]}</div>
             ))}
           </div>

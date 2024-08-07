@@ -26,30 +26,30 @@ const data: dataComboBox[] = [
 
 const ComboBoxFilter = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [inputValue, setInputValue] = useState("");
-  const [value, setValue] = useState("");
+  const [inputValueSearch, setInputValueSearch] = useState("");
+  const [selectValue, setSelectValue] = useState("");
 
   const searchParams = useSearchParams();
-  const category = searchParams.get("category");
+  const categoryParams = searchParams.get("category");
 
-  const comboBoxRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+  const comboBoxRef = useRef<HTMLDivElement>(null);
 
   const filteredData = data?.filter((item) =>
-    item.label.toLowerCase().includes(inputValue.toLowerCase()),
+    item.label.toLowerCase().includes(inputValueSearch.toLowerCase()),
   );
 
-  const handleClick = () => {
+  const handleClickOpen = () => {
     setIsOpen(!isOpen);
   };
 
   const handleSelect = (newValue: string) => {
-    setValue((prevValue) => (prevValue === newValue ? "" : newValue));
+    setSelectValue((prevValue) => (prevValue === newValue ? "" : newValue));
     setIsOpen(false);
   };
 
   const handleChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
+    setInputValueSearch(event.target.value);
   };
 
   const handleClickOutside = (event: MouseEvent) => {
@@ -62,20 +62,20 @@ const ComboBoxFilter = () => {
   };
 
   useEffect(() => {
-    if (category) {
-      setValue(encodeURIComponent(category));
+    if (categoryParams) {
+      setSelectValue(categoryParams);
     } else {
-      setValue("");
+      setSelectValue("");
     }
-  }, [category]);
+  }, [categoryParams]);
 
   useEffect(() => {
-    if (value === "") {
+    if (selectValue === "") {
       router.push(`/achievements`);
     } else {
-      router.push(`/achievements?category=${encodeURIComponent(value)}`);
+      router.push(`/achievements?category=${encodeURIComponent(selectValue)}`);
     }
-  }, [router, value]);
+  }, [router, selectValue]);
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
@@ -89,11 +89,11 @@ const ComboBoxFilter = () => {
     <div ref={comboBoxRef} className="relative w-full md:w-[230px]">
       <Button
         className="flex w-full  items-center justify-between gap-4 bg-neutral-100 p-2 text-neutral-900 outline outline-neutral-300 hover:bg-neutral-300  dark:bg-neutral-900 dark:text-neutral-400 dark:outline-neutral-700 dark:hover:bg-neutral-800"
-        onClick={handleClick}
+        onClick={handleClickOpen}
       >
         <span className="text-sm ">
-          {value
-            ? data.find((item) => item.value === value)?.label
+          {selectValue
+            ? data.find((item) => item.value === selectValue)?.label
             : `Filter achievements...`}
         </span>
         <ArrowIcon
@@ -115,7 +115,7 @@ const ComboBoxFilter = () => {
                 className="flex justify-start bg-neutral-100 text-sm text-neutral-900 outline-none placeholder:text-neutral-500 dark:bg-neutral-900 dark:text-neutral-50"
                 placeholder={`Search achievements...`}
                 onChange={handleChangeInput}
-                value={inputValue}
+                value={inputValueSearch}
               />
             </div>
 
@@ -132,7 +132,7 @@ const ComboBoxFilter = () => {
                   className="grid w-full grid-cols-[1.5rem_1fr] items-center rounded-[4px] p-2 text-neutral-900 hover:bg-neutral-300 dark:text-neutral-50 dark:hover:bg-neutral-800"
                   onClick={() => handleSelect(item.value)}
                 >
-                  {item.value === value && <ActiveIcon />}
+                  {item.value === selectValue && <ActiveIcon />}
                   <span className="col-start-2 flex justify-start text-sm">
                     {item.label}
                   </span>
