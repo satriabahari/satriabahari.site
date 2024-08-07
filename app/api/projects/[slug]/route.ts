@@ -7,7 +7,7 @@ export const GET = async (
   { params }: { params: { slug: string } },
 ) => {
   try {
-    const slug = params?.slug;
+    const { slug } = params;
     const data = await getProjectsDataBySlug(slug);
     return NextResponse.json(data, { status: 200 });
   } catch (error) {
