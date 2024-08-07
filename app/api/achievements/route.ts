@@ -1,12 +1,7 @@
 import { NextResponse } from "next/server";
 import { type NextRequest } from "next/server";
 
-import {
-  getAchievementsData,
-  getAchievementsDataByCategory,
-  getAchievementsDataByCategoryAndQuery,
-  getAchievementsDataByQuerySearch,
-} from "@/services/achievements";
+import { getAchievementsData } from "@/services/achievements";
 
 export const GET = async (req: NextRequest) => {
   try {
@@ -15,26 +10,29 @@ export const GET = async (req: NextRequest) => {
     const querySearch = searchParams.get("search");
 
     if (queryCategory && querySearch) {
-      const data = await getAchievementsDataByCategoryAndQuery(queryCategory, querySearch);
+      const data = await getAchievementsData({
+        category: queryCategory,
+        search: querySearch,
+      });
       return NextResponse.json(data, { status: 200 });
     }
 
     if (queryCategory && queryCategory.trim()) {
-      const data = await getAchievementsDataByCategory(queryCategory);
+      const data = await getAchievementsData({ category: queryCategory });
       return NextResponse.json(data, { status: 200 });
     }
 
     if (querySearch) {
-      const data = await getAchievementsDataByQuerySearch(querySearch);
+      const data = await getAchievementsData({ search: querySearch });
       return NextResponse.json(data, { status: 200 });
     }
 
-    const data = await getAchievementsData();
+    const data = await getAchievementsData({});
     return NextResponse.json(data, { status: 200 });
   } catch (error) {
     return NextResponse.json(
       { message: "Internal Server Error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 };
