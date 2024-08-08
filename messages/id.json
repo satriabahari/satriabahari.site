@@ -58,7 +58,7 @@
   },
   "AchievementsPage": {
     "title": "Prestasi",
-    "description": "Prestasi profesional saya.",
+    "description": "Koleksi sertifikat dan lencana yang saya dapatkan sepanjang perjalanan profesional saya.",
     "error": "Terjadi kesalahan di server.",
     "no_data": "Tidak ada data yang tersedia",
     "show_credential": "Tampilkan Kredensial"

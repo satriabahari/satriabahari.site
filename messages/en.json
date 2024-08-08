@@ -58,7 +58,7 @@
   },
   "AchievementsPage": {
     "title": "Achievements",
-    "description": "My professional achievements.",
+    "description": "A collection of certificates and badges that I have earned throughout my professional journey.",
     "error": "An error occurred on the server.",
     "no_data": "No data available.",
     "show_credential": "Show Credentials"
