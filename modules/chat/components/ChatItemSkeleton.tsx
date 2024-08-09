@@ -1,6 +1,6 @@
 const ChatItemSkeleton = () => {
   return (
-    <div className="flex h-80 flex-col gap-4">
+    <div className="flex h-80 flex-col gap-4 p-4">
       <div className="mb-4 flex  gap-4">
         <div className="h-12 w-12 animate-pulse rounded-full bg-neutral-300 dark:bg-neutral-800" />
         <div className="w-full space-y-2">

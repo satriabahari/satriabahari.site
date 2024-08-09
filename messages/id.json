@@ -7,6 +7,15 @@
     "skills": {
       "title": "Keahlian",
       "sub_title": "Keahlian profesional saya."
+    },
+    "services": {
+      "title": "Layanan",
+      "sub_title": "Saya bekerja sebagai freelancer untuk mengembangkan situs web yang luar biasa bagi merek, perusahaan, institusi, dan startup, dengan fokus pada solusi web strategis.",
+      "cta": {
+        "title": "Mari bekerja sama!",
+        "sub_title": "Saya terbuka untuk proyek freelance, silakan kirimkan email kepada saya untuk mengetahui bagaimana kita dapat berkolaborasi.",
+        "button": "Hubungi saya"
+      }
     }
   },
   "AboutPage": {
@@ -22,8 +31,6 @@
     "career": {
       "title": "Karier",
       "sub_title": "Perjalanan karier profesional saya.",
-      "resume_download_button": "Unduh Resume",
-      "portfolio_download_button": "Unduh Portofolio",
       "careers": {
         "career_0": {
           "position": "Pengembang Web Fullstack",
@@ -54,7 +61,9 @@
       "start_year": 2022,
       "end_year": 2026,
       "link": "https://www.unja.ac.id"
-    }
+    },
+    "resume_download_button": "Unduh Resume",
+    "portfolio_download_button": "Unduh Portofolio"
   },
   "AchievementsPage": {
     "title": "Prestasi",
@@ -139,6 +148,12 @@
       "label": "Masuk dengan",
       "signed_label": "Masuk sebagai",
       "sign_out_label": "Keluar"
+    },
+    "widget": {
+      "title": "Ruang Obrolan",
+      "tooltip_title": "Pergi ke Ruang Obrolan",
+      "tooltip_minimize": "Perkecil",
+      "tooltip_signout": "Keluar"
     }
   },
   "ContactPage": {
@@ -174,6 +189,11 @@
       "input_message": "Pesan",
       "button": "Kirim Email"
     }
+  },
+  "Footer": {
+    "hire": "Hire me.",
+    "copyright_1": "Hak Cipta © ",
+    "copyright_2": "Satria Bahari. Semua hak dilindungi."
   },
   "LocaleSwitcher": {
     "en": "🇺🇸",
