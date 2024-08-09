@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 import { MENU_ITEMS } from "@/common/constants/menu";
 
 import Breakline from "../../elements/Breakline";
+
 import Menu from "./Menu";
 
-export default function MobileMenu() {
+const MobileMenu = () => {
   const filteredMenu = MENU_ITEMS?.filter((item) => item?.isShow);
   return (
     <motion.div
@@ -20,4 +21,6 @@ export default function MobileMenu() {
       </div>
     </motion.div>
   );
-}
+};
+
+export default MobileMenu;

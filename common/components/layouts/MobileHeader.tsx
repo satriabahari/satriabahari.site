@@ -12,7 +12,7 @@ import MobileMenu from "./sidebar/MobileMenu";
 import Tooltip from "../elements/Tooltip";
 import Image from "../elements/Image";
 
-export default function MobileHeader() {
+const MobileHeader = () => {
   const isMobile = useIsMobile();
   const { isOpen, toggleMenu } = useMenu();
   const imageSize = isMobile ? 40 : 100;
@@ -64,4 +64,6 @@ export default function MobileHeader() {
       )}
     </div>
   );
-}
+};
+
+export default MobileHeader;
