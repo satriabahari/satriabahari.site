@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { MONKEYTYPE_ACCOUNT } from "@/common/constant/monkeytype";
+import { MONKEYTYPE_ACCOUNT } from "@/common/constants/monkeytype";
 
 const { username, api_key } = MONKEYTYPE_ACCOUNT;
 

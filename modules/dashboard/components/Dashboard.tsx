@@ -4,9 +4,9 @@ import CodingActive from "./CodingActive";
 import Contributions from "./Contributions";
 
 import Breakline from "@/common/components/elements/Breakline";
-import { GITHUB_ACCOUNTS } from "@/common/constant/github";
-import { MONKEYTYPE_ACCOUNT } from "@/common/constant/monkeytype";
-import { CODEWARS_ACCOUNT } from "@/common/constant/codewars";
+import { GITHUB_ACCOUNTS } from "@/common/constants/github";
+import { MONKEYTYPE_ACCOUNT } from "@/common/constants/monkeytype";
+import { CODEWARS_ACCOUNT } from "@/common/constants/codewars";
 
 const Dashboard = () => {
   return (

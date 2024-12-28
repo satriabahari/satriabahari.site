@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import clsx from 'clsx'
 
-type MobileMenuButtonProps = {
+interface MobileMenuButtonProps {
   expandMenu: boolean
   setExpandMenu: (expand: boolean) => void
 }

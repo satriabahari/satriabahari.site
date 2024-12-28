@@ -13,6 +13,7 @@ import Tooltip from "@/common/components/elements/Tooltip";
 import { MessageProps } from "@/common/types/chat";
 
 interface ChatItemProps extends MessageProps {
+  isWidget?: boolean;
   onDelete: (id: string) => void;
   onReply: (name: string) => void;
 }
@@ -26,6 +27,7 @@ const ChatItem = ({
   created_at,
   reply_to,
   is_reply,
+  isWidget,
   onDelete,
   onReply,
 }: ChatItemProps) => {
@@ -35,11 +37,13 @@ const ChatItem = ({
   const authorEmail = process.env.NEXT_PUBLIC_AUTHOR_EMAIL;
   const isAuthor = email === authorEmail;
 
+  const condition = isAuthor && !isWidget;
+
   return (
     <div
       className={clsx(
         "flex items-center gap-3 px-4 lg:px-8",
-        isAuthor && "flex-row-reverse",
+        condition && "flex-row-reverse",
       )}
     >
       {image && (
@@ -52,15 +56,17 @@ const ChatItem = ({
         />
       )}
 
-      <div className={clsx("space-y-1", isAuthor && "flex flex-col items-end")}>
+      <div
+        className={clsx("space-y-1", condition && "flex flex-col items-end")}
+      >
         <div
           className={clsx(
             "flex items-center gap-x-2",
-            isAuthor && "flex-row-reverse",
+            condition && "flex-row-reverse",
           )}
         >
           <div className="text-sm dark:text-neutral-200">{name}</div>
-          {isAuthor && (
+          {condition && (
             <div className="flex items-center gap-[2px] rounded-full bg-sky-500/20 px-1.5 py-0.5 font-medium text-sky-500 ">
               <AdminIcon size={13} />
               <span className="text-[10px]">Author</span>
@@ -73,7 +79,7 @@ const ChatItem = ({
         <div
           className={clsx(
             "group relative ml-1.5 mr-2 flex w-fit items-center gap-3",
-            isAuthor && "flex-row-reverse",
+            condition && "flex-row-reverse",
           )}
           onMouseEnter={() => setIsHover(true)}
           onMouseLeave={() => setIsHover(false)}
@@ -81,7 +87,7 @@ const ChatItem = ({
           <div
             className={clsx(
               "absolute top-1/2 h-3 w-3 -translate-y-1/2 rotate-45 bg-neutral-200 group-hover:bg-neutral-300 dark:bg-neutral-800 dark:group-hover:bg-neutral-600",
-              isAuthor ? "-right-1" : "-left-1",
+              condition ? "-right-1" : "-left-1",
             )}
           />
 
@@ -107,7 +113,7 @@ const ChatItem = ({
                   size={15}
                   className={clsx(
                     "transition duration-300 active:scale-90",
-                    isAuthor && "scale-x-[-1] active:scale-x-[-1]",
+                    condition && "scale-x-[-1] active:scale-x-[-1]",
                   )}
                 />
               </Tooltip>

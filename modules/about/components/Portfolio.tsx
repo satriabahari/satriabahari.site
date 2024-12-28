@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import { LuDownload as DownloadIcon } from "react-icons/lu";
 
 const Portfolio = () => {
-  const t = useTranslations("AboutPage.career");
+  const t = useTranslations("AboutPage");
 
   const PORTFOLIO_URL =
     "https://www.canva.com/design/DAGGNurMYa0/Qz-ESp1akKih_dBsdV0_0w/edit?utm_content=DAGGNurMYa0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton";

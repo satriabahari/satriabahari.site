@@ -7,6 +7,15 @@
     "skills": {
       "title": "Skills",
       "sub_title": "My professional skills."
+    },
+    "services": {
+      "title": "Service",
+      "sub_title": "I work as a freelancer to develop exceptional websites for brands, companies, institutions, and startups, focusing on strategic web solutions.",
+      "cta": {
+        "title": "Let's work together!",
+        "sub_title": "I'm open for freelance projects, feel free to email me to see how can we collaborate.",
+        "button": "Contact me"
+      }
     }
   },
   "AboutPage": {
@@ -22,8 +31,6 @@
     "career": {
       "title": "Career",
       "sub_title": "My professional career journey.",
-      "resume_download_button": "Download Resume",
-      "portfolio_download_button": "Download Portfolio",
       "careers": {
         "career_0": {
           "position": "Fullstack Web Developer",
@@ -54,7 +61,16 @@
       "start_year": 2022,
       "end_year": 2026,
       "link": "https://www.unja.ac.id"
-    }
+    },
+    "resume_download_button": "Download Resume",
+    "portfolio_download_button": "Download Portfolio"
+  },
+  "AchievementsPage": {
+    "title": "Achievements",
+    "description": "A collection of certificates and badges that I have earned throughout my professional journey.",
+    "error": "An error occurred on the server.",
+    "no_data": "No data available.",
+    "show_credential": "Show Credentials"
   },
   "ProjectsPage": {
     "title": "Projects",
@@ -132,6 +148,12 @@
       "label": "Sign in with",
       "signed_label": "Signed in as",
       "sign_out_label": "Sign out"
+    },
+    "widget": {
+      "title": "Chat Room",
+      "tooltip_title": "Go to Chat Room",
+      "tooltip_minimize": "Minimize",
+      "tooltip_signout": "Signout"
     }
   },
   "ContactPage": {
@@ -168,6 +190,11 @@
       "button": "Send Email"
     }
   },
+  "Footer": {
+    "hire": "Hire me.",
+    "copyright_1": "COPYRIGHT © ",
+    "copyright_2": "Satria Bahari. All rights reserved."
+  },
   "LocaleSwitcher": {
     "en": "🇺🇸",
     "id": "🇮🇩",
@@ -176,6 +203,7 @@
   "Navigation": {
     "Home": "Home",
     "About": "About",
+    "Achievements": "Achievements",
     "Projects": "Projects",
     "Dashboard": "Dashboard",
     "Chat Room": "Chat Room",

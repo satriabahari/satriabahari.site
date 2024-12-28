@@ -1,23 +1,15 @@
-import { firestore } from "@/common/libs/firebase";
-import { ProjectItem } from "@/common/types/projects";
-import { collection, getDocs, query, where } from "@firebase/firestore";
+import { createClient } from "@/common/utils/server";
 
 export const getProjectsData = async () => {
-  const querySnapshot = await getDocs(collection(firestore, "projects"));
-  const projects: ProjectItem[] = [];
-  querySnapshot.forEach((doc) => {
-    const data = { id: parseInt(doc.id), ...doc.data() } as ProjectItem;
-    projects.push(data);
-  });
-  return projects;
+  const supabase = createClient();
+
+  let { data } = await supabase.from("projects").select();
+  return data;
 };
 
 export const getProjectsDataBySlug = async (slug: string) => {
-  const q = query(collection(firestore, "projects"), where("slug", "==", slug));
-  const querySnapshot = await getDocs(q);
-  let data = {};
-  querySnapshot.forEach((doc) => {
-    data = { id: parseInt(doc.id), ...doc.data() };
-  });
+  const supabase = createClient();
+
+  let { data } = await supabase.from("projects").select().eq("slug", slug).single();
   return data;
 };

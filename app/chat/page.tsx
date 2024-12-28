@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 
 import Container from "@/common/components/elements/Container";
 import PageHeading from "@/common/components/elements/PageHeading";
-import { METADATA } from "@/common/constant/metadata";
+import { METADATA } from "@/common/constants/metadata";
 import ChatRoom from "@/modules/chat";
 
 export const metadata: Metadata = {

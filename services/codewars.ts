@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { CODEWARS_ACCOUNT } from "@/common/constant/codewars";
+import { CODEWARS_ACCOUNT } from "@/common/constants/codewars";
 
 const { user_id } = CODEWARS_ACCOUNT;
 

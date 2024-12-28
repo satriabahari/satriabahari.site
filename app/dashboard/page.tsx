@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import Container from "@/common/components/elements/Container";
 import PageHeading from "@/common/components/elements/PageHeading";
 import Dashboard from "@/modules/dashboard/components/Dashboard";
-import { METADATA } from "@/common/constant/metadata";
+import { METADATA } from "@/common/constants/metadata";
 
 export const metadata: Metadata = {
   title: `Dashboard ${METADATA.exTitle}`,

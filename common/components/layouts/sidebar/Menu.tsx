@@ -2,11 +2,12 @@ import { MenuItemProps } from "@/common/types/menu";
 
 import MenuItem from "./MenuItem";
 
-type MenuProps = {
+interface MenuProps {
   title?: string;
   list: MenuItemProps[];
-};
-export default function Menu({ title, list }: MenuProps) {
+}
+
+const Menu = ({ title, list }: MenuProps) => {
   return (
     <nav className="flex flex-col gap-y-1">
       {title && (
@@ -19,4 +20,6 @@ export default function Menu({ title, list }: MenuProps) {
       ))}
     </nav>
   );
-}
+};
+
+export default Menu;
