@@ -18,7 +18,14 @@ const Projects = () => {
 
   const filteredProjects: ProjectItem[] = data
     ?.filter((item: ProjectItem) => item?.is_show)
-    .sort((a: ProjectItem, b: ProjectItem) => a.id - b.id);
+    .sort((a: ProjectItem, b: ProjectItem) => {
+      if (a.is_featured && !b.is_featured) return -1;
+      if (!a.is_featured && b.is_featured) return 1;
+
+      if (a.is_featured && b.is_featured) return a.id - b.id;
+
+      return b.id - a.id;
+    });
 
   if (filteredProjects?.length === 0) {
     return <EmptyState message={t("no_data")} />;

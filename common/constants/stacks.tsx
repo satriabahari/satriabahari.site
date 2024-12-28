@@ -33,6 +33,7 @@ import {
   SiSupabase,
   SiJest,
   SiDocker,
+  SiKotlin
 } from "react-icons/si";
 
 export type SkillProps = {
@@ -70,6 +71,7 @@ export const STACKS: SkillProps = {
   PHP: <SiPhp size={iconSize} className="text-indigo-400" />,
   Laravel: <SiLaravel size={iconSize} className="text-red-600" />,
   Prisma: <SiPrisma size={iconSize} className="text-teal-500" />,
+  Kotlin: <SiKotlin size={iconSize} className="text-purple-500" />,
   PostgreSql: <BiLogoPostgresql size={iconSize} className="text-blue-400" />,
   MySql: <SiMysql size={iconSize} className="text-blue-400" />,
   MongoDb: <SiMongodb size={iconSize} className="text-green-600" />,
