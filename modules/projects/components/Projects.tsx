@@ -29,14 +29,20 @@ const Projects = () => {
 
   if (filteredProjects?.length === 0) {
     return <EmptyState message={t("no_data")} />;
-  }
+}
 
   if (error) {
     return <EmptyState message={t("error")} />;
   }
 
   if (isLoading) {
-    return <ProjectSkeleton />;
+    return (
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        {[...Array(4)].map((_, i) => (
+          <ProjectSkeleton key={i} />
+        ))}
+      </div>
+    );
   }
 
   return (
