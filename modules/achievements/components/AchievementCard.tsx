@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "@/common/components/elements/Image";
 import { useTranslations } from "next-intl";
 import { format, parseISO } from "date-fns";
 import { HiOutlineArrowSmRight as ViewIcon } from "react-icons/hi";

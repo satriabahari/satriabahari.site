@@ -1,11 +1,27 @@
+import Card from "@/common/components/elements/Card";
+import SkeletonLoader from "@/common/components/elements/SkeletonLoader";
+import Skeleton from "react-loading-skeleton";
+
 const ProjectSkeleton = () => {
   return (
-    <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-      <div className="h-72 w-full animate-pulse rounded-lg bg-neutral-300 dark:bg-neutral-800" />
-      <div className="h-72 w-full animate-pulse rounded-lg bg-neutral-300 dark:bg-neutral-800" />
-      <div className="h-72 w-full animate-pulse rounded-lg bg-neutral-300 dark:bg-neutral-800" />
-      <div className="h-72 w-full animate-pulse rounded-lg bg-neutral-300 dark:bg-neutral-800" />
-    </div>
+    <SkeletonLoader>
+      <Card>
+        <Skeleton className="h-44 w-full rounded-xl" />
+        <div className="flex flex-col gap-2 p-4">
+          <Skeleton className="h-6" />
+          <div className="flex flex-col">
+            {[...Array(2)].map((_, i) => (
+              <Skeleton key={i} className="h-4" />
+            ))}
+          </div>
+          <div className="flex w-1/2 gap-2">
+            {[...Array(4)].map((_, i) => (
+              <Skeleton key={i} className="h-8" containerClassName="w-1/4" />
+            ))}
+          </div>
+        </div>
+      </Card>
+    </SkeletonLoader>
   );
 };
 
