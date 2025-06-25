@@ -21,7 +21,7 @@ const Achievements = () => {
   const [filter, setFilter] = useState({
     category: params.get("category") || "",
     search: params.get("search") || "",
-  })
+  });
   const category = params.get("category");
   const search = params.get("search");
 
@@ -48,7 +48,13 @@ const Achievements = () => {
     <section className="space-y-4">
       <FilterHeader totalData={data?.length} />
 
-      {isLoading && <AchievementSkeleton />}
+      {isLoading && (
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          {[...Array(6)].map((_, i) => (
+            <AchievementSkeleton key={i} />
+          ))}
+        </div>
+      )}
 
       {error && <EmptyState message={t("error")} />}
 
