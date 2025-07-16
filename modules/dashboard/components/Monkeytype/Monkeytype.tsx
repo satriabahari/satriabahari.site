@@ -19,7 +19,11 @@ import Leaderboard from "./Leaderboard";
 const Monkeytype = () => {
   const { data, isLoading, error } = useSWR("/api/monkeytype", fetcher);
 
+  const { monkeytype_url, is_active } = MONKEYTYPE_ACCOUNT;
+
   const t = useTranslations("DashboardPage");
+
+  if (!is_active) return null;
 
   return (
     <section className="space-y-2">
@@ -34,7 +38,7 @@ const Monkeytype = () => {
       <SectionSubHeading>
         <p>{t("monkeytype.sub_title")}</p>
         <Link
-          href={MONKEYTYPE_ACCOUNT.monkeytype_url}
+          href={monkeytype_url}
           target="_blank"
           className="text-sm text-neutral-600 hover:text-neutral-900 dark:text-neutral-500 dark:hover:text-neutral-400"
         >

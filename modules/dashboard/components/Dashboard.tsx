@@ -19,7 +19,7 @@ const Dashboard = () => {
       <CodingActive />
       <Breakline className="my-8" />
       <Codewars endpoint={CODEWARS_ACCOUNT.endpoint} />
-      <Breakline className="my-8" />
+      {/* <Breakline className="my-8" /> */}
       <Monkeytype />
     </>
   );

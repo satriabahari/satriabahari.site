@@ -1,16 +1,27 @@
+import Card from "@/common/components/elements/Card";
+import SkeletonLoader from "@/common/components/elements/SkeletonLoader";
+import Skeleton from "react-loading-skeleton";
+
 const CodingActiveSkeleton = () => {
   return (
-    <div className="flex flex-col gap-4">
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        <div className="h-20 w-full animate-pulse rounded-md bg-neutral-300 dark:bg-neutral-800" />
-        <div className="h-20 w-full animate-pulse rounded-md bg-neutral-300 dark:bg-neutral-800" />
-        <div className="h-20 w-full animate-pulse rounded-md bg-neutral-300 dark:bg-neutral-800" />
-        <div className="h-20 w-full animate-pulse rounded-md bg-neutral-300 dark:bg-neutral-800" />
-        <div className="h-20 w-full animate-pulse rounded-md bg-neutral-300 dark:bg-neutral-800" />
-        <div className="h-20 w-full animate-pulse rounded-md bg-neutral-300 dark:bg-neutral-800" />
+    <SkeletonLoader>
+      <div className="grid grid-cols-2 gap-4">
+        {[...Array(6)].map((_, i) => (
+          <Card key={i} className="p-4">
+            <Skeleton className="h-4" />
+            <Skeleton className="h-6" />
+          </Card>
+        ))}
       </div>
-      <div className="h-40 w-full animate-pulse rounded-md bg-neutral-300 dark:bg-neutral-800" />
-    </div>
+
+      <Card className="p-4">
+        <Skeleton className="h-4" />
+        <div className="grid grid-cols-2 gap-4">
+          <Skeleton className="h-6" count={3} />
+          <Skeleton className="h-6" count={3} />
+        </div>
+      </Card>
+    </SkeletonLoader>
   );
 };
 

@@ -8,7 +8,7 @@ interface OverviewItemProps {
 }
 
 const OverviewItem = ({ label, value, unit = "" }: OverviewItemProps) => (
-  <Card className="flex flex-col self-center bg-neutral-100 px-4 py-3">
+  <Card className="0 flex flex-col items-center p-4">
     <span className="text-sm dark:text-neutral-400">{label}</span>
     <div>
       <AnimateCounter

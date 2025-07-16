@@ -1,15 +1,13 @@
+import { WAKATIME_ACCOUNT } from "@/common/constants/wakatime";
 import axios from "axios";
 
-const API_KEY = process.env.WAKATIME_API_KEY;
-
-const STATS_ENDPOINT = "https://wakatime.com/api/v1/users/current/stats";
-const ALL_TIME_SINCE_TODAY =
-  "https://wakatime.com/api/v1/users/current/all_time_since_today";
+const { api_key, base_url, all_time_endpoint, stats_endpoint } =
+  WAKATIME_ACCOUNT;
 
 export const getReadStats = async () => {
-  const response = await axios.get(`${STATS_ENDPOINT}/last_7_days`, {
+  const response = await axios.get(`${base_url}${stats_endpoint}/last_7_days`, {
     headers: {
-      Authorization: `Basic ${API_KEY}`,
+      Authorization: `Basic ${api_key}`,
     },
   });
 
@@ -51,9 +49,9 @@ export const getReadStats = async () => {
 };
 
 export const getAllTimeSinceToday = async () => {
-  const response = await axios.get(ALL_TIME_SINCE_TODAY, {
+  const response = await axios.get(`${base_url}${all_time_endpoint}`, {
     headers: {
-      Authorization: `Basic ${API_KEY}`,
+      Authorization: `Basic ${api_key}`,
     },
   });
 

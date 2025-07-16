@@ -6,7 +6,7 @@ const AchievementSkeleton = () => {
   return (
     <SkeletonLoader>
       <Card>
-        <Skeleton className="h-44 w-full rounded-xl" />
+        <Skeleton className="h-44"/>
         <div className="flex flex-col gap-2 p-4">
           <Skeleton className="h-6" />
           <Skeleton className="h-4" />

@@ -20,9 +20,11 @@ interface CodewarsProps {
 
 const Codewars = ({ endpoint }: CodewarsProps) => {
   const { data, isLoading, error } = useSWR(endpoint, fetcher);
-  const { codewars_url } = CODEWARS_ACCOUNT;
+  const { codewars_url, is_active } = CODEWARS_ACCOUNT;
 
   const t = useTranslations("DashboardPage");
+
+  if (!is_active) return null;
 
   return (
     <section className="space-y-2">
