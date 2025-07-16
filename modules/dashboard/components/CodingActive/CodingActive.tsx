@@ -16,6 +16,7 @@ import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
 import EmptyState from "@/common/components/elements/EmptyState";
 import { fetcher } from "@/services/fetcher";
+import { WAKATIME_ACCOUNT } from "@/common/constants/wakatime";
 
 const CodingActive = () => {
   const { data, isLoading, error } = useSWR("/api/read-stats", fetcher);
@@ -23,6 +24,8 @@ const CodingActive = () => {
   const [formattedLastUpdate, setFormattedLastUpdate] = useState<string | null>(
     null,
   );
+
+  const { is_active } = WAKATIME_ACCOUNT;
 
   const t = useTranslations("DashboardPage");
 
@@ -50,6 +53,8 @@ const CodingActive = () => {
     }
     return null;
   };
+
+  if (!is_active) return null;
 
   return (
     <section className="space-y-2">

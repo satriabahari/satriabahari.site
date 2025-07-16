@@ -14,7 +14,7 @@ const Notif = dynamic(() => import("../elements/Notif"), { ssr: false });
 
 interface LayoutsProps {
   children: React.ReactNode;
-};
+}
 
 const Layouts = ({ children }: LayoutsProps) => {
   const pathname = usePathname();
@@ -29,7 +29,7 @@ const Layouts = ({ children }: LayoutsProps) => {
   }, []);
   return (
     <div className="mx-auto max-w-7xl lg:px-12">
-      <div className="flex flex-col lg:flex-row lg:gap-5 lg:py-4 mx-auto">
+      <div className="mx-auto flex flex-col lg:flex-row lg:gap-5 lg:py-4">
         <Sidebar />
         <main className="max-w-[854px] transition-all duration-300 lg:w-4/5">
           {children}
@@ -39,6 +39,6 @@ const Layouts = ({ children }: LayoutsProps) => {
       {isShowChatButton && <ChatButton />}
     </div>
   );
-}
+};
 
 export default Layouts;

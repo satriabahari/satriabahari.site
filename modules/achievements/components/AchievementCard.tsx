@@ -29,7 +29,7 @@ const AchievementCard = ({
             alt={name}
             width={500}
             height={200}
-            className="min-h-[180px] w-full object-cover md:h-[170px]"
+            className="min-h-[180px] w-full rounded-t-xl object-cover md:h-[170px]"
           />
           <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center gap-1 rounded-t-lg bg-black text-sm font-medium opacity-0 transition-opacity duration-300 group-hover:opacity-80 dark:text-neutral-50">
             <span>{t("show_credential")}</span>
@@ -40,7 +40,9 @@ const AchievementCard = ({
           {credential_id && (
             <p className="text-sm text-neutral-500">{credential_id}</p>
           )}
-          <p className=" text-neutral-900 dark:text-neutral-50">{name}</p>
+          <p className=" font-semibold text-neutral-900 dark:text-neutral-50">
+            {name}
+          </p>
           <p className="text-sm text-neutral-500 dark:text-neutral-400">
             {issuing_organization}
           </p>

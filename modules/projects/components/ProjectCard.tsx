@@ -19,7 +19,7 @@ const ProjectCard = ({
   const t = useTranslations("ProjectsPage");
 
   const trimmedContent =
-    description.slice(0, 80) + (description.length > 80 ? "..." : "");
+    description.slice(0, 85) + (description.length > 85 ? "..." : "");
 
   return (
     <Link href={`/projects/${slug}`}>
@@ -44,10 +44,10 @@ const ProjectCard = ({
           </div>
         </div>
         <div className="space-y-2 p-5">
-          <h3 className="cursor-pointer text-lg text-neutral-700 transition-all duration-300 group-hover:text-teal-500 dark:text-neutral-300 dark:group-hover:text-teal-400">
+          <h3 className="cursor-pointer text-lg font-semibold text-neutral-700 transition-all duration-300 group-hover:text-teal-500 dark:text-neutral-300 dark:group-hover:text-teal-400">
             {title}
           </h3>
-          <p className="text-sm leading-relaxed text-neutral-700 dark:text-neutral-400">
+          <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
             {trimmedContent}
           </p>
           <div className="flex flex-wrap items-center gap-3 pt-2">
