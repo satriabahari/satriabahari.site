@@ -1,15 +1,13 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { HiOutlineBriefcase as CareerIcon } from "react-icons/hi";
 
 import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
-import { CAREERS } from "@/common/constant/carreers";
+import { CAREERS } from "@/common/constants/carreers";
 
 import CareerCard from "./CareerCard";
-import Resume from "./Resume";
-import Portfolio from "./Portfolio";
-import { useTranslations } from "next-intl";
 
 const CareerList = () => {
   const t = useTranslations("AboutPage.career");
@@ -20,10 +18,6 @@ const CareerList = () => {
         <SectionHeading title={t("title")} icon={<CareerIcon />} />
         <SectionSubHeading>
           <p>{t("sub_title")}</p>
-          <div className="mt-2 flex flex-col gap-4 md:mt-0 md:flex-row">
-            <Portfolio />
-            <Resume />
-          </div>
         </SectionSubHeading>
       </div>
 

@@ -12,7 +12,7 @@ import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
 import ContributionsSkeleton from "./ContributionsSkeleton";
 import EmptyState from "@/common/components/elements/EmptyState";
-import { GITHUB_ACCOUNTS } from "@/common/constant/github";
+import { GITHUB_ACCOUNTS } from "@/common/constants/github";
 import { fetcher } from "@/services/fetcher";
 
 interface ContributionsProps {
@@ -24,7 +24,11 @@ const Contributions = ({ endpoint }: ContributionsProps) => {
   const contributionCalendar =
     data?.contributionsCollection?.contributionCalendar;
 
+  const { github_url, is_active } = GITHUB_ACCOUNTS;
+
   const t = useTranslations("DashboardPage");
+
+  if (!is_active) return null;
 
   return (
     <section className="space-y-2">
@@ -32,7 +36,7 @@ const Contributions = ({ endpoint }: ContributionsProps) => {
       <SectionSubHeading>
         <p>{t("github.sub_title")}</p>
         <Link
-          href={GITHUB_ACCOUNTS.github_url}
+          href={github_url}
           target="_blank"
           className="text-sm text-neutral-600 hover:text-neutral-900 dark:text-neutral-500 dark:hover:text-neutral-400"
         >

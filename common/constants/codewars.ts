@@ -3,5 +3,5 @@ export const CODEWARS_ACCOUNT = {
   username: "Satria Bahari",
   endpoint: "/api/codewars",
   codewars_url: "https://www.codewars.com/",
-  is_active: true,
+  is_active: false,
 };

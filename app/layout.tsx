@@ -10,7 +10,7 @@ import "./globals.css";
 import Layouts from "@/common/components/layouts";
 import ThemeProviderContext from "@/common/stores/theme";
 import NextAuthProvider from "@/SessionProvider";
-import { METADATA } from "@/common/constant/metadata";
+import { METADATA } from "@/common/constants/metadata";
 import { onestSans } from "@/common/styles/fonts";
 
 export const metadata: Metadata = {
@@ -59,7 +59,7 @@ const RootLayout = async ({
           crawlSpeed={200}
           height={3}
           crawl={true}
-          showSpinner={true}
+          // showSpinner={true}
           easing="ease"
           speed={200}
           shadow="0 0 10px #05b6d3,0 0 5px #45c6c0"

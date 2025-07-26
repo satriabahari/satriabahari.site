@@ -10,12 +10,14 @@ import ChatUserInfo from "./ChatUserInfo";
 import { ChatInputProps } from "@/common/types/chat";
 
 interface ChatInputPropsNew extends ChatInputProps {
-  onCancelReply: () => void;
   replyName?: string;
+  isWidget?: boolean;
+  onCancelReply: () => void;
 }
 
 const ChatInput = ({
   replyName,
+  isWidget,
   onSendMessage,
   onCancelReply,
 }: ChatInputPropsNew) => {
@@ -52,7 +54,7 @@ const ChatInput = ({
 
   return (
     <>
-      <form className="flex flex-col gap-2 border-t border-neutral-300 py-4 dark:border-neutral-700">
+      <form className="flex flex-col gap-2 px-4 border-t border-neutral-300 py-4 dark:border-neutral-700">
         {replyName && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -92,7 +94,7 @@ const ChatInput = ({
           </button>
         </div>
       </form>
-      <ChatUserInfo />
+      <ChatUserInfo isWidget={isWidget} />
     </>
   );
 };

@@ -1,13 +1,57 @@
+import Card from "@/common/components/elements/Card";
+import SkeletonLoader from "@/common/components/elements/SkeletonLoader";
+import Skeleton from "react-loading-skeleton";
+
 const MonkeytypeSkeleton = () => {
   return (
-    <div className="flex flex-col gap-4">
-      <div className="h-52 w-full animate-pulse rounded-md bg-neutral-300 dark:bg-neutral-800 md:h-40" />
-      <div className="h-32 w-full animate-pulse rounded-md bg-neutral-300 dark:bg-neutral-800 md:h-16" />
-      <div className="flex flex-col gap-4 md:flex-row">
-        <div className="h-32 w-full animate-pulse rounded-md bg-neutral-300 dark:bg-neutral-800 md:h-32" />
-        <div className="h-32 w-full animate-pulse rounded-md bg-neutral-300 dark:bg-neutral-800 md:h-32" />
+    <SkeletonLoader>
+      <Card className="grid grid-cols-[1fr_2fr] gap-16 p-4">
+        <div className="flex flex-col gap-2">
+          <div className="flex gap-4">
+            <Skeleton className="h-full" circle containerClassName="w-1/2" />
+            <div className="w-full">
+              <Skeleton containerClassName="w-full" className="h-6" />
+              <Skeleton containerClassName="w-full" />
+              <Skeleton containerClassName="w-full" />
+            </div>
+          </div>
+          <div className="flex w-full gap-2">
+            <Skeleton containerClassName="w-full" />
+            <Skeleton containerClassName="w-full" />
+            <Skeleton containerClassName="w-full" />
+          </div>
+        </div>
+
+        <div className="flex items-center justify-center gap-16">
+          {[...Array(3)].map((_, i) => (
+            <div key={i} className="w-full">
+              <Skeleton containerClassName="w-full" className="h-6" />
+              <Skeleton containerClassName="w-full" />
+            </div>
+          ))}
+        </div>
+      </Card>
+
+      <Card className="p-4">
+        <div className="flex items-center justify-center gap-16">
+          {[...Array(3)].map((_, i) => (
+            <div key={i} className="w-full">
+              <Skeleton containerClassName="w-full" className="h-6" />
+            </div>
+          ))}
+        </div>
+      </Card>
+
+      <div className="flex gap-4">
+        {[...Array(2)].map((_, i) => (
+          <Card key={i} className="flex gap-8 p-4">
+            {[...Array(4)].map((_, i) => (
+              <Skeleton key={i} containerClassName="w-full" count={3} />
+            ))}
+          </Card>
+        ))}
       </div>
-    </div>
+    </SkeletonLoader>
   );
 };
 

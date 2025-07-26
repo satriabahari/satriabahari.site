@@ -9,15 +9,18 @@ import { ChatListProps } from "@/common/types/chat";
 interface ChatListPropsNew extends ChatListProps {
   onDeleteMessage: (id: string) => void;
   onClickReply: (name: string) => void;
+  isWidget?: boolean;
 }
 
 const ChatList = ({
   messages,
+  isWidget,
   onDeleteMessage,
   onClickReply,
 }: ChatListPropsNew) => {
   const chatListRef = useRef<HTMLDivElement | null>(null);
   const [hasScrolledUp, setHasScrolledUp] = useState(false);
+  const [chatListHeight, setChatListHeight] = useState('500px');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,28 +52,29 @@ const ChatList = ({
     }
   }, [messages, hasScrolledUp]);
 
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     const newHeight = isWidget ? '500px' : `${window.innerHeight - 360}px`;
-  //     setChatListHeight(newHeight);
-  //   };
+  useEffect(() => {
+    const handleResize = () => {
+      const newHeight = isWidget ? '500px' : `${window.innerHeight - 360}px`;
+      setChatListHeight(newHeight);
+    };
 
-  //   handleResize();
+    handleResize();
 
-  //   window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize);
 
-  //   return () => {
-  //     window.removeEventListener('resize', handleResize);
-  //   };
-  // }, [isWidget]);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [isWidget]);
 
   return (
-    <div ref={chatListRef} className="h-80 space-y-5 overflow-y-auto py-4">
+    <div ref={chatListRef} className="h-96 space-y-5 overflow-y-auto py-4">
       {messages?.map((chat, index) => (
         <ChatItem
           key={index}
           onDelete={onDeleteMessage}
           onReply={onClickReply}
+          isWidget={isWidget}
           {...chat}
         />
       ))}

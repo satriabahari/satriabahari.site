@@ -1,7 +1,7 @@
 import { BiLogoPostgresql } from "react-icons/bi";
 import { BsFillBootstrapFill } from "react-icons/bs";
 import { TbBrandFramerMotion } from "react-icons/tb";
-import { FaNpm } from "react-icons/fa6";
+import { FaNpm, FaGolang } from "react-icons/fa6";
 import {
   SiCss3,
   SiExpress,
@@ -33,6 +33,7 @@ import {
   SiSupabase,
   SiJest,
   SiDocker,
+  SiKotlin,
 } from "react-icons/si";
 
 export type SkillProps = {
@@ -67,9 +68,11 @@ export const STACKS: SkillProps = {
   "Node.js": <SiNodedotjs size={iconSize} className="text-green-500" />,
   "Express.js": <SiExpress size={iconSize} />,
   "Nest.js": <SiNestjs size={iconSize} className="text-pink-700" />,
+  Go: <FaGolang size={iconSize} className="text-sky-400" />,
   PHP: <SiPhp size={iconSize} className="text-indigo-400" />,
   Laravel: <SiLaravel size={iconSize} className="text-red-600" />,
   Prisma: <SiPrisma size={iconSize} className="text-teal-500" />,
+  Kotlin: <SiKotlin size={iconSize} className="text-purple-500" />,
   PostgreSql: <BiLogoPostgresql size={iconSize} className="text-blue-400" />,
   MySql: <SiMysql size={iconSize} className="text-blue-400" />,
   MongoDb: <SiMongodb size={iconSize} className="text-green-600" />,

@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import { LuDownload as DownloadIcon } from "react-icons/lu";
 
 const Resume = () => {
-  const t = useTranslations("AboutPage.career");
+  const t = useTranslations("AboutPage");
 
   const RESUME_URL = "https://bit.ly/cv-satriabahari";
 

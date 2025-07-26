@@ -10,7 +10,7 @@ import ProfileHeader from "./ProfileHeader";
 import ThemeToggle from "../../elements/ThemeToggle";
 import LocaleSwitcher from "./LocaleSwitcher";
 
-export default function Profile() {
+const Profile = () => {
   const [width, setWidth] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -77,4 +77,6 @@ export default function Profile() {
       )}
     </div>
   );
-}
+};
+
+export default Profile;

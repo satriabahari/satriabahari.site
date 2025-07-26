@@ -10,6 +10,7 @@ import ProjectCard from "./ProjectCard";
 import EmptyState from "@/common/components/elements/EmptyState";
 import { fetcher } from "@/services/fetcher";
 import { ProjectItem } from "@/common/types/projects";
+import Card from "@/common/components/elements/Card";
 
 const Projects = () => {
   const { data, isLoading, error } = useSWR("/api/projects", fetcher);
@@ -18,7 +19,14 @@ const Projects = () => {
 
   const filteredProjects: ProjectItem[] = data
     ?.filter((item: ProjectItem) => item?.is_show)
-    .sort((a: ProjectItem, b: ProjectItem) => a.id - b.id);
+    .sort((a: ProjectItem, b: ProjectItem) => {
+      if (a.is_featured && !b.is_featured) return -1;
+      if (!a.is_featured && b.is_featured) return 1;
+
+      if (a.is_featured && b.is_featured) return a.id - b.id;
+
+      return b.id - a.id;
+    });
 
   if (filteredProjects?.length === 0) {
     return <EmptyState message={t("no_data")} />;
@@ -29,7 +37,13 @@ const Projects = () => {
   }
 
   if (isLoading) {
-    return <ProjectSkeleton />;
+    return (
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        {[...Array(4)].map((_, i) => (
+          <ProjectSkeleton key={i} />
+        ))}
+      </div>
+    );
   }
 
   return (

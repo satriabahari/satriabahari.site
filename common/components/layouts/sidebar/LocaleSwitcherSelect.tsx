@@ -1,10 +1,10 @@
 "use client";
 
+import clsx from "clsx";
+import { ChangeEvent, useState, useTransition } from "react";
+
 import { Locale } from "@/config";
 import { setUserLocale } from "@/services/locale";
-import clsx from "clsx";
-import { usePathname, useRouter } from "next/navigation";
-import { ChangeEvent, useState, useTransition } from "react";
 
 interface LocaleSwitcherSelectProps {
   items: Array<{ value: string; label: string }>;
@@ -12,11 +12,11 @@ interface LocaleSwitcherSelectProps {
   defaultValue: string;
 }
 
-export default function LocaleSwitcherSelect({
+const LocaleSwitcherSelect = ({
   items,
   label,
   defaultValue,
-}: LocaleSwitcherSelectProps) {
+}: LocaleSwitcherSelectProps) => {
   const [isPending, startTransition] = useTransition();
   const [isShow, setIsShow] = useState(false);
 
@@ -49,4 +49,6 @@ export default function LocaleSwitcherSelect({
       </select>
     </button>
   );
-}
+};
+
+export default LocaleSwitcherSelect;

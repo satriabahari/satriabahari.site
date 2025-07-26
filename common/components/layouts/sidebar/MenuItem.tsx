@@ -1,6 +1,7 @@
 "use client";
 
 import clsx from "clsx";
+import Link from "next/link";
 import { useState } from "react";
 import { BsArrowRightShort as ExternalLinkIcon } from "react-icons/bs";
 import { useSelectedLayoutSegment } from "next/navigation";
@@ -8,9 +9,8 @@ import { useTranslations } from "next-intl";
 
 import { MenuItemProps } from "@/common/types/menu";
 import { useMenu } from "@/common/stores/menu";
-import Link from "next/link";
 
-export default function MenuItem({
+const MenuItem = ({
   title,
   href,
   icon,
@@ -18,7 +18,7 @@ export default function MenuItem({
   className = "",
   isHover,
   children,
-}: MenuItemProps) {
+}: MenuItemProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const { hideMenu } = useMenu();
   const isExternalUrl = href?.includes("http");
@@ -95,3 +95,5 @@ export default function MenuItem({
     </Link>
   );
 }
+
+export default MenuItem;

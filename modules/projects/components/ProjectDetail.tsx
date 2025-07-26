@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 
 import Tooltip from "@/common/components/elements/Tooltip";
 import MDXComponent from "@/common/components/elements/MDXComponent";
-import { STACKS } from "@/common/constant/stacks";
+import { STACKS } from "@/common/constants/stacks";
 import { ProjectItem } from "@/common/types/projects";
 
 import ProjectLink from "./ProjectLink";
@@ -18,8 +18,6 @@ const ProjectDetail = ({
 }: ProjectItem) => {
   const t = useTranslations("ProjectsPage");
 
-  const stacksArray = JSON.parse(JSON.stringify(stacks));
-
   return (
     <div className="space-y-8">
       <div className="flex flex-col items-center justify-between gap-5 sm:flex-row lg:flex-row lg:items-start">
@@ -28,7 +26,7 @@ const ProjectDetail = ({
             {t("tech_stack")} :{" "}
           </span>
           <div className="flex flex-wrap items-center gap-3">
-            {stacksArray.map((stack: string, index: number) => (
+            {stacks.map((stack: string, index: number) => (
               <div key={index}>
                 <Tooltip title={stack}>{STACKS[stack]}</Tooltip>
               </div>

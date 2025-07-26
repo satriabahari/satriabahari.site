@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 
-import { SOCIAL_MEDIA } from "@/common/constant/socialMedia";
+import { SOCIAL_MEDIA } from "@/common/constants/socialMedia";
 
 import ContactCard from "./ContactCard";
 

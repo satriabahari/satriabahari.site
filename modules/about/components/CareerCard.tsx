@@ -103,37 +103,43 @@ const CareerCard = ({
             </span>
           </div>
 
-          <button
-            onClick={() => setIsShowResponsibility(!isShowResponsibility)}
-            className="-ml-1 flex items-center justify-center gap-x-1 transition duration-300 hover:text-neutral-800 dark:text-neutral-500 dark:hover:text-neutral-300"
-          >
-            <ChevronIcon
-              size={18}
-              className={clsx({
-                "rotate-90 transition-all duration-300": isShowResponsibility,
-              })}
-            />
-            <p className="text-sm">
-              {isShowResponsibility ? hideText : showText} {responsibilityText}
-            </p>
-          </button>
-          <AnimatePresence>
-            {isShowResponsibility && (
-              <motion.ul
-                className="ml-[18px] list-disc space-y-1 pb-2 text-sm leading-normal text-neutral-600 dark:text-neutral-400"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ y: -20, opacity: 0 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
+          {responsibilities != null && (
+            <>
+              <button
+                onClick={() => setIsShowResponsibility(!isShowResponsibility)}
+                className="-ml-1 flex items-center justify-center gap-x-1 transition duration-300 hover:text-neutral-800 dark:text-neutral-500 dark:hover:text-neutral-300"
               >
-                {responsibilities?.map((responsibility, index) => (
-                  <motion.li key={index} layout>
-                    {t(`responsibilities.responsibility_${index + 1}`)}
-                  </motion.li>
-                ))}
-              </motion.ul>
-            )}
-          </AnimatePresence>
+                <ChevronIcon
+                  size={18}
+                  className={clsx({
+                    "rotate-90 transition-all duration-300":
+                      isShowResponsibility,
+                  })}
+                />
+                <p className="text-sm">
+                  {isShowResponsibility ? hideText : showText}{" "}
+                  {responsibilityText}
+                </p>
+              </button>
+              <AnimatePresence>
+                {isShowResponsibility && (
+                  <motion.ul
+                    className="ml-[18px] list-disc space-y-1 pb-2 text-sm leading-normal text-neutral-600 dark:text-neutral-400"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ y: -20, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                  >
+                    {responsibilities?.map((responsibility, index) => (
+                      <motion.li key={index} layout>
+                        {t(`responsibilities.responsibility_${index + 1}`)}
+                      </motion.li>
+                    ))}
+                  </motion.ul>
+                )}
+              </AnimatePresence>
+            </>
+          )}
         </div>
       </div>
     </Card>

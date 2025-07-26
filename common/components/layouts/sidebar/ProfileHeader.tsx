@@ -8,15 +8,12 @@ import Status from "../../elements/Status";
 import ThemeToggle from "../../elements/ThemeToggle";
 import LocaleSwitcher from "./LocaleSwitcher";
 
-type ProfileHeaderProps = {
+interface ProfileHeaderProps {
   expandMenu: boolean;
   imageSize: number;
-};
+}
 
-export default function ProfileHeader({
-  expandMenu,
-  imageSize,
-}: ProfileHeaderProps) {
+const ProfileHeader = ({ expandMenu, imageSize }: ProfileHeaderProps) => {
   return (
     <div
       className={clsx(
@@ -47,7 +44,7 @@ export default function ProfileHeader({
       </div>
 
       <div className="hidden text-sm text-neutral-600 transition-all duration-300 hover:text-neutral-700 dark:text-neutral-500 dark:hover:text-neutral-400 lg:flex">
-        @satriabaharii_
+        @satriabahari
       </div>
 
       <div className="hidden w-full items-center justify-between lg:mt-2 lg:flex">
@@ -59,4 +56,6 @@ export default function ProfileHeader({
       </div>
     </div>
   );
-}
+};
+
+export default ProfileHeader;

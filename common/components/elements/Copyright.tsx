@@ -1,14 +1,13 @@
+import { useTranslations } from "next-intl";
+
 const Copyright = () => {
+  const t = useTranslations("Footer");
+
   return (
-    <div className="font-sora flex items-center gap-1 px-3 py-1 text-sm text-neutral-600 dark:text-neutral-400">
-      <span>©</span>
+    <div className="font-sora flex flex-wrap items-center justify-center gap-1 text-sm text-neutral-600 dark:text-neutral-400">
+      <p>{t("copyright_1")}</p>
       <span>{new Date().getFullYear()}</span>
-      <span>with</span>
-      <span data-testid="love" className="animate-pulse text-red-500">
-        ❤
-      </span>
-      <span>by</span>
-      <span className="cursor-pointer hover:dark:text-neutral-400">satria</span>
+      <p>{t("copyright_2")}</p>
     </div>
   );
 };

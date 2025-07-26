@@ -1,8 +1,8 @@
 "use client";
 
 import clsx from "clsx";
-import { useState } from "react";
 import NextImage, { ImageProps as NextImageProps } from "next/image";
+import { useState } from "react";
 
 interface ImageProps extends NextImageProps {
   rounded?: string;
@@ -31,9 +31,9 @@ const Image = (props: ImageProps) => {
         )}
         src={src}
         alt={alt}
-        // loading="lazy"
+        loading="lazy"
         quality={100}
-        priority
+        // priority
         onLoad={() => setLoading(false)}
         {...rest}
       />
