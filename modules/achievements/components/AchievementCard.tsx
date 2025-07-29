@@ -6,6 +6,7 @@ import { HiOutlineArrowSmRight as ViewIcon } from "react-icons/hi";
 
 import Card from "@/common/components/elements/Card";
 import { AchievementItem } from "@/common/types/achievements";
+import SpotlightCard from "@/common/components/elements/SpotlightCard";
 
 const AchievementCard = ({
   credential_id,
@@ -22,7 +23,7 @@ const AchievementCard = ({
 
   return (
     <Link href={url_credential} className="flex h-full" target="_blank">
-      <Card className="group flex h-full flex-col overflow-hidden">
+      <SpotlightCard>
         <div className="relative">
           <Image
             src={image}
@@ -40,9 +41,7 @@ const AchievementCard = ({
           {credential_id && (
             <p className="text-sm text-neutral-500">{credential_id}</p>
           )}
-          <p className=" font-semibold text-neutral-900 dark:text-neutral-50">
-            {name}
-          </p>
+          <p className="text-neutral-900 dark:text-neutral-50">{name}</p>
           <p className="text-sm text-neutral-500 dark:text-neutral-400">
             {issuing_organization}
           </p>
@@ -55,7 +54,7 @@ const AchievementCard = ({
             </p>
           </div>
         </div>
-      </Card>
+      </SpotlightCard>
     </Link>
   );
 };
