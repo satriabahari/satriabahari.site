@@ -12,6 +12,8 @@ import CareerCard from "./CareerCard";
 const CareerList = () => {
   const t = useTranslations("AboutPage.career");
 
+  const filteredCareers = CAREERS?.filter((career) => career.isShow);
+
   return (
     <section className="space-y-6">
       <div className="space-y-2">
@@ -22,7 +24,7 @@ const CareerList = () => {
       </div>
 
       <div className="grid grid-cols-1 gap-4">
-        {CAREERS?.map((career, index) => (
+        {filteredCareers?.map((career, index) => (
           <CareerCard key={index} indexCareer={index} {...career} />
         ))}
       </div>
