@@ -2,6 +2,42 @@ import { CareerProps } from "../types/careers";
 
 export const CAREERS: CareerProps[] = [
   {
+    position: "Backend Golang Developer",
+    company: "Pt. Affan Technology Indonesia (Parto.id)",
+    logo: "/images/careers/parto-id.png",
+    location: "Jambi, Indonesia 🇮🇩",
+    location_type: "Onsite",
+    type: "Internship",
+    start_date: "2025-07",
+    end_date: "2025-09",
+    industry: "Marketplace B2B/B2G",
+    link: "https://parto.id/",
+    responsibilities: [
+      "Developed and maintained backend services using Golang for Parto.id's internal attendance application.",
+      "Implemented efficient data handling and secure API integrations to support daily attendance workflows.",
+      "Collaborated with frontend and product teams to ensure smooth functionality and seamless user experience.",
+    ],
+    isShow: true,
+  },
+  {
+    position: "Frontend Web Developer",
+    company: "Pt. Eltran Indonesia",
+    logo: "/images/careers/eltran-indonesia.png",
+    location: "Bandung, Indonesia 🇮🇩",
+    location_type: "Remote",
+    type: "Internship",
+    start_date: "2025-05",
+    end_date: "2025-11",
+    industry: "Engineering, Procurement & Construction (EPC)",
+    link: "https://eltran.co.id/",
+    responsibilities: [
+      "Developed a responsive and interactive landing page using Next.js to promote company services and solutions.",
+      "Ensured SEO optimization and fast performance by leveraging Next.js features such as static site generation.",
+      "Collaborated with design and marketing teams to align web presence with brand identity.",
+    ],
+    isShow: true,
+  },
+  {
     position: "Head of Technology in the Research and Technology Division",
     company:
       "Himpunan Mahasiswa Sistem Informasi Universitas Jambi (HIMASI UNJA)",
@@ -13,10 +49,12 @@ export const CAREERS: CareerProps[] = [
     end_date: null,
     industry: "school",
     link: "https://himasi.unja.ac.id/",
-    // responsibilities: [
-    //   "Developed and managed a portfolio website showcasing my best work and achievements as a Web Developer. The website emphasizes professional design and easy navigation for an optimal user experience",
-    //   "Designed user interfaces with professional, responsive designs for both mobile and desktop devices, ensuring easy navigation for an optimal user experience",
-    // ],
+    responsibilities: [
+      "Led the development of an internal RFID-based attendance system for HIMASI UNJA.",
+      "Managed the technical team and oversaw the implementation of hardware-software integration.",
+      "Ensured the system was user-friendly, secure, and met the organization's operational needs.",
+    ],
+    isShow: true,
   },
   {
     position: "Mobile Development Cohort",
@@ -35,6 +73,7 @@ export const CAREERS: CareerProps[] = [
       "Collaborated with a cross-functional team to develop a Company-Based Capstone Project, applying Agile methodologies and real-world problem-solving.",
       "Enhanced teamwork, problem-solving, and communication skills in a multicultural environment.",
     ],
+    isShow: true,
   },
   {
     position: "Mobile Developer",
@@ -53,5 +92,6 @@ export const CAREERS: CareerProps[] = [
       "Worked closely with PT Amanah Corp to ensure alignment with business objectives and deliver impactful, real-world solutions.",
       "Strengthened technical and soft skills, including problem-solving, teamwork, and communication, in a professional, multicultural setting.",
     ],
+    isShow: true,
   },
 ];
