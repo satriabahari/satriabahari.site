@@ -41,7 +41,7 @@ const GlassIcon: React.FC<GlassIconProps> = ({ items }) => {
             </span>
           </span>
 
-          <span className="absolute left-0 right-0 top-full translate-y-0 whitespace-nowrap text-center text-base leading-[2] opacity-0 transition-[opacity,transform] duration-300 ease-[cubic-bezier(0.83,0,0.17,1)] group-hover:opacity-100 group-hover:[transform:translateY(20%)]">
+          <span className="absolute left-0 right-0 top-full translate-y-0 whitespace-nowrap text-center text-sm leading-[2] opacity-0 transition-[opacity,transform] duration-300 ease-[cubic-bezier(0.83,0,0.17,1)] group-hover:opacity-100 group-hover:[transform:translateY(20%)]">
             {item.label}
           </span>
         </button>
