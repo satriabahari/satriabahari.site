@@ -42,7 +42,7 @@ export type SkillProps = {
   label: string;
 };
 
-const iconSize = 30;
+const iconSize = 28;
 
 export const STACKS: SkillProps[] = [
   {
