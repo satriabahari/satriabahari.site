@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 
 import Tooltip from "@/common/components/elements/Tooltip";
 import MDXComponent from "@/common/components/elements/MDXComponent";
-import { STACKS } from "@/common/constants/stacks";
+import { STACKSMARQUE } from "@/common/constants/stacksMarque";
 import { ProjectItem } from "@/common/types/projects";
 
 import ProjectLink from "./ProjectLink";
@@ -28,7 +28,7 @@ const ProjectDetail = ({
           <div className="flex flex-wrap items-center gap-3">
             {stacks.map((stack: string, index: number) => (
               <div key={index}>
-                <Tooltip title={stack}>{STACKS[stack]}</Tooltip>
+                <Tooltip title={stack}>{STACKSMARQUE[stack]}</Tooltip>
               </div>
             ))}
           </div>
