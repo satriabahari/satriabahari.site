@@ -11,4 +11,5 @@ export interface CareerProps {
   link: string | null;
   responsibilities?: string[];
   indexCareer?: number;
+  isShow?: boolean;
 }

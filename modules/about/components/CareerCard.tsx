@@ -13,6 +13,7 @@ import { differenceInMonths, differenceInYears, format } from "date-fns";
 
 import Card from "@/common/components/elements/Card";
 import { CareerProps } from "@/common/types/careers";
+import SpotlightCard from "@/common/components/elements/SpotlightCard";
 
 const CareerCard = ({
   position,
@@ -55,26 +56,32 @@ const CareerCard = ({
     locale == "en" ? "responsibilities" : "tanggung jawab";
 
   return (
-    <Card className="flex items-start gap-5 px-6 py-4">
+    <SpotlightCard className="flex items-start gap-5 p-6">
       {logo ? (
-        <Image width={70} height={70} src={logo} alt={company} />
+        <Image
+          width={60}
+          height={60}
+          src={logo}
+          alt={company}
+          className="rounded-lg border-[1.5px] border-neutral-800 bg-neutral-100 dark:border-neutral-300"
+        />
       ) : (
         <CompanyIcon size={65} />
       )}
 
       <div className="space-y-1">
-        <h5>{t("position")}</h5>
+        <h5>{position}</h5>
         <div className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
           <div className="flex flex-col gap-2 md:flex-row">
             <Link href={link || "#"} target="_blank">
               <span className="cursor-pointer hover:text-neutral-900 hover:underline hover:dark:text-neutral-50">
-                {t("company")}
+                {company}
               </span>
             </Link>
             <span className="hidden text-neutral-300 dark:text-neutral-700 md:block">
               •
             </span>
-            <span>{t("location")}</span>
+            <span>{location}</span>
           </div>
 
           <div className="flex flex-col gap-2 text-[13px] md:flex-row">
@@ -92,14 +99,14 @@ const CareerCard = ({
               •
             </span>
             <span className="text-neutral-600 dark:text-neutral-400">
-              {t(`type`)}
+              {type}
             </span>
 
             <span className="hidden text-neutral-300 dark:text-neutral-700 md:block">
               •
             </span>
             <span className="text-neutral-600 dark:text-neutral-400">
-              {t("location_type")}
+              {location_type}
             </span>
           </div>
 
@@ -132,7 +139,7 @@ const CareerCard = ({
                   >
                     {responsibilities?.map((responsibility, index) => (
                       <motion.li key={index} layout>
-                        {t(`responsibilities.responsibility_${index + 1}`)}
+                        {responsibility}
                       </motion.li>
                     ))}
                   </motion.ul>
@@ -142,7 +149,7 @@ const CareerCard = ({
           )}
         </div>
       </div>
-    </Card>
+    </SpotlightCard>
   );
 };
 
