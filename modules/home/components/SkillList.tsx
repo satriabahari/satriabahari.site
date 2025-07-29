@@ -18,7 +18,7 @@ const SkillList = () => {
         </SectionSubHeading>
       </div>
 
-      <div className="grid grid-cols-6 gap-x-[1em] gap-y-[3em] py-2 md:grid-cols-10 lg:grid-cols-11">
+      <div className="grid grid-cols-6 gap-x-[1em] gap-y-[2.7em] py-2 md:grid-cols-10 lg:grid-cols-11">
         <GlassIcon items={STACKS} />
       </div>
     </section>
