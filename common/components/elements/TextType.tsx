@@ -1,16 +1,9 @@
 "use client";
 
-import {
-  useEffect,
-  useRef,
-  useState,
-  ElementType,
-  createElement,
-} from "react";
+import { useEffect, useRef, useState, ElementType, createElement } from "react";
 
 interface TextTypeProps {
   className?: string;
-  showCursor?: boolean;
   hideCursorWhileTyping?: boolean;
   cursorCharacter?: string;
   cursorClassName?: string;
@@ -37,7 +30,6 @@ const TextType = ({
   initialDelay = 0,
   loop = true,
   className = "",
-  showCursor = true,
   hideCursorWhileTyping = false,
   cursorCharacter = "|",
   cursorClassName = "",
@@ -48,7 +40,6 @@ const TextType = ({
   reverseMode = false,
   ...props
 }: TextTypeProps & React.HTMLAttributes<HTMLElement>) => {
-
   const containerRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(!startOnVisible);
   const [displayedText, setDisplayedText] = useState("");
@@ -75,7 +66,7 @@ const TextType = ({
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     observer.observe(containerRef.current);
@@ -116,7 +107,10 @@ const TextType = ({
       timeout = setTimeout(handleTyping, getSpeed());
     };
 
-    timeout = setTimeout(handleTyping, charIndex === 0 ? initialDelay : getSpeed());
+    timeout = setTimeout(
+      handleTyping,
+      charIndex === 0 ? initialDelay : getSpeed(),
+    );
 
     return () => clearTimeout(timeout);
   }, [
@@ -140,10 +134,6 @@ const TextType = ({
       ? textColors[textIndex % textColors.length]
       : "inherit";
 
-  const shouldHideCursor =
-    hideCursorWhileTyping &&
-    (charIndex < textArray[textIndex].length || isDeleting);
-
   return createElement(
     Component,
     {
@@ -155,14 +145,7 @@ const TextType = ({
       <span className="inline" style={{ color: currentColor }}>
         {displayedText}
       </span>
-      {showCursor && (
-        <span
-          className={`ml-1 inline-block animate-blink ${shouldHideCursor ? "invisible" : ""} ${cursorClassName}`}
-        >
-          {cursorCharacter}
-        </span>
-      )}
-    </>
+    </>,
   );
 };
 
