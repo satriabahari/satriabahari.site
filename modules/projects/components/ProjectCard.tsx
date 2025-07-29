@@ -7,6 +7,7 @@ import { TbPinnedFilled as PinIcon } from "react-icons/tb";
 import Card from "@/common/components/elements/Card";
 import { STACKS } from "@/common/constants/stacks";
 import { ProjectItem } from "@/common/types/projects";
+import { STACKSMARQUE } from "@/common/constants/stacksMarque";
 
 const ProjectCard = ({
   title,
@@ -52,7 +53,7 @@ const ProjectCard = ({
           </p>
           <div className="flex flex-wrap items-center gap-3 pt-2">
             {stacks.map((stack: string, index: number) => (
-              <div key={index}>{STACKS[stack]}</div>
+              <div key={index}>{STACKSMARQUE[stack]}</div>
             ))}
           </div>
         </div>
