@@ -19,7 +19,7 @@ const GlassIcon: React.FC<GlassIconProps> = ({ items }) => {
           key={index}
           type="button"
           aria-label={item.label}
-          className={`group relative h-[2.7em] w-[2.7em] bg-transparent outline-none [-webkit-tap-highlight-color:transparent] [perspective:24em] [transform-style:preserve-3d] md:h-[3em] md:w-[3em] ${
+          className={`group relative h-[2.6em] w-[2.6em] bg-transparent outline-none [-webkit-tap-highlight-color:transparent] [perspective:24em] [transform-style:preserve-3d] md:h-[3em] md:w-[3em] ${
             item.customClass || ""
           }`}
         >
