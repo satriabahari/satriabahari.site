@@ -4,6 +4,7 @@ import { BsBuildings as CompanyIcon } from "react-icons/bs";
 import Card from "@/common/components/elements/Card";
 import { EducationProps } from "@/common/types/education";
 import { useTranslations } from "next-intl";
+import SpotlightCard from "@/common/components/elements/SpotlightCard";
 
 const EducationCard = ({
   school,
@@ -18,7 +19,7 @@ const EducationCard = ({
   const t = useTranslations("AboutPage.education");
 
   return (
-    <Card className="flex items-center gap-5 px-6 py-4 ">
+    <SpotlightCard className="flex items-start gap-5 p-6">
       {logo ? (
         <Image width={70} height={70} src={logo} alt={school} />
       ) : (
@@ -48,7 +49,7 @@ const EducationCard = ({
           </div>
         </div>
       </div>
-    </Card>
+    </SpotlightCard>
   );
 };
 
