@@ -3,6 +3,7 @@ import { MdArrowOutward as ArrowIcon } from "react-icons/md";
 import { useLocale, useTranslations } from "next-intl";
 
 import { SocialMediaProps } from "@/common/types/socialMedia";
+import SpotlightCard from "@/common/components/elements/SpotlightCard";
 
 const ContactCard = ({
   title,
@@ -21,8 +22,8 @@ const ContactCard = ({
   const locale = useLocale();
 
   return (
-    <div
-      className={`relative grid w-full grid-cols-[2.5fr_1fr] overflow-hidden rounded-md border p-6 ${colSpan} ${borderColor} ${backgroundGradientColor}`}
+    <SpotlightCard
+      className={`relative grid w-full grid-cols-[2.5fr_1fr] overflow-hidden rounded-md border-2 border-neutral-300 p-6 dark:border-neutral-700 ${colSpan} ${backgroundGradientColor}`}
     >
       <div className="absolute -left-[3.5rem] -top-[3.5rem] rotate-45 text-neutral-50/5">
         {backgroundIcon}
@@ -35,7 +36,7 @@ const ContactCard = ({
         </h4>
         <p className="pb-2 text-xs">{t(`social_media.${name}.description`)}</p>
         <button
-          className={`${backgroundColor} rounded-md bg-opacity-85 px-4 py-2 transition duration-100 hover:bg-opacity-100 md:w-max `}
+          className={`${backgroundColor} rounded-md bg-opacity-85 px-4 py-2 transition duration-300 hover:scale-105 hover:bg-opacity-100 md:w-max`}
         >
           <Link
             href={href}
@@ -53,12 +54,12 @@ const ContactCard = ({
 
       <div className={`flex items-end justify-end`}>
         <div
-          className={`rounded-2xl border-8 border-opacity-10 bg-opacity-5 p-2 text-neutral-50 ${backgroundColor} ${borderColor}`}
+          className={`rounded-2xl border-4 border-opacity-80 bg-opacity-5 p-2 text-neutral-50 ${backgroundColor} ${borderColor}`}
         >
           {icon}
         </div>
       </div>
-    </div>
+    </SpotlightCard>
   );
 };
 
