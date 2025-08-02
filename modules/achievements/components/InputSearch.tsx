@@ -53,6 +53,7 @@ const InputSearch = () => {
         className="w-full bg-transparent pr-2 text-sm outline-none placeholder:text-neutral-500"
         onChange={handleChange}
         onKeyDown={handleKeyDown}
+        data-umami-event="input_search"
       />
     </div>
   );

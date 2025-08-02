@@ -12,12 +12,14 @@ const Providers = [
     icon: <GoogleIcon size={18} />,
     bgColor: "!bg-white",
     textColor: "text-black",
+    eventName: "sign_in: Google",
   },
   {
     id: "github",
     icon: <GithubIcon size={18} />,
     bgColor: "!bg-black",
     textColor: "text-white",
+    eventName: "sign_in: Github",
   },
 ];
 
@@ -38,6 +40,7 @@ const ChatAuth = ({ isWidget = false }) => {
               key={provider.id}
               onClick={() => signIn(provider.id)}
               className={`flex w-full items-center justify-center border ${provider.bgColor} py-2.5 shadow-sm transition duration-300 hover:scale-105 active:scale-100 lg:w-fit ${isWidget && "!w-full"}`}
+              data-umami-event={provider.eventName}
             >
               {provider.icon}
               <span className={provider.textColor}>

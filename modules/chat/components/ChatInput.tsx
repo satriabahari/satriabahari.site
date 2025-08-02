@@ -89,6 +89,7 @@ const ChatInput = ({
                 "cursor-not-allowed !bg-neutral-700 active:scale-100",
             )}
             disabled={isSending || !message.trim()}
+            data-umami-event="click_send_message"
           >
             <SendIcon size={18} />
           </button>
