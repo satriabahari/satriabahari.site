@@ -9,6 +9,10 @@ import { STACKS } from "@/common/constants/stacks";
 const SkillList = () => {
   const t = useTranslations("HomePage");
 
+  const stacksInArray: Array<
+    [string, { icon: JSX.Element; background: string }]
+  > = Object.entries(STACKS);
+
   return (
     <section className="space-y-6">
       <div className="space-y-2">
@@ -18,8 +22,15 @@ const SkillList = () => {
         </SectionSubHeading>
       </div>
 
-      <div className="grid grid-cols-6 w-full gap-x-[1em] gap-y-[2.7em] py-2 md:grid-cols-10 lg:grid-cols-11">
-        <GlassIcon items={STACKS} />
+      <div className="grid w-full grid-cols-6 gap-x-[1em] gap-y-[2.7em] py-2 md:grid-cols-10 lg:grid-cols-11">
+        {stacksInArray.map(([name, { icon, background }], index) => (
+          <GlassIcon
+            key={index}
+            name={name}
+            icon={icon}
+            background={background}
+          />
+        ))}
       </div>
     </section>
   );
