@@ -1,12 +1,11 @@
 import SkillCard from "../SkillCard";
 
 import MarqueeElement from "@/common/components/elements/MarqueeElement";
-import { STACKSMARQUE } from "@/common/constants/stacksMarque";
+import { STACKS } from "@/common/constants/stacks";
 
 const MarqueeIcons = () => {
-  const stacksInArray: Array<[string, JSX.Element]> = Object.entries(
-    STACKSMARQUE,
-  ).sort(() => Math.random() - 0.5);
+  const stacksInArray: Array<[string, { icon: JSX.Element; color: string }]> =
+    Object.entries(STACKS).sort(() => Math.random() - 0.5);
   return (
     <div className="flex flex-col overflow-x-hidden">
       {Array.from({ length: 2 }, (_, index) => {
@@ -16,8 +15,8 @@ const MarqueeIcons = () => {
             key={index}
             direction={index % 2 === 0 ? "left" : "right"}
           >
-            {slider.map(([name, icon], index) => (
-              <SkillCard key={index} name={name} icon={icon} />
+            {slider.map(([name, { icon, color }], index) => (
+              <SkillCard key={index} name={name} icon={icon} color={color} />
             ))}
           </MarqueeElement>
         );

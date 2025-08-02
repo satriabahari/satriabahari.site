@@ -37,151 +37,189 @@ import {
 } from "react-icons/si";
 
 export type SkillProps = {
-  icon: React.ReactElement;
-  color: string;
-  label: string;
+  [key: string]: {
+    icon: JSX.Element;
+    background: string;
+    color: string;
+  };
 };
 
 const iconSize = 26;
 
-export const STACKS: SkillProps[] = [
-  {
+export const STACKS: SkillProps = {
+  HTML: {
     icon: <SiHtml5 size={iconSize} />,
-    color: "bg-orange-500",
-    label: "HTML",
+    background: "bg-orange-500",
+    color: "text-orange-500",
   },
-  { icon: <SiCss3 size={iconSize} />, color: "bg-blue-500", label: "CSS" },
-  {
+  CSS: {
+    icon: <SiCss3 size={iconSize} />,
+    background: "bg-blue-500",
+    color: "text-blue-500",
+  },
+  Bootstrap: {
     icon: <BsFillBootstrapFill size={iconSize} />,
-    color: "bg-violet-600",
-    label: "Bootstrap",
+    background: "bg-violet-600",
+    color: "text-violet-600",
   },
-  {
+  TailwindCSS: {
     icon: <SiTailwindcss size={iconSize} />,
-    color: "bg-cyan-400",
-    label: "TailwindCSS",
+    background: "bg-cyan-400",
+    color: "text-cyan-400",
   },
-  {
+  JavaScript: {
     icon: <SiJavascript size={iconSize} />,
-    color: "bg-yellow-400",
-    label: "JavaScript",
+    background: "bg-yellow-400",
+    color: "text-yellow-400",
   },
-  {
+  TypeScript: {
     icon: <SiTypescript size={iconSize} />,
-    color: "bg-blue-400",
-    label: "TypeScript",
+    background: "bg-blue-400",
+    color: "text-blue-400",
   },
-  {
+  "Vue.js": {
     icon: <SiVuedotjs size={iconSize} />,
-    color: "bg-green-400",
-    label: "Vue.js",
+    background: "bg-green-400",
+    color: "text-green-400",
   },
-  {
+  "React.js": {
     icon: <SiReact size={iconSize} />,
-    color: "bg-cyan-400",
-    label: "React.js",
+    background: "bg-cyan-400",
+    color: "text-cyan-400",
   },
-  {
+  "React Table": {
     icon: <SiReacttable size={iconSize} />,
-    color: "bg-rose-600",
-    label: "React Table",
+    background: "bg-rose-600",
+    color: "text-rose-600",
   },
-  {
+  "React Hook Form": {
     icon: <SiReacthookform size={iconSize} />,
-    color: "bg-pink-500",
-    label: "React Hook Form",
+    background: "bg-pink-500",
+    color: "text-pink-500",
   },
-  {
+  "React Router": {
     icon: <SiReactrouter size={iconSize} />,
-    color: "bg-red-500",
-    label: "React Router",
+    background: "bg-red-500",
+    color: "text-red-500",
   },
-  { icon: <SiVite size={iconSize} />, color: "bg-purple-500", label: "Vite" },
-  {
+  Vite: {
+    icon: <SiVite size={iconSize} />,
+    background: "bg-purple-500",
+    color: "text-purple-500",
+  },
+  "Framer Motion": {
     icon: <TbBrandFramerMotion size={iconSize} />,
-    color: "bg-fuchsia-500",
-    label: "Framer Motion",
+    background: "bg-fuchsia-500",
+    color: "text-fuchsia-500",
   },
-  {
+  Redux: {
     icon: <SiRedux size={iconSize} />,
-    color: "bg-violet-500",
-    label: "Redux",
+    background: "bg-violet-500",
+    color: "text-violet-500",
   },
-  {
+  "Astro.js": {
     icon: <SiAstro size={iconSize} />,
-    color: "bg-pink-500",
-    label: "Astro.js",
+    background: "bg-pink-500",
+    color: "text-pink-500",
   },
-  {
+  "Next.js": {
     icon: <SiNextdotjs size={iconSize} />,
-    color: "bg-neutral-700",
-    label: "Next.js",
+    color: "text-neutral-500",
+    background: "bg-neutral-500",
   },
-  {
+  "Node.js": {
     icon: <SiNodedotjs size={iconSize} />,
-    color: "bg-green-500",
-    label: "Node.js",
+    background: "bg-green-500",
+    color: "text-green-500",
   },
-  {
+  "Express.js": {
     icon: <SiExpress size={iconSize} />,
-    color: "bg-neutral-500",
-    label: "Express.js",
+    color: "text-neutral-500",
+    background: "bg-gray-500",
   },
-  {
+  "Nest.js": {
     icon: <SiNestjs size={iconSize} />,
-    color: "bg-pink-700",
-    label: "Nest.js",
+    background: "bg-pink-700",
+    color: "text-pink-700",
   },
-  { icon: <FaGolang size={iconSize} />, color: "bg-sky-400", label: "Go" },
-  { icon: <SiPhp size={iconSize} />, color: "bg-indigo-400", label: "PHP" },
-  {
+  Go: {
+    icon: <FaGolang size={iconSize} />,
+    background: "bg-sky-400",
+    color: "text-sky-400",
+  },
+  PHP: {
+    icon: <SiPhp size={iconSize} />,
+    background: "bg-indigo-400",
+    color: "text-indigo-400",
+  },
+  Laravel: {
     icon: <SiLaravel size={iconSize} />,
-    color: "bg-red-600",
-    label: "Laravel",
+    background: "bg-red-600",
+    color: "text-red-600",
   },
-  {
+  Prisma: {
     icon: <SiPrisma size={iconSize} />,
-    color: "bg-teal-500",
-    label: "Prisma",
+    background: "bg-teal-500",
+    color: "text-teal-500",
   },
-  {
+  Kotlin: {
     icon: <SiKotlin size={iconSize} />,
-    color: "bg-purple-500",
-    label: "Kotlin",
+    background: "bg-purple-500",
+    color: "text-purple-500",
   },
-  {
+  PostgreSql: {
     icon: <BiLogoPostgresql size={iconSize} />,
-    color: "bg-blue-400",
-    label: "PostgreSql",
+    background: "bg-blue-400",
+    color: "text-blue-400",
   },
-  { icon: <SiMysql size={iconSize} />, color: "bg-blue-400", label: "MySql" },
-  {
+  MySql: {
+    icon: <SiMysql size={iconSize} />,
+    background: "bg-blue-400",
+    color: "text-blue-400",
+  },
+  MongoDb: {
     icon: <SiMongodb size={iconSize} />,
-    color: "bg-green-600",
-    label: "MongoDb",
+    background: "bg-green-600",
+    color: "text-green-600",
   },
-  {
+  Firebase: {
     icon: <SiFirebase size={iconSize} />,
-    color: "bg-yellow-500",
-    label: "Firebase",
+    background: "bg-yellow-500",
+    color: "text-yellow-500",
   },
-  {
+  Supabase: {
     icon: <SiSupabase size={iconSize} />,
-    color: "bg-emerald-500",
-    label: "Supabase",
+    background: "bg-emerald-500",
+    color: "text-emerald-500",
   },
-  { icon: <SiJest size={iconSize} />, color: "bg-rose-400", label: "Jest" },
-  {
+  Jest: {
+    icon: <SiJest size={iconSize} />,
+    background: "bg-rose-400",
+    color: "text-rose-400",
+  },
+  Docker: {
     icon: <SiDocker size={iconSize} />,
-    color: "bg-blue-500",
-    label: "Docker",
+    background: "bg-blue-500",
+    color: "text-blue-500",
   },
-  { icon: <FaNpm size={iconSize} />, color: "bg-red-500", label: "Npm" },
-  { icon: <SiYarn size={iconSize} />, color: "bg-sky-400", label: "Yarn" },
-  { icon: <SiBun size={iconSize} />, color: "bg-yellow-300", label: "bun" },
-  {
+  Npm: {
+    icon: <FaNpm size={iconSize} />,
+    background: "bg-red-500",
+    color: "text-red-500",
+  },
+  Yarn: {
+    icon: <SiYarn size={iconSize} />,
+    background: "bg-sky-400",
+    color: "text-sky-400",
+  },
+  bun: {
+    icon: <SiBun size={iconSize} />,
+    background: "bg-yellow-300",
+    color: "text-yellow-50",
+  },
+  Github: {
     icon: <SiGithub size={iconSize} />,
-    color: "bg-neutral-700",
-    label: "Github",
+    color: "text-neutral-50",
+    background: "bg-zinc-200",
   },
-];
+};
