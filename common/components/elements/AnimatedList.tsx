@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import React, {
@@ -11,6 +10,8 @@ import React, {
   MouseEventHandler,
   UIEvent,
 } from "react";
+
+import Image from "./Image";
 
 interface AnimatedItemProps {
   children: ReactNode;
@@ -28,7 +29,7 @@ const AnimatedItem: React.FC<AnimatedItemProps> = ({
   onClick,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { amount: 0.5, once: false });
+  const inView = useInView(ref, { amount: 0.5, once: true });
   return (
     <motion.div
       ref={ref}
