@@ -27,6 +27,7 @@ const ChatButton = () => {
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
         onClick={handleClick}
+        data-umami-event="click_chat_button"
       >
         {isHover ? <ChatIconHover size={23} /> : <ChatIcon size={23} />}
       </div>
