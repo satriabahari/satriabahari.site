@@ -8,14 +8,15 @@ import {
 import { PiChatTeardropDotsBold as ChatRoomIcon } from "react-icons/pi";
 import { PiCertificate as AchievementIcon } from "react-icons/pi";
 
-const AnimatedListProject = dynamic(() => import("@/modules/home/components/Bento/AnimatedListProject"), { ssr: false });
-const StackImagesPersonal = dynamic(() => import("@/modules/home/components/Bento/StackImagesPersonal"), { ssr: false });
-const MarqueeIcons = dynamic(() => import("@/modules/home/components/Bento/MarqueeIcons"), { ssr: false });
-const AchievementFolder = dynamic(() => import("@/modules/home/components/Bento/AchievementFolder"), { ssr: false });
-const AnimatedChat = dynamic(() => import("@/modules/home/components/Bento/AnimatedChat"), { ssr: false });
-const TrueFocusService = dynamic(() => import("@/modules/home/components/Bento/TrueFocusService"), { ssr: false });
+import ChatPreview from "@/modules/home/components/Bento/ChatPreview";
+import MarqueeIcons from "@/modules/home/components/Bento/MarqueeIcons";
+import AchievementFolder from "@/modules/home/components/Bento/AchievementFolder";
 
 import { BentoItemProps } from "../types/bento";
+
+const AnimatedListProject = dynamic(() => import("@/modules/home/components/Bento/AnimatedListProject"), { ssr: false });
+const StackImagesPersonal = dynamic(() => import("@/modules/home/components/Bento/StackImagesPersonal"), { ssr: false });
+const TrueFocusService = dynamic(() => import("@/modules/home/components/Bento/TrueFocusService"), { ssr: false });
 
 const size = 22;
 
@@ -69,7 +70,7 @@ export const BENTO: BentoItemProps[] = [
     description: "Open space to talk and collaborate.",
     label: "Chat",
     icon: <ChatRoomIcon size={size} />,
-    visual: <AnimatedChat />,
+    visual: <ChatPreview />,
     href: "/chat",
     colSpan: 1,
     className: "from-gray-700 to-gray-900",

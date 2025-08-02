@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import useSWR from "swr";
 
 import Folder from "@/common/components/elements/Folder";
+import Image from "@/common/components/elements/Image";
 import { AchievementItem } from "@/common/types/achievements";
 import { fetcher } from "@/services/fetcher";
 
@@ -32,7 +32,6 @@ const AchievementFolder = () => {
       <Folder
         size={0.8}
         color="#facc15"
-        className="custom-folder"
         items={items}
       />
     </div>
