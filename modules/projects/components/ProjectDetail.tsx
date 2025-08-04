@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 import Tooltip from "@/common/components/elements/Tooltip";
+import Image from "@/common/components/elements/Image";
 import MDXComponent from "@/common/components/elements/MDXComponent";
 import { ProjectItem } from "@/common/types/projects";
 import { STACKS } from "@/common/constants/stacks";
@@ -26,11 +26,17 @@ const ProjectDetail = ({
             {t("tech_stack")} :{" "}
           </span>
           <div className="flex flex-wrap items-center gap-3">
-            {stacks.map((stack: string, index: number) => (
-              <div key={index}>
-                <Tooltip title={stack}>{STACKS[stack].icon}</Tooltip>
-              </div>
-            ))}
+            {stacks.map((stack: string, index: number) => {
+              const stackData = STACKS[stack];
+
+              return (
+                <Tooltip title={stack} key={index}>
+                  <div className={`${stackData.color}`}>
+                    {STACKS[stack].icon}
+                  </div>
+                </Tooltip>
+              );
+            })}
           </div>
         </div>
         <ProjectLink
@@ -47,7 +53,6 @@ const ProjectDetail = ({
           width={1000}
           height={400}
           className="transition duration-500 hover:scale-[1.04]"
-          priority
         />
       </div>
 

@@ -4,9 +4,9 @@ import { useTranslations } from "next-intl";
 import { TbPinnedFilled as PinIcon } from "react-icons/tb";
 
 import Image from "@/common/components/elements/Image";
+import SpotlightCard from "@/common/components/elements/SpotlightCard";
 import { ProjectItem } from "@/common/types/projects";
 import { STACKS } from "@/common/constants/stacks";
-import SpotlightCard from "@/common/components/elements/SpotlightCard";
 
 const ProjectCard = ({
   title,
@@ -51,9 +51,15 @@ const ProjectCard = ({
             {trimmedContent}
           </p>
           <div className="flex flex-wrap items-center gap-3 pt-2">
-            {stacks.map((stack: string, index: number) => (
-              <div key={index}>{STACKS[stack].icon}</div>
-            ))}
+            {stacks.map((stack: string, index: number) => {
+              const stackData = STACKS[stack];
+
+              return (
+                <div key={index} className={`${stackData.color}`}>
+                  {stackData.icon}
+                </div>
+              );
+            })}
           </div>
         </div>
       </SpotlightCard>
