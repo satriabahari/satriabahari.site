@@ -224,6 +224,10 @@
       "button": "Send Email"
     }
   },
+  "SmartTalkPage": {
+    "title": "Smart Talk",
+    "description": "Smart Talk Integreted with AI"
+  },
   "Footer": {
     "hire": "Hire me.",
     "copyright_1": "COPYRIGHT © ",
