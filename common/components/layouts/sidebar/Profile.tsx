@@ -1,14 +1,14 @@
 import clsx from "clsx";
 import { AnimatePresence } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useMenu } from "@/common/stores/menu";
 
 import MobileMenu from "./MobileMenu";
 import MobileMenuButton from "./MobileMenuButton";
 import ProfileHeader from "./ProfileHeader";
-import ThemeToggle from "../../elements/ThemeToggle";
-import LocaleSwitcher from "./LocaleSwitcher";
+import ThemeToggle from "./ThemeToggle";
+import IntlToggle from "./IntlToggle";
 
 const Profile = () => {
   const [width, setWidth] = useState(0);
@@ -53,7 +53,7 @@ const Profile = () => {
         isOpen && "pb-0",
       )}
     >
-      <div className="flex items-start justify-between md:px-2 lg:flex-col lg:space-y-4">
+      <div className="flex items-center justify-between md:px-2 lg:flex-col lg:space-y-4">
         <ProfileHeader expandMenu={isOpen} imageSize={imageSize} />
         {isMobile && (
           <div
@@ -64,8 +64,8 @@ const Profile = () => {
             )}
           >
             <div className="flex gap-4">
-              <LocaleSwitcher />
               <ThemeToggle />
+              <IntlToggle />
             </div>
             <MobileMenuButton expandMenu={isOpen} setExpandMenu={toggleMenu} />
           </div>

@@ -1,13 +1,12 @@
 import clsx from "clsx";
 import Link from "next/link";
 import { MdVerified as VerifiedIcon } from "react-icons/md";
-import { AnimatePresence } from "framer-motion";
 
 import useIsMobile from "@/hooks/useIsMobile";
 import { useMenu } from "@/common/stores/menu";
 
+import ThemeToggle from "./sidebar/ThemeToggle";
 import MobileMenuButton from "./sidebar/MobileMenuButton";
-import ThemeToggle from "../elements/ThemeToggle";
 import MobileMenu from "./sidebar/MobileMenu";
 import Tooltip from "../elements/Tooltip";
 import Image from "../elements/Image";
@@ -58,10 +57,7 @@ const MobileHeader = () => {
           </div>
         )}
       </div>
-      {isMobile && (
-        // <AnimatePresence>{isOpen && <MobileMenu />}</AnimatePresence>
-        <>{isOpen && <MobileMenu />}</>
-      )}
+      {isMobile && <>{isOpen && <MobileMenu />}</>}
     </div>
   );
 };

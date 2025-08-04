@@ -3,7 +3,7 @@
 import { useTheme } from "next-themes";
 import { BsCloudMoon, BsCloudSun } from "react-icons/bs";
 
-const ThemeToggle = () => {
+const ThemeSwitcher = () => {
   const { resolvedTheme, setTheme } = useTheme();
 
   const toggleTheme = () => {
@@ -21,4 +21,4 @@ const ThemeToggle = () => {
   );
 };
 
-export default ThemeToggle;
+export default ThemeSwitcher;
