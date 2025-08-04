@@ -7,6 +7,7 @@ import {
 } from "react-icons/bi";
 import { PiChatTeardropDotsBold as ChatRoomIcon } from "react-icons/pi";
 import { PiCertificate as AchievementIcon } from "react-icons/pi";
+import { VscHubot as SmartChatIcon } from "react-icons/vsc";
 
 import { MenuItemProps } from "../types/menu";
 
@@ -68,5 +69,14 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
     isExternal: false,
     eventName: "Pages: Contact",
+  },
+  {
+    title: "Smart Talk",
+    href: "/smart-talk",
+    icon: <SmartChatIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: "Pages: Dashboard",
+    isExclusive: true,
   },
 ];
