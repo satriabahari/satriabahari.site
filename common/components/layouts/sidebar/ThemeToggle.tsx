@@ -12,7 +12,8 @@ const ThemeToggle = () => {
 
   return (
     <div className="flex items-center justify-center">
-      <div className="relative flex items-center gap-2 rounded-full border-[1.5px] border-neutral-300 bg-neutral-200 p-1 dark:border-neutral-700 dark:bg-neutral-800">
+      {/* Desktop */}
+      <div className="relative hidden items-center gap-2 rounded-full border-[1.5px] border-neutral-300 bg-neutral-200 p-1 dark:border-neutral-700 dark:bg-neutral-800 lg:flex">
         {/* Sliding Background */}
         <motion.div
           className="absolute bottom-1 top-1 w-8 rounded-full bg-neutral-500"
@@ -60,6 +61,23 @@ const ThemeToggle = () => {
           </motion.div>
         </motion.button>
       </div>
+
+      {/* Mobile */}
+      <button
+        className="flex items-center gap-2 rounded-full border-[1.5px] border-neutral-300 bg-neutral-200 p-1 transition duration-200 hover:scale-110 dark:border-neutral-700 dark:bg-neutral-800 lg:hidden"
+        onClick={() => setTheme(isLightMode ? "dark" : "light")}
+      >
+        <motion.div
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="flex h-8 w-8 items-center justify-center rounded-full bg-neutral-500 text-white"
+        >
+          {isLightMode ? (
+            <DarkModeIcon size={17} />
+          ) : (
+            <LightModeIcon size={17} />
+          )}
+        </motion.div>
+      </button>
     </div>
   );
 };
