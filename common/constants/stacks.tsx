@@ -124,7 +124,7 @@ export const STACKS: SkillProps = {
   },
   "Next.js": {
     icon: <SiNextdotjs size={iconSize} />,
-    color: "text-neutral-500",
+    color: "text-neutral-50",
     background: "bg-neutral-500",
   },
   "Node.js": {
@@ -134,7 +134,7 @@ export const STACKS: SkillProps = {
   },
   "Express.js": {
     icon: <SiExpress size={iconSize} />,
-    color: "text-neutral-500",
+    color: "text-neutral-50",
     background: "bg-gray-500",
   },
   "Nest.js": {
@@ -220,6 +220,6 @@ export const STACKS: SkillProps = {
   Github: {
     icon: <SiGithub size={iconSize} />,
     color: "text-neutral-50",
-    background: "bg-zinc-200",
+    background: "bg-neutral-200",
   },
 };
