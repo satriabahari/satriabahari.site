@@ -224,6 +224,10 @@
       "button": "Kirim Email"
     }
   },
+  "SmartTalkPage": {
+    "title": "Smart Talk",
+    "description": "Smart Talk Terintegrasi dengan AI"
+  },
   "Footer": {
     "hire": "Hire me.",
     "copyright_1": "Hak Cipta © ",
