@@ -1,8 +1,8 @@
 import { useTranslations } from "next-intl";
 
-import Card from "@/common/components/elements/Card";
-
 import Progress from "./Progress";
+
+import SpotlightCard from "@/common/components/elements/SpotlightCard";
 
 interface ItemProps {
   name: string;
@@ -25,8 +25,8 @@ const CodingActiveList = ({ data }: CodingActiveListProps) => {
   }
 
   return (
-    <Card className="flex flex-col gap-y-3 px-4 py-3">
-      <p className="dark:text-neutral-400">{t("languages")}</p>
+    <SpotlightCard className="flex flex-col gap-y-3 p-4">
+      <p className="text-neutral-600 dark:text-neutral-400">{t("languages")}</p>
 
       <ul className="grid grid-cols-1 gap-x-12 sm:grid-cols-2">
         {data?.languages?.map((subItem) => (
@@ -38,7 +38,7 @@ const CodingActiveList = ({ data }: CodingActiveListProps) => {
           </li>
         ))}
       </ul>
-    </Card>
+    </SpotlightCard>
   );
 };
 

@@ -1,5 +1,5 @@
 import AnimateCounter from "@/common/components/elements/AnimateCounter";
-import Card from "@/common/components/elements/Card";
+import SpotlightCard from "@/common/components/elements/SpotlightCard";
 
 interface OverviewItemProps {
   label: string;
@@ -8,7 +8,7 @@ interface OverviewItemProps {
 }
 
 const OverviewItem = ({ label, value, unit = "" }: OverviewItemProps) => (
-  <Card className="0 flex flex-col items-center p-4">
+  <SpotlightCard className="flex flex-col items-center p-4">
     <span className="text-sm dark:text-neutral-400">{label}</span>
     <div>
       <AnimateCounter
@@ -17,7 +17,7 @@ const OverviewItem = ({ label, value, unit = "" }: OverviewItemProps) => (
       />
       {unit && <span className="text-sm dark:text-neutral-400"> {unit}</span>}
     </div>
-  </Card>
+  </SpotlightCard>
 );
 
 export default OverviewItem;

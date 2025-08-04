@@ -1,21 +1,22 @@
-import Card from "@/common/components/elements/Card";
-import SkeletonLoader from "@/common/components/elements/SkeletonLoader";
 import Skeleton from "react-loading-skeleton";
+
+import SkeletonLoader from "@/common/components/elements/SkeletonLoader";
+import SpotlightCard from "@/common/components/elements/SpotlightCard";
 
 const UmamiSkeleton = () => {
   return (
     <SkeletonLoader>
-      <div className="grid grid-cols-5 gap-4">
+      <div className="!mt-4 grid grid-cols-2 gap-4 md:grid-cols-5">
         {[...Array(5)].map((_, i) => (
-          <Card key={i} className="p-4">
+          <SpotlightCard key={i} className="p-4">
             <Skeleton className="h-4" />
             <Skeleton className="h-6" />
-          </Card>
+          </SpotlightCard>
         ))}
       </div>
 
       <div className="flex flex-col gap-4">
-        <div className="m-auto w-1/3 mt-4">
+        <div className="m-auto mt-4 w-1/3">
           <Skeleton containerClassName="w-1/2" />
           <div className="flex gap-4">
             <Skeleton containerClassName="w-full" />

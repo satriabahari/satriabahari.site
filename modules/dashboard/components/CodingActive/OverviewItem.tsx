@@ -1,5 +1,4 @@
-import React from "react";
-import Card from "@/common/components/elements/Card";
+import SpotlightCard from "@/common/components/elements/SpotlightCard";
 
 interface OverviewItemProps {
   label: string;
@@ -8,10 +7,10 @@ interface OverviewItemProps {
 
 const OverviewItem = ({ label, value }: OverviewItemProps) => {
   return (
-    <Card className="flex flex-col space-y-1 p-4 sm:col-span-1">
-      <span className="text-sm dark:text-neutral-400">{label}</span>
+    <SpotlightCard className="flex flex-col space-y-1 p-4 sm:col-span-1">
+      <span className="text-sm dark:text-neutral-400 text-neutral-600">{label}</span>
       <span>{value || "-"}</span>
-    </Card>
+    </SpotlightCard>
   );
 };
 
