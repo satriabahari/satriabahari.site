@@ -25,7 +25,6 @@ interface OverviewProps {
 
 const Overview = ({ data }: OverviewProps) => {
   const pageViewsData = data?.websiteStats?.pageviews?.value ?? 0;
-  console.log("test", pageViewsData);
   const visitorsData = data?.websiteStats?.visitors?.value ?? 0;
   const visitsData = data?.websiteStats?.visits?.value ?? 0;
   const countriesData = data?.websiteStats?.countries?.value ?? 0;
