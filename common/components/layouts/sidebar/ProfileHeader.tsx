@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { MdVerified as VerifiedIcon } from "react-icons/md";
-import clsx from "clsx";
 
+import ThemeToggle from "./ThemeToggle";
+import IntlToggle from "./IntlToggle";
 import Tooltip from "../../elements/Tooltip";
 import Image from "../../elements/Image";
-import Status from "../../elements/Status";
-import ThemeToggle from "../../elements/ThemeToggle";
-import LocaleSwitcher from "./LocaleSwitcher";
+
+import cn from "@/common/libs/clsxm";
 
 interface ProfileHeaderProps {
   expandMenu: boolean;
@@ -16,12 +16,11 @@ interface ProfileHeaderProps {
 const ProfileHeader = ({ expandMenu, imageSize }: ProfileHeaderProps) => {
   return (
     <div
-      className={clsx(
-        "flex w-full flex-grow items-center gap-4 lg:flex-col lg:items-start lg:gap-0.5",
+      className={cn(
+        "flex w-full flex-grow items-center gap-4 lg:flex-col  lg:gap-0.5",
         expandMenu && "flex-col !items-start",
       )}
     >
-      {/* Bermasalah (bug) */}
       <Image
         src={"/images/satria-3.jpg"}
         width={expandMenu ? 80 : imageSize * 0.9}
@@ -47,12 +46,9 @@ const ProfileHeader = ({ expandMenu, imageSize }: ProfileHeaderProps) => {
         @satriabahari
       </div>
 
-      <div className="hidden w-full items-center justify-between lg:mt-2 lg:flex">
-        <Status />
-        <div className="flex gap-4">
-          <LocaleSwitcher />
-          <ThemeToggle />
-        </div>
+      <div className="hidden justify-between gap-6 lg:mt-4 lg:flex">
+        <ThemeToggle />
+        <IntlToggle />
       </div>
     </div>
   );
