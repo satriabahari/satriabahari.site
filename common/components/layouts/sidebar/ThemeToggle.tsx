@@ -1,0 +1,67 @@
+import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
+import {
+  BsCloudMoon as DarkModeIcon,
+  BsCloudSun as LightModeIcon,
+} from "react-icons/bs";
+
+const ThemeToggle = () => {
+  const { resolvedTheme, setTheme } = useTheme();
+
+  const isLightMode = resolvedTheme === "light";
+
+  return (
+    <div className="flex items-center justify-center">
+      <div className="relative flex items-center gap-2 rounded-full border-[1.5px] border-neutral-300 bg-neutral-200 p-1 dark:border-neutral-700 dark:bg-neutral-800">
+        {/* Sliding Background */}
+        <motion.div
+          className="absolute bottom-1 top-1 w-8 rounded-full bg-neutral-500"
+          animate={{
+            x: isLightMode ? 0 : 40,
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 30,
+          }}
+        />
+
+        {/* Light Mode Button */}
+        <motion.button
+          className="relative z-10 flex h-8 w-8 items-center justify-center transition duration-200"
+          onClick={() => setTheme("light")}
+          whileHover={{ scale: 1.15 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <motion.div
+            animate={{
+              color: isLightMode ? "#FFFFFF" : "#737373",
+            }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            <LightModeIcon size={17} />
+          </motion.div>
+        </motion.button>
+
+        {/* Dark Mode Button */}
+        <motion.button
+          className="relative z-10 flex h-8 w-8 items-center justify-center transition duration-200"
+          onClick={() => setTheme("dark")}
+          whileHover={{ scale: 1.15 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <motion.div
+            animate={{
+              color: !isLightMode ? "#FFFFFF" : "#737373",
+            }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            <DarkModeIcon size={17} />
+          </motion.div>
+        </motion.button>
+      </div>
+    </div>
+  );
+};
+
+export default ThemeToggle;
