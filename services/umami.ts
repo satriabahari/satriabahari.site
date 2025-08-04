@@ -1,16 +1,27 @@
 import axios from "axios";
-
 import { UMAMI_ACCOUNT } from "@/common/constants/umami";
 
-const { api_key, website_id, endpoint, base_url, parameters } = UMAMI_ACCOUNT;
+const { api_key, endpoint, base_url, parameters, websites } = UMAMI_ACCOUNT;
 
-const url = `${base_url}/${website_id}`;
-const url_pageviews = `${url}${endpoint.page_views}`;
-const url_sessions = `${url}${endpoint.sessions}`;
+const getWebsiteIdByDomain = (domain: string) => {
+  const found = websites.find((w) => w.domain === domain);
+  return found?.website_id;
+};
 
-export const getPageViewsByDataRange = async () => {
+export const getPageViewsByDataRange = async (domain: string) => {
+  const website_id = getWebsiteIdByDomain(domain);
+  if (!website_id) {
+    return {
+      status: 404,
+      data: {},
+      error: `Website not found for domain "${domain}"`,
+    };
+  }
+
+  const url = `${base_url}/${website_id}${endpoint.page_views}`;
+
   try {
-    const response = await axios.get(url_pageviews, {
+    const response = await axios.get(url, {
       headers: {
         Accept: "application/json",
         "x-umami-api-key": api_key || "",
@@ -31,9 +42,20 @@ export const getPageViewsByDataRange = async () => {
   }
 };
 
-export const getWebsiteStats = async () => {
+export const getWebsiteStats = async (domain: string) => {
+  const website_id = getWebsiteIdByDomain(domain);
+  if (!website_id) {
+    return {
+      status: 404,
+      data: {},
+      error: `Website not found for domain "${domain}"`,
+    };
+  }
+
+  const url = `${base_url}/${website_id}${endpoint.sessions}`;
+
   try {
-    const response = await axios.get(url_sessions, {
+    const response = await axios.get(url, {
       headers: {
         Accept: "application/json",
         "x-umami-api-key": api_key || "",
