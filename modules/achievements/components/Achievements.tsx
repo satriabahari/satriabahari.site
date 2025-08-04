@@ -1,6 +1,7 @@
 "use client";
 
 import useSWR from "swr";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
@@ -12,7 +13,6 @@ import { fetcher } from "@/services/fetcher";
 import AchievementCard from "./AchievementCard";
 import AchievementSkeleton from "./AchievementSkeleton";
 import FilterHeader from "./FilterHeader";
-import { useState } from "react";
 
 const Achievements = () => {
   const t = useTranslations("AchievementsPage");

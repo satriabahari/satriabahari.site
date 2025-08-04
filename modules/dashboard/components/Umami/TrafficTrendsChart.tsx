@@ -37,7 +37,7 @@ interface DataProps {
 }
 
 const TrafficTrendsChart = ({ data }: DataProps) => {
-  const rawLabels = data?.pageviews.map((point) => point.x);
+  const rawLabels = data?.pageviews?.map((point) => point.x);
   const labels = rawLabels?.map((isoDate) => format(parseISO(isoDate), "MMM"));
 
   const chartData = {
@@ -45,13 +45,13 @@ const TrafficTrendsChart = ({ data }: DataProps) => {
     datasets: [
       {
         label: "Sessions",
-        data: data?.sessions.map((point) => point.y),
+        data: data?.sessions?.map((point) => point.y),
         backgroundColor: "rgba(155, 233, 168, 0.7)",
         stack: "traffic",
       },
       {
-        label: "Pageviews",
-        data: data?.pageviews.map((point) => point.y),
+        label: "Page views",
+        data: data?.pageviews?.map((point) => point.y),
         backgroundColor: "rgba(48,161,78,0.7)",
         stack: "traffic",
       },

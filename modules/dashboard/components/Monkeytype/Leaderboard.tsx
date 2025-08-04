@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 
-import Card from "@/common/components/elements/Card";
+import SpotlightCard from "@/common/components/elements/SpotlightCard";
 import { convertToOrdinal } from "@/common/helpers";
 import { MonkeytypeData } from "@/common/types/monkeytype";
 
@@ -23,23 +23,23 @@ const Leaderboard = ({ data }: LeaderboardProps) => {
     return (
       <div className="flex items-center gap-4">
         <div className="flex flex-col items-end gap-y-0.5">
-          <span className="text-sm dark:text-neutral-500">
+          <span className="text-sm text-neutral-600 dark:text-neutral-400">
             {label} {t("unit_seconds")}
           </span>
           {percent ? (
-            <span className="text-xs dark:text-neutral-500">
+            <span className="text-xs text-neutral-600 dark:text-neutral-400">
               {t("top")} {percent}%
             </span>
           ) : null}
         </div>
-        <span className="text-2xl dark:text-green-600">{value}</span>
+        <span className="text-2xl text-green-600">{value}</span>
       </div>
     );
   };
 
   return (
-    <Card className="flex flex-col items-center justify-between gap-y-3 px-4 py-3 sm:flex-row sm:gap-y-1">
-      <span className="text-sm text-neutral-600 dark:text-neutral-500">
+    <SpotlightCard className="flex flex-col items-center justify-between gap-y-3 p-4 sm:flex-row sm:gap-y-1">
+      <span className="text-sm text-neutral-600 dark:text-neutral-400">
         {t("title_leaderboard")}
       </span>
       {datas.map((data, index) => {
@@ -53,7 +53,7 @@ const Leaderboard = ({ data }: LeaderboardProps) => {
           />
         );
       })}
-    </Card>
+    </SpotlightCard>
   );
 };
 

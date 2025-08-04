@@ -4,7 +4,7 @@ import { motion, Variants } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 import Tooltip from "@/common/components/elements/Tooltip";
-import Card from "@/common/components/elements/Card";
+import SpotlightCard from "@/common/components/elements/SpotlightCard";
 import { MonkeytypeData } from "@/common/types/monkeytype";
 
 interface ProfileProps {
@@ -18,8 +18,10 @@ interface ItemProps {
 
 const Item = ({ label, value }: ItemProps) => (
   <div className="flex flex-col items-center">
-    <span className="text-xs dark:text-neutral-500">{label}</span>
-    <span className="text-2xl dark:text-green-600">{value}</span>
+    <span className="text-xs text-neutral-600 dark:text-neutral-400">
+      {label}
+    </span>
+    <span className="text-2xl text-green-600">{value}</span>
   </div>
 );
 
@@ -82,7 +84,7 @@ const Profile = ({ data }: ProfileProps) => {
   );
 
   return (
-    <Card className="flex flex-col items-center gap-x-8 gap-y-4 py-3 sm:flex-row sm:px-4">
+    <SpotlightCard className="flex flex-col items-center gap-x-8 gap-y-4 p-4 sm:flex-row">
       <div className="flex flex-col gap-y-2">
         <div className="flex gap-x-4">
           <div className="flex items-center">
@@ -135,7 +137,7 @@ const Profile = ({ data }: ProfileProps) => {
           }
         />
       </div>
-    </Card>
+    </SpotlightCard>
   );
 };
 

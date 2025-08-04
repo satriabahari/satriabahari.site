@@ -1,26 +1,27 @@
-import Card from "@/common/components/elements/Card";
-import SkeletonLoader from "@/common/components/elements/SkeletonLoader";
 import Skeleton from "react-loading-skeleton";
+
+import SkeletonLoader from "@/common/components/elements/SkeletonLoader";
+import SpotlightCard from "@/common/components/elements/SpotlightCard";
 
 const CodingActiveSkeleton = () => {
   return (
     <SkeletonLoader>
       <div className="grid grid-cols-2 gap-4">
         {[...Array(6)].map((_, i) => (
-          <Card key={i} className="p-4">
+          <SpotlightCard key={i} className="p-4">
             <Skeleton className="h-4" />
             <Skeleton className="h-6" />
-          </Card>
+          </SpotlightCard>
         ))}
       </div>
 
-      <Card className="p-4">
+      <SpotlightCard className="!mt-4 p-4">
         <Skeleton className="h-4" />
         <div className="grid grid-cols-2 gap-4">
           <Skeleton className="h-6" count={3} />
           <Skeleton className="h-6" count={3} />
         </div>
-      </Card>
+      </SpotlightCard>
     </SkeletonLoader>
   );
 };
