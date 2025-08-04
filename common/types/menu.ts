@@ -9,4 +9,5 @@ export type MenuItemProps = {
   eventName?: string;
   isHover?: boolean;
   children?: React.ReactNode
+  isExclusive?: boolean;
 };
