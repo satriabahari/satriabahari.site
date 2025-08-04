@@ -47,8 +47,8 @@ const ProfileHeader = ({ expandMenu, imageSize }: ProfileHeaderProps) => {
       </div>
 
       <div className="hidden justify-between gap-6 lg:mt-4 lg:flex">
-        <ThemeToggle />
         <IntlToggle />
+        <ThemeToggle />
       </div>
     </div>
   );

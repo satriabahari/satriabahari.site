@@ -64,8 +64,8 @@ const Profile = () => {
             )}
           >
             <div className="flex gap-4">
-              <ThemeToggle />
               <IntlToggle />
+              <ThemeToggle />
             </div>
             <MobileMenuButton expandMenu={isOpen} setExpandMenu={toggleMenu} />
           </div>
