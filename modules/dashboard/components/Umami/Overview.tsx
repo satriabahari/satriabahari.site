@@ -24,11 +24,12 @@ interface OverviewProps {
 }
 
 const Overview = ({ data }: OverviewProps) => {
-  const pageViewsData = data?.websiteStats.pageviews.value || 0;
-  const visitorsData = data?.websiteStats.visitors.value || 0;
-  const visitsData = data?.websiteStats.visits.value || 0;
-  const countriesData = data?.websiteStats.countries.value || 0;
-  const eventsData = data?.websiteStats.events.value || 0;
+  const pageViewsData = data?.websiteStats?.pageviews?.value ?? 0;
+  console.log("test", pageViewsData);
+  const visitorsData = data?.websiteStats?.visitors?.value ?? 0;
+  const visitsData = data?.websiteStats?.visits?.value ?? 0;
+  const countriesData = data?.websiteStats?.countries?.value ?? 0;
+  const eventsData = data?.websiteStats?.events?.value ?? 0;
 
   return (
     <div className="grid grid-cols-2 gap-3 py-2 sm:grid-cols-5">
