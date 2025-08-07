@@ -7,10 +7,9 @@
 [![Depfu](https://badges.depfu.com/badges/02483ebb21fdb2182a66a28b68d1b7b0/count.svg)](https://depfu.com/github/satriabahari/satria.com?project_id=38809)
 [![Last Update](https://img.shields.io/badge/deps%20update-every%20sunday-blue.svg)](https://shields.io/)
 
-</div>
-<br />
+---
 
-<img width="1525" height="1227" alt="image" src="https://github.com/user-attachments/assets/9843739c-032f-4985-a515-cfaceb4deee0" />
+<img width="1525" height="1221" alt="Screenshot 2025-08-07 115929" src="https://github.com/user-attachments/assets/fcf5a30b-0ad8-4a57-b1bf-e846e4ed416c" />
 
 ## 📘 Introduction
 
@@ -21,7 +20,8 @@ I use this platform to share projects, insights, and resources. The site is cons
 Feel free to explore the source code, use it as inspiration, or fork it as a template under the provided license. If you find this project useful, consider giving it a star ⭐.
 
 Have feedback, ideas, or questions? Don’t hesitate to reach out! 🙌
-<br /><br />
+
+---
 
 ## Tech Stack
 
@@ -40,7 +40,7 @@ This website is built using these technologies:
 - **📏 ESLint & Prettier**
 - **📌 Conventional Commit Lint**
 
-<br />
+---
 
 ## 🚀 Features
 
@@ -61,6 +61,8 @@ Interactive dashboard visualizing:
 - Monkeytype typing stats
 
 Each stat is retrieved using public APIs and visualized in a user-friendly way.
+
+---
 
 ## ⚡ Performance
 
