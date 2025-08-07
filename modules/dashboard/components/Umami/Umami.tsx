@@ -32,12 +32,10 @@ const Umami = () => {
 
   return (
     <section className="space-y-2">
-      <SectionHeading title="Umami" icon={<UmamiIcon />} />
+      <SectionHeading title={t("umami.title")} icon={<UmamiIcon />} />
       <SectionSubHeading>
         <div className="flex w-full flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <p>
-            Monitor real-time traffic and engagement from my portfolio website.
-          </p>
+          <p>{t("umami.sub_title")} </p>
 
           <ComboBoxFilter />
         </div>
