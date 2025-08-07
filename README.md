@@ -48,7 +48,7 @@ This website is built using these technologies:
 Displays live coding statistics from Wakatime using serverless API routes in Next.js.
 
 ### 🗳 Project Showcase
-Projects are stored in a Supabase PostgreSQL database and fetched via Prisma. Uses ISR (1s revalidation) and SSR for optimal performance.
+Projects are stored in a Supabase PostgreSQL database. Uses ISR (1s revalidation) and SSR for optimal performance.
 
 ### 🌍 Internationalization
 Supports multiple languages using `next-intl`. Easily extendable to support additional locales.
