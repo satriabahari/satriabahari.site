@@ -1,223 +1,177 @@
 {
   "HomePage": {
     "intro": "Hai, saya Satria Bahari",
-    "location": "Berasal dari Jambi, Indonesia 🇮🇩",
-    "location_type": "Di lokasi",
-    "resume": "Insinyur Perangkat Lunak yang bersemangat dan berpengalaman dengan fokus kuat pada pengembangan frontend. Mahir dalam TypeScript dan berpengalaman dalam semua aspek teknologi web. Pemain tim kolaboratif yang berdedikasi untuk memberikan aplikasi web yang efisien, skalabel, dan menarik secara visual.",
+    "location": "Berdomisili di Jambi, Indonesia 🇮🇩",
+    "location_type": "Tatap Muka",
+    "resume": "Pengembang Fullstack yang berpengalaman dan penuh semangat, berspesialisasi dalam membangun solusi digital yang skalabel dan efisien. Di sisi frontend, saya menggunakan Next.js, TypeScript, dan Tailwind CSS untuk membuat antarmuka pengguna yang responsif dan mudah diakses. Di sisi backend, saya mengembangkan layanan yang tangguh menggunakan Golang, dan untuk mobile, saya membangun aplikasi Android native menggunakan Kotlin. Saya adalah engineer yang kolaboratif dan berorientasi pada detail, berkomitmen untuk menghadirkan aplikasi lintas platform yang terstruktur dengan baik dan berkinerja tinggi.",
     "skills": {
       "title": "Keahlian",
       "sub_title": "Keahlian profesional saya."
     },
-    "services": {
-      "title": "Layanan",
-      "sub_title": "Saya bekerja sebagai freelancer untuk mengembangkan situs web yang luar biasa bagi merek, perusahaan, institusi, dan startup, dengan fokus pada solusi web strategis.",
-      "cta": {
-        "title": "Mari bekerja sama!",
-        "sub_title": "Saya terbuka untuk proyek freelance, silakan kirimkan email kepada saya untuk mengetahui bagaimana kita dapat berkolaborasi.",
-        "button": "Hubungi saya"
-      }
+    "bento": {
+      "title": "Bagian Unggulan",
+      "sub_title": "Jelajahi semua yang telah saya buat, kontribusikan, dan capai."
     }
   },
   "AboutPage": {
     "title": "Tentang",
-    "description": "Cerita singkat tentang saya",
+    "description": "Perkenalan singkat tentang siapa saya.",
     "resume": {
-      "paragraf_1": "Halo! Terima kasih telah mengunjungi situs pribadi saya. Saya Satria Bahari, seorang mahasiswa Sistem Informasi di Universitas Jambi. Saya sangat tertarik dengan pengembangan frontend. Dengan dasar yang kuat dalam JavaScript dan TypeScript, serta pemahaman komprehensif tentang berbagai pustaka dan kerangka kerja frontend, saya telah menjelajahi lanskap pengembangan web yang selalu berkembang dengan antusiasme dan dedikasi.",
+      "paragraf_1": "Halo! Terima kasih telah mengunjungi situs pribadi saya. Saya Satria Bahari, seorang mahasiswa Sistem Informasi di Universitas Jambi. Saya adalah seorang Fullstack Developer dengan minat besar dalam membangun produk perangkat lunak yang berdampak. Stack teknologi saya meliputi teknologi frontend modern seperti Next.js, TypeScript, dan Tailwind CSS, serta pengembangan backend menggunakan Golang. Untuk aplikasi mobile, saya mengembangkan aplikasi Android native menggunakan Kotlin.",
 
-      "paragraf_2": "Saya fokus pada pembuatan aplikasi web yang tidak hanya memberikan pengalaman yang akurat tetapi juga ramah pengguna. Spesialisasi saya meliputi JavaScript dan TypeScript, bersama dengan kerangka kerja seperti React, Vite, dan Next.js. Sebagai pembelajar cepat dan pemikir adaptif, saya berkembang dalam lingkungan dinamis di mana inovasi adalah kekuatan pendorong. Sifat kolaboratif saya memungkinkan saya untuk berintegrasi dengan tim, tidak hanya menyumbangkan keterampilan teknis saya tetapi juga memiliki sikap rendah hati yang menghargai masukan dari setiap anggota tim.",
+      "paragraf_2": "Saya menikmati menciptakan solusi yang ramah pengguna dan memiliki performa tinggi. Baik saat membangun antarmuka yang intuitif maupun merancang layanan backend, saya selalu berusaha membawa efisiensi dan kejelasan pada setiap lapisan aplikasi. Saya pembelajar cepat yang tumbuh dalam lingkungan dinamis dan senang menyelesaikan masalah kompleks secara kolaboratif.",
 
-      "paragraf_3": "Saya sangat percaya bahwa komunikasi yang efektif adalah kunci sukses dalam peran apa pun. Saya adaptif, berpikir efisien, dan selalu berusaha untuk yang terbaik. Pengalaman saya telah membekali saya dengan keterampilan analitis dan kemampuan kepemimpinan yang kuat. Saya nyaman bekerja secara kolaboratif dalam tim dan sangat antusias dengan kesempatan untuk berkontribusi pada kesuksesan tim. Saya menantikan kemungkinan untuk berkolaborasi!",
+      "paragraf_3": "Saya percaya bahwa komunikasi yang baik dan sinergi tim adalah kunci kesuksesan dalam pengembangan perangkat lunak. Pengalaman saya telah membentuk kemampuan teknis dan analitis saya, serta kualitas kepemimpinan saya. Saya selalu bersemangat untuk bekerja dalam tim, belajar dari orang lain, dan berkontribusi pada proyek yang berdampak.",
 
-      "paragraf_4": "Salam,"
+      "paragraf_4": "Salam hangat,"
     },
     "career": {
       "title": "Karier",
-      "sub_title": "Perjalanan karier profesional saya.",
-      "careers": {
-        "career_0": {
-          "position": "Kepala Teknologi di Divisi Riset dan Teknologi",
-          "company": "Himpunan Mahasiswa Sistem Informasi Universitas Jambi (HIMASI UNJA)",
-          "logo": "/images/careers/himasi-unja.jpeg",
-          "location": "Jambi, Indonesia 🇮🇩",
-          "location_type": "Di Tempat",
-          "type": "Paruh Waktu",
-          "start_date": "2024-01",
-          "end_date": null,
-          "industry": "sekolah",
-          "link": "https://himasi.unja.ac.id/"
-        },
-        "career_1": {
-          "position": "Kohort Pengembangan Mobile",
-          "company": "Bangkit Academy yang dipimpin oleh Google, Tokopedia, Gojek & Traveloka",
-          "logo": "/images/careers/bangkit.png",
-          "location": "Bandung, Indonesia 🇮🇩",
-          "location_type": "Jarak Jauh",
-          "type": "Paruh Waktu",
-          "start_date": "2024-12",
-          "end_date": "2025-12",
-          "industry": "sekolah",
-          "link": "https://grow.google/intl/id_id/bangkit/?tab=mobile-development",
-          "responsibilities": {
-            "responsibility_1": "Menguasai pengembangan Android menggunakan Kotlin, Komponen Jetpack, dan alat modern seperti Room Database dan DataStore untuk manajemen status dan data.",
-            "responsibility_2": "Mendapatkan pengalaman langsung dengan ViewModel, RecyclerView, dan Hilt untuk injeksi ketergantungan untuk membuat aplikasi mobile yang kuat dan dapat diskalakan.",
-            "responsibility_3": "Berkolaborasi dengan tim lintas fungsi untuk mengembangkan Proyek Capstone Berbasis Perusahaan, menerapkan metodologi Agile dan pemecahan masalah dunia nyata.",
-            "responsibility_4": "Meningkatkan keterampilan kerja tim, pemecahan masalah, dan komunikasi dalam lingkungan multikultural."
-          }
-        },
-        "career_2": {
-          "position": "Pengembang Mobile",
-          "company": "Pt. Amanah Karya Indonesia (Amanah Corp)",
-          "logo": "/images/careers/amanah-karya-indonesia.jpeg",
-          "location": "Depok, Indonesia 🇮🇩",
-          "location_type": "Jarak Jauh",
-          "type": "Magang",
-          "start_date": "2024-12",
-          "end_date": "2025-12",
-          "industry": "sekolah",
-          "link": "https://amanahcorp.co.id/",
-          "responsibilities": {
-            "responsibility_1": "Merancang dan mengembangkan aplikasi mobile menggunakan Kotlin, menggabungkan Room Database, Hilt, dan ViewModel untuk kinerja dan skalabilitas yang optimal.",
-            "responsibility_2": "Menerapkan fitur yang aman dan ramah pengguna yang disesuaikan dengan platform berbagi.link untuk meningkatkan keterlibatan dan aksesibilitas pengguna.",
-            "responsibility_3": "Bekerja sama dengan PT Amanah Corp untuk memastikan keselarasan dengan tujuan bisnis dan memberikan solusi dunia nyata yang berdampak.",
-            "responsibility_4": "Memperkuat keterampilan teknis dan keterampilan lunak, termasuk pemecahan masalah, kerja tim, dan komunikasi, dalam lingkungan profesional yang multikultural."
-          }
-        }
-      }
+      "sub_title": "Perjalanan profesional saya."
     },
     "education": {
       "title": "Pendidikan",
-      "sub_title": "Perjalanan pendidikan saya.",
-      "school": "Universitas Jambi",
-      "major": "Sistem Informasi, (S.Kom)",
-      "logo": "/images/education/unja.png",
-      "location": "Jambi, Indonesia 🇮🇩",
-      "degree": "Gelar Sarjana",
-      "start_year": 2022,
-      "end_year": 2026,
-      "link": "https://www.unja.ac.id"
+      "sub_title": "Perjalanan pendidikan saya."
     },
-    "resume_download_button": "Unduh Resume",
+    "resume_download_button": "Unduh CV",
     "portfolio_download_button": "Unduh Portofolio"
   },
   "AchievementsPage": {
-    "title": "Prestasi",
-    "description": "Koleksi sertifikat dan lencana yang saya dapatkan sepanjang perjalanan profesional saya.",
-    "error": "Terjadi kesalahan di server.",
-    "no_data": "Tidak ada data yang tersedia",
-    "show_credential": "Tampilkan Kredensial"
+    "title": "Pencapaian",
+    "description": "Kumpulan sertifikat dan badge yang saya peroleh sepanjang perjalanan profesional dan akademik.",
+    "error": "Terjadi kesalahan pada server.",
+    "no_data": "Data tidak tersedia.",
+    "show_credential": "Lihat Kredensial"
   },
   "ProjectsPage": {
     "title": "Proyek",
-    "description": "Beberapa proyek yang telah saya kerjakan, baik pribadi maupun sumber terbuka.",
+    "description": "Pameran proyek pribadi dan open-source yang telah saya buat atau kontribusikan.",
     "view_project": "Lihat Proyek",
-    "tech_stack": "Tumpukan Teknologi",
+    "tech_stack": "Teknologi yang Digunakan",
     "back_button": "Kembali",
     "source_code_text": "Kode Sumber",
     "live_demo_text": "Demo Langsung",
-    "error": "Terjadi kesalahan di server.",
-    "no_data": "Tidak ada data yang tersedia"
+    "error": "Terjadi kesalahan pada server.",
+    "no_data": "Data tidak tersedia."
   },
   "DashboardPage": {
     "title": "Dasbor",
-    "description": "Ini adalah dasbor pribadi saya, dibangun dengan jalur API Next.js yang diterapkan sebagai fungsi serverless.",
-    "error": "Terjadi kesalahan di server.",
+    "description": "Dasbor pribadi saya yang dibangun dengan Next.js API routes, memvisualisasikan statistik pengembangan dan kontribusi secara real-time.",
+    "error": "Terjadi kesalahan pada server.",
+    "umami": {
+      "title": "Umami",
+      "sub_title": "Pantau lalu lintas dan interaksi secara real-time dari situs portofolio saya.",
+      "overview": {
+        "page_views": "Tampilan",
+        "visitors": "Pengunjung",
+        "visits": "Kunjungan",
+        "countries": "Negara",
+        "events": "Peristiwa"
+      },
+      "chart": {
+        "title": "Tren Lalu Lintas",
+        "sessions": "Sesi",
+        "page_views": "Tampilan Halaman"
+      },
+      "filter_placeholder": "Saring domain..."
+    },
     "github": {
-      "title": "Kontribusi",
-      "sub_title": "Kontribusi saya dari tahun lalu di GitHub.",
+      "title": "Kontribusi GitHub",
+      "sub_title": "Aktivitas GitHub saya selama satu tahun terakhir.",
       "title_total_contribution": "Total",
       "title_total_this_week_contributino": "Minggu ini",
       "title_best_contribution": "Terbaik",
       "title_average_contribution": "Rata-rata",
-      "title_less_contribution": "Kurang",
-      "title_more_contribution": "Lebih",
+      "title_less_contribution": "Paling Sedikit",
+      "title_more_contribution": "Paling Banyak",
       "unit": "hari"
     },
     "wakatime": {
-      "title": "Statistik Mingguan",
-      "sub_title": "Statistik WakaTime saya selama 7 hari terakhir.",
+      "title": "Statistik WakaTime",
+      "sub_title": "Aktivitas coding selama 7 hari terakhir.",
       "last_update": "Pembaruan Terakhir",
       "start_date": "Tanggal Mulai",
-      "end_date": "Tanggal Berakhir",
-      "daily_average": "Rata-rata Coding Harian",
-      "daily_total": "Total Waktu Coding Minggu Ini",
-      "best_day": "Hari Terbaik Waktu Coding",
-      "all_time_since_today": "Total Waktu Sejak Hari Ini",
-      "languages": "Bahasa Pemrograman"
+      "end_date": "Tanggal Selesai",
+      "daily_average": "Rata-rata Waktu Coding Harian",
+      "total_this_week": "Total Minggu Ini",
+      "best_day": "Hari Terbaik",
+      "all_time_since_joined": "Total Coding Sejak Bergabung",
+      "languages": "Bahasa Teratas"
     },
     "codewars": {
-      "title": "Statistik Codewars",
-      "sub_title": "Skor statistik saya di Codewars.",
+      "title": "Perkembangan Codewars",
+      "sub_title": "Metri performa dari tantangan Codewars.",
       "title_rank": "Peringkat",
-      "title_honor": "Kehormatan",
-      "title_completed": "Selesai",
-      "title_leaderboard": "Papan Peringkat",
+      "title_honor": "Honor",
+      "title_completed": "Tantangan Diselesaikan",
+      "title_leaderboard": "Papan Peringkat Global",
       "title_clan": "Klan",
-      "title_skills": "Keterampilan"
+      "title_skills": "Keahlian Terkait"
     },
     "monkeytype": {
       "title": "Statistik Monkeytype",
-      "sub_title": "Skor statistik saya di Monkeytype.",
+      "sub_title": "Statistik dan performa mengetik.",
       "joined": "Bergabung",
-      "current_streak": "Rekor saat ini",
+      "current_streak": "Rekor Saat Ini",
       "unit_days": "hari",
-      "title_test_started": "Tes dimulai",
-      "title_test_completed": "Tes selesai",
-      "title_time_typing": "Waktu mengetik",
-      "title_leaderboard": "Papan Peringkat Bahasa Inggris",
-      "unit_seconds": "Detik",
-      "unit_time": "detik",
+      "title_test_started": "Tes Dimulai",
+      "title_test_completed": "Tes Selesai",
+      "title_time_typing": "Total Waktu Mengetik",
+      "title_leaderboard": "Papan Peringkat Bahasa Inggris Sepanjang Masa",
+      "unit_seconds": "detik",
+      "unit_time": "waktu",
       "unit_words": "kata",
       "top": "teratas",
       "days_ago": "hari yang lalu",
-      "xp_until_next_level": "XP sampai level berikutnya",
-      "total_xp": "jumlah XP"
+      "xp_until_next_level": "XP ke Level Selanjutnya",
+      "total_xp": "Total XP"
     }
   },
   "ChatRoomPage": {
     "title": "Ruang Obrolan",
-    "description": "Tinggalkan apa pun yang ingin anda katakan, saran, pertanyaan, atau apa pun!",
-    "placeholder": "Ketik pesan...",
+    "description": "Silakan bagikan pendapat, saran, pertanyaan, atau apa pun di sini!",
+    "placeholder": "Ketik pesan Anda...",
     "sign_in": {
-      "title": "Silakan masuk untuk memulai. Jangan khawatir, data anda aman.",
+      "title": "Silakan masuk untuk bergabung dalam percakapan. Tenang, data Anda aman bersama kami.",
       "label": "Masuk dengan",
       "signed_label": "Masuk sebagai",
       "sign_out_label": "Keluar"
     },
     "widget": {
       "title": "Ruang Obrolan",
-      "tooltip_title": "Pergi ke Ruang Obrolan",
-      "tooltip_minimize": "Perkecil",
+      "tooltip_title": "Buka Ruang Obrolan",
+      "tooltip_minimize": "Minimalkan",
       "tooltip_signout": "Keluar"
     }
   },
   "ContactPage": {
     "title": "Kontak",
-    "description": "Mari kita berhubungan",
+    "description": "Mari kita terhubung",
     "social_media": {
       "title": "Temukan saya di media sosial",
       "gmail": {
-        "title": "Tetap Berhubungan",
-        "description": "Hubungi melalui email untuk pertanyaan atau kolaborasi."
+        "title": "Tetap Terhubung",
+        "description": "Hubungi saya via email untuk pertanyaan atau kolaborasi."
       },
       "instagram": {
         "title": "Ikuti Perjalanan Saya",
-        "description": "Tetap diperbarui dengan posting dan cerita terbaru saya di Instagram."
+        "description": "Ikuti perjalanan kreatif saya."
       },
       "linkedin": {
         "title": "Mari Terhubung",
-        "description": "Terhubung untuk kolaborasi atau jelajahi pengalaman profesional saya."
+        "description": "Terhubung secara profesional dengan saya."
       },
       "tiktok": {
-        "title": "Bergabunglah dalam Keseruan",
-        "description": "Ikuti saya di TikTok untuk konten yang menghibur dan menarik."
+        "title": "Ikut Seru-seruan",
+        "description": "Tonton konten yang seru dan menarik."
       },
       "github": {
         "title": "Jelajahi Kode",
-        "description": "Jelajahi kode sumber untuk semua proyek saya di GitHub."
+        "description": "Lihat karya open-source saya."
       }
     },
     "form": {
-      "title": "Atau kirim pesan kepada saya",
+      "title": "Atau kirim saya pesan",
       "input_name": "Nama",
       "input_email": "Email",
       "input_message": "Pesan",
@@ -226,12 +180,12 @@
   },
   "SmartTalkPage": {
     "title": "Smart Talk",
-    "description": "Smart Talk Terintegrasi dengan AI"
+    "description": "Ruang berbasis AI untuk percakapan alami, penuh wawasan, dan eksplorasi ide."
   },
   "Footer": {
-    "hire": "Hire me.",
-    "copyright_1": "Hak Cipta © ",
-    "copyright_2": "Satria Bahari. Semua hak dilindungi."
+    "hire": "Rekrut saya.",
+    "copyright_1": "HAK CIPTA © ",
+    "copyright_2": "Satria Bahari. Seluruh hak dilindungi."
   },
   "LocaleSwitcher": {
     "en": "🇺🇸",
@@ -241,15 +195,15 @@
   "Navigation": {
     "Home": "Beranda",
     "About": "Tentang",
-    "Achievements": "Prestasi",
+    "Achievements": "Pencapaian",
     "Projects": "Proyek",
-    "Dashboard": "Dasbord",
+    "Dashboard": "Dasbor",
     "Chat Room": "Ruang Obrolan",
     "Contact": "Kontak",
     "Smart Talk": "Smart Talk"
   },
   "NotFoundPage": {
     "title": "Halaman tidak ditemukan",
-    "button": "Kembali ke beranda"
+    "button": "Bawa saya ke beranda"
   }
 }
