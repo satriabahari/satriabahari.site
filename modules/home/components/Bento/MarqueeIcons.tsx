@@ -5,7 +5,11 @@ import { STACKS } from "@/common/constants/stacks";
 
 const MarqueeIcons = () => {
   const stacksInArray: Array<[string, { icon: JSX.Element; color: string }]> =
-    Object.entries(STACKS).sort(() => Math.random() - 0.5);
+    Object.entries(STACKS)
+      .filter(([, value]) => value.isActive)
+      .sort(() => Math.random() - 0.5)
+      .map(([name, value]) => [name, { icon: value.icon, color: value.color }]);
+
   return (
     <div className="flex flex-col overflow-x-hidden">
       {Array.from({ length: 2 }, (_, index) => {

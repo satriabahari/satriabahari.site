@@ -11,7 +11,12 @@ const SkillList = () => {
 
   const stacksInArray: Array<
     [string, { icon: JSX.Element; background: string }]
-  > = Object.entries(STACKS);
+  > = Object.entries(STACKS)
+    .filter(([, value]) => value.isActive)
+    .map(([name, value]) => [
+      name,
+      { icon: value.icon, background: value.background },
+    ]);
 
   return (
     <section className="space-y-6">
