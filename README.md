@@ -217,4 +217,3 @@ You can start editing the homepage in:
 ## 📄 License
 
 This project is licensed under the MIT License.
-```
