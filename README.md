@@ -63,18 +63,6 @@ Each stat is retrieved using public APIs and visualized in a user-friendly way.
 
 ---
 
-## ⚡ Performance
-
-### 📈 Google PageSpeed Insights
-
-➡️ [View Report](https://pagespeed.web.dev/analysis/https-satriav2-vercel-app/yjcgcx7o2a?form_factor=desktop)  
-![PageSpeed](https://github.com/satriabahari/satria.com/assets/121304362/22628b99-fd71-4aff-b8d8-f744fef6e06c)
-
-### 📉 GTmetrix
-
-➡️ [View Report](https://gtmetrix.com/reports/satriav2.vercel.app/cRqM4gpB/)  
-![GTmetrix](https://github.com/satriabahari/satria.com/assets/121304362/872797d0-e027-4972-ae93-0343c607140d)
-
 ## 🛠 Getting Started
 
 Follow these steps to run the project locally:
