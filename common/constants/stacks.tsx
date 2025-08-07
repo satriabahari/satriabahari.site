@@ -1,5 +1,5 @@
 import { BiLogoPostgresql } from "react-icons/bi";
-import { BsFillBootstrapFill } from "react-icons/bs";
+import { BsFillBootstrapFill, BsRobot } from "react-icons/bs";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { FaNpm, FaGolang } from "react-icons/fa6";
 import {
@@ -232,6 +232,12 @@ export const STACKS: SkillProps = {
     icon: <SiDocker size={iconSize} />,
     background: "bg-blue-600",
     color: "text-blue-500",
+    isActive: true,
+  },
+  AI: {
+    icon: <BsRobot size={iconSize} />,
+    background: "bg-fuchsia-700",
+    color: "text-fuchsia-700",
     isActive: true,
   },
   Npm: {

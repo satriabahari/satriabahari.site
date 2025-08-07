@@ -12,9 +12,11 @@ interface TableProps {
   children?: ReactNode;
 }
 
-const Table = ({ children }: TableProps) => (
-  <div className="table-container">
-    <table className="table w-full">{children}</table>
+const Table = (props: TableProps & React.HTMLProps<HTMLTableElement>) => (
+  <div className="table-container overflow-auto">
+    <table className="table w-full" {...props}>
+      {props.children}
+    </table>
   </div>
 );
 
@@ -60,14 +62,17 @@ const MDXComponent = ({ children }: MarkdownRendererProps) => {
           />
         ),
         table: (props) => <Table {...props} />,
-        th: (props) => (
-          <th className="border px-3 py-1 text-left dark:border-neutral-600">
-            {props.children}
+        th: ({ children, ...rest }) => (
+          <th
+            className="border px-3 py-1 text-left dark:border-neutral-600"
+            {...rest}
+          >
+            {children}
           </th>
         ),
-        td: (props) => (
-          <td className="border px-3  py-1 dark:border-neutral-600">
-            {props.children}
+        td: ({ children, ...rest }) => (
+          <td className="border px-3 py-1 dark:border-neutral-600" {...rest}>
+            {children}
           </td>
         ),
       }}

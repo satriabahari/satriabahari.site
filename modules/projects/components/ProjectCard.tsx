@@ -36,7 +36,7 @@ const ProjectCard = ({
             alt={title}
             width={450}
             height={200}
-            className="h-full w-full rounded-t-xl object-cover md:w-auto"
+            className="h-[200px] w-full rounded-t-xl object-cover"
           />
           <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center gap-1 rounded-t-xl bg-black text-sm font-medium text-neutral-50 opacity-0 transition-opacity duration-300 group-hover:opacity-80">
             <span>{t("view_project")}</span>
@@ -44,7 +44,7 @@ const ProjectCard = ({
           </div>
         </div>
         <div className="space-y-2 p-5">
-          <h3 className="cursor-pointer text-lg text-neutral-700 transition-all duration-300 group-hover:text-teal-500 dark:text-neutral-300 dark:group-hover:text-teal-400">
+          <h3 className="cursor-pointer text-lg text-neutral-700 transition-all duration-300 dark:text-neutral-300">
             {title}
           </h3>
           <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">

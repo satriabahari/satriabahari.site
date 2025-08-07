@@ -70,7 +70,7 @@ const ComboBoxFilter = () => {
         onClick={handleClickOpen}
         data-umami-event="click_filter_websites"
       >
-        <span className="text-sm">{selectValue || `Filter websites...`}</span>
+        <span className="text-sm">{selectValue || `Filter domains...`}</span>
         <ArrowIcon
           className={cn("transition duration-200", isOpen && "scale-125")}
         />
