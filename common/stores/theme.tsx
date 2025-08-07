@@ -5,7 +5,7 @@ import React, { ReactNode } from 'react'
 
 export default function ThemeProviderContext({ children }: { children: ReactNode }) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="light">
+    <ThemeProvider attribute="class" defaultTheme="dark">
       {children}
     </ThemeProvider>
   )
