@@ -1,5 +1,6 @@
 import React from "react";
 import OverviewItem from "./OverviewItem";
+import { useTranslations } from "next-intl";
 
 interface OverviewProps {
   data: {
@@ -24,6 +25,8 @@ interface OverviewProps {
 }
 
 const Overview = ({ data }: OverviewProps) => {
+  const t = useTranslations("DashboardPage.umami.overview");
+
   const pageViewsData = data?.websiteStats?.pageviews?.value ?? 0;
   const visitorsData = data?.websiteStats?.visitors?.value ?? 0;
   const visitsData = data?.websiteStats?.visits?.value ?? 0;
@@ -32,11 +35,11 @@ const Overview = ({ data }: OverviewProps) => {
 
   return (
     <div className="grid grid-cols-2 gap-3 py-2 sm:grid-cols-5">
-      <OverviewItem label="Page Views" value={pageViewsData} />
-      <OverviewItem label="Visitors" value={visitorsData} />
-      <OverviewItem label="Visits" value={visitsData} />
-      <OverviewItem label="Countries" value={countriesData} />
-      <OverviewItem label="Events" value={eventsData} />
+      <OverviewItem label={t("page_views")} value={pageViewsData} />
+      <OverviewItem label={t("visitors")} value={visitorsData} />
+      <OverviewItem label={t("visits")} value={visitsData} />
+      <OverviewItem label={t("countries")} value={countriesData} />
+      <OverviewItem label={t("events")} value={eventsData} />
     </div>
   );
 };

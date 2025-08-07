@@ -8,12 +8,10 @@ import { BsBuildings as CompanyIcon } from "react-icons/bs";
 import { HiChevronRight as ChevronIcon } from "react-icons/hi";
 import { AnimatePresence, motion } from "framer-motion";
 import { useLocale } from "next-intl";
-import { useTranslations } from "use-intl";
 import { differenceInMonths, differenceInYears, format } from "date-fns";
 
-import Card from "@/common/components/elements/Card";
-import { CareerProps } from "@/common/types/careers";
 import SpotlightCard from "@/common/components/elements/SpotlightCard";
+import { CareerProps } from "@/common/types/careers";
 
 const CareerCard = ({
   position,
@@ -30,7 +28,6 @@ const CareerCard = ({
 }: CareerProps) => {
   const [isShowResponsibility, setIsShowResponsibility] = useState(false);
 
-  const t = useTranslations(`AboutPage.career.careers.career_${indexCareer}`);
   const locale = useLocale();
 
   const startDate = new Date(start_date);

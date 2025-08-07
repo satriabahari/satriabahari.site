@@ -39,10 +39,10 @@ const Overview = ({ data }: OverviewProps) => {
       <OverviewItem label={t("start_date")} value={startDate} />
       <OverviewItem label={t("end_date")} value={endDate} />
       <OverviewItem label={t("daily_average")} value={dailyAverage} />
-      <OverviewItem label={t("daily_total")} value={dailyTotal} />
+      <OverviewItem label={t("total_this_week")} value={dailyTotal} />
       <OverviewItem label={t("best_day")} value={bestDay} />
       <OverviewItem
-        label={t("all_time_since_today")}
+        label={t("all_time_since_joined")}
         value={allTimeSinceToday}
       />
     </div>
