@@ -30,7 +30,6 @@ This website is built using these technologies:
 - **⚛️ Next.js**
 - **🔰 TypeScript**
 - **💠 Tailwind CSS v3**
-- **🗂 Prisma Client**
 - **🦫 Zustand**
 - **〰️ SWR**
 - **➰ Framer Motion**
