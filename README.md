@@ -74,7 +74,9 @@ Each stat is retrieved using public APIs and visualized in a user-friendly way.
 ### 📉 GTmetrix
 
 ➡️ [View Report](https://gtmetrix.com/reports/satriav2.vercel.app/cRqM4gpB/)  
-![GTmetrix](https://github.com/satriabahari/satria.com/assets/121304362/872797d0-e027-4972-ae93-0343c607140d)## 🛠 Getting Started
+![GTmetrix](https://github.com/satriabahari/satria.com/assets/121304362/872797d0-e027-4972-ae93-0343c607140d)
+
+## 🛠 Getting Started
 
 Follow these steps to run the project locally:
 
