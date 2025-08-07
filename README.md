@@ -7,6 +7,8 @@
 [![Depfu](https://badges.depfu.com/badges/02483ebb21fdb2182a66a28b68d1b7b0/count.svg)](https://depfu.com/github/satriabahari/satria.com?project_id=38809)
 [![Last Update](https://img.shields.io/badge/deps%20update-every%20sunday-blue.svg)](https://shields.io/)
 
+<br/>
+
 <img width="1525" height="1221" alt="Screenshot 2025-08-07 115929" src="https://github.com/user-attachments/assets/fcf5a30b-0ad8-4a57-b1bf-e846e4ed416c" />
 
 ## 📘 Introduction
